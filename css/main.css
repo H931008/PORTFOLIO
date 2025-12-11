@@ -1,0 +1,569 @@
+:root {
+  /* 메인 컬러 (3색) */
+  --color-dark: #2c2c2c;
+  --color-gold: #d4af37;
+  --color-beige: #f5f5dc;
+
+  /* 보조 컬러 (1색) */
+  --color-white: #ffffff;
+
+  /* 투명도 변형 */
+  --color-dark-80: rgba(44, 44, 44, 0.8);
+  --color-dark-50: rgba(44, 44, 44, 0.5);
+  --color-dark-30: rgba(44, 44, 44, 0.3);
+  --color-dark-20: rgba(44, 44, 44, 0.2);
+  --color-dark-10: rgba(44, 44, 44, 0.1);
+
+  --color-gold-80: rgba(212, 175, 55, 0.8);
+  --color-gold-60: rgba(212, 175, 55, 0.6);
+  --color-gold-30: rgba(212, 175, 55, 0.3);
+  --color-gold-10: rgba(212, 175, 55, 0.1);
+
+  --header-height: 72px;
+}
+
+/* 기본 리셋 & 타이포 */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background-color: var(--color-dark);
+  color: var(--color-beige);
+}
+
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 공통 텍스트 스타일 */
+
+.section-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color-beige);
+  margin: 0 0 16px;
+}
+
+.section-desc {
+  font-size: 15px;
+  color: var(--color-beige);
+  max-width: 460px;
+}
+
+/* 헤더 */
+
+.main-header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  z-index: 20;
+  background: linear-gradient(
+    to bottom,
+    rgba(44, 44, 44, 0.95),
+    rgba(44, 44, 44, 0.7),
+    rgba(44, 44, 44, 0)
+  );
+  backdrop-filter: blur(12px);
+}
+
+.main-header__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-header__logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid var(--color-gold-60);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.main-header__logo-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-beige);
+}
+
+.main-header__nav {
+  display: flex;
+  gap: 16px;
+}
+
+.main-header__nav button {
+  background: transparent;
+  border: none;
+  padding: 4px 0;
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-beige);
+  cursor: pointer;
+  position: relative;
+}
+
+.main-header__nav button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width 0.25s ease;
+}
+
+.main-header__nav button:hover::after {
+  width: 100%;
+}
+
+/* 도트 네비게이션 */
+
+.dot-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 30;
+}
+
+.dot-nav__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background-color: var(--color-gold-30);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.dot-nav__dot:hover {
+  background-color: var(--color-gold-60);
+  transform: scale(1.05);
+}
+
+.dot-nav__dot.is-active {
+  background-color: var(--color-gold);
+  box-shadow: 0 0 12px var(--color-gold-60);
+  transform: scale(1.1);
+}
+
+/* 섹션 공통 */
+
+.section {
+  min-height: 100vh;
+  padding: calc(var(--header-height) + 40px) 24px 80px;
+  display: flex;
+  align-items: center;
+}
+
+.section > div {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* 버튼 */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-gold-80);
+  box-shadow: 0 4px 16px var(--color-gold-30);
+  transform: translateY(-1px);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-gold);
+  border: 2px solid var(--color-gold);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  box-shadow: 0 4px 12px var(--color-gold-30);
+  transform: translateY(-1px);
+}
+
+/* 카드 */
+
+.card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-dark-10);
+  box-shadow: 0 4px 16px rgba(44, 44, 44, 0.08);
+  border-radius: 16px;
+  padding: 18px 20px;
+  color: var(--color-dark);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(44, 44, 44, 0.12);
+  transform: translateY(-2px);
+}
+
+/* 인풋 */
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--color-dark-20);
+  background-color: var(--color-white);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--color-dark);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px var(--color-gold-10);
+}
+
+/* 관찰 대상 요소 기본 애니메이션 (페이드인) */
+
+.js-observe {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js-observe.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 01. 씨앗 (HOME) - 배경: 다크 */
+
+.section-home {
+  background-color: var(--color-dark);
+  color: var(--color-beige);
+}
+
+.section-home__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.section-home__content {
+  max-width: 520px;
+}
+
+.section-home__eyebrow {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-home__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+
+.section-home__title span {
+  color: var(--color-gold);
+}
+
+.section-home__subtitle {
+  font-size: 15px;
+  color: var(--color-beige);
+  margin-bottom: 24px;
+}
+
+.section-home__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.section-home__visual {
+  flex: 1;
+  min-height: 260px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 씨앗 - 연꽃 컨셉 (골드 단색) */
+.seed-orbit {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gold-30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seed-orbit__ring {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 999px;
+  border: 1px dashed var(--color-gold-60);
+  animation: seed-ring 10s linear infinite;
+}
+
+.seed-orbit__seed {
+  position: relative;
+  width: 32px;
+  height: 46px;
+  border-radius: 50% 50% 40% 40%;
+  background: var(--color-gold);
+  box-shadow: 0 0 24px var(--color-gold-30);
+  transform-origin: 50% 0%;
+  animation:
+    seed-float 3s ease-in-out infinite,
+    seed-drop 1.3s ease-out 0.5s both;
+}
+
+/* 씨앗 떨어지는 듯한 애니메이션 */
+@keyframes seed-drop {
+  0% {
+    transform: translateY(-40px) scale(0.4);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(10px) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 씨앗 미세한 떠다님 */
+@keyframes seed-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes seed-ring {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+/* 스크롤 인디케이터 */
+
+.section-home__scroll-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.scroll-indicator__text {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.scroll-indicator__line {
+  display: block;
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-gold-60),
+    var(--color-gold-10)
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-indicator__line::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: var(--color-gold);
+  animation: scroll-blink 1.3s ease-in-out infinite;
+}
+
+@keyframes scroll-blink {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+}
+
+/* 02. 뿌리 (ABOUT) - 배경: 다크 */
+
+.section-about {
+  background-color: var(--color-dark);
+  color: var(--color-beige);
+}
+
+.section-about__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.section-about__highlights {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.about-highlight__label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.about-highlight__text {
+  font-size: 14px;
+  color: var(--color-beige);
+}
+
+.section-about__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.root-illustration {
+  position: relative;
+  width: 260px;
+  height: 280px;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.root-illustration__svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 뿌리 드로잉 애니메이션 */
+.root-path {
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  transition: stroke-dashoffset 1.4s ease-out;
+}
+
+.root-path--sub {
+  transition-delay: 0.25s;
+}
+
+.root-illustration.is-drawn .root-path {
+  stroke-dashoffset: 0;
+}
+
+.root-illustration__label {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold-60);
+}

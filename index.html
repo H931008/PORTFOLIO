@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HYKIM'S PORTFOLIO</title>
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
 
     <link rel="stylesheet" href="css/sideNavi.css">
     <link rel="stylesheet" href="css/overlaymenu.css">
@@ -25,9 +22,20 @@
     <script src="https://kit.fontawesome.com/c3b958d629.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- GSAP ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <!-- GSAP ScrollToPlugin -->
     <script src="js/SideNav.js"></script>
     <script src="js/overlaymenu.js"></script>
-    <script src="js/modernizr.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/story.js"></script>
+    <script src="js/works.js"></script>
+    <script src="js/resume.js"></script>
+    <script src="js/contact.js"></script>
 </head>
 
 <body>
@@ -50,12 +58,24 @@
     <div class="nav">
         <div class="nav_content">
             <ul class="nav_list">
-                <li class="nav_list-item"><a href="#home" class="hover-target">home</a></li>
-                <li class="nav_list-item"><a href="#about" class="hover-target">about me</a></li>
-                <li class="nav_list-item"><a href="#story" class="hover-target">story</a></li>
-                <li class="nav_list-item"><a href="#works" class="hover-target">works</a></li>
-                <li class="nav_list-item"><a href="#resume" class="hover-target">resume</a></li>
-                <li class="nav_list-item"><a href="#contact" class="hover-target">contact</a></li>
+                <li class="nav_list-item">
+                    <a href="#home" class="hover-target">home</a>
+                </li>
+                <li class="nav_list-item">
+                    <a href="#about" class="hover-target">about me</a>
+                </li>
+                <li class="nav_list-item">
+                    <a href="#story" class="hover-target">story</a>
+                </li>
+                <li class="nav_list-item">
+                    <a href="#works" class="hover-target">works</a>
+                </li>
+                <li class="nav_list-item">
+                    <a href="#resume" class="hover-target">resume</a>
+                </li>
+                <li class="nav_list-item">
+                    <a href="#contact" class="hover-target">contact</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -68,34 +88,428 @@
 
     <section class="km-side-navi" id="exampleSide"></section>
     <div id="fullpage">
-        <section id="home">
-            <div class="content">
-                <h1 class="title">
-                    <span class="title-line">PORTFOLIO</span>
-                    <span class="title-line">2024</span>
-                </h1>
-                <p class="subtitle">Growing Ideas into Reality</p>
-
-                <div class="seed-container">
-                    <div class="seed">
-                        <div class="seed-body"></div>
-                        <div class="seed-leaf seed-leaf-1"></div>
-                        <div class="seed-leaf seed-leaf-2"></div>
+        <section id="home" class="section section-home hero-section-new">
+            <div class="section-home__inner">
+                <div class="section-home__content">
+                    <p class="section-home__eyebrow">THE SEED OF A LOTUS</p>
+                    <h1 class="section-home__title">
+                        HYKIM'S<br />
+                        <span>PORTFOLIO</span>
+                    </h1>
+                    <p class="section-home__subtitle">
+                        가장 예쁜 꽃은<br />
+                        우여곡절 끝에 피어나는 꽃이라고 믿습니다.
+                    </p>
+                    <div class="section-home__buttons">
+                        <button class="btn btn-primary" data-target="#works">
+                            PROJECTS BLOOM
+                        </button>
+                        <button class="btn btn-secondary" data-target="#story">
+                            SEE THE JOURNEY
+                        </button>
                     </div>
                 </div>
 
-                <!-- 스크롤 인디케이터 -->
-                <div class="scroll-indicator">
-                    <span class="scroll-text">Scroll</span>
-                    <div class="scroll-line"></div>
+                <!-- 씨앗 일러스트 & 애니메이션 -->
+                <div class="section-home__visual">
+                    <div class="seed-orbit">
+                        <div class="seed-orbit__ring"></div>
+                        <div class="seed-orbit__seed"></div>
+                    </div>
+                    <div class="section-home__scroll-indicator">
+                        <span class="scroll-indicator__text">Scroll</span>
+                        <span class="scroll-indicator__line"></span>
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="about"></section>
-        <section id="story"></section>
-        <section id="works"></section>
-        <section id="resume"></section>
-        <section id="contact"></section>
+
+        <section id="about" class="section section-about">
+            <div class="section-about__inner">
+                <!-- 좌측 텍스트 -->
+                <div class="section-about__text js-observe">
+                    <p class="section-label">ROOT · ABOUT</p>
+                    <h2 class="section-title">
+                        진흙 속에서<br />
+                        뿌리를 내리다
+                    </h2>
+                    <p class="section-desc">
+                        가장 깊은 곳에서부터 시작된, 저의 좌절과 도전, 그리고 다시 일어섬의 기록입니다.
+                        보이지 않는 뿌리가 단단할수록, 연꽃은 더 고요하고 단단하게 피어난다고 생각합니다.
+                    </p>
+                    <div class="section-about__highlights">
+                        <div class="about-highlight">
+                            <span class="about-highlight__label">Background</span>
+                            <p class="about-highlight__text">
+                                000 전공을 기반으로 UX/UI와 프론트엔드 개발에 집중해 왔습니다.
+                                사용자의 맥락을 이해하고, 그것을 화면과 인터랙션으로 옮기는 과정을 좋아합니다.
+                            </p>
+                        </div>
+                        <div class="about-highlight">
+                            <span class="about-highlight__label">Mindset</span>
+                            <p class="about-highlight__text">
+                                실패와 우여곡절을 숨기기보다, 그것을 영양분으로 삼는 태도로 성장해왔습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 우측 뿌리 일러스트 -->
+                <div class="section-about__visual">
+                    <div class="root-illustration js-root">
+                        <svg class="root-illustration__svg" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
+                            <!-- 지면 라인 -->
+                            <line x1="0" y1="60" x2="200" y2="60" stroke="rgba(44,44,44,0.3)" stroke-width="1.5"
+                                stroke-dasharray="4 4" />
+                            <!-- 메인 뿌리 (드로잉 애니메이션) -->
+                            <path class="root-path" d="M100 60 C 95 100, 110 130, 90 170
+                 C 80 190, 105 210, 95 235
+                 C 88 248, 100 255, 105 260" stroke="rgba(44,44,44,0.3)" stroke-width="3" fill="none" />
+                            <!-- 옆 가지 뿌리 -->
+                            <path class="root-path root-path--sub" d="M100 105 C 120 125, 130 145, 140 165"
+                                stroke="rgba(44,44,44,0.3)" stroke-width="2" fill="none" />
+                            <path class="root-path root-path--sub" d="M92 140 C 75 160, 70 180, 65 200"
+                                stroke="rgba(44,44,44,0.3)" stroke-width="2" fill="none" />
+                            <!-- 골드 포인트 (끝부분) -->
+                            <circle cx="105" cy="260" r="4" fill="#D4AF37" />
+                            <circle cx="140" cy="165" r="3" fill="#D4AF37" />
+                            <circle cx="65" cy="200" r="3" fill="#D4AF37" />
+                        </svg>
+                        <div class="root-illustration__label">
+                            <span>보이지 않는 곳에서의 시간</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="story" class="section section-story">
+            <div class="section-story__gradient"></div>
+            <div class="section-story__inner">
+                <div class="section-story__header js-observe">
+                    <p class="section-label">GROWTH · STORY</p>
+                    <h2 class="section-title">
+                        줄기가 자라며<br />
+                        이야기가 쌓이다
+                    </h2>
+                    <p class="section-desc">
+                        한 번에 피어나는 꽃은 없습니다. 작은 실험과 시행착오, 그리고 프로젝트들을 통해
+                        줄기가 자라듯 성장해 온 과정을 타임라인으로 담았습니다.
+                    </p>
+                </div>
+
+                <div class="story-timeline">
+                    <!-- 중앙 줄기 -->
+                    <div class="story-stem">
+                        <div class="story-stem__line"></div>
+                        <div class="story-stem__bud"></div>
+                    </div>
+
+                    <!-- 타임라인 아이템들 -->
+                    <div class="story-timeline__items">
+                        <article class="story-item js-observe">
+                            <div class="story-item__point"></div>
+                            <div class="story-item__card card">
+                                <h3 class="story-item__title">첫 번째 도전</h3>
+                                <p class="story-item__meta">2020 — 작은 사이드 프로젝트</p>
+                                <p class="story-item__text">
+                                    디자인과 개발을 혼자 모두 책임지며, 사용자의 반응을 처음 온전히 마주했던 프로젝트입니다.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="story-item js-observe">
+                            <div class="story-item__point"></div>
+                            <div class="story-item__card card">
+                                <h3 class="story-item__title">우여곡절의 시기</h3>
+                                <p class="story-item__meta">2021 — 실패와 피드백</p>
+                                <p class="story-item__text">
+                                    여러 번의 기획 변경과 클라이언트 피드백을 거치며, 설득과 조율의 중요성을 배웠습니다.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="story-item js-observe">
+                            <div class="story-item__point"></div>
+                            <div class="story-item__card card">
+                                <h3 class="story-item__title">연꽃의 줄기</h3>
+                                <p class="story-item__meta">2022 — 제품 런칭 경험</p>
+                                <p class="story-item__text">
+                                    실제 서비스 런칭을 경험하며, 디테일과 마감의 중요성을 몸으로 느꼈습니다.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="story-item js-observe">
+                            <div class="story-item__point story-item__point--gold"></div>
+                            <div class="story-item__card card">
+                                <h3 class="story-item__title">지금의 나</h3>
+                                <p class="story-item__meta">2023 ~ Now — 연꽃을 피우는 중</p>
+                                <p class="story-item__text">
+                                    사용자의 문제를 발견하고, 그것을 구조화하여 인터페이스와 인터랙션으로 풀어내는 일에 집중하고 있습니다.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="works" class="section section-works">
+            <div class="section-works__inner">
+                <header class="section-works__header js-observe">
+                    <p class="section-label">BLOOM · WORKS</p>
+                    <h2 class="section-title">
+                        마침내 피어난<br />
+                        연꽃 같은 결과물들
+                    </h2>
+                    <p class="section-desc">
+                        진흙과 물, 시간을 통과해 피어난 프로젝트들입니다.
+                        각 카드 위에 마우스를 올리면, 연꽃이 한 번 더 활짝 피어오르듯 인터랙션을 느껴보세요.
+                    </p>
+                </header>
+
+                <div class="works-grid">
+                    <!-- 프로젝트 카드 -->
+                    <article class="work-card card js-observe">
+                        <div class="work-card__lotus">
+                            <div class="lotus-outline"></div>
+                            <div class="lotus-core"></div>
+                        </div>
+                        <div class="work-card__body">
+                            <h3 class="work-card__title">Project Lotus</h3>
+                            <p class="work-card__tagline">
+                                연꽃의 성장 과정을 모티브로 한 인터랙티브 랜딩 페이지
+                            </p>
+                            <p class="work-card__meta">UX/UI · Frontend · Interaction Design</p>
+                            <button class="btn btn-secondary work-card__btn">
+                                VIEW CASE STUDY
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="work-card card js-observe">
+                        <div class="work-card__lotus">
+                            <div class="lotus-outline"></div>
+                            <div class="lotus-core"></div>
+                        </div>
+                        <div class="work-card__body">
+                            <h3 class="work-card__title">Mud to Bloom</h3>
+                            <p class="work-card__tagline">
+                                복잡한 데이터를 담백하게 정리한 B2B 대시보드 디자인
+                            </p>
+                            <p class="work-card__meta">Design System · Data Visualization</p>
+                            <button class="btn btn-secondary work-card__btn">
+                                VIEW CASE STUDY
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="work-card card js-observe">
+                        <div class="work-card__lotus">
+                            <div class="lotus-outline"></div>
+                            <div class="lotus-core"></div>
+                        </div>
+                        <div class="work-card__body">
+                            <h3 class="work-card__title">Floating Garden</h3>
+                            <p class="work-card__tagline">
+                                브랜드 스토리텔링을 위한 스크롤 기반 인터랙션 웹사이트
+                            </p>
+                            <p class="work-card__meta">Scrolling Storytelling · Motion</p>
+                            <button class="btn btn-secondary work-card__btn">
+                                VIEW CASE STUDY
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="work-card card js-observe">
+                        <div class="work-card__lotus">
+                            <div class="lotus-outline"></div>
+                            <div class="lotus-core"></div>
+                        </div>
+                        <div class="work-card__body">
+                            <h3 class="work-card__title">Silent Pond</h3>
+                            <p class="work-card__tagline">
+                                고요함과 집중을 주제로 한 미니멀 포트폴리오 템플릿
+                            </p>
+                            <p class="work-card__meta">Minimal UI · Responsive</p>
+                            <button class="btn btn-secondary work-card__btn">
+                                VIEW CASE STUDY
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="section section-resume">
+            <div class="section-resume__inner">
+                <header class="section-resume__header js-observe">
+                    <p class="section-label">FRUIT · RESUME</p>
+                    <h2 class="section-title">
+                        쌓여 온 시간들이<br />
+                        열매가 되다
+                    </h2>
+                    <p class="section-desc">
+                        한 번의 프로젝트로는 만들어지지 않는 역량들.
+                        반복과 축적 끝에 맺힌 열매를 스킬과 경험으로 정리했습니다.
+                    </p>
+                </header>
+
+                <div class="resume-layout">
+                    <!-- 스킬 바 영역 -->
+                    <div class="resume-skills js-observe">
+                        <h3 class="resume-subtitle">Skills as Fruits</h3>
+
+                        <div class="skill-item">
+                            <div class="skill-item__top">
+                                <span class="skill-item__name">HTML · CSS · Semantic Markup</span>
+                                <span class="skill-item__value">90%</span>
+                            </div>
+                            <div class="skill-bar" data-level="90">
+                                <div class="skill-bar__fill"></div>
+                                <div class="skill-bar__seed"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-item__top">
+                                <span class="skill-item__name">JavaScript · Interaction</span>
+                                <span class="skill-item__value">85%</span>
+                            </div>
+                            <div class="skill-bar" data-level="85">
+                                <div class="skill-bar__fill"></div>
+                                <div class="skill-bar__seed"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-item__top">
+                                <span class="skill-item__name">React · SPA Architecture</span>
+                                <span class="skill-item__value">80%</span>
+                            </div>
+                            <div class="skill-bar" data-level="80">
+                                <div class="skill-bar__fill"></div>
+                                <div class="skill-bar__seed"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-item__top">
+                                <span class="skill-item__name">UX Writing · IA</span>
+                                <span class="skill-item__value">75%</span>
+                            </div>
+                            <div class="skill-bar" data-level="75">
+                                <div class="skill-bar__fill"></div>
+                                <div class="skill-bar__seed"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 경력/요약 카드 -->
+                    <div class="resume-summary">
+                        <div class="card resume-card js-observe">
+                            <h3 class="resume-subtitle">Experience</h3>
+                            <ul class="resume-list">
+                                <li>
+                                    <span class="resume-list__title">000 Company · Product Designer</span>
+                                    <span class="resume-list__meta">2022 — 현재</span>
+                                </li>
+                                <li>
+                                    <span class="resume-list__title">000 Studio · Frontend Developer</span>
+                                    <span class="resume-list__meta">2020 — 2022</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card resume-card js-observe">
+                            <h3 class="resume-subtitle">Values</h3>
+                            <p class="resume-values">
+                                • 우여곡절을 숨기지 않는 정직한 과정<br />
+                                • 사용자의 시간을 아끼는 인터페이스<br />
+                                • 팀과 함께 피어나는 연꽃 같은 결과물
+                            </p>
+                            <button class="btn btn-primary resume-download">
+                                DOWNLOAD RESUME (PDF)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-contact">
+            <div class="section-contact__inner">
+                <header class="section-contact__header js-observe">
+                    <p class="section-label">GARDEN · CONTACT</p>
+                    <h2 class="section-title">
+                        함께 가꿀<br />
+                        다음 정원을 상상합니다
+                    </h2>
+                    <p class="section-desc">
+                        새로운 진흙, 새로운 물, 새로운 계절을 맞이하기 위해
+                        당신의 이야기를 기다리고 있습니다. 작은 씨앗이라도 좋습니다.
+                    </p>
+                </header>
+
+                <div class="contact-layout">
+                    <!-- 정원 일러스트 & SNS -->
+                    <div class="contact-garden js-observe">
+                        <div class="garden-illustration">
+                            <div class="garden-pond"></div>
+                            <div class="garden-lotus garden-lotus--left"></div>
+                            <div class="garden-lotus garden-lotus--right"></div>
+                            <!-- 날아다니는 나비/벌 -->
+                            <div class="garden-butterfly garden-butterfly--1"></div>
+                            <div class="garden-butterfly garden-butterfly--2"></div>
+                        </div>
+
+                        <div class="contact-social">
+                            <p class="contact-social__label">Find me in the garden</p>
+                            <div class="contact-social__links">
+                                <a href="#" class="contact-social__icon">Behance</a>
+                                <a href="#" class="contact-social__icon">Dribbble</a>
+                                <a href="#" class="contact-social__icon">GitHub</a>
+                                <a href="#" class="contact-social__icon">LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 폼 -->
+                    <div class="contact-form card js-observe">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">이름</label>
+                                <input type="text" id="name" name="name" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">이메일</label>
+                                <input type="email" id="email" name="email" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">메시지</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+
+                            <div class="contact-form__footer">
+                                <button type="submit" class="btn btn-primary">
+                                    씨앗 보내기
+                                </button>
+                                <span class="contact-form__status" aria-live="polite"></span>
+                            </div>
+                        </form>
+
+                        <!-- 폼 제출 시 씨앗 애니메이션 -->
+                        <div class="contact-seed-animation" aria-hidden="true">
+                            <div class="contact-seed"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 </body>
 
@@ -120,7 +534,7 @@
         var sections = $('#fullpage section');
 
         // 섹션별 배경색 설정
-        var colors = ['#fff', '#fff', '#c7b2a0', '#c5c4cb', '#eee', '#ae795b'];
+        var colors = ['#2c2c2c', '#2c2c2c', '#f5f5dc', '#f5f5dc', '#f5f5dc', '#f5f5dc'];
         sections.each(function (index) {
             $(this).css({
                 'background-color': colors[index],

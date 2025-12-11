@@ -1,0 +1,144 @@
+.section-story {
+  position: relative;
+  color: var(--color-dark);
+}
+
+.section-story__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--color-dark),
+    var(--color-dark-80),
+    var(--color-dark-30),
+    var(--color-beige)
+  );
+  z-index: -1;
+}
+
+.section-story__inner {
+  position: relative;
+  color: var(--color-beige);
+}
+
+.section-story__header .section-title {
+  color: var(--color-beige);
+}
+
+.story-timeline {
+  margin-top: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* 중앙 줄기 */
+.story-stem {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.story-stem__line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(
+    to bottom,
+    var(--color-gold-10),
+    var(--color-gold),
+    var(--color-gold-60)
+  );
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 1.4s ease-out;
+}
+
+.story-stem__bud {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.2);
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 2px solid var(--color-gold);
+  box-shadow: 0 0 16px var(--color-gold-30);
+  opacity: 0;
+  transition: transform 0.8s ease-out 0.8s, opacity 0.8s ease-out 0.8s;
+}
+
+/* 타임라인 아이템 */
+
+.story-timeline__items {
+  display: grid;
+  gap: 26px;
+  max-width: 720px;
+}
+
+.story-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  position: relative;
+}
+
+.story-item__point {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 10px) scale(0.7);
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 2px solid var(--color-gold-60);
+  background-color: var(--color-dark);
+  transition: transform 0.35s ease, box-shadow 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.story-item__point--gold {
+  background-color: var(--color-gold);
+}
+
+.story-item__card {
+  margin-top: 20px;
+  padding: 16px 18px;
+}
+
+.story-item__title {
+  font-size: 16px;
+  margin: 0 0 6px;
+  color: var(--color-dark);
+}
+
+.story-item__meta {
+  font-size: 12px;
+  color: var(--color-dark-80);
+  margin-bottom: 8px;
+}
+
+.story-item__text {
+  font-size: 14px;
+  color: var(--color-dark);
+}
+
+/* 타임라인 in-view 시 애니메이션 */
+.story-timeline__items .js-observe.is-visible .story-item__point {
+  transform: translate(-50%, 0) scale(1);
+  box-shadow: 0 0 12px var(--color-gold-60);
+  background-color: var(--color-gold);
+}
+
+.section-story__inner.story-active .story-stem__line {
+  transform: scaleY(1);
+}
+
+.section-story__inner.story-active .story-stem__bud {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
