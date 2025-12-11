@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
 :root {
   /* 메인 컬러 (3색) */
   --color-dark: #2c2c2c;
@@ -81,12 +84,10 @@ body {
   display: flex;
   align-items: center;
   z-index: 20;
-  background: linear-gradient(
-    to bottom,
-    rgba(44, 44, 44, 0.95),
-    rgba(44, 44, 44, 0.7),
-    rgba(44, 44, 44, 0)
-  );
+  background: linear-gradient(to bottom,
+      rgba(44, 44, 44, 0.95),
+      rgba(44, 44, 44, 0.7),
+      rgba(44, 44, 44, 0));
   backdrop-filter: blur(12px);
 }
 
@@ -202,7 +203,7 @@ body {
   align-items: center;
 }
 
-.section > div {
+.section>div {
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
@@ -404,10 +405,12 @@ textarea:focus {
     transform: translateY(-40px) scale(0.4);
     opacity: 0;
   }
+
   60% {
     transform: translateY(10px) scale(1.05);
     opacity: 1;
   }
+
   100% {
     transform: translateY(0) scale(1);
   }
@@ -415,10 +418,12 @@ textarea:focus {
 
 /* 씨앗 미세한 떠다님 */
 @keyframes seed-float {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-4px);
   }
@@ -429,6 +434,7 @@ textarea:focus {
     transform: rotate(0deg);
     opacity: 0.6;
   }
+
   100% {
     transform: rotate(360deg);
     opacity: 0.2;
@@ -459,11 +465,9 @@ textarea:focus {
   display: block;
   width: 1px;
   height: 34px;
-  background: linear-gradient(
-    to bottom,
-    var(--color-gold-60),
-    var(--color-gold-10)
-  );
+  background: linear-gradient(to bottom,
+      var(--color-gold-60),
+      var(--color-gold-10));
   position: relative;
   overflow: hidden;
 }
@@ -484,9 +488,11 @@ textarea:focus {
     transform: translateY(0);
     opacity: 0;
   }
+
   30% {
     opacity: 1;
   }
+
   100% {
     transform: translateY(24px);
     opacity: 0;

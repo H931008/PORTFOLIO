@@ -1,4 +1,5 @@
 .section-resume {
+  background-color: var(--color-beige);
   color: var(--color-dark);
 }
 

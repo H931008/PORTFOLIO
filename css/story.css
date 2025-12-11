@@ -1,5 +1,6 @@
 .section-story {
   position: relative;
+  background: var(--color-beige);
   color: var(--color-dark);
 }
 

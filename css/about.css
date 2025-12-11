@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 .section-about {
-  background: radial-gradient(circle at top left, #17171b 0%, #050507 65%);
   color: var(--color-sand);
 }
 

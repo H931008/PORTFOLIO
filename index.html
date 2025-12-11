@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HYKIM'S PORTFOLIO</title>
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="asset/favicon.ico">
 
     <link rel="stylesheet" href="css/sideNavi.css">
     <link rel="stylesheet" href="css/overlaymenu.css">
@@ -22,12 +22,7 @@
     <script src="https://kit.fontawesome.com/c3b958d629.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <!-- GSAP ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <!-- GSAP ScrollToPlugin -->
-    <script src="js/SideNav.js"></script>
+    <script src="js/SideNavi.js"></script>
     <script src="js/overlaymenu.js"></script>
     <script src="js/main.js"></script>
     <script src="js/home.js"></script>
@@ -62,7 +57,7 @@
                     <a href="#home" class="hover-target">home</a>
                 </li>
                 <li class="nav_list-item">
-                    <a href="#about" class="hover-target">about me</a>
+                    <a href="#about" class="hover-target">about</a>
                 </li>
                 <li class="nav_list-item">
                     <a href="#story" class="hover-target">story</a>
@@ -509,14 +504,12 @@
                 </div>
             </div>
         </section>
-
     </div>
 </body>
 
 <!-- layout js -->
 <script>
     $(document).ready(function () {
-        // overflow 설정
         $('html, body').css({
             'overflow-y': 'auto',
             'overflow-x': 'hidden'
@@ -527,126 +520,51 @@
             position: 'right',
             themeColor: '#4a66ac',
             id: 'exampleSide'
-        }
-        var sidenav = new SideNavi(options);
+        };
 
-        // 섹션 선택
+        var sidenav = null;
+        // ★ SideNavi 플러그인 로드 여부 확인
+        if (typeof SideNavi === 'function') {
+            sidenav = new SideNavi(options);
+        }
+
         var sections = $('#fullpage section');
 
-        // 섹션별 배경색 설정
-        var colors = ['#2c2c2c', '#2c2c2c', '#f5f5dc', '#f5f5dc', '#f5f5dc', '#f5f5dc'];
-        sections.each(function (index) {
-            $(this).css({
-                'background-color': colors[index],
-                'min-height': '100vh',
-                'padding': '50px 20px'
-            });
-        });
-
-        // 스크롤 함수
         function scrollToSection(index) {
             var targetSection = sections.eq(index);
             if (targetSection.length) {
                 var targetOffset = targetSection.offset().top;
-                console.log('Scrolling to section', index, 'at', targetOffset);
 
-                // 스크롤 실행
                 window.scrollTo({
                     top: targetOffset,
                     behavior: 'smooth'
                 });
 
-                // 메뉴 활성화
                 $('#exampleSide .km-name-tag ul li').removeClass('active');
                 $('#exampleSide .km-name-tag ul li').eq(index).addClass('active');
 
-                // SideNavi 태그 이동
-                setTimeout(function () {
-                    try {
-                        sidenav.activeMenuAndTag(index);
-                    } catch (error) {
-                        console.log('Tag move skipped');
-                    }
-                }, 100);
+                // SideNavi가 있을 때만 activeMenuAndTag 호출
+                // ★ SideNavi는 1-based index를 사용 (itemId: 1, 2, 3...)
+                if (sidenav) {
+                    var itemId = index + 1; // 0-based를 1-based로 변환
+                    setTimeout(function () {
+                        sidenav.activeMenuAndTag(itemId);
+                    }, 100);
+                }
             }
         }
 
-        // SideNavi 로드 대기
+        // SideNavi 첫 번째 텍스트 active 설정
         setTimeout(function () {
-            console.log('Setting up events...');
-
-            // 동그라미 메뉴 - 투명 오버레이 방식
-            $('#exampleSide .km-side-navi-ul li').each(function (index) {
-                var $this = $(this);
-
-                // 기존 요소 위에 투명 div 추가
-                $this.css('position', 'relative');
-
-                var $clickLayer = $('<div>')
-                    .css({
-                        'position': 'absolute',
-                        'top': '0',
-                        'left': '0',
-                        'width': '100%',
-                        'height': '100%',
-                        'z-index': '9999',
-                        'cursor': 'pointer',
-                        'background': 'transparent'
-                    })
-                    .on('click', function (e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        console.log('Circle menu clicked:', index);
-                        scrollToSection(index);
-                        return false;
-                    });
-
-                $this.append($clickLayer);
-            });
-
-            // 텍스트 메뉴
-            $('#exampleSide .km-name-tag ul li').each(function (index) {
-                var $this = $(this);
-
-                $this.css('position', 'relative');
-
-                var $clickLayer = $('<div>')
-                    .css({
-                        'position': 'absolute',
-                        'top': '0',
-                        'left': '0',
-                        'width': '100%',
-                        'height': '100%',
-                        'z-index': '9999',
-                        'cursor': 'pointer',
-                        'background': 'transparent'
-                    })
-                    .on('click', function (e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        console.log('Text menu clicked:', index);
-                        scrollToSection(index);
-                        return false;
-                    });
-
-                $this.append($clickLayer);
-            });
-
-            // 초기 활성화
-            $('#exampleSide .km-name-tag ul li:first').addClass('active');
-
-            console.log('Click layers added');
-
+            $('#exampleSide .km-name-tag ul li').first().addClass('active');
         }, 1000);
 
-        // 오버레이 메뉴 클릭
+        // overlay 메뉴 클릭
         $('.nav_list-item a').click(function (e) {
             e.preventDefault();
             var href = $(this).attr('href');
             var index = $('.nav_list-item a').index(this);
             var targetSection = $(href);
-
-            console.log('Overlay menu clicked:', index);
 
             if (targetSection.length) {
                 window.scrollTo({
@@ -657,13 +575,13 @@
                 $('#exampleSide .km-name-tag ul li').removeClass('active');
                 $('#exampleSide .km-name-tag ul li').eq(index).addClass('active');
 
-                setTimeout(function () {
-                    try {
-                        sidenav.activeMenuAndTag(index);
-                    } catch (error) { }
-                }, 100);
+                if (sidenav) {
+                    var itemId = index + 1; // 0-based를 1-based로 변환
+                    setTimeout(function () {
+                        sidenav.activeMenuAndTag(itemId);
+                    }, 100);
+                }
 
-                // 오버레이 메뉴 닫기
                 $('.nav').removeClass('active');
                 $('.menu-icon').removeClass('active');
                 $('body').removeClass('nav-active');

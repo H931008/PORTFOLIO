@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 .section-home {
-  background: radial-gradient(circle at top, #272738 0%, #0b0b12 40%, #050507 100%);
   color: var(--color-sand);
 }
 

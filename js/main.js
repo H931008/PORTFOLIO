@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 // 스무스 스크롤 헬퍼
 function scrollToTarget(selector) {
   const el = document.querySelector(selector);
@@ -100,4 +101,5 @@ if (rootIllustration) {
     const offsetY = (rect.top + rect.height / 2 - center) * -0.05;
     rootIllustration.style.transform = `translateY(${offsetY}px)`;
   });
-}
+};
+});
