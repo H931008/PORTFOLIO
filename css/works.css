@@ -1,0 +1,82 @@
+.section-works {
+  background-color: var(--color-beige);
+  color: var(--color-dark);
+}
+
+.section-works__header .section-title,
+.section-works__header .section-desc {
+  color: var(--color-dark);
+}
+
+.works-grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* 연꽃 일러스트: 외곽선 다크 투명, 중심 골드 */
+
+.work-card {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.work-card__lotus {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lotus-outline {
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-dark-10);
+}
+
+.lotus-core {
+  position: absolute;
+  inset: 24px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+  box-shadow: 0 0 18px var(--color-gold-30);
+  transform: scale(0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.work-card__title {
+  margin: 0;
+  font-size: 16px;
+  color: var(--color-dark);
+}
+
+.work-card__tagline {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-dark-80);
+}
+
+.work-card__meta {
+  margin: 0 0 4px;
+  font-size: 12px;
+  color: var(--color-dark-50);
+}
+
+.work-card__btn {
+  align-self: flex-start;
+}
+
+/* 카드 호버 시 꽃 만개 느낌 */
+.work-card:hover .lotus-core {
+  transform: scale(1);
+  box-shadow: 0 0 26px var(--color-gold-60);
+}
