@@ -1,0 +1,140 @@
+/* font css */
+@font-face {
+    font-family: 'YdestreetB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/YdestreetB.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'YdestreetL';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/YdestreetL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YUniverse-B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'YUniverse-L';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-L.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.ab {width: 100%; height: 100%; background-image: url(../images/bg1.jpg);}
+.ab .about {width: 100%; height: 100%; position: absolute; bottom: 60px; opacity: 0.5;}
+.ab_box_bar {width: 100%; height: 30px; background: #4a66ac;}
+
+/* profile */
+.ab_box {width: 550px; height: 765px; text-align: left; position: relative; top: 120px; left: 100px;}
+.ab_box .title_text {font-family: 'Montserrat'; color: #4a66ac; font-size: 48px; position: relative; bottom: 57px; left: 13px; letter-spacing: -2px}
+/* .ab_box .ttt {font-family: 'Noto Sans KR'; font-size: 18px; font-weight: 400; color: #000; position: absolute; left: 16px; top: 2px;} */
+.ab_box .ttt_bold {font-family: 'Noto Sans KR'; font-size: 18px; font-weight: bold;}
+.ab_box .profile_img {width: 464px; height: 556px; background-image: url(../images/profile_img.jpg); background-position: center; position: absolute; left: 16px; top: 131px;}
+
+/* emoji */
+.ab_box .emoji {font-size: 48px; position: relative; left: 1820px; bottom: 255px;}
+
+/* profile_charactor */
+.ab_box .charactor {font-family: 'YUniverse-B'; width: 465px; height: 100px; position: relative; left: 16px; top: -65px;}
+.ab_box .charactor .box1 {width: 105px; height: 30px; text-align: center; line-height: 32px; background: #4a66ac; color: #fff; border-radius: 30px; position: absolute; left: 0px; top: 0px;}
+.ab_box .charactor .box2 {width: 105px; height: 30px; text-align: center; line-height: 32px; background: #4a66ac; color: #fff; border-radius: 30px; position: absolute; left: 121px; top: 0px;}
+.ab_box .charactor .box3 {width: 105px; height: 30px; text-align: center; line-height: 32px; background: #4a66ac; color: #fff; border-radius: 30px; position: absolute; left: 240px; top: 0px;}
+.ab_box .charactor .box4 {width: 105px; height: 30px; text-align: center; line-height: 32px; background: #4a66ac; color: #fff; border-radius: 30px; position: absolute; left: 359px; top: 0px;}
+.ab_box .charactor .box5 {width: 105px; height: 30px; text-align: center; line-height: 32px; background: #4a66ac; color: #fff; border-radius: 30px; position: absolute; left: 0px; top: 42px;}
+.ab_box .charactor .box6 {width: 105px; height: 30px; text-align: center; line-height: 32px; background: #4a66ac; color: #fff; border-radius: 30px; position: absolute; left: 121px; top: 42px;}
+.ab_box .charactor .box7 {width: 105px; height: 30px; text-align: center; line-height: 32px; background: #4a66ac; color: #fff; border-radius: 30px; position: absolute; left: 240px; top: 42px;}
+.ab_box .charactor .box8 {width: 105px; height: 30px; text-align: center; line-height: 32px; background: #4a66ac; color: #fff; border-radius: 30px; position: absolute; left: 359px; top: 42px;}
+
+/* profile text */
+.ab_box_1 {width: 765px; height: 100px; position: absolute; left: 841px; bottom: 809px;}
+.ab_box_1 .title {font-family: 'YdestreetB'; color: #4a66ac; font-size: 48px; position: relative; top: 72px;}
+.ab_box_1 .title2 {font-family: 'YdestreetB'; font-size: 22px; position: relative; left: 2px; top: 30px;}
+.ab_box_1 .ttt_bold {font-family: 'Noto Sans KR'; font-size: 20px; font-weight: bold; position: relative; left: 333px; bottom: 197px;}
+.ab_box_1 #tel {position: absolute; top: 105px;}
+.ab_box_1 #mail {position: absolute; top: 138px;}
+.ab_box_1 #web {position: absolute; top: 172px;}
+.ab_box_1 .txt {font-family: 'Noto Sans KR'; font-size: 20px; font-weight: 300;}
+
+.ab .bar {width: 3px; height: 534px; background: #ededed; position: absolute; top: 336px; left: 841px;}
+
+/* education */
+.ab .edu {width: 500px; height: 135px; position: absolute; left: 839px; bottom: 459px;}
+.ab .edu .bar {width: 8px; height: 52px; background: #4a66ac; position: absolute; top: -16px; left: -1px;}
+.ab .edu_title {font-family: 'Montserrat'; font-size: 24px; position: relative; bottom: 15px; left: 27px;}
+.ab .edu_txt {line-height: 15px; font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 300; letter-spacing: -1px; position: relative; left: 29px; bottom: 12px;}
+.ab .edu .ttt_bold {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700;}
+
+/* experience */
+.ab .exp {width: 500px; height: 135px; position: absolute; left: 839px; bottom: 199px;}
+.ab .exp .bar {width: 8px; height: 52px; background: #4a66ac; position: absolute; top: -16px; left: -1px;}
+.ab .exp_title {font-family: 'Montserrat'; font-size: 24px; position: relative; bottom: 15px; left: 27px;}
+.ab .exp_txt {line-height: 15px; font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 300; letter-spacing: -1px; position: relative; left: 29px; bottom: 12px;}
+.ab .exp .ttt_bold {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700;}
+
+/* license */
+.ab .license {width: 500px; height: 135px; position: absolute; left: 839px; bottom: 16px;}
+.ab .license .bar {width: 8px; height: 52px; background: #4a66ac; position: absolute; top: -16px; left: -1px;}
+.ab .license_title {font-family: 'Montserrat'; font-size: 24px; position: relative; bottom: 15px; left: 27px;}
+.ab .license_txt {line-height: 15px; font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 300; letter-spacing: -1px; position: relative; left: 29px; bottom: 12px;}
+.ab .license .ttt_bold {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700;}
+
+/* skills */
+.ab .skills {width: 500px; height: 135px; position: absolute; left: 1368px; top: 330px;}
+.ab .skills .bar {width: 8px; height: 52px; background: #4a66ac; position: absolute; top: -16px; left: -1px;}
+.ab .skills_title {font-family: 'Montserrat'; font-size: 24px; position: relative; bottom: 15px; left: 27px;}
+.ab .skills_txt {line-height: 20px; font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 300; letter-spacing: -1px; position: relative; left: 29px; bottom: 12px;}
+.ab .skills_txt .pt1 {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700; color: #31a8ff;}
+.ab .skills_txt .pt2 {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700; color: #ff9a00;}
+.ab .skills_txt .pt3 {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700; color: #9999ff;}
+.ab .skills_txt .pt4 {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700; color: #9999ff ;}
+.ab .skills_txt .pt5 {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700; color: #ff3366;}
+.ab .skills_txt .pt6 {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700; color: #31a8ff;}
+.ab .skills_txt .pt7 {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700; color: #ec6cee;}
+.ab .skills_txt .pt8 {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700; color: #e44d26;}
+.ab .skills_txt .pt9 {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700; color: #1572b6;}
+.ab .skills_txt .pt10 {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700; color: #333230;}
+.ab .skills_txt .pt11 {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700; color: #e87d0d;}
+.ab .skills_txt .pt12 {font-family: 'Noto Sans KR'; font-size: 16px; font-weight: 700; color: #121e63;}
+.ab .bar2 {width: 3px; height: 534px; background: #ededed; position: absolute; top: 336px; left: 1370px;}
+
+/* skils_box */
+.ab .skills .ps {width: 250px; height: 10px; background: #eee; border-radius: 20px; position: absolute; left: 125px; top: 55px;}
+.ab .skills .ps2 {width: 250px; height: 10px; background: #4a66ac; border-radius: 20px; position: absolute; left: 0px; top: 0px;}
+
+.ab .skills .ai {width: 250px; height: 10px; background: #eee; border-radius: 20px; position: absolute; left: 125px; top: 86px;}
+.ab .skills .ai2 {width: 250px; height: 10px; background: #4a66ac; border-radius: 20px; position: absolute; left: 0px; top: 0px;}
+
+.ab .skills .pr {width: 250px; height: 10px; background: #eee; border-radius: 20px; position: absolute; left: 125px; top: 117px;}
+.ab .skills .pr2 {width: 140px; height: 10px; background: #4a66ac; border-radius: 20px; position: absolute; left: 0px; top: 0px;}
+
+.ab .skills .ae {width: 250px; height: 10px; background: #eee; border-radius: 20px; position: absolute; left: 125px; top: 147px;}
+.ab .skills .ae2 {width: 170px; height: 10px; background: #4a66ac; border-radius: 20px; position: absolute; left: 0px; top: 0px;}
+
+.ab .skills .id {width: 250px; height: 10px; background: #eee; border-radius: 20px; position: absolute; left: 125px; top: 178px;}
+.ab .skills .id2 {width: 140px; height: 10px; background: #4a66ac; border-radius: 20px; position: absolute; left: 0px; top: 0px;}
+
+.ab .skills .lr {width: 250px; height: 10px; background: #eee; border-radius: 20px; position: absolute; left: 125px; top: 209px;}
+.ab .skills .lr2 {width: 140px; height: 10px; background: #4a66ac; border-radius: 20px; position: absolute; left: 0px; top: 0px;}
+
+.ab .skills .xd {width: 250px; height: 10px; background: #eee; border-radius: 20px; position: absolute; left: 125px; top: 239px;}
+.ab .skills .xd2 {width: 160px; height: 10px; background: #4a66ac; border-radius: 20px; position: absolute; left: 0px; top: 0px;}
+
+.ab .skills .html {width: 250px; height: 10px; background: #eee; border-radius: 20px; position: absolute; left: 125px; top: 270px;}
+.ab .skills .html2 {width: 180px; height: 10px; background: #4a66ac; border-radius: 20px; position: absolute; left: 0px; top: 0px;}
+
+.ab .skills .css {width: 250px; height: 10px; background: #eee; border-radius: 20px; position: absolute; left: 125px; top: 301px;}
+.ab .skills .css2 {width: 170px; height: 10px; background: #4a66ac; border-radius: 20px; position: absolute; left: 0px; top: 0px;}
+
+.ab .skills .js {width: 250px; height: 10px; background: #eee; border-radius: 20px; position: absolute; left: 125px; top: 330px;}
+.ab .skills .js2 {width: 150px; height: 10px; background: #4a66ac; border-radius: 20px; position: absolute; left: 0px; top: 0px;}
+
+.ab .skills .bd {width: 250px; height: 10px; background: #eee; border-radius: 20px; position: absolute; left: 125px; top: 362px;}
+.ab .skills .bd2 {width: 150px; height: 10px; background: #4a66ac; border-radius: 20px; position: absolute; left: 0px; top: 0px;}
+
+.ab .skills .c4d {width: 250px; height: 10px; background: #eee; border-radius: 20px; position: absolute; left: 125px; top: 393px;}
+.ab .skills .c4d2 {width: 150px; height: 10px; background: #4a66ac; border-radius: 20px; position: absolute; left: 0px; top: 0px;}

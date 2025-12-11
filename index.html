@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HYKIM'S PORTFOLIO</title>
     <link rel="shortcut icon" href="images/favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/sideNavi.css">
+    <link rel="stylesheet" href="css/overlaymenu.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/story.css">
+    <link rel="stylesheet" href="css/works.css">
+    <link rel="stylesheet" href="css/resume.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/mobile.css"> <!-- ip16pm (440*956)-->
     <link rel="stylesheet" href="css/tablet.css"> <!-- ipad 10.9 (1180*820) -->
+
+    <script src="https://kit.fontawesome.com/c3b958d629.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
+    <script src="js/SideNav.js"></script>
+    <script src="js/overlaymenu.js"></script>
+    <script src="js/modernizr.js"></script>
 </head>
+
 <body>
     <!-- overlay menu + hamburger menu -->
     <header class="cd-header">
@@ -29,12 +49,12 @@
     <div class="nav">
         <div class="nav_content">
             <ul class="nav_list">
-                <li class="nav_list-item"><a href="#home" class="hover-target">HOME</a></li>
-                <li class="nav_list-item"><a href="#about" class="hover-target">ABOUT ME</a></li>
-                <li class="nav_list-item"><a href="#story" class="hover-target">STORY</a></li>
-                <li class="nav_list-item"><a href="#works" class="hover-target">WORKS</a></li>
-                <li class="nav_list-item"><a href="#resume" class="hover-target">RESUME</a></li>
-                <li class="nav_list-item"><a href="#contact" class="hover-target">CONTACT</a></li>
+                <li class="nav_list-item"><a href="#home" class="hover-target">home</a></li>
+                <li class="nav_list-item"><a href="#about" class="hover-target">about me</a></li>
+                <li class="nav_list-item"><a href="#story" class="hover-target">story</a></li>
+                <li class="nav_list-item"><a href="#works" class="hover-target">works</a></li>
+                <li class="nav_list-item"><a href="#resume" class="hover-target">resume</a></li>
+                <li class="nav_list-item"><a href="#contact" class="hover-target">contact</a></li>
             </ul>
         </div>
     </div>
@@ -45,11 +65,174 @@
     <div class='cursor3' id="cursor3"></div>
     <!-- overlay menu + logo + hamburger menu end -->
 
-    <section id="home"></section>
-    <section id="about"></section>
-    <section id="story"></section>
-    <section id="works"></section>
-    <section id="resume"></section>
-    <section id="contact"></section>
+    <section class="km-side-navi" id="exampleSide"></section>
+    <div id="fullpage">
+        <section id="home"></section>
+        <section id="about"></section>
+        <section id="story"></section>
+        <section id="works"></section>
+        <section id="resume"></section>
+        <section id="contact"></section>
+    </div>
 </body>
+
+<!-- layout js -->
+<script>
+$(document).ready(function () {
+    // overflow 설정
+    $('html, body').css({
+        'overflow-y': 'auto',
+        'overflow-x': 'hidden'
+    });
+    
+    var options = {
+        menu: ['HOME', 'ABOUT', 'STORY', 'WORKS', 'RESUME', 'CONTACT'],
+        position: 'right',
+        themeColor: '#4a66ac',
+        id: 'exampleSide'
+    }
+    var sidenav = new SideNavi(options);
+    
+    // 섹션 선택
+    var sections = $('#fullpage section');
+    
+    // 섹션별 배경색 설정
+    var colors = ['#fff', '#fff', '#c7b2a0', '#c5c4cb', '#eee', '#ae795b'];
+    sections.each(function(index) {
+        $(this).css({
+            'background-color': colors[index],
+            'min-height': '100vh',
+            'padding': '50px 20px'
+        });
+    });
+    
+    // 스크롤 함수
+    function scrollToSection(index) {
+        var targetSection = sections.eq(index);
+        if (targetSection.length) {
+            var targetOffset = targetSection.offset().top;
+            console.log('Scrolling to section', index, 'at', targetOffset);
+            
+            // 스크롤 실행
+            window.scrollTo({
+                top: targetOffset,
+                behavior: 'smooth'
+            });
+            
+            // 메뉴 활성화
+            $('#exampleSide .km-name-tag ul li').removeClass('active');
+            $('#exampleSide .km-name-tag ul li').eq(index).addClass('active');
+            
+            // SideNavi 태그 이동
+            setTimeout(function() {
+                try {
+                    sidenav.activeMenuAndTag(index);
+                } catch(error) {
+                    console.log('Tag move skipped');
+                }
+            }, 100);
+        }
+    }
+    
+    // SideNavi 로드 대기
+    setTimeout(function() {
+        console.log('Setting up events...');
+        
+        // 동그라미 메뉴 - 투명 오버레이 방식
+        $('#exampleSide .km-side-navi-ul li').each(function(index) {
+            var $this = $(this);
+            
+            // 기존 요소 위에 투명 div 추가
+            $this.css('position', 'relative');
+            
+            var $clickLayer = $('<div>')
+                .css({
+                    'position': 'absolute',
+                    'top': '0',
+                    'left': '0',
+                    'width': '100%',
+                    'height': '100%',
+                    'z-index': '9999',
+                    'cursor': 'pointer',
+                    'background': 'transparent'
+                })
+                .on('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Circle menu clicked:', index);
+                    scrollToSection(index);
+                    return false;
+                });
+            
+            $this.append($clickLayer);
+        });
+        
+        // 텍스트 메뉴
+        $('#exampleSide .km-name-tag ul li').each(function(index) {
+            var $this = $(this);
+            
+            $this.css('position', 'relative');
+            
+            var $clickLayer = $('<div>')
+                .css({
+                    'position': 'absolute',
+                    'top': '0',
+                    'left': '0',
+                    'width': '100%',
+                    'height': '100%',
+                    'z-index': '9999',
+                    'cursor': 'pointer',
+                    'background': 'transparent'
+                })
+                .on('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Text menu clicked:', index);
+                    scrollToSection(index);
+                    return false;
+                });
+            
+            $this.append($clickLayer);
+        });
+        
+        // 초기 활성화
+        $('#exampleSide .km-name-tag ul li:first').addClass('active');
+        
+        console.log('Click layers added');
+        
+    }, 1000);
+    
+    // 오버레이 메뉴 클릭
+    $('.nav_list-item a').click(function(e) {
+        e.preventDefault();
+        var href = $(this).attr('href');
+        var index = $('.nav_list-item a').index(this);
+        var targetSection = $(href);
+        
+        console.log('Overlay menu clicked:', index);
+        
+        if (targetSection.length) {
+            window.scrollTo({
+                top: targetSection.offset().top,
+                behavior: 'smooth'
+            });
+            
+            $('#exampleSide .km-name-tag ul li').removeClass('active');
+            $('#exampleSide .km-name-tag ul li').eq(index).addClass('active');
+            
+            setTimeout(function() {
+                try {
+                    sidenav.activeMenuAndTag(index);
+                } catch(error) {}
+            }, 100);
+            
+            // 오버레이 메뉴 닫기
+            $('.nav').removeClass('active');
+            $('.menu-icon').removeClass('active');
+            $('body').removeClass('nav-active');
+        }
+    });
+});
+</script>
+<!-- layout end -->
 </html>
