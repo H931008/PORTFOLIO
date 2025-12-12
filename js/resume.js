@@ -1,21 +1,4 @@
-const skillBars = document.querySelectorAll(".skill-bar");
+/* js/resume.js - reset by user request.
+   All previous behavior removed. Add page-specific scripts here later if needed. */
 
-const skillObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const bar = entry.target;
-        const level = bar.getAttribute("data-level");
-        const fill = bar.querySelector(".skill-bar__fill");
-        if (fill && level) {
-          fill.style.width = `${level}%`;
-        }
-        bar.classList.add("is-filled");
-        skillObserver.unobserve(bar);
-      }
-    });
-  },
-  { threshold: 0.4 }
-);
 
-skillBars.forEach((bar) => skillObserver.observe(bar));

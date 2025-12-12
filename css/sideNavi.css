@@ -92,6 +92,9 @@
     position: relative;
     right: 0;
     white-space: nowrap;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 .km-side-navi .km-side-navi-outer .km-name-tag li {
@@ -102,5 +105,5 @@
     line-height: 24px;
     white-space: nowrap;
     padding-left: 24px;
-    padding-right: 19.6px;
+    padding-right: 14px;
 }

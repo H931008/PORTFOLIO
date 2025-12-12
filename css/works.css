@@ -22,12 +22,46 @@
   grid-template-columns: 80px minmax(0, 1fr);
   gap: 16px;
   align-items: center;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* 초기 숨김 상태 (JS에서 제어) */
+.work-card.is-hidden {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+}
+
+/* 스크롤 진입 시 나타나기 */
+.work-card.is-visible {
+  animation: card-appear 0.6s ease-out forwards;
+}
+
+.work-card:nth-child(1).is-visible { animation-delay: 0s; }
+.work-card:nth-child(2).is-visible { animation-delay: 0.15s; }
+.work-card:nth-child(3).is-visible { animation-delay: 0.3s; }
+.work-card:nth-child(4).is-visible { animation-delay: 0.45s; }
+
+@keyframes card-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .work-card__lotus {
   position: relative;
   width: 80px;
   height: 80px;
+  flex-shrink: 0;
 }
 
 .lotus-outline {
@@ -35,6 +69,7 @@
   inset: 8px;
   border-radius: 50%;
   border: 1.5px solid var(--color-dark-10);
+  transition: all 0.4s ease;
 }
 
 .lotus-core {
@@ -44,7 +79,42 @@
   background-color: var(--color-gold);
   box-shadow: 0 0 18px var(--color-gold-30);
   transform: scale(0.7);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* 호버 시 꽃 만개 애니메이션 */
+.lotus-petals {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.lotus-petal {
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-dark-10);
+  transform-origin: center;
+  animation: petal-bloom 0.5s ease-out forwards;
+}
+
+.lotus-petal:nth-child(1) { animation-delay: 0s; transform: rotate(0deg) translateY(-30px); }
+.lotus-petal:nth-child(2) { animation-delay: 0.1s; transform: rotate(45deg) translateY(-30px); }
+.lotus-petal:nth-child(3) { animation-delay: 0.2s; transform: rotate(90deg) translateY(-30px); }
+.lotus-petal:nth-child(4) { animation-delay: 0.3s; transform: rotate(135deg) translateY(-30px); }
+.lotus-petal:nth-child(5) { animation-delay: 0.4s; transform: rotate(180deg) translateY(-30px); }
+
+@keyframes petal-bloom {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) translateY(-30px) scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(var(--angle)) translateY(-30px) scale(1);
+  }
 }
 
 .work-card__body {
@@ -75,8 +145,31 @@
   align-self: flex-start;
 }
 
-/* 카드 호버 시 꽃 만개 느낌 */
+/* 카드 호버 시 꽃 만개 + 확대 */
+.work-card:hover {
+  transform: scale(1.04);
+  background-color: rgba(212, 175, 55, 0.08);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+}
+
 .work-card:hover .lotus-core {
   transform: scale(1);
-  box-shadow: 0 0 26px var(--color-gold-60);
+  box-shadow: 0 0 32px var(--color-gold-60), 0 0 8px var(--color-gold-30);
+}
+
+/* class-triggered bloom (used by JS) */
+.work-card.is-bloom {
+  transform: scale(1.04);
+  background-color: rgba(212, 175, 55, 0.08);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+}
+
+.work-card.is-bloom .lotus-core {
+  transform: scale(1);
+  box-shadow: 0 0 32px var(--color-gold-60), 0 0 8px var(--color-gold-30);
+}
+
+.work-card:hover .lotus-outline {
+  border-color: var(--color-dark-30);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
 }

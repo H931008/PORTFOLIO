@@ -28,7 +28,6 @@
     <script src="js/home.js"></script>
     <script src="js/about.js"></script>
     <script src="js/story.js"></script>
-    <script src="js/works.js"></script>
     <script src="js/resume.js"></script>
     <script src="js/contact.js"></script>
 </head>
@@ -50,6 +49,14 @@
     </header>
 
     <!-- overlay menu -->
+    <!-- global curved connector (fixed SVG) -->
+    <svg id="global-connector" class="global-connector" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path id="connector-path" d="M0,0" stroke="rgba(212,175,55,0.6)" stroke-width="2" fill="none"
+            stroke-linecap="round" stroke-linejoin="round" />
+        <path id="connector-path-bottom" d="M0,0" stroke="rgba(212,175,55,0.45)" stroke-width="2" fill="none"
+            stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
     <div class="nav">
         <div class="nav_content">
             <ul class="nav_list">
@@ -111,6 +118,7 @@
                         <div class="seed-orbit__ring"></div>
                         <div class="seed-orbit__seed"></div>
                     </div>
+                    <!-- 씨앗에서 뿌리로 연결되는 라인 -->
                     <div class="section-home__scroll-indicator">
                         <span class="scroll-indicator__text">Scroll</span>
                         <span class="scroll-indicator__line"></span>
@@ -153,9 +161,6 @@
                 <div class="section-about__visual">
                     <div class="root-illustration js-root">
                         <svg class="root-illustration__svg" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
-                            <!-- 지면 라인 -->
-                            <line x1="0" y1="60" x2="200" y2="60" stroke="rgba(44,44,44,0.3)" stroke-width="1.5"
-                                stroke-dasharray="4 4" />
                             <!-- 메인 뿌리 (드로잉 애니메이션) -->
                             <path class="root-path" d="M100 60 C 95 100, 110 130, 90 170
                  C 80 190, 105 210, 95 235
@@ -165,14 +170,16 @@
                                 stroke="rgba(44,44,44,0.3)" stroke-width="2" fill="none" />
                             <path class="root-path root-path--sub" d="M92 140 C 75 160, 70 180, 65 200"
                                 stroke="rgba(44,44,44,0.3)" stroke-width="2" fill="none" />
-                            <!-- 골드 포인트 (끝부분) -->
-                            <circle cx="105" cy="260" r="4" fill="#D4AF37" />
-                            <circle cx="140" cy="165" r="3" fill="#D4AF37" />
-                            <circle cx="65" cy="200" r="3" fill="#D4AF37" />
+                            <!-- 새싹 (플레이스홀더) -->
+                            <g class="root-illustration__seedlings">
+                                <path class="root-illustration__seedling" d="M110 180 C 108 170, 118 165, 120 155"
+                                    stroke="rgba(44,44,44,0.6)" stroke-width="1.5" fill="none" />
+                                <path class="root-illustration__seedling" d="M95 190 C 92 180, 102 175, 104 165"
+                                    stroke="rgba(44,44,44,0.6)" stroke-width="1.5" fill="none" />
+                                <path class="root-illustration__seedling" d="M100 170 C 98 160, 108 155, 110 145"
+                                    stroke="rgba(44,44,44,0.6)" stroke-width="1.5" fill="none" />
+                            </g>
                         </svg>
-                        <div class="root-illustration__label">
-                            <span>보이지 않는 곳에서의 시간</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -181,72 +188,75 @@
         <section id="story" class="section section-story">
             <div class="section-story__gradient"></div>
             <div class="section-story__inner">
-                <div class="section-story__header js-observe">
-                    <p class="section-label">GROWTH · STORY</p>
-                    <h2 class="section-title">
-                        줄기가 자라며<br />
-                        이야기가 쌓이다
-                    </h2>
-                    <p class="section-desc">
-                        한 번에 피어나는 꽃은 없습니다. 작은 실험과 시행착오, 그리고 프로젝트들을 통해
-                        줄기가 자라듯 성장해 온 과정을 타임라인으로 담았습니다.
-                    </p>
-                </div>
+                <main class="story-layout layout">
+                    <!-- LEFT: Intro (keep original copy) -->
+                    <section class="intro">
+                        <p class="section-label">GROWTH · STORY</p>
+                        <h2 class="section-title">줄기가 자라며<br />이야기가 쌓이다</h2>
+                        <p class="section-desc">한 번에 피어나는 꽃은 없습니다. 작은 실험과 시행착오, 그리고 프로젝트들을 통해 줄기가 자라듯 성장해 온 과정을 타임라인으로
+                            담았습니다.</p>
+                    </section>
 
-                <div class="story-timeline">
-                    <!-- 중앙 줄기 -->
-                    <div class="story-stem">
-                        <div class="story-stem__line"></div>
-                        <div class="story-stem__bud"></div>
-                    </div>
-
-                    <!-- 타임라인 아이템들 -->
-                    <div class="story-timeline__items">
-                        <article class="story-item js-observe">
-                            <div class="story-item__point"></div>
-                            <div class="story-item__card card">
-                                <h3 class="story-item__title">첫 번째 도전</h3>
-                                <p class="story-item__meta">2020 — 작은 사이드 프로젝트</p>
-                                <p class="story-item__text">
-                                    디자인과 개발을 혼자 모두 책임지며, 사용자의 반응을 처음 온전히 마주했던 프로젝트입니다.
-                                </p>
+                    <!-- RIGHT: timeline as cards using provided layout (content preserved) -->
+                    <section class="position-list story-position-list" aria-label="Timeline items">
+                        <article class="position-card story-card js-observe">
+                            <div class="position-meta"><span class="position-index">01</span></div>
+                            <div class="position-body">
+                                <h3 class="position-title">첫 번째 도전 <span class="position-tag">2020</span></h3>
+                                <p class="position-desc">디자인과 개발을 혼자 모두 책임지며, 사용자의 반응을 처음 온전히 마주했던 프로젝트입니다.</p>
                             </div>
+                            <button class="position-link" aria-label="첫 번째 도전 상세 보기"><span
+                                    class="arrow"></span></button>
                         </article>
 
-                        <article class="story-item js-observe">
-                            <div class="story-item__point"></div>
-                            <div class="story-item__card card">
-                                <h3 class="story-item__title">우여곡절의 시기</h3>
-                                <p class="story-item__meta">2021 — 실패와 피드백</p>
-                                <p class="story-item__text">
-                                    여러 번의 기획 변경과 클라이언트 피드백을 거치며, 설득과 조율의 중요성을 배웠습니다.
-                                </p>
+                        <article class="position-card story-card js-observe">
+                            <div class="position-meta"><span class="position-index">02</span></div>
+                            <div class="position-body">
+                                <h3 class="position-title">우여곡절의 시기 <span class="position-tag">2021</span></h3>
+                                <p class="position-desc">여러 번의 기획 변경과 클라이언트 피드백을 거치며, 설득과 조율의 중요성을 배웠습니다.</p>
                             </div>
+                            <button class="position-link" aria-label="우여곡절의 시기 상세 보기"><span
+                                    class="arrow"></span></button>
                         </article>
 
-                        <article class="story-item js-observe">
-                            <div class="story-item__point"></div>
-                            <div class="story-item__card card">
-                                <h3 class="story-item__title">연꽃의 줄기</h3>
-                                <p class="story-item__meta">2022 — 제품 런칭 경험</p>
-                                <p class="story-item__text">
-                                    실제 서비스 런칭을 경험하며, 디테일과 마감의 중요성을 몸으로 느꼈습니다.
-                                </p>
+                        <article class="position-card story-card js-observe">
+                            <div class="position-meta"><span class="position-index">03</span></div>
+                            <div class="position-body">
+                                <h3 class="position-title">연꽃의 줄기 <span class="position-tag">2022</span></h3>
+                                <p class="position-desc">실제 서비스 런칭을 경험하며, 디테일과 마감의 중요성을 몸으로 느꼈습니다.</p>
                             </div>
+                            <button class="position-link" aria-label="연꽃의 줄기 상세 보기"><span class="arrow"></span></button>
                         </article>
 
-                        <article class="story-item js-observe">
-                            <div class="story-item__point story-item__point--gold"></div>
-                            <div class="story-item__card card">
-                                <h3 class="story-item__title">지금의 나</h3>
-                                <p class="story-item__meta">2023 ~ Now — 연꽃을 피우는 중</p>
-                                <p class="story-item__text">
-                                    사용자의 문제를 발견하고, 그것을 구조화하여 인터페이스와 인터랙션으로 풀어내는 일에 집중하고 있습니다.
-                                </p>
+                        <article class="position-card story-card js-observe">
+                            <div class="position-meta"><span class="position-index">04</span></div>
+                            <div class="position-body">
+                                <h3 class="position-title">지금의 나 <span class="position-tag">2023 ~ Now</span></h3>
+                                <p class="position-desc">사용자의 문제를 발견하고, 그것을 구조화하여 인터페이스와 인터랙션으로 풀어내는 일에 집중하고 있습니다.</p>
                             </div>
+                            <button class="position-link" aria-label="지금의 나 상세 보기"><span class="arrow"></span></button>
                         </article>
-                    </div>
-                </div>
+
+                        <article class="position-card story-card js-observe">
+                            <div class="position-meta"><span class="position-index">05</span></div>
+                            <div class="position-body">
+                                <h3 class="position-title">지금의 나 <span class="position-tag">2023 ~ Now</span></h3>
+                                <p class="position-desc">사용자의 문제를 발견하고, 그것을 구조화하여 인터페이스와 인터랙션으로 풀어내는 일에 집중하고 있습니다.</p>
+                            </div>
+                            <button class="position-link" aria-label="지금의 나 상세 보기"><span class="arrow"></span></button>
+                        </article>
+
+                        <article class="position-card story-card js-observe">
+                            <div class="position-meta"><span class="position-index">06</span></div>
+                            <div class="position-body">
+                                <h3 class="position-title">지금의 나 <span class="position-tag">2023 ~ Now</span></h3>
+                                <p class="position-desc">사용자의 문제를 발견하고, 그것을 구조화하여 인터페이스와 인터랙션으로 풀어내는 일에 집중하고 있습니다.</p>
+                            </div>
+                            <button class="position-link" aria-label="지금의 나 상세 보기"><span class="arrow"></span></button>
+                        </article>
+
+                    </section>
+                </main>
             </div>
         </section>
 
@@ -339,96 +349,57 @@
 
         <section id="resume" class="section section-resume">
             <div class="section-resume__inner">
+                <!-- 헤더 (전체 너비, 위) -->
                 <header class="section-resume__header js-observe">
                     <p class="section-label">FRUIT · RESUME</p>
                     <h2 class="section-title">
-                        쌓여 온 시간들이<br />
+                        쌓여 온 시간들이<br/>
                         열매가 되다
                     </h2>
                     <p class="section-desc">
-                        한 번의 프로젝트로는 만들어지지 않는 역량들.
-                        반복과 축적 끝에 맺힌 열매를 스킬과 경험으로 정리했습니다.
+                        한 번의 프로젝트로는 만들어지지 않는 역량들. 반복과 축적 끝에 맺힌 열매를 스킬과 경험으로 정리했습니다.
                     </p>
                 </header>
 
-                <div class="resume-layout">
-                    <!-- 스킬 바 영역 -->
-                    <div class="resume-skills js-observe">
-                        <h3 class="resume-subtitle">Skills as Fruits</h3>
-
-                        <div class="skill-item">
-                            <div class="skill-item__top">
-                                <span class="skill-item__name">HTML · CSS · Semantic Markup</span>
-                                <span class="skill-item__value">90%</span>
-                            </div>
-                            <div class="skill-bar" data-level="90">
-                                <div class="skill-bar__fill"></div>
-                                <div class="skill-bar__seed"></div>
-                            </div>
+                <!-- 카드 그리드 (가로 3개) -->
+                <div class="interview-grid">
+                    <article class="interview-card js-observe">
+                        <div class="interview-card__image">
+                            <div class="interview-card__icon p-gi-icon--1" role="img" aria-label="interview icon 1"></div>
                         </div>
-
-                        <div class="skill-item">
-                            <div class="skill-item__top">
-                                <span class="skill-item__name">JavaScript · Interaction</span>
-                                <span class="skill-item__value">85%</span>
-                            </div>
-                            <div class="skill-bar" data-level="85">
-                                <div class="skill-bar__fill"></div>
-                                <div class="skill-bar__seed"></div>
-                            </div>
+                        <div class="interview-card__content">
+                            <span class="interview-card__number">01</span>
+                            <h3 class="interview-card__title">자신의 관점에서 성장부터<br/>고객의 미래까지<br/>눈에 띄는 성장에.</h3>
+                            <button class="interview-card__link" aria-label="더보기">→</button>
                         </div>
+                    </article>
 
-                        <div class="skill-item">
-                            <div class="skill-item__top">
-                                <span class="skill-item__name">React · SPA Architecture</span>
-                                <span class="skill-item__value">80%</span>
-                            </div>
-                            <div class="skill-bar" data-level="80">
-                                <div class="skill-bar__fill"></div>
-                                <div class="skill-bar__seed"></div>
-                            </div>
+                    <article class="interview-card js-observe">
+                        <div class="interview-card__image">
+                            <div class="interview-card__icon p-gi-icon--2" role="img" aria-label="interview icon 2"></div>
                         </div>
+                        <div class="interview-card__content">
+                            <span class="interview-card__number">02</span>
+                            <h3 class="interview-card__title">정년 후를 바라보고 결의한 전직.<br/>여기에서 "to be"를 함께 이끄는 존재에.</h3>
+                            <button class="interview-card__link" aria-label="더보기">→</button>
+                        </div>
+                    </article>
 
-                        <div class="skill-item">
-                            <div class="skill-item__top">
-                                <span class="skill-item__name">UX Writing · IA</span>
-                                <span class="skill-item__value">75%</span>
-                            </div>
-                            <div class="skill-bar" data-level="75">
-                                <div class="skill-bar__fill"></div>
-                                <div class="skill-bar__seed"></div>
-                            </div>
+                    <article class="interview-card js-observe">
+                        <div class="interview-card__image">
+                            <div class="interview-card__icon p-gi-icon--3" role="img" aria-label="interview icon 3"></div>
                         </div>
-                    </div>
+                        <div class="interview-card__content">
+                            <span class="interview-card__number">03</span>
+                            <h3 class="interview-card__title">고객도 멤버도.<br/>끝없는 학습욕으로 성장을 뒷받침.</h3>
+                            <button class="interview-card__link" aria-label="더보기">→</button>
+                        </div>
+                    </article>
+                </div>
 
-                    <!-- 경력/요약 카드 -->
-                    <div class="resume-summary">
-                        <div class="card resume-card js-observe">
-                            <h3 class="resume-subtitle">Experience</h3>
-                            <ul class="resume-list">
-                                <li>
-                                    <span class="resume-list__title">000 Company · Product Designer</span>
-                                    <span class="resume-list__meta">2022 — 현재</span>
-                                </li>
-                                <li>
-                                    <span class="resume-list__title">000 Studio · Frontend Developer</span>
-                                    <span class="resume-list__meta">2020 — 2022</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="card resume-card js-observe">
-                            <h3 class="resume-subtitle">Values</h3>
-                            <p class="resume-values">
-                                • 우여곡절을 숨기지 않는 정직한 과정<br />
-                                • 사용자의 시간을 아끼는 인터페이스<br />
-                                • 팀과 함께 피어나는 연꽃 같은 결과물
-                            </p>
-                            <button class="btn btn-primary resume-download">
-                                DOWNLOAD RESUME (PDF)
-                            </button>
-                        </div>
-                    </div>
+                <!-- View All 버튼 (오른쪽 정렬) -->
+                <div class="resume-footer">
+                    <a href="#" class="resume-view-all">View All</a>
                 </div>
             </div>
         </section>
@@ -454,10 +425,10 @@
                             <div class="garden-pond"></div>
                             <div class="garden-lotus garden-lotus--left"></div>
                             <div class="garden-lotus garden-lotus--right"></div>
-                            <!-- 날아다니는 나비/벌 -->
-                            <div class="garden-butterfly garden-butterfly--1"></div>
-                            <div class="garden-butterfly garden-butterfly--2"></div>
                         </div>
+                        <!-- 날아다니는 나비/벌 (섹션 전체에 걸쳐 위치) -->
+                        <div class="garden-butterfly garden-butterfly--1"></div>
+                        <div class="garden-butterfly garden-butterfly--2"></div>
 
                         <div class="contact-social">
                             <p class="contact-social__label">Find me in the garden</p>
@@ -518,7 +489,7 @@
         var options = {
             menu: ['HOME', 'ABOUT', 'STORY', 'WORKS', 'RESUME', 'CONTACT'],
             position: 'right',
-            themeColor: '#4a66ac',
+            themeColor: '#d4af37',
             id: 'exampleSide'
         };
 

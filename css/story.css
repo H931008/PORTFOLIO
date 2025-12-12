@@ -139,3 +139,52 @@
   transform: translateX(-50%) scale(1);
   opacity: 1;
 }
+
+/* Two-column layout for story (adapted from provided POSITION layout) */
+.story-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.story-layout .intro {
+  padding: 20px 0 20px 0;
+}
+
+.story-layout .intro .section-label {
+  color: var(--color-gold);
+}
+
+.story-layout .intro .section-title {
+  color: var(--color-dark);
+}
+
+.story-position-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.position-card {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 44px;
+  align-items: flex-start;
+  padding: 16px 14px;
+  background: var(--color-beige);
+  border-radius: 6px;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.position-card:hover { background: #fff; transform: translateY(-4px); box-shadow: 0 8px 18px rgba(0,0,0,0.06); }
+
+.position-index { color: var(--color-dark-50); font-weight: 600; }
+.position-title { margin:0 0 6px; color: var(--color-dark); font-weight:700; }
+.position-desc { margin:0; color: var(--color-dark-50); }
+
+.position-link { background: transparent; border: none; cursor: pointer; }
+
+@media (max-width: 900px) {
+  .story-layout { grid-template-columns: 1fr; }
+}
