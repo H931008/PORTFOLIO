@@ -43,8 +43,7 @@ body {
 }
 
 body {
-  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
-    sans-serif;
+  font-family: "Pretendard", "Montserrat", sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }

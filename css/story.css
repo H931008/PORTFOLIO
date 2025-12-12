@@ -152,10 +152,6 @@
   padding: 20px 0 20px 0;
 }
 
-.story-layout .intro .section-label {
-  color: var(--color-gold);
-}
-
 .story-layout .intro .section-title {
   color: var(--color-dark);
 }

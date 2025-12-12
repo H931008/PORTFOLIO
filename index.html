@@ -129,7 +129,6 @@
 
         <section id="about" class="section section-about">
             <div class="section-about__inner">
-                <!-- 좌측 텍스트 -->
                 <div class="section-about__text js-observe">
                     <p class="section-label">ROOT · ABOUT</p>
                     <h2 class="section-title">
@@ -189,7 +188,6 @@
             <div class="section-story__gradient"></div>
             <div class="section-story__inner">
                 <main class="story-layout layout">
-                    <!-- LEFT: Intro (keep original copy) -->
                     <section class="intro">
                         <p class="section-label">GROWTH · STORY</p>
                         <h2 class="section-title">줄기가 자라며<br />이야기가 쌓이다</h2>
@@ -197,7 +195,6 @@
                             담았습니다.</p>
                     </section>
 
-                    <!-- RIGHT: timeline as cards using provided layout (content preserved) -->
                     <section class="position-list story-position-list" aria-label="Timeline items">
                         <article class="position-card story-card js-observe">
                             <div class="position-meta"><span class="position-index">01</span></div>
@@ -349,57 +346,96 @@
 
         <section id="resume" class="section section-resume">
             <div class="section-resume__inner">
-                <!-- 헤더 (전체 너비, 위) -->
                 <header class="section-resume__header js-observe">
                     <p class="section-label">FRUIT · RESUME</p>
                     <h2 class="section-title">
-                        쌓여 온 시간들이<br/>
+                        쌓여 온 시간들이<br />
                         열매가 되다
                     </h2>
                     <p class="section-desc">
-                        한 번의 프로젝트로는 만들어지지 않는 역량들. 반복과 축적 끝에 맺힌 열매를 스킬과 경험으로 정리했습니다.
+                        한 번의 프로젝트로는 만들어지지 않는 역량들.
+                        반복과 축적 끝에 맺힌 열매를 스킬과 경험으로 정리했습니다.
                     </p>
                 </header>
 
-                <!-- 카드 그리드 (가로 3개) -->
-                <div class="interview-grid">
-                    <article class="interview-card js-observe">
-                        <div class="interview-card__image">
-                            <div class="interview-card__icon p-gi-icon--1" role="img" aria-label="interview icon 1"></div>
-                        </div>
-                        <div class="interview-card__content">
-                            <span class="interview-card__number">01</span>
-                            <h3 class="interview-card__title">자신의 관점에서 성장부터<br/>고객의 미래까지<br/>눈에 띄는 성장에.</h3>
-                            <button class="interview-card__link" aria-label="더보기">→</button>
-                        </div>
-                    </article>
+                <div class="resume-layout">
+                    <!-- 스킬 바 영역 -->
+                    <div class="resume-skills js-observe">
+                        <h3 class="resume-subtitle">Skills as Fruits</h3>
 
-                    <article class="interview-card js-observe">
-                        <div class="interview-card__image">
-                            <div class="interview-card__icon p-gi-icon--2" role="img" aria-label="interview icon 2"></div>
+                        <div class="skill-item">
+                            <div class="skill-item__top">
+                                <span class="skill-item__name">HTML · CSS · Semantic Markup</span>
+                                <span class="skill-item__value">90%</span>
+                            </div>
+                            <div class="skill-bar" data-level="90">
+                                <div class="skill-bar__fill"></div>
+                                <div class="skill-bar__seed"></div>
+                            </div>
                         </div>
-                        <div class="interview-card__content">
-                            <span class="interview-card__number">02</span>
-                            <h3 class="interview-card__title">정년 후를 바라보고 결의한 전직.<br/>여기에서 "to be"를 함께 이끄는 존재에.</h3>
-                            <button class="interview-card__link" aria-label="더보기">→</button>
-                        </div>
-                    </article>
 
-                    <article class="interview-card js-observe">
-                        <div class="interview-card__image">
-                            <div class="interview-card__icon p-gi-icon--3" role="img" aria-label="interview icon 3"></div>
+                        <div class="skill-item">
+                            <div class="skill-item__top">
+                                <span class="skill-item__name">JavaScript · Interaction</span>
+                                <span class="skill-item__value">85%</span>
+                            </div>
+                            <div class="skill-bar" data-level="85">
+                                <div class="skill-bar__fill"></div>
+                                <div class="skill-bar__seed"></div>
+                            </div>
                         </div>
-                        <div class="interview-card__content">
-                            <span class="interview-card__number">03</span>
-                            <h3 class="interview-card__title">고객도 멤버도.<br/>끝없는 학습욕으로 성장을 뒷받침.</h3>
-                            <button class="interview-card__link" aria-label="더보기">→</button>
-                        </div>
-                    </article>
-                </div>
 
-                <!-- View All 버튼 (오른쪽 정렬) -->
-                <div class="resume-footer">
-                    <a href="#" class="resume-view-all">View All</a>
+                        <div class="skill-item">
+                            <div class="skill-item__top">
+                                <span class="skill-item__name">React · SPA Architecture</span>
+                                <span class="skill-item__value">80%</span>
+                            </div>
+                            <div class="skill-bar" data-level="80">
+                                <div class="skill-bar__fill"></div>
+                                <div class="skill-bar__seed"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-item__top">
+                                <span class="skill-item__name">UX Writing · IA</span>
+                                <span class="skill-item__value">75%</span>
+                            </div>
+                            <div class="skill-bar" data-level="75">
+                                <div class="skill-bar__fill"></div>
+                                <div class="skill-bar__seed"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 경력/요약 카드 -->
+                    <div class="resume-summary">
+                        <div class="card resume-card js-observe">
+                            <h3 class="resume-subtitle">Experience</h3>
+                            <ul class="resume-list">
+                                <li>
+                                    <span class="resume-list__title">000 Company · Product Designer</span>
+                                    <span class="resume-list__meta">2022 — 현재</span>
+                                </li>
+                                <li>
+                                    <span class="resume-list__title">000 Studio · Frontend Developer</span>
+                                    <span class="resume-list__meta">2020 — 2022</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card resume-card js-observe">
+                            <h3 class="resume-subtitle">Values</h3>
+                            <p class="resume-values">
+                                • 우여곡절을 숨기지 않는 정직한 과정<br />
+                                • 사용자의 시간을 아끼는 인터페이스<br />
+                                • 팀과 함께 피어나는 연꽃 같은 결과물
+                            </p>
+                            <button class="btn btn-primary resume-download">
+                                DOWNLOAD RESUME (PDF)
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
