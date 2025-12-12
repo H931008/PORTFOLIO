@@ -28,6 +28,8 @@
   color: rgba(245, 239, 227, 0.9);
 }
 
+/* 제거: 하이라이트 효과는 사용하지 않음 */
+
 .section-about__visual {
   display: flex;
   justify-content: center;
@@ -51,15 +53,57 @@
 .root-path {
   stroke-dasharray: 360;
   stroke-dashoffset: 360;
-  transition: stroke-dashoffset 1.4s ease-out;
+  /* stroke animation controlled by JS based on scroll progress */
+  transition: none;
+  stroke: var(--color-gold-80) !important;
+  stroke-width: 3px !important;
 }
 
 .root-path--sub {
   transition-delay: 0.25s;
+  stroke: var(--color-gold-60) !important;
+  stroke-width: 2px !important;
 }
 
 .root-illustration.is-drawn .root-path {
   stroke-dashoffset: 0;
+}
+
+/* 새싹 잎 자라나는 애니메이션 */
+.root-illustration .root-illustration__seedling {
+  opacity: 0;
+  transform-origin: center bottom;
+  animation: none;
+}
+
+.root-illustration.is-drawn .root-illustration__seedling {
+  animation: seedling-grow 1.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.root-illustration.is-drawn .root-illustration__seedling:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.root-illustration.is-drawn .root-illustration__seedling:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.root-illustration.is-drawn .root-illustration__seedling:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes seedling-grow {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scaleY(0) scaleX(0.6);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1) scaleX(1);
+  }
 }
 
 .root-illustration__label {
@@ -71,6 +115,23 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(245, 201, 124, 0.7);
+}
+
+/* Story hover triggers: animate seedlings when timeline items are hovered */
+.root-illustration.story-hover-active .root-illustration__seedling {
+  opacity: 1;
+  transform-origin: center bottom;
+  animation: seedling-grow 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.root-illustration.story-hover-active .root-illustration__seedling:nth-of-type(1) {
+  animation-delay: 0s;
+}
+.root-illustration.story-hover-active .root-illustration__seedling:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+.root-illustration.story-hover-active .root-illustration__seedling:nth-of-type(3) {
+  animation-delay: 0.3s;
 }
 
 @media (max-width: 900px) {
