@@ -75,7 +75,7 @@
     height: 24px;
     overflow: hidden;
     text-transform: uppercase;
-    font: 12px/1.2em "Microsoft Yahei", "微软雅黑", arial, "宋体";
+    font: 12px/1.2em "Montserrat", "Pretendard", sans-serif;
 }
 
 .km-side-navi .km-side-navi-outer .km-name-tag .km-bg {
@@ -95,12 +95,12 @@
 }
 
 .km-side-navi .km-side-navi-outer .km-name-tag li {
-    font-size: 14px;
+    font-size: 12px;
     position: relative;
     display: inline;
     display: -moz-inline-stack;
     line-height: 24px;
     white-space: nowrap;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 24px;
+    padding-right: 19.6px;
 }

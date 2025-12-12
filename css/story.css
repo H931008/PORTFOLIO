@@ -7,13 +7,11 @@
 .section-story__gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    var(--color-dark),
-    var(--color-dark-80),
-    var(--color-dark-30),
-    var(--color-beige)
-  );
+  background: linear-gradient(to bottom,
+      var(--color-dark),
+      var(--color-dark-80),
+      var(--color-dark-30),
+      var(--color-beige));
   z-index: -1;
 }
 
@@ -50,12 +48,10 @@
 .story-stem__line {
   width: 2px;
   flex: 1;
-  background: linear-gradient(
-    to bottom,
-    var(--color-gold-10),
-    var(--color-gold),
-    var(--color-gold-60)
-  );
+  background: linear-gradient(to bottom,
+      var(--color-gold-10),
+      var(--color-gold),
+      var(--color-gold-60));
   transform-origin: top;
   transform: scaleY(0);
   transition: transform 1.4s ease-out;
