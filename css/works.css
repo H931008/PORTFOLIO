@@ -1,6 +1,16 @@
 .section-works {
+  min-height: 100vh;
+  padding: calc(var(--header-height) + 40px) 24px 80px;
+  display: flex;
+  align-items: center;
   background-color: var(--color-beige);
   color: var(--color-dark);
+}
+
+.section-works > div {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
 .section-works__header .section-title,
