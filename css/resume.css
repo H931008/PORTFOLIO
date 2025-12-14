@@ -1,86 +1,6 @@
 .section-resume {
   background-color: var(--color-beige);
   color: var(--color-dark);
-  position: relative;
-  overflow: hidden;
-}
-
-.section-resume__inner {
-  position: relative;
-  z-index: 1;
-}
-
-.section-resume__header {
-  margin-bottom: 80px;
-}
-
-/* Circle Animation Background */
-.resume-circle {
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  width: 500px;
-  height: 500px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.c-circle {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.c-circle__item {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  transform-origin: center center;
-  opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.c-circle__item:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg); transition-delay: 0s; }
-.c-circle__item:nth-child(2) { transform: translate(-50%, -50%) rotate(18deg); transition-delay: 0.05s; }
-.c-circle__item:nth-child(3) { transform: translate(-50%, -50%) rotate(36deg); transition-delay: 0.1s; }
-.c-circle__item:nth-child(4) { transform: translate(-50%, -50%) rotate(54deg); transition-delay: 0.15s; }
-.c-circle__item:nth-child(5) { transform: translate(-50%, -50%) rotate(72deg); transition-delay: 0.2s; }
-.c-circle__item:nth-child(6) { transform: translate(-50%, -50%) rotate(90deg); transition-delay: 0.25s; }
-.c-circle__item:nth-child(7) { transform: translate(-50%, -50%) rotate(108deg); transition-delay: 0.3s; }
-.c-circle__item:nth-child(8) { transform: translate(-50%, -50%) rotate(126deg); transition-delay: 0.35s; }
-.c-circle__item:nth-child(9) { transform: translate(-50%, -50%) rotate(144deg); transition-delay: 0.4s; }
-.c-circle__item:nth-child(10) { transform: translate(-50%, -50%) rotate(162deg); transition-delay: 0.45s; }
-.c-circle__item:nth-child(11) { transform: translate(-50%, -50%) rotate(180deg); transition-delay: 0.5s; }
-.c-circle__item:nth-child(12) { transform: translate(-50%, -50%) rotate(198deg); transition-delay: 0.55s; }
-.c-circle__item:nth-child(13) { transform: translate(-50%, -50%) rotate(216deg); transition-delay: 0.6s; }
-.c-circle__item:nth-child(14) { transform: translate(-50%, -50%) rotate(234deg); transition-delay: 0.65s; }
-.c-circle__item:nth-child(15) { transform: translate(-50%, -50%) rotate(252deg); transition-delay: 0.7s; }
-.c-circle__item:nth-child(16) { transform: translate(-50%, -50%) rotate(270deg); transition-delay: 0.75s; }
-.c-circle__item:nth-child(17) { transform: translate(-50%, -50%) rotate(288deg); transition-delay: 0.8s; }
-.c-circle__item:nth-child(18) { transform: translate(-50%, -50%) rotate(306deg); transition-delay: 0.85s; }
-.c-circle__item:nth-child(19) { transform: translate(-50%, -50%) rotate(324deg); transition-delay: 0.9s; }
-.c-circle__item:nth-child(20) { transform: translate(-50%, -50%) rotate(342deg); transition-delay: 0.95s; }
-
-.c-circle.is-active .c-circle__item {
-  opacity: 1;
-}
-
-.c-circle__elem {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 250px;
-  background: linear-gradient(
-    to bottom,
-    var(--color-gold-30) 0%,
-    var(--color-gold-50) 50%,
-    var(--color-gold-30) 100%
-  );
-  border-radius: 4px;
 }
 
 .section-resume__header .section-title,
@@ -88,148 +8,100 @@
   color: var(--color-dark);
 }
 
-/* Interview Section Container */
-.interview-section {
-  width: 100%;
-  padding-bottom: 60px;
-}
-
-/* Grid Layout */
-.interview-grid {
+.resume-layout {
+  margin-top: 32px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 24px;
-  align-items: start;
 }
 
-/* Card Structure */
-.interview-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Staggered Layout for 2nd card */
-.interview-card--low {
-  margin-top: 80px;
-}
-
-/* Card Visual (Image) */
-.interview-card__visual {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 9 / 11;
-  /* Based on image ratio */
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: #eef2f6;
-}
-
-/* Person Image Placeholders */
-.interview-card__person {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.interview-card__person--1 {
-  background: linear-gradient(135deg, #dceefb 0%, #bfdbfe 100%);
-}
-
-.interview-card__person--2 {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-}
-
-.interview-card__person--3 {
-  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-}
-
-.interview-card:hover .interview-card__person {
-  transform: scale(1.03);
-}
-
-/* Card Content Body */
-.interview-card__body {
-  padding: 0 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-/* Number: Large, Orange, aligned left as per image 1 */
-/* Number: Overlapping image bottom-left */
-.interview-card__num {
-  font-family: inherit;
-  font-size: 56px;
-  font-weight: 700;
-  color: #ff6b1d;
-  line-height: 1;
-  position: relative;
-  margin-top: -28px;
-  /* Overlap effect */
-  margin-left: 10px;
-  /* Slight offset */
-  z-index: 10;
-  text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;
-  /* Outline effect for readability over overlap */
-}
-
-/* Description Text */
-.interview-card__desc {
-  margin: 10px 0 0;
+.resume-subtitle {
+  margin: 0 0 10px;
   font-size: 16px;
-  font-weight: 600;
-  line-height: 1.6;
   color: var(--color-dark);
-  font-family: "Pretendard", sans-serif;
-  word-break: keep-all;
-  padding-left: 4px;
 }
 
-/* Footer "View All" Button - Aligned Right, Adjusted Size */
-.interview-footer {
-  margin-top: 60px;
+/* 스킬 바 */
+
+.skill-item {
+  margin-bottom: 14px;
+}
+
+.skill-item__top {
   display: flex;
-  justify-content: flex-end;
-  /* Right aligned */
-  padding-right: 10px;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 13px;
 }
 
-.interview-btn-all {
-  display: inline-flex;
-  align-items: center;
-  gap: 40px;
-  height: 56px;
-  /* Smaller height */
-  padding: 0 40px;
-  /* Padding for pill shape */
-  background-color: #1a1a1a;
-  color: #fff;
-  border-radius: 999px;
-  font-size: 16px;
-  /* Smaller font */
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+.skill-item__name {
+  color: var(--color-dark-80);
 }
 
-.interview-btn-all:hover {
-  background-color: #333;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+.skill-item__value {
+  color: var(--color-gold);
 }
 
-/* Arrow with separator */
-.arrow-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.skill-bar {
   position: relative;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  background-color: var(--color-dark-10);
+}
+
+.skill-bar__fill {
+  position: absolute;
+  inset: 0;
+  width: 0;
+  background: linear-gradient(
+    to right,
+    var(--color-gold-10),
+    var(--color-gold-60),
+    var(--color-gold)
+  );
+  transition: width 1.1s ease-out;
+}
+/* 스킬 호버 시 툴팁 */
+
+.skill-item:hover .skill-bar::after {
+  content: ".";
+  position: absolute;
+  top: -28px;
+  right: 0;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background-color: var(--color-dark-80);
+  color: var(--color-beige);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* 경력/요약 */
+
+.resume-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--color-dark);
+}
+
+.resume-list__title {
+  font-weight: 500;
+}
+
+.resume-list__meta {
+  font-size: 12px;
+  color: var(--color-dark-50);
+}
+
+.resume-values {
+  font-size: 14px;
+  color: var(--color-dark-80);
+  margin-bottom: 12px;
 }
 
 .arrow-wrapper::before {
