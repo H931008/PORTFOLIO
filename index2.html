@@ -49,8 +49,6 @@
     </header>
 
     <!-- overlay menu -->
-    <!-- global connector (fixed SVG) REMOVED as requested -->
-
     <div class="nav">
         <div class="nav_content">
             <ul class="nav_list">
@@ -85,41 +83,45 @@
     <section class="km-side-navi" id="exampleSide"></section>
     <div id="fullpage">
         <section id="home" class="section section-home hero-section-new">
-            <!-- Background Text Layer (Parallax slower) -->
-            <div class="hero-parallax-text text-layer-back" data-speed="0.2">HYKIM'S</div>
-
-            <!-- Central Visual (The Seed) -->
-            <div class="hero-central-visual">
-                <div class="seed-orbit__seed"></div>
-            </div>
-
-            <!-- Foreground Text Layer (Parallax faster) -->
-            <div class="hero-parallax-text text-layer-front" data-speed="0.5">PORTFOLIO</div>
-
-            <!-- Ticker Tape -->
-            <div class="hero-ticker-tape">
-                <div class="ticker-track">
-                    <span class="ticker-item">UX/UI DESIGNER</span>
-                    <span class="ticker-item">FRONTEND DEVELOPER</span>
-                    <span class="ticker-item">INTERACTION DESIGN</span>
-                    <span class="ticker-item">WEB PUBLISHER</span>
-                    <span class="ticker-item">UX/UI DESIGNER</span>
-                    <span class="ticker-item">FRONTEND DEVELOPER</span>
-                    <span class="ticker-item">INTERACTION DESIGN</span>
-                    <span class="ticker-item">WEB PUBLISHER</span>
+            <div class="section-home__inner">
+                <div class="hero-content">
+                    <p class="hero-eyebrow js-hero-text">THE SEED OF A LOTUS</p>
+                    <h1 class="hero-title js-hero-text">
+                        HYKIM'S<br />
+                        <span>PORTFOLIO</span>
+                    </h1>
+                    <p class="hero-desc js-hero-text">
+                        가장 예쁜 꽃은<br />
+                        우여곡절 끝에 피어나는 꽃이라고 믿습니다.
+                    </p>
+                    <div class="hero-actions js-hero-text">
+                        <button class="btn btn-primary" data-target="#works">
+                            PROJECTS BLOOM
+                        </button>
+                        <button class="btn btn-secondary" data-target="#story">
+                            SEE THE JOURNEY
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Scroll Indicator -->
-            <div class="section-home__scroll-indicator">
-                <span class="scroll-indicator__text">Scroll</span>
-                <span class="scroll-indicator__line"></span>
+                <!-- Seed Animation & Visual -->
+                <div class="hero-visual js-hero-visual">
+                    <div class="seed-orbit">
+                        <div class="seed-orbit__ring"></div>
+                        <div class="seed-orbit__seed"></div>
+                    </div>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div class="hero-scroll js-hero-scroll">
+                    <span class="scroll-text">Scroll</span>
+                    <span class="scroll-line"></span>
+                </div>
             </div>
         </section>
 
         <section id="about" class="section section-about">
             <div class="section-about__inner">
-                <!-- 좌측 텍스트 -->
                 <div class="section-about__text js-observe">
                     <p class="section-label">ROOT · ABOUT</p>
                     <h2 class="section-title">
@@ -170,7 +172,6 @@
             <div class="section-story__gradient"></div>
             <div class="section-story__inner">
                 <main class="story-layout layout">
-                    <!-- LEFT: Intro (keep original copy) -->
                     <section class="intro">
                         <p class="section-label">GROWTH · STORY</p>
                         <h2 class="section-title">줄기가 자라며<br />이야기가 쌓이다</h2>
@@ -178,7 +179,6 @@
                             담았습니다.</p>
                     </section>
 
-                    <!-- RIGHT: timeline as cards using provided layout (content preserved) -->
                     <section class="position-list story-position-list" aria-label="Timeline items">
                         <article class="position-card story-card js-observe">
                             <div class="position-meta"><span class="position-index">01</span></div>
@@ -256,81 +256,110 @@
                 </header>
 
                 <div class="works-grid">
-                    <!-- 프로젝트 카드 -->
-                    <article class="work-card card js-observe">
-                        <div class="work-card__lotus">
-                            <div class="lotus-outline"></div>
-                            <div class="lotus-core"></div>
+                    <!-- Project 01 -->
+                    <article class="work-card js-observe">
+                        <div class="work-card__image-box">
+                            <span class="work-card__idx">Website · Branding · Product</span>
+                            <div class="work-card__thumb"
+                                style="background: linear-gradient(135deg, #111 0%, #333 100%);"></div>
+                            <!-- Lotus Effect Layer -->
+                            <div class="lotus-layer">
+                                <span class="lotus-petal"></span>
+                                <span class="lotus-petal"></span>
+                                <span class="lotus-petal"></span>
+                                <span class="lotus-petal"></span>
+                                <div class="lotus-core"></div>
+                            </div>
                         </div>
-                        <div class="work-card__body">
-                            <h3 class="work-card__title">Project Lotus</h3>
-                            <p class="work-card__tagline">
-                                연꽃의 성장 과정을 모티브로 한 인터랙티브 랜딩 페이지
-                            </p>
-                            <p class="work-card__meta">UX/UI · Frontend · Interaction Design</p>
-                            <button class="btn btn-secondary work-card__btn">
-                                VIEW CASE STUDY
-                            </button>
-                        </div>
-                    </article>
-
-                    <article class="work-card card js-observe">
-                        <div class="work-card__lotus">
-                            <div class="lotus-outline"></div>
-                            <div class="lotus-core"></div>
-                        </div>
-                        <div class="work-card__body">
-                            <h3 class="work-card__title">Mud to Bloom</h3>
-                            <p class="work-card__tagline">
-                                복잡한 데이터를 담백하게 정리한 B2B 대시보드 디자인
-                            </p>
-                            <p class="work-card__meta">Design System · Data Visualization</p>
-                            <button class="btn btn-secondary work-card__btn">
-                                VIEW CASE STUDY
-                            </button>
+                        <div class="work-card__desc-box">
+                            <h3 class="work-card__tit">Blackadge</h3>
+                            <div class="work-card__btns">
+                                <button class="btn-work-action" aria-label="View Project">View</button>
+                                <button class="btn-work-action" aria-label="View Details">Detail</button>
+                            </div>
                         </div>
                     </article>
 
-                    <article class="work-card card js-observe">
-                        <div class="work-card__lotus">
-                            <div class="lotus-outline"></div>
-                            <div class="lotus-core"></div>
+                    <!-- Project 02 -->
+                    <article class="work-card js-observe">
+                        <div class="work-card__image-box">
+                            <span class="work-card__idx">Website</span>
+                            <div class="work-card__thumb"
+                                style="background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);">
+                                <!-- Light theme placeholder -->
+                            </div>
+                            <div class="lotus-layer">
+                                <span class="lotus-petal"></span>
+                                <span class="lotus-petal"></span>
+                                <span class="lotus-petal"></span>
+                                <span class="lotus-petal"></span>
+                                <div class="lotus-core"></div>
+                            </div>
                         </div>
-                        <div class="work-card__body">
-                            <h3 class="work-card__title">Floating Garden</h3>
-                            <p class="work-card__tagline">
-                                브랜드 스토리텔링을 위한 스크롤 기반 인터랙션 웹사이트
-                            </p>
-                            <p class="work-card__meta">Scrolling Storytelling · Motion</p>
-                            <button class="btn btn-secondary work-card__btn">
-                                VIEW CASE STUDY
-                            </button>
+                        <div class="work-card__desc-box">
+                            <h3 class="work-card__tit">Antimetal</h3>
+                            <div class="work-card__btns">
+                                <button class="btn-work-action" aria-label="View Project">View</button>
+                                <button class="btn-work-action" aria-label="View Details">Detail</button>
+                            </div>
                         </div>
                     </article>
 
-                    <article class="work-card card js-observe">
-                        <div class="work-card__lotus">
-                            <div class="lotus-outline"></div>
-                            <div class="lotus-core"></div>
+                    <!-- Project 03 -->
+                    <article class="work-card js-observe">
+                        <div class="work-card__image-box">
+                            <span class="work-card__idx">Website · Branding</span>
+                            <div class="work-card__thumb"
+                                style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);"></div>
+                            <div class="lotus-layer">
+                                <span class="lotus-petal"></span>
+                                <span class="lotus-petal"></span>
+                                <span class="lotus-petal"></span>
+                                <span class="lotus-petal"></span>
+                                <div class="lotus-core"></div>
+                            </div>
                         </div>
-                        <div class="work-card__body">
-                            <h3 class="work-card__title">Silent Pond</h3>
-                            <p class="work-card__tagline">
-                                고요함과 집중을 주제로 한 미니멀 포트폴리오 템플릿
-                            </p>
-                            <p class="work-card__meta">Minimal UI · Responsive</p>
-                            <button class="btn btn-secondary work-card__btn">
-                                VIEW CASE STUDY
-                            </button>
+                        <div class="work-card__desc-box">
+                            <h3 class="work-card__tit">AuthKit</h3>
+                            <div class="work-card__btns">
+                                <button class="btn-work-action" aria-label="View Project">View</button>
+                                <button class="btn-work-action" aria-label="View Details">Detail</button>
+                            </div>
                         </div>
                     </article>
+
+                    <!-- Project 04 -->
+                    <article class="work-card js-observe">
+                        <div class="work-card__image-box">
+                            <span class="work-card__idx">Website · Branding</span>
+                            <div class="work-card__thumb"
+                                style="background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);"></div>
+                            <div class="lotus-layer">
+                                <span class="lotus-petal"></span>
+                                <span class="lotus-petal"></span>
+                                <span class="lotus-petal"></span>
+                                <span class="lotus-petal"></span>
+                                <div class="lotus-core"></div>
+                            </div>
+                        </div>
+                        <div class="work-card__desc-box">
+                            <h3 class="work-card__tit">Index</h3>
+                            <div class="work-card__btns">
+                                <button class="btn-work-action" aria-label="View Project">View</button>
+                                <button class="btn-work-action" aria-label="View Details">Detail</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="works-footer js-observe">
+                    <button class="btn btn-secondary">View All Projects</button>
                 </div>
             </div>
         </section>
 
         <section id="resume" class="section section-resume">
             <div class="section-resume__inner">
-                <!-- 헤더 (전체 너비, 위) -->
                 <header class="section-resume__header js-observe">
                     <p class="section-label">FRUIT · RESUME</p>
                     <h2 class="section-title">
@@ -338,52 +367,66 @@
                         열매가 되다
                     </h2>
                     <p class="section-desc">
-                        한 번의 프로젝트로는 만들어지지 않는 역량들. 반복과 축적 끝에 맺힌 열매를 스킬과 경험으로 정리했습니다.
+                        한 번의 프로젝트로는 만들어지지 않는 역량들.
+                        반복과 축적 끝에 맺힌 열매를 스킬과 경험으로 정리했습니다.
                     </p>
                 </header>
 
-                <!-- 카드 그리드 (가로 3개) -->
-                <div class="interview-grid">
-                    <article class="interview-card js-observe">
-                        <div class="interview-card__image">
-                            <div class="interview-card__icon p-gi-icon--1" role="img" aria-label="interview icon 1">
+                <div class="interview-section">
+                    <div class="interview-grid">
+                        <!-- Card 01 -->
+                        <article class="interview-card js-observe">
+                            <div class="interview-card__visual">
+                                <div class="interview-card__person interview-card__person--1"></div>
                             </div>
-                        </div>
-                        <div class="interview-card__content">
-                            <span class="interview-card__number">01</span>
-                            <h3 class="interview-card__title">자신의 관점에서 성장부터<br />고객의 미래까지<br />눈에 띄는 성장에.</h3>
-                            <button class="interview-card__link" aria-label="더보기">→</button>
-                        </div>
-                    </article>
-
-                    <article class="interview-card js-observe">
-                        <div class="interview-card__image">
-                            <div class="interview-card__icon p-gi-icon--2" role="img" aria-label="interview icon 2">
+                            <div class="interview-card__body">
+                                <div class="interview-card__num">01</div>
+                                <h4 class="interview-card__desc">
+                                    자신의 관점에서 성장부터<br>
+                                    고객의 미래까지<br>
+                                    눈에 띄는 성장에.
+                                </h4>
                             </div>
-                        </div>
-                        <div class="interview-card__content">
-                            <span class="interview-card__number">02</span>
-                            <h3 class="interview-card__title">정년 후를 바라보고 결의한 전직.<br />여기에서 "to be"를 함께 이끄는 존재에.</h3>
-                            <button class="interview-card__link" aria-label="더보기">→</button>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="interview-card js-observe">
-                        <div class="interview-card__image">
-                            <div class="interview-card__icon p-gi-icon--3" role="img" aria-label="interview icon 3">
+                        <!-- Card 02 (Lower position) -->
+                        <article class="interview-card interview-card--low js-observe">
+                            <div class="interview-card__visual">
+                                <div class="interview-card__person interview-card__person--2"></div>
                             </div>
-                        </div>
-                        <div class="interview-card__content">
-                            <span class="interview-card__number">03</span>
-                            <h3 class="interview-card__title">고객도 멤버도.<br />끝없는 학습욕으로 성장을 뒷받침.</h3>
-                            <button class="interview-card__link" aria-label="더보기">→</button>
-                        </div>
-                    </article>
-                </div>
+                            <div class="interview-card__body">
+                                <div class="interview-card__num">02</div>
+                                <h4 class="interview-card__desc">
+                                    정년 후를 바라보고 결의한 전직.<br>
+                                    여기에서 "to be"를 함께 이끄는 존재에.
+                                </h4>
+                            </div>
+                        </article>
 
-                <!-- View All 버튼 (오른쪽 정렬) -->
-                <div class="resume-footer">
-                    <a href="#" class="resume-view-all">View All</a>
+                        <!-- Card 03 -->
+                        <article class="interview-card js-observe">
+                            <div class="interview-card__visual">
+                                <div class="interview-card__person interview-card__person--3"></div>
+                            </div>
+                            <div class="interview-card__body">
+                                <div class="interview-card__num">03</div>
+                                <h4 class="interview-card__desc">
+                                    고객도 멤버도.<br>
+                                    끝없는 학습욕으로<br>
+                                    성장을 뒷받침.
+                                </h4>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="interview-footer js-observe">
+                        <button class="interview-btn-all">
+                            View All
+                            <span class="arrow-wrapper">
+                                <span class="arrow-small">→</span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -402,58 +445,50 @@
                     </p>
                 </header>
 
-                <div class="contact-layout">
-                    <!-- 정원 일러스트 & SNS -->
-                    <div class="contact-garden js-observe">
-                        <div class="garden-illustration">
-                            <div class="garden-pond"></div>
-                            <div class="garden-lotus garden-lotus--left"></div>
-                            <div class="garden-lotus garden-lotus--right"></div>
-                        </div>
-                        <!-- 날아다니는 나비/벌 (섹션 전체에 걸쳐 위치) -->
-                        <div class="garden-butterfly garden-butterfly--1"></div>
-                        <div class="garden-butterfly garden-butterfly--2"></div>
-
-                        <div class="contact-social">
-                            <p class="contact-social__label">Find me in the garden</p>
-                            <div class="contact-social__links">
-                                <a href="#" class="contact-social__icon">Behance</a>
-                                <a href="#" class="contact-social__icon">Dribbble</a>
-                                <a href="#" class="contact-social__icon">GitHub</a>
-                                <a href="#" class="contact-social__icon">LinkedIn</a>
-                            </div>
-                        </div>
+                <div class="contact-garden-footer js-observe">
+                    <!-- Ambient Creatures -->
+                    <div class="garden-ambient">
+                        <div class="creature butterfly"></div>
+                        <div class="creature bumblebee"></div>
                     </div>
 
-                    <!-- 폼 -->
-                    <div class="contact-form card js-observe">
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">이름</label>
-                                <input type="text" id="name" name="name" required />
+                    <div class="contact-grid">
+                        <!-- Left: Social & Info -->
+                        <div class="contact-info">
+                            <h3 class="contact-info__cta">Let's cultivate<br>something beautiful.</h3>
+                            <div class="contact-social">
+                                <a href="#" class="social-link" aria-label="Behance">Behance</a>
+                                <a href="#" class="social-link" aria-label="Dribbble">Dribbble</a>
+                                <a href="#" class="social-link" aria-label="GitHub">GitHub</a>
+                                <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a>
                             </div>
+                            <p class="contact-email">hello@hykim-portfolio.com</p>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="email">이메일</label>
-                                <input type="email" id="email" name="email" required />
-                            </div>
+                        <!-- Right: Form -->
+                        <div class="contact-form-wrapper">
+                            <form id="contactForm" class="contact-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name" class="sr-only">Name</label>
+                                        <input type="text" id="name" name="name" placeholder="Name" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="sr-only">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="Email" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message" class="sr-only">Message</label>
+                                    <textarea id="message" name="message" rows="4"
+                                        placeholder="Tell me about your garden..." required></textarea>
+                                </div>
 
-                            <div class="form-group">
-                                <label for="message">메시지</label>
-                                <textarea id="message" name="message" rows="4" required></textarea>
-                            </div>
-
-                            <div class="contact-form__footer">
-                                <button type="submit" class="btn btn-primary">
-                                    씨앗 보내기
+                                <button type="submit" class="btn-submit-seed">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="seed-icon">🌱</span>
                                 </button>
-                                <span class="contact-form__status" aria-live="polite"></span>
-                            </div>
-                        </form>
-
-                        <!-- 폼 제출 시 씨앗 애니메이션 -->
-                        <div class="contact-seed-animation" aria-hidden="true">
-                            <div class="contact-seed"></div>
+                            </form>
                         </div>
                     </div>
                 </div>

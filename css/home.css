@@ -1,244 +1,163 @@
-@charset "utf-8";
-
-.section-home {
-  color: var(--color-sand);
-}
-
-.section-home__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.section-home__content {
-  max-width: 520px;
-}
-
-.section-home__eyebrow {
-  font-family: "Montserrat", sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  color: var(--color-gold);
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.section-home__title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 42px;
-  line-height: 1.05;
-  font-weight: 600;
-  margin: 0 0 14px;
-}
-
-.section-home__title span {
-  color: var(--color-gold-soft);
-}
-
-.section-home__subtitle {
-  font-size: 15px;
-  color: rgba(245, 239, 227, 0.9);
-  margin-bottom: 24px;
-}
-
-.section-home__buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.section-home__visual {
-  flex: 1;
-  min-height: 260px;
+/* HERO SECTION NEW */
+.hero-section-new {
   position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-dark);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  z-index: 10;
+  /* Reset global section padding to ensure full bleed */
+  padding: 0 !important; 
 }
 
-/* 씨앗 오브젝트 */
-
-.seed-orbit {
-  position: relative;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  border: 1px solid rgba(245, 201, 124, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Reset global constraints on direct children */
+.hero-section-new > div {
+    max-width: none !important;
+    margin: 0 !important;
+    width: auto; 
 }
 
-.seed-orbit__ring {
+/* 1. Parallax Text Layers */
+.hero-parallax-text {
   position: absolute;
-  width: 170px;
-  height: 170px;
-  border-radius: 999px;
-  border: 1px dashed rgba(245, 201, 124, 0.55);
-  animation: seed-ring 11s linear infinite;
+  width: 100%;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  /* Massive font size for that bold effect - Default for Back Layer */
+  font-size: clamp(120px, 18vw, 300px); 
+  line-height: 0.85;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+  
+  /* Center horizontally */
+  left: 50%;
+  /* Initial transform includes centering X */
+  transform: translate(-50%, 0); 
 }
 
-.seed-orbit__seed {
-  position: relative;
-  width: 32px;
-  height: 46px;
-  border-radius: 50% 50% 42% 42%;
-  background: radial-gradient(circle at 30% 10%, #fff5d0, #f2b562);
-  box-shadow:
-    0 0 20px rgba(245, 201, 124, 0.8),
-    0 0 40px rgba(245, 201, 124, 0.4);
-  transform-origin: 50% 0%;
-  animation:
-    seed-float 3s ease-in-out infinite,
-    seed-drop 1.3s ease-out 0.6s both;
+.text-layer-back {
+    /* Behind the visual */
+    z-index: 1;
+    /* Use background color instead of transparent to mask the strokes of overlapping letters */
+    color: var(--color-dark);
+    -webkit-text-stroke: 2px var(--color-gold-30);
+    /* Improve stroke rendering so stroke is outside/clipped properly */
+    paint-order: stroke fill;
+    top: 50%;
+    /* Add Y offset to X centering */
+    transform: translate(-50%, -90%); 
+    /* Tighten spacing to ensure overlap happens if intended, making masking useful */
+    letter-spacing: -0.05em;
 }
 
-@keyframes seed-drop {
+.text-layer-front {
+  /* In front of the visual */
+  z-index: 3;
+  color: var(--color-gold);
+  /* Front layer smaller as requested */
+  font-size: clamp(80px, 12vw, 200px);
+  top: 50%;
+  /* Add Y offset to X centering */
+  transform: translate(-50%, 20%); 
+  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* 2. Central Visual (Seed) */
+.hero-central-visual {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Higher z-index to be ON TOP of ticker tape (z-index 4) */
+    z-index: 5; 
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    pointer-events: none; /* Let clicks pass through if needed */
+}
+
+/* Old .seed-orbit and .seed-orbit__ring removed */
+
+.hero-central-visual .seed-orbit__seed {
+    /* Much larger to be the main focal point like the Unicorn */
+    width: 120px;
+    height: 180px;
+    background: var(--color-gold);
+    border-radius: 50% 50% 40% 40%;
+    box-shadow: 
+        inset -20px -20px 40px rgba(0,0,0,0.2),
+        inset 20px 20px 40px rgba(255,255,255,0.4),
+        0 20px 60px rgba(0,0,0,0.5); /* Deep shadow */
+    will-change: transform;
+    /* Initial transform managed by JS, but set base here */
+}
+
+/* 3. Ticker Tape */
+.hero-ticker-tape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Ensure width is enough to cover diagonal */
+  width: 150vw; 
+  background: var(--color-gold);
+  color: var(--color-dark);
+  padding: 12px 0;
+  z-index: 4;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  overflow: hidden;
+  /* Borders removed as requested */
+  border: none;
+  
+  /* Centered + Rotated */
+  /* Angle adjusted to match undo.co.in feel better */
+  transform: translate(-50%, -50%) rotate(-2deg);
+}
+
+.ticker-track {
+    display: flex;
+    gap: 0; /* Removing gap to prevent stutter, use padding on items instead */
+    white-space: nowrap;
+    /* Speed adjusted to 20s - Balanced speed (not too fast, not too slow) */
+    animation: ticker-scroll 20s linear infinite;
+}
+
+.ticker-item {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  /* Add padding to items for spacing */
+  padding-right: 40px; 
+}
+
+@keyframes ticker-scroll {
   0% {
-    transform: translateY(-50px) scale(0.4);
-    opacity: 0;
+    transform: translateX(0);
   }
-
-  60% {
-    transform: translateY(10px) scale(1.02);
-    opacity: 1;
-  }
-
   100% {
-    transform: translateY(0) scale(1);
+    transform: translateX(-50%);
   }
+  /* Assumption: track content is duplicated enough to cover 50% scroll seamless loop 
+       Actually, standard ticker trick is: content width must be > 100% 
+       and we scroll by half if we duplicated content. 
+    */
 }
 
-@keyframes seed-float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-@keyframes seed-ring {
-  0% {
-    transform: rotate(0deg);
-    opacity: 0.7;
-  }
-
-  100% {
-    transform: rotate(360deg);
-    opacity: 0.2;
-  }
-}
-
-/* Scroll 인디케이터 */
-
+/* Scroll Indicator Override */
 .section-home__scroll-indicator {
   position: absolute;
-  bottom: 0;
   left: 50%;
+  bottom: 40px;
   transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-.scroll-indicator__text {
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-gold-60);
-}
-
-.scroll-indicator__line {
-  display: block;
-  width: 1px;
-  height: 34px;
-  background: linear-gradient(to bottom,
-      var(--color-gold-60),
-      rgba(245, 201, 124, 0.07));
-  position: relative;
-  overflow: hidden;
-}
-
-.scroll-indicator__line::after {
-  content: "";
-  position: absolute;
-  top: -8px;
-  left: 0;
-  width: 100%;
-  height: 10px;
-  background-color: var(--color-gold);
-  animation: scroll-blink 1.35s ease-in-out infinite;
-}
-
-@keyframes scroll-blink {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-
-  30% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(24px);
-    opacity: 0;
-  }
-}
-
-/* 씨앗에서 뿌리로 연결되는 라인 */
-.seed-to-root-line {
-  position: absolute;
-  width: 2px;
-  height: 0;
-  top: calc(100% + 20px);
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.seed-to-root-line.is-visible {
-  animation: line-extend 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-.seed-to-root-line__path {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 500;
-  animation: line-draw 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-@keyframes line-extend {
-  0% {
-    height: 0;
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    height: 400px;
-    opacity: 1;
-  }
-}
-
-@keyframes line-draw {
-  0% {
-    stroke-dashoffset: 500;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@media (max-width: 900px) {
-  .section-home__inner {
-    flex-direction: column;
-  }
+  z-index: 5;
+  margin: 0 !important; /* ensure override */
 }
