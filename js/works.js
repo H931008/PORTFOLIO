@@ -9,14 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-active');
+            console.log('Works circle is active!');
             circleObserver.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
     
     circleObserver.observe(circleElement);
+    console.log('Works circle observer initialized');
+  } else {
+    console.error('Works circle element not found');
   }
 });
 

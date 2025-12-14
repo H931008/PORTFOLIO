@@ -12,24 +12,6 @@ a:hover {
     text-decoration: none;
 }
 
-/* #Cursor ================================================== */
-
-.cursor,
-.cursor2,
-.cursor3 {
-    display: none !important;
-    /* 완전히 비활성화 - 클릭 차단 문제 해결 */
-}
-
-@media screen and (max-width: 1200px) {
-
-    .cursor,
-    .cursor2,
-    .cursor3 {
-        display: none;
-    }
-}
-
 /* #Navigation ================================================== */
 
 .cd-header {
