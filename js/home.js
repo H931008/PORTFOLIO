@@ -15,24 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Only animate if we are roughly looking at the top part (performance)
     if (scrollY > sectionHeight * 1.5) return;
 
-    // 1. Text Parallax
+    // 1. Text Parallax - Fixed position (no movement on scroll)
     parallaxTexts.forEach((text) => {
-      // Get base speed from data attribute
-      const speed = parseFloat(text.getAttribute("data-speed")) || 0.2;
-      
-      // Calculate offset based on scrollY
-      
-      // Default CSS: 
-      // .text-layer-back: translate(-50%, -80%)
-      // .text-layer-front: translate(-50%, 10%)
-      
+      // Keep text fixed at their initial positions
       let initialYPercent = 0;
-      if (text.classList.contains("text-layer-back")) initialYPercent = -80;
-      if (text.classList.contains("text-layer-front")) initialYPercent = 10;
+      if (text.classList.contains("text-layer-back")) initialYPercent = -90;
+      if (text.classList.contains("text-layer-front")) initialYPercent = 20;
       
-      const move = -(scrollY * speed);
-      // Preserve X centering (-50%)
-      text.style.transform = `translate(-50%, calc(${initialYPercent}% + ${move}px))`;
+      // No movement - keep fixed
+      text.style.transform = `translate(-50%, ${initialYPercent}%)`;
     });
 
     // 2. Seed Rotation & Scale
@@ -44,13 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
       seedElement.style.transform = `rotateX(10deg) rotateY(${-10 + rotation}deg) scale(${scale})`;
     }
 
-    // 3. Ticker Tape Parallax
-    // Make ticker move sideways faster on scroll
+    // 3. Ticker Tape - Fixed position (no parallax)
     if (tickerTape) {
-      const tickerMove = scrollY * 0.5;
-       // We keep the rotate(-3deg) and centering
-       // We adjust X translation: start at -50% (center), move left by tickerMove
-      tickerTape.style.transform = `translate(calc(-50% - ${tickerMove}px), -50%) rotate(-3deg)`;
+      // Keep ticker fixed at its position
+      tickerTape.style.transform = `translate(-50%, 0) rotate(-2deg)`;
     }
   });
 

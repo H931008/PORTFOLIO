@@ -24,11 +24,12 @@
 .hero-parallax-text {
   position: absolute;
   width: 100%;
+  max-width: calc(100vw - 80px);
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
-  /* Massive font size for that bold effect - Default for Back Layer */
-  font-size: clamp(120px, 18vw, 300px); 
+  /* Larger font size like undo.co.in while fitting inside side-navi */
+  font-size: clamp(100px, 16vw, 280px); 
   line-height: 0.85;
   white-space: nowrap;
   pointer-events: none;
@@ -37,8 +38,9 @@
   
   /* Center horizontally */
   left: 50%;
-  /* Initial transform includes centering X */
-  transform: translate(-50%, 0); 
+  top: 50%;
+  /* Initial transform includes centering */
+  transform: translate(-50%, -50%); 
 }
 
 .text-layer-back {
@@ -49,8 +51,7 @@
     -webkit-text-stroke: 2px var(--color-gold-30);
     /* Improve stroke rendering so stroke is outside/clipped properly */
     paint-order: stroke fill;
-    top: 50%;
-    /* Add Y offset to X centering */
+    /* Offset slightly up */
     transform: translate(-50%, -90%); 
     /* Tighten spacing to ensure overlap happens if intended, making masking useful */
     letter-spacing: -0.05em;
@@ -60,10 +61,8 @@
   /* In front of the visual */
   z-index: 3;
   color: var(--color-gold);
-  /* Front layer smaller as requested */
-  font-size: clamp(80px, 12vw, 200px);
-  top: 50%;
-  /* Add Y offset to X centering */
+  /* Same size as back layer */
+  /* Offset slightly down */
   transform: translate(-50%, 20%); 
   text-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
@@ -71,7 +70,7 @@
 /* 2. Central Visual (Seed) */
 .hero-central-visual {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* Higher z-index to be ON TOP of ticker tape (z-index 4) */
@@ -104,7 +103,7 @@
 /* 3. Ticker Tape */
 .hero-ticker-tape {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   /* Ensure width is enough to cover diagonal */
   width: 150vw; 
@@ -112,7 +111,6 @@
   color: var(--color-dark);
   padding: 12px 0;
   z-index: 4;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   overflow: hidden;
   /* Borders removed as requested */
   border: none;
@@ -126,8 +124,8 @@
     display: flex;
     gap: 0; /* Removing gap to prevent stutter, use padding on items instead */
     white-space: nowrap;
-    /* Speed adjusted to 20s - Balanced speed (not too fast, not too slow) */
-    animation: ticker-scroll 20s linear infinite;
+    /* Speed adjusted to 40s - Slower speed matching undo.co.in */
+    animation: ticker-scroll 40s linear infinite;
 }
 
 .ticker-item {

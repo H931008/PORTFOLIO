@@ -143,48 +143,126 @@
 /* Two-column layout for story (adapted from provided POSITION layout) */
 .story-layout {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 36px;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
   align-items: start;
 }
 
 .story-layout .intro {
   padding: 20px 0 20px 0;
+  position: sticky;
+  top: 100px;
 }
 
 .story-layout .intro .section-label {
   color: var(--color-gold);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
 }
 
 .story-layout .intro .section-title {
   color: var(--color-dark);
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 20px;
+  line-height: 1.2;
 }
 
+.story-layout .intro .section-desc {
+  color: var(--color-dark-80);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Position List */
 .story-position-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0;
 }
 
+/* Position Card - Based on MediaAid style */
 .position-card {
-  display: grid;
-  grid-template-columns: 56px minmax(0, 1fr) 44px;
-  align-items: flex-start;
-  padding: 16px 14px;
-  background: var(--color-beige);
-  border-radius: 6px;
-  border-bottom: 1px solid rgba(0,0,0,0.04);
-  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  display: block;
+  padding: 28px 24px;
+  background: transparent;
+  border-bottom: 1px solid var(--color-dark-20);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+  position: relative;
 }
 
-.position-card:hover { background: #fff; transform: translateY(-4px); box-shadow: 0 8px 18px rgba(0,0,0,0.06); }
+.position-card:first-child {
+  border-top: 1px solid var(--color-dark-20);
+}
 
-.position-index { color: var(--color-dark-50); font-weight: 600; }
-.position-title { margin:0 0 6px; color: var(--color-dark); font-weight:700; }
-.position-desc { margin:0; color: var(--color-dark-50); }
+.position-card:hover {
+  background: var(--color-dark-10);
+  border-bottom-color: var(--color-gold);
+}
 
-.position-link { background: transparent; border: none; cursor: pointer; }
+.position-card:hover + .position-card {
+  border-top-color: var(--color-gold);
+}
+
+/* Index (Number inline with title) */
+.position-index {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-dark);
+  transition: color 0.3s ease;
+  margin-right: 12px;
+}
+
+.position-card:hover .position-index {
+  color: var(--color-gold);
+}
+
+/* Body */
+.position-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.position-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-dark);
+  transition: color 0.3s ease;
+}
+
+.position-tag {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-dark-50);
+  margin-left: 8px;
+}
+
+.position-card:hover .position-title {
+  color: var(--color-gold);
+}
+
+.position-desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-dark-80);
+}
 
 @media (max-width: 900px) {
-  .story-layout { grid-template-columns: 1fr; }
+  .story-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story-layout .intro {
+    position: static;
+  }
+
+  .position-card {
+    padding: 20px 16px;
+  }
 }

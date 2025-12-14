@@ -1,175 +1,424 @@
 .section-works {
+  min-height: 100vh;
+  padding: calc(var(--header-height) + 60px) 24px 100px;
   background-color: var(--color-beige);
   color: var(--color-dark);
 }
 
+.section-works__inner {
+  max-width: 1400px;
+  /* Increased for 3x2 grid layout */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-works__header {
+  margin-bottom: 60px;
+  text-align: left;
+  max-width: 100%;
+  /* Ensure visibility override */
+  position: relative;
+  z-index: 10;
+}
+
+/* Explicit color overrides for header visibility */
+.section-works__header .section-label,
 .section-works__header .section-title,
 .section-works__header .section-desc {
-  color: var(--color-dark);
+  color: var(--color-dark) !important;
+  /* Force dark color on beige bg */
 }
 
+.section-works__header .section-label {
+  color: var(--color-gold) !important;
+}
+
+/* Works Grid (3x2) */
 .works-grid {
-  margin-top: 32px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
 }
 
-/* 연꽃 일러스트: 외곽선 다크 투명, 중심 골드 */
-
+/* Work Card */
 .work-card {
-  display: grid;
-  grid-template-columns: 80px minmax(0, 1fr);
-  gap: 16px;
-  align-items: center;
-  padding: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* 초기 숨김 상태 (JS에서 제어) */
-.work-card.is-hidden {
-  opacity: 0;
-  transform: translateY(20px) scale(0.95);
-}
-
-/* 스크롤 진입 시 나타나기 */
-.work-card.is-visible {
-  animation: card-appear 0.6s ease-out forwards;
-}
-
-.work-card:nth-child(1).is-visible { animation-delay: 0s; }
-.work-card:nth-child(2).is-visible { animation-delay: 0.15s; }
-.work-card:nth-child(3).is-visible { animation-delay: 0.3s; }
-.work-card:nth-child(4).is-visible { animation-delay: 0.45s; }
-
-@keyframes card-appear {
-  0% {
-    opacity: 0;
-    transform: translateY(20px) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.work-card__lotus {
   position: relative;
-  width: 80px;
-  height: 80px;
-  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.lotus-outline {
-  position: absolute;
-  inset: 8px;
-  border-radius: 50%;
-  border: 1.5px solid var(--color-dark-10);
-  transition: all 0.4s ease;
+.work-card.js-observe.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.lotus-core {
-  position: absolute;
-  inset: 24px;
-  border-radius: 50%;
-  background-color: var(--color-gold);
-  box-shadow: 0 0 18px var(--color-gold-30);
-  transform: scale(0.7);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.work-card:nth-child(1) {
+  transition-delay: 0.1s;
 }
 
-/* 호버 시 꽃 만개 애니메이션 */
-.lotus-petals {
+.work-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.work-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.work-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+/* Image Container */
+.work-card__image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  /* Slightly wider than square for 2x2 look */
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--color-dark-10);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  isolation: isolate;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px;
+  align-content: flex-start;
+}
+
+/* Thumb (Image) */
+.work-card__thumb {
   position: absolute;
   inset: 0;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease, filter 0.4s ease;
+  z-index: 1;
+}
+
+/* Hover Logic */
+.work-card:hover .work-card__thumb {
+  transform: scale(1.05);
+}
+
+/* Lotus Layer - Detailed blooming flower animation from bud to full bloom */
+.lotus-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
-.lotus-petal {
+.work-card:hover .lotus-layer {
+  opacity: 1;
+}
+
+/* Disable lotus layer when hovering buttons */
+.work-card:has(.work-card__btns:hover) .lotus-layer {
+  opacity: 0;
+}
+
+/* Lotus Core - Center of the flower (stamen/pistil) */
+.lotus-core {
   position: absolute;
-  inset: 8px;
+  width: 28px;
+  height: 28px;
+  background: radial-gradient(circle, #FFA500 0%, #FF8C00 60%, #D2691E 100%);
   border-radius: 50%;
-  border: 1.5px solid var(--color-dark-10);
-  transform-origin: center;
-  animation: petal-bloom 0.5s ease-out forwards;
-}
-
-.lotus-petal:nth-child(1) { animation-delay: 0s; transform: rotate(0deg) translateY(-30px); }
-.lotus-petal:nth-child(2) { animation-delay: 0.1s; transform: rotate(45deg) translateY(-30px); }
-.lotus-petal:nth-child(3) { animation-delay: 0.2s; transform: rotate(90deg) translateY(-30px); }
-.lotus-petal:nth-child(4) { animation-delay: 0.3s; transform: rotate(135deg) translateY(-30px); }
-.lotus-petal:nth-child(5) { animation-delay: 0.4s; transform: rotate(180deg) translateY(-30px); }
-
-@keyframes petal-bloom {
-  0% {
-    opacity: 0;
-    transform: rotate(0deg) translateY(-30px) scale(0.3);
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(var(--angle)) translateY(-30px) scale(1);
-  }
-}
-
-.work-card__body {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.work-card__title {
-  margin: 0;
-  font-size: 16px;
-  color: var(--color-dark);
-}
-
-.work-card__tagline {
-  margin: 0;
-  font-size: 14px;
-  color: var(--color-dark-80);
-}
-
-.work-card__meta {
-  margin: 0 0 4px;
-  font-size: 12px;
-  color: var(--color-dark-50);
-}
-
-.work-card__btn {
-  align-self: flex-start;
-}
-
-/* 카드 호버 시 꽃 만개 + 확대 */
-.work-card:hover {
-  transform: scale(1.04);
-  background-color: rgba(212, 175, 55, 0.08);
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 0 12px rgba(255, 165, 0, 0.5);
+  z-index: 10;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s;
 }
 
 .work-card:hover .lotus-core {
   transform: scale(1);
-  box-shadow: 0 0 32px var(--color-gold-60), 0 0 8px var(--color-gold-30);
+  opacity: 1;
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.7);
 }
 
-/* class-triggered bloom (used by JS) */
-.work-card.is-bloom {
-  transform: scale(1.04);
-  background-color: rgba(212, 175, 55, 0.08);
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+/* Lotus Petals - 12 petals in two layers (outer 6 & inner 6) for realistic lotus bloom */
+.lotus-petal {
+  position: absolute;
+  background: linear-gradient(to bottom, 
+    rgba(255, 192, 203, 0.95) 0%, 
+    rgba(255, 182, 193, 0.92) 25%,
+    rgba(255, 105, 180, 0.88) 65%, 
+    rgba(219, 112, 147, 0.9) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.2),
+    inset 0 1px 4px rgba(255, 255, 255, 0.5);
+  transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.work-card.is-bloom .lotus-core {
-  transform: scale(1);
-  box-shadow: 0 0 32px var(--color-gold-60), 0 0 8px var(--color-gold-30);
+/* Outer layer petals - larger and positioned further out (6 petals) */
+.lotus-petal--outer {
+  width: 50px;
+  height: 85px;
+  border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+  transform-origin: center 90%;
 }
 
-.work-card:hover .lotus-outline {
-  border-color: var(--color-dark-30);
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+/* Inner layer petals - smaller and closer to center (6 petals) */
+.lotus-petal--inner {
+  width: 40px;
+  height: 68px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  transform-origin: center 88%;
+  background: linear-gradient(to bottom, 
+    rgba(255, 218, 224, 0.95) 0%, 
+    rgba(255, 192, 203, 0.92) 25%,
+    rgba(255, 182, 193, 0.88) 65%, 
+    rgba(255, 105, 180, 0.9) 100%);
 }
+
+/* Initial state: Closed bud - all petals tightly closed at center */
+/* Outer petals - 6 petals at 60 degree intervals (0, 60, 120, 180, 240, 300) */
+.lotus-petal--outer:nth-child(1) {
+  transform: rotate(0deg) translateY(0px) scale(0.1) rotateX(88deg);
+  opacity: 0;
+}
+
+.lotus-petal--outer:nth-child(2) {
+  transform: rotate(60deg) translateY(0px) scale(0.1) rotateX(88deg);
+  opacity: 0;
+}
+
+.lotus-petal--outer:nth-child(3) {
+  transform: rotate(120deg) translateY(0px) scale(0.1) rotateX(88deg);
+  opacity: 0;
+}
+
+.lotus-petal--outer:nth-child(4) {
+  transform: rotate(180deg) translateY(0px) scale(0.1) rotateX(88deg);
+  opacity: 0;
+}
+
+.lotus-petal--outer:nth-child(5) {
+  transform: rotate(240deg) translateY(0px) scale(0.1) rotateX(88deg);
+  opacity: 0;
+}
+
+.lotus-petal--outer:nth-child(6) {
+  transform: rotate(300deg) translateY(0px) scale(0.1) rotateX(88deg);
+  opacity: 0;
+}
+
+/* Inner petals - 6 petals offset by 30 degrees (30, 90, 150, 210, 270, 330) */
+.lotus-petal--inner:nth-child(7) {
+  transform: rotate(30deg) translateY(0px) scale(0.08) rotateX(90deg);
+  opacity: 0;
+}
+
+.lotus-petal--inner:nth-child(8) {
+  transform: rotate(90deg) translateY(0px) scale(0.08) rotateX(90deg);
+  opacity: 0;
+}
+
+.lotus-petal--inner:nth-child(9) {
+  transform: rotate(150deg) translateY(0px) scale(0.08) rotateX(90deg);
+  opacity: 0;
+}
+
+.lotus-petal--inner:nth-child(10) {
+  transform: rotate(210deg) translateY(0px) scale(0.08) rotateX(90deg);
+  opacity: 0;
+}
+
+.lotus-petal--inner:nth-child(11) {
+  transform: rotate(270deg) translateY(0px) scale(0.08) rotateX(90deg);
+  opacity: 0;
+}
+
+.lotus-petal--inner:nth-child(12) {
+  transform: rotate(330deg) translateY(0px) scale(0.08) rotateX(90deg);
+  opacity: 0;
+}
+
+/* Hover state: Full bloom - petals unfold outward in stages */
+/* Outer petals unfold first and furthest */
+.work-card:hover .lotus-petal--outer:nth-child(1) {
+  transform: rotate(0deg) translateY(-52px) scale(1) rotateX(0deg);
+  opacity: 1;
+  transition-delay: 0.08s;
+}
+
+.work-card:hover .lotus-petal--outer:nth-child(2) {
+  transform: rotate(60deg) translateY(-52px) scale(1) rotateX(0deg);
+  opacity: 1;
+  transition-delay: 0.12s;
+}
+
+.work-card:hover .lotus-petal--outer:nth-child(3) {
+  transform: rotate(120deg) translateY(-52px) scale(1) rotateX(0deg);
+  opacity: 1;
+  transition-delay: 0.16s;
+}
+
+.work-card:hover .lotus-petal--outer:nth-child(4) {
+  transform: rotate(180deg) translateY(-52px) scale(1) rotateX(0deg);
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.work-card:hover .lotus-petal--outer:nth-child(5) {
+  transform: rotate(240deg) translateY(-52px) scale(1) rotateX(0deg);
+  opacity: 1;
+  transition-delay: 0.24s;
+}
+
+.work-card:hover .lotus-petal--outer:nth-child(6) {
+  transform: rotate(300deg) translateY(-52px) scale(1) rotateX(0deg);
+  opacity: 1;
+  transition-delay: 0.28s;
+}
+
+/* Inner petals unfold after outer ones and not as far */
+.work-card:hover .lotus-petal--inner:nth-child(7) {
+  transform: rotate(30deg) translateY(-38px) scale(1) rotateX(0deg);
+  opacity: 1;
+  transition-delay: 0.32s;
+}
+
+.work-card:hover .lotus-petal--inner:nth-child(8) {
+  transform: rotate(90deg) translateY(-38px) scale(1) rotateX(0deg);
+  opacity: 1;
+  transition-delay: 0.36s;
+}
+
+.work-card:hover .lotus-petal--inner:nth-child(9) {
+  transform: rotate(150deg) translateY(-38px) scale(1) rotateX(0deg);
+  opacity: 1;
+  transition-delay: 0.4s;
+}
+
+.work-card:hover .lotus-petal--inner:nth-child(10) {
+  transform: rotate(210deg) translateY(-38px) scale(1) rotateX(0deg);
+  opacity: 1;
+  transition-delay: 0.44s;
+}
+
+.work-card:hover .lotus-petal--inner:nth-child(11) {
+  transform: rotate(270deg) translateY(-38px) scale(1) rotateX(0deg);
+  opacity: 1;
+  transition-delay: 0.48s;
+}
+
+.work-card:hover .lotus-petal--inner:nth-child(12) {
+  transform: rotate(330deg) translateY(-38px) scale(1) rotateX(0deg);
+  opacity: 1;
+  transition-delay: 0.52s;
+}
+
+
+/* Badge - Multiple tags support */
+.work-card__idx {
+  position: relative;
+  z-index: 10;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  padding: 6px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  display: inline-block;
+  height: fit-content;
+}
+
+.work-card__desc-box {
+  display: flex;
+  flex-direction: row;
+  /* Horizontal layout */
+  align-items: center;
+  justify-content: space-between;
+  /* Space between title and buttons */
+  gap: 16px;
+  padding-top: 4px;
+}
+
+.work-card__tit {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.work-card__btns {
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+  position: relative;
+  width: 180px;
+  /* Fixed width for consistency */
+  flex-shrink: 0;
+  /* Prevent buttons from shrinking */
+}
+
+.btn-work-action {
+  flex: 1;
+  padding: 10px 0;
+  background-color: transparent;
+  border: 1px solid var(--color-dark-20);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+.btn-work-action:hover {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  border-color: var(--color-dark);
+}
+
+.works-footer {
+  margin-top: 80px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
+}
+
+.works-footer.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .section-works__inner {
+    max-width: 100%;
+  }
+}
+
