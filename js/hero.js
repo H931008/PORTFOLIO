@@ -152,3 +152,73 @@ document.addEventListener("DOMContentLoaded", () => {
     tickerTrack.innerHTML = loopBlock + loopBlock;
   }
 });
+
+// --- HERO SECTION INTERACTION (텍스트 transform 건드리지 않고 opacity만 animate, 클래스 기반 트리거) ---
+$(function () {
+  const $hero = $('#hero');
+  const $mainText = $hero.find('.text-layer-back');
+  const $subText = $hero.find('.text-layer-front');
+  const $scrollIndi = $hero.find('.section-home__scroll-indicator');
+  const $rose = $hero.find('.hero-central-visual .hero-rose');
+  const $petals = $hero.find('.rose-petal');
+  const $roseCenter = $hero.find('.rose-center');
+  const $roseLight = $hero.find('.rose-center-light');
+
+  // 무조건 스크롤 맨 위로 이동 (브라우저 렌더 직후)
+  window.scrollTo(0, 0);
+  setTimeout(() => {
+    // 텍스트/장미/인디케이터 모두 opacity 0, active 클래스 제거
+    $mainText.removeClass('active').css({ opacity: 0 });
+    $subText.removeClass('active').css({ opacity: 0 });
+    $scrollIndi.removeClass('active').css({ opacity: 0 });
+    $rose.removeClass('active');
+    $petals.removeClass('active');
+    if ($roseLight.length) $roseLight.removeClass('active');
+
+    // 2. 메인 텍스트 페이드인 (0.5s)
+    setTimeout(() => {
+      $mainText.animate({ opacity: 1 }, 500, function() {
+        $mainText.addClass('active');
+      });
+    }, 500);
+
+    // 3. 장미 등장 (1.5s)
+    if ($rose.length) {
+      setTimeout(() => {
+        $rose.addClass('active');
+      }, 1500);
+    }
+
+    // 4. 장미 만개 (2.5s) - 꽃잎 순차, 빛 퍼짐
+    if ($petals.length) {
+      setTimeout(() => {
+        $petals.each(function (i) {
+          setTimeout(() => {
+            $(this).addClass('active');
+          }, i * 120);
+        });
+        if ($roseLight.length) {
+          setTimeout(() => $roseLight.addClass('active'), 900);
+        }
+      }, 2500);
+    }
+
+    // 5. 서브 텍스트 페이드인 (3.5s)
+    setTimeout(() => {
+      $subText.animate({ opacity: 1 }, 600, function() {
+        $subText.addClass('active');
+      });
+    }, 3500);
+
+    // 6. 스크롤 인디케이터 (4s~) - opacity만 깜빡임(원래대로)
+    setTimeout(() => {
+      if ($scrollIndi.length) {
+        $scrollIndi.animate({ opacity: 1 }, 400, function() {
+          $scrollIndi.addClass('active');
+        });
+        // 깜빡임 효과 제거: setInterval 없음
+      }
+    }, 4000);
+  }, 1); // 렌더 직후 1프레임 뒤에 실행
+});
+// --- END HERO SECTION INTERACTION ---

@@ -1,3 +1,275 @@
+/* 어두운 오버레이 */
+.hero-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: #1A1A2E;
+  z-index: 20;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.7s;
+}
+
+/* 메인 텍스트 */
+.hero-main-text {
+  position: absolute;
+  left: 50%; top: 32%;
+  transform: translate(-50%, 0);
+  z-index: 30;
+  opacity: 0;
+  transition: opacity 0.7s, transform 0.7s;
+}
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.08em;
+  display: inline-block;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: opacity 0.7s, transform 0.7s;
+}
+.hero-title.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 장미 SVG */
+.hero-rose-wrap {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 35;
+  width: 180px; height: 180px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+.hero-rose {
+  width: 100%; height: 100%;
+  display: block;
+  transform: scale(0.5) rotate(-180deg);
+  transition: transform 1.1s cubic-bezier(.7,1.7,.5,1), opacity 0.7s;
+}
+.hero-rose.active {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+/* 꽃잎 */
+.hero-rose .petal {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.5s, transform 0.7s cubic-bezier(.7,1.7,.5,1);
+}
+.hero-rose .petal.active {
+  opacity: 1;
+  transform: scale(1);
+}
+/* 빛 */
+.rose-light {
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+.rose-light.active {
+  opacity: 1;
+  animation: rose-light-pulse 3s infinite alternate;
+}
+@keyframes rose-light-pulse {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+/* 장미 펄스 */
+.hero-rose.pulse {
+  animation: rose-pulse 3s infinite alternate;
+}
+@keyframes rose-pulse {
+  0% { transform: scale(1) rotate(0deg); }
+  100% { transform: scale(1.02) rotate(0.5deg); }
+}
+
+/* 서브 텍스트 */
+.hero-sub-text {
+  position: absolute;
+  left: 50%; top: 66%;
+  transform: translate(-50%, 0);
+  z-index: 40;
+  opacity: 0;
+  transition: opacity 0.7s, transform 0.7s;
+}
+.hero-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #fffbe6;
+  letter-spacing: 0.12em;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.hero-subtitle.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 스크롤 인디케이터 */
+.hero-scroll-indicator {
+  position: absolute;
+  left: 50%; bottom: 4.5vh;
+  transform: translateX(-50%);
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+.scroll-indicator__icon {
+  font-size: 2.1rem;
+  color: #fffbe6;
+  opacity: 0.3;
+  animation: scroll-indicator-blink 1.2s infinite alternate, scroll-indicator-bounce 1.2s infinite;
+}
+@keyframes scroll-indicator-blink {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+@keyframes scroll-indicator-bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); }
+}
+/* 어두운 오버레이 */
+.hero-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: #1A1A2E;
+  z-index: 20;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.7s;
+}
+
+/* 메인 텍스트 */
+.hero-main-text {
+  position: absolute;
+  left: 50%; top: 32%;
+  transform: translate(-50%, 0);
+  z-index: 30;
+  opacity: 0;
+  transition: opacity 0.7s, transform 0.7s;
+}
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.08em;
+  display: inline-block;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: opacity 0.7s, transform 0.7s;
+}
+.hero-title.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 장미 SVG */
+.hero-rose-wrap {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 35;
+  width: 180px; height: 180px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+.hero-rose {
+  width: 100%; height: 100%;
+  display: block;
+  transform: scale(0.5) rotate(-180deg);
+  transition: transform 1.1s cubic-bezier(.7,1.7,.5,1), opacity 0.7s;
+}
+.hero-rose.active {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+/* 꽃잎 */
+.hero-rose .petal {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.5s, transform 0.7s cubic-bezier(.7,1.7,.5,1);
+}
+.hero-rose .petal.active {
+  opacity: 1;
+  transform: scale(1);
+}
+/* 빛 */
+.rose-light {
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+.rose-light.active {
+  opacity: 1;
+  animation: rose-light-pulse 3s infinite alternate;
+}
+@keyframes rose-light-pulse {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+/* 장미 펄스 */
+.hero-rose.pulse {
+  animation: rose-pulse 3s infinite alternate;
+}
+@keyframes rose-pulse {
+  0% { transform: scale(1) rotate(0deg); }
+  100% { transform: scale(1.02) rotate(0.5deg); }
+}
+
+/* 서브 텍스트 */
+.hero-sub-text {
+  position: absolute;
+  left: 50%; top: 66%;
+  transform: translate(-50%, 0);
+  z-index: 40;
+  opacity: 0;
+  transition: opacity 0.7s, transform 0.7s;
+}
+.hero-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #fffbe6;
+  letter-spacing: 0.12em;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.hero-subtitle.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 스크롤 인디케이터 */
+.hero-scroll-indicator {
+  position: absolute;
+  left: 50%; bottom: 4.5vh;
+  transform: translateX(-50%);
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+.scroll-indicator__icon {
+  font-size: 2.1rem;
+  color: #fffbe6;
+  opacity: 0.3;
+  animation: scroll-indicator-blink 1.2s infinite alternate, scroll-indicator-bounce 1.2s infinite;
+}
+@keyframes scroll-indicator-blink {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+@keyframes scroll-indicator-bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); }
+}
 /* HERO SECTION */
 .hero-section-new {
   position: relative;
