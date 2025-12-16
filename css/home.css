@@ -1,161 +1,41 @@
-/* HERO SECTION NEW */
-.hero-section-new {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background-color: var(--color-dark);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  /* Reset global section padding to ensure full bleed */
-  padding: 0 !important; 
+/* HOME SECTION */
+.section-home {
+    position: relative;
+    background-color: var(--color-dark);
+    overflow: hidden;
 }
 
-/* Reset global constraints on direct children */
-.hero-section-new > div {
-    max-width: none !important;
-    margin: 0 !important;
-    width: auto; 
+.section-home__inner {
+    padding: 80px var(--section-padding) !important;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-/* 1. Parallax Text Layers */
-.hero-parallax-text {
-  position: absolute;
-  width: 100%;
-  max-width: calc(100vw - 80px);
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
-  /* Larger font size like undo.co.in while fitting inside side-navi */
-  font-size: clamp(100px, 16vw, 280px); 
-  line-height: 0.85;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-  will-change: transform;
-  
-  /* Center horizontally */
-  left: 50%;
-  top: 50%;
-  /* Initial transform includes centering */
-  transform: translate(-50%, -50%); 
+.section-home__text {
+    max-width: 100%;
 }
 
-.text-layer-back {
-    /* Behind the visual */
-    z-index: 1;
-    /* Use background color instead of transparent to mask the strokes of overlapping letters */
-    color: var(--color-dark);
-    -webkit-text-stroke: 2px var(--color-gold-30);
-    /* Improve stroke rendering so stroke is outside/clipped properly */
-    paint-order: stroke fill;
-    /* Offset slightly up */
-    transform: translate(-50%, -90%); 
-    /* Tighten spacing to ensure overlap happens if intended, making masking useful */
-    letter-spacing: -0.05em;
+.section-home__highlights {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
 }
 
-.text-layer-front {
-  /* In front of the visual */
-  z-index: 3;
-  color: var(--color-gold);
-  /* Same size as back layer */
-  /* Offset slightly down */
-  transform: translate(-50%, 20%); 
-  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+.home-highlight__label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-wine);
 }
 
-/* 2. Central Visual (Seed) */
-.hero-central-visual {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* Higher z-index to be ON TOP of ticker tape (z-index 4) */
-    z-index: 5; 
-    width: auto;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1000px;
-    pointer-events: none; /* Let clicks pass through if needed */
+.home-highlight__text {
+    font-size: 14px;
+    color: rgba(245, 230, 211, 0.9);
 }
 
-/* Old .seed-orbit and .seed-orbit__ring removed */
-
-.hero-central-visual .seed-orbit__seed {
-    /* Much larger to be the main focal point like the Unicorn */
-    width: 120px;
-    height: 180px;
-    background: var(--color-gold);
-    border-radius: 50% 50% 40% 40%;
-    box-shadow: 
-        inset -20px -20px 40px rgba(0,0,0,0.2),
-        inset 20px 20px 40px rgba(255,255,255,0.4),
-        0 20px 60px rgba(0,0,0,0.5); /* Deep shadow */
-    will-change: transform;
-    /* Initial transform managed by JS, but set base here */
-}
-
-/* 3. Ticker Tape */
-.hero-ticker-tape {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  /* Ensure width is enough to cover diagonal */
-  width: 150vw; 
-  background: var(--color-gold);
-  color: var(--color-dark);
-  padding: 12px 0;
-  z-index: 4;
-  overflow: hidden;
-  /* Borders removed as requested */
-  border: none;
-  
-  /* Centered + Rotated */
-  /* Angle adjusted to match undo.co.in feel better */
-  transform: translate(-50%, -50%) rotate(-2deg);
-}
-
-.ticker-track {
-    display: flex;
-    gap: 0; /* Removing gap to prevent stutter, use padding on items instead */
-    white-space: nowrap;
-    /* Speed adjusted to 40s - Slower speed matching undo.co.in */
-    animation: ticker-scroll 40s linear infinite;
-}
-
-.ticker-item {
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  /* Add padding to items for spacing */
-  padding-right: 40px; 
-}
-
-@keyframes ticker-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-  /* Assumption: track content is duplicated enough to cover 50% scroll seamless loop 
-       Actually, standard ticker trick is: content width must be > 100% 
-       and we scroll by half if we duplicated content. 
-    */
-}
-
-/* Scroll Indicator Override */
-.section-home__scroll-indicator {
-  position: absolute;
-  left: 50%;
-  bottom: 40px;
-  transform: translateX(-50%);
-  z-index: 5;
-  margin: 0 !important; /* ensure override */
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .section-home__inner {
+        padding: 60px var(--section-padding) !important;
+    }
 }

@@ -198,12 +198,12 @@
 }
 
 .position-card:hover {
-  background: var(--color-dark-10);
-  border-bottom-color: var(--color-gold);
+  background: var(--color-wine-10);
+  border-bottom-color: var(--color-wine);
 }
 
 .position-card:hover + .position-card {
-  border-top-color: var(--color-gold);
+  border-top-color: var(--color-wine);
 }
 
 /* Index (Number inline with title) */
@@ -216,7 +216,7 @@
 }
 
 .position-card:hover .position-index {
-  color: var(--color-gold);
+  color: var(--color-wine);
 }
 
 /* Body */
@@ -242,7 +242,7 @@
 }
 
 .position-card:hover .position-title {
-  color: var(--color-gold);
+  color: var(--color-wine);
 }
 
 .position-desc {

@@ -1,6 +1,48 @@
     $().ready(function(){
     (function($) { "use strict";
 	
+	//Page cursors
+	document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
+		if (t && e && i) {
+			t.style.left = n.clientX + "px";
+			t.style.top = n.clientY + "px";
+			e.style.left = n.clientX + "px";
+			e.style.top = n.clientY + "px";
+			i.style.left = n.clientX + "px";
+			i.style.top = n.clientY + "px";
+		}
+	});
+	
+	var t = document.getElementById("cursor");
+	var e = document.getElementById("cursor2");
+	var i = document.getElementById("cursor3");
+	
+	function n(t) {
+		if (e && i) {
+			e.classList.add("hover");
+			i.classList.add("hover");
+		}
+	}
+	
+	function s(t) {
+		if (e && i) {
+			e.classList.remove("hover");
+			i.classList.remove("hover");
+		}
+	}
+	
+	s();
+	
+	var r = document.querySelectorAll(".hover-target");
+	for (var a = r.length - 1; a >= 0; a--) {
+		o(r[a]);
+	}
+	
+	function o(t) {
+		t.addEventListener("mouseover", n);
+		t.addEventListener("mouseout", s);
+	}
+	
 	//Navigation
 	var app = function () {
 		var body = undefined;
@@ -9,7 +51,7 @@
 		var init = function init() {
 			body = document.querySelector('body');
 			menu = document.querySelector('.menu-icon');
-			menuItems = document.querySelectorAll('.nav__list-item');
+			menuItems = document.querySelectorAll('.nav_list-item');
 			applyListeners();
 		};
 		var applyListeners = function applyListeners() {
@@ -22,18 +64,6 @@
 		};
 		init();
 	}();
-
 	
-	//Switch light/dark
-	$("#switch").on('click', function () {
-		if ($("body").hasClass("light")) {
-			$("body").removeClass("light");
-			$("#switch").removeClass("switched");
-		}
-		else {
-			$("body").addClass("light");
-			$("#switch").addClass("switched");
-		}
-	});	
     })(jQuery);        
     });

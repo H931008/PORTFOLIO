@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="css/sideNavi.css">
     <link rel="stylesheet" href="css/overlaymenu.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/story.css">
     <link rel="stylesheet" href="css/works.css">
+    <link rel="stylesheet" href="css/works_slides.css">
     <link rel="stylesheet" href="css/resume.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/mobile.css"> <!-- ip16pm (440*956)-->
@@ -25,6 +27,7 @@
     <script src="js/SideNavi.js"></script>
     <script src="js/overlaymenu.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/hero.js"></script>
     <script src="js/home.js"></script>
     <script src="js/about.js"></script>
     <script src="js/story.js"></script>
@@ -50,8 +53,6 @@
     </header>
 
     <!-- overlay menu -->
-    <!-- global connector (fixed SVG) REMOVED as requested -->
-
     <div class="nav">
         <div class="nav_content">
             <ul class="nav_list">
@@ -78,37 +79,55 @@
     </div>
 
     <section class="km-side-navi" id="exampleSide"></section>
+    <section id="hero" class="section section-hero hero-section-new">
+        <!-- Background Text Layer (Parallax slower) -->
+        <div class="hero-parallax-text text-layer-back" data-speed="0.2">HYKIM'S</div>
+
+        <!-- Foreground Text Layer (Parallax faster) -->
+        <div class="hero-parallax-text text-layer-front" data-speed="0.5">PORTFOLIO</div>
+
+        <!-- Ticker Tape -->
+        <div class="hero-ticker-tape">
+            <div class="ticker-track">
+                <span class="ticker-item">UX/UI DESIGNER</span>
+                <span class="ticker-item">WEB DESIGNER</span>
+                <span class="ticker-item">INTERACTION DESIGN</span>
+                <span class="ticker-item">WEB PUBLISHER</span>
+                <span class="ticker-item">UX/UI DESIGNER</span>
+                <span class="ticker-item">WEB DESIGNER</span>
+                <span class="ticker-item">INTERACTION DESIGN</span>
+                <span class="ticker-item">WEB PUBLISHER</span>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="section-home__scroll-indicator">
+            <span class="scroll-indicator__text">Scroll</span>
+            <span class="scroll-indicator__line"></span>
+        </div>
+    </section>
     <div id="fullpage">
-        <section id="home" class="section section-home hero-section-new">
-            <!-- Background Text Layer (Parallax slower) -->
-            <div class="hero-parallax-text text-layer-back" data-speed="0.2">HYKIM'S</div>
-
-            <!-- Central Visual (The Seed) -->
-            <div class="hero-central-visual">
-                <div class="seed-orbit__seed"></div>
-            </div>
-
-            <!-- Foreground Text Layer (Parallax faster) -->
-            <div class="hero-parallax-text text-layer-front" data-speed="0.5">PORTFOLIO</div>
-
-            <!-- Ticker Tape -->
-            <div class="hero-ticker-tape">
-                <div class="ticker-track">
-                    <span class="ticker-item">UX/UI DESIGNER</span>
-                    <span class="ticker-item">FRONTEND DEVELOPER</span>
-                    <span class="ticker-item">INTERACTION DESIGN</span>
-                    <span class="ticker-item">WEB PUBLISHER</span>
-                    <span class="ticker-item">UX/UI DESIGNER</span>
-                    <span class="ticker-item">FRONTEND DEVELOPER</span>
-                    <span class="ticker-item">INTERACTION DESIGN</span>
-                    <span class="ticker-item">WEB PUBLISHER</span>
+        <section id="home" class="section section-home">
+            <div class="section-home__inner">
+                <div class="section-home__text js-observe">
+                    <p class="section-label">WELCOME · HOME</p>
+                    <h2 class="section-title">
+                        새로운 이야기의<br />
+                        시작을 만나다
+                    </h2>
+                    <p class="section-desc">
+                        정원은 한 번에 완성되지 않습니다. 작은 씨앗을 심고, 물을 주고, 시간을 기다리는 과정 속에서
+                        우리는 무언가 의미 있는 것을 만들어갑니다.
+                    </p>
+                    <div class="section-home__highlights">
+                        <div class="home-highlight">
+                            <span class="home-highlight__label">가장 예쁜 꽃은</span>
+                            <p class="home-highlight__text">
+                                우여곡절 끝에 피어나는 꽃
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Scroll Indicator -->
-            <div class="section-home__scroll-indicator">
-                <span class="scroll-indicator__text">Scroll</span>
-                <span class="scroll-indicator__line"></span>
             </div>
         </section>
 
@@ -187,7 +206,8 @@
                         <article class="position-card story-card js-observe">
                             <div class="position-body">
                                 <h3 class="position-title"><span class="position-index">02</span> Frontend Developer
-                                    <span class="position-tag">경력 3년 이상</span></h3>
+                                    <span class="position-tag">경력 3년 이상</span>
+                                </h3>
                                 <p class="position-desc">React, Vue.js 등 모던 프레임워크를 활용하여 반응형 웹 애플리케이션을 개발하는 프론트엔드 개발자를
                                     모집합니다.</p>
                             </div>
@@ -221,7 +241,8 @@
                         <article class="position-card story-card js-observe">
                             <div class="position-body">
                                 <h3 class="position-title"><span class="position-index">06</span> Marketing Specialist
-                                    <span class="position-tag">경력 2년 이상</span></h3>
+                                    <span class="position-tag">경력 2년 이상</span>
+                                </h3>
                                 <p class="position-desc">데이터 기반의 마케팅 전략을 수립하고 실행하여 비즈니스 성장을 이끌어갈 마케팅 스페셜리스트를 모집합니다.</p>
                             </div>
                         </article>
@@ -308,82 +329,145 @@
                     </div>
                 </div>
 
-                <div class="works-interview">
-                    <div class="works-grid">
-                        <!-- Project 01 -->
-                        <article class="project-card js-observe">
-                            <div class="project-card__visual">
-                                <div class="project-card__tags">
-                                    <span class="project-card__tag">UXUI</span>
-                                    <span class="project-card__tag">DESIGN</span>
-                                    <span class="project-card__tag">CHATBOT</span>
-                                    <span class="project-card__tag">AI</span>
-                                    <span class="project-card__tag">개인</span>
+                <div class="works-slides-cont">
+                    <div id="works-slides">
+                        <div class="work-slide"
+                            style="background-image: url(https://alca.tv/static/u/ef5af971-fc46-4ee1-a589-980346478696_opt.png);">
+                            <div class="slide-number">01</div>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">★입상</span>
+                                <span class="project-card__tag">UXUI</span>
+                                <span class="project-card__tag">팀플</span>
+                            </div>
+                            <div class="slide-body">
+                                <div class="slide-location">K-Brand Contents Web/Mobile UX/UI 프로젝트</div>
+                                <div class="slide-headline">팬덤 커뮤니티 Mobile UX/UI</div>
+                                <div class="slide-button-container" style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                                    <button type="button" class="slide-link">자세히 보기</button>
+                                    <button type="button" class="slide-link">프로젝트 보기</button>
                                 </div>
-                                <div class="project-card__image project-card__image--1"></div>
-                                <div class="project-card__num">01</div>
                             </div>
-                            <div class="project-card__body">
-                                <h4 class="project-card__desc">
-                                    AI챗봇 지원 팬덤 커뮤니티<br>
-                                    Mobile UX/UI 프로젝트
-                                </h4>
-                                <button class="project-card__btn"><span class="arrow"><i class="fa-solid fa-arrow-right"></i></span></button>
+                        </div>
+                        <div class="work-slide"
+                            style="background-image: url(https://alca.tv/static/u/522d6a86-0dcf-4554-8b22-7655d65a1f66_opt.png);">
+                            <div class="slide-number">02</div>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">UXUI</span>
+                                <span class="project-card__tag">APP</span>
+                                <span class="project-card__tag">개인</span>
                             </div>
-                        </article>
-
-                        <!-- Project 02 -->
-                        <article class="project-card js-observe">
-                            <div class="project-card__visual">
-                                <div class="project-card__tags">
-                                    <span class="project-card__tag" style="background-color: var(--color-gold);">★입상·우수상</span>
-                                    <span class="project-card__tag">UXUI</span>
-                                    <span class="project-card__tag">RENEWAL</span>
-                                    <span class="project-card__tag">팀프로젝트</span>
+                            <div class="slide-body">
+                                <div class="slide-location">AI챗봇 지원 팬덤 커뮤니티 Mobile UX/UI 프로젝트</div>
+                                <div class="slide-headline">Web/Mobile UX/UI Renewal</div>
+                                <div class="slide-button-container" style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                                    <a href="#" target="_blank" style="display:inline-flex;">
+                                        <div class="slide-link">자세히 보기</div>
+                                    </a>
+                                    <a href="#" target="_blank" style="display:inline-flex;">
+                                        <div class="slide-link">프로젝트 보기</div>
+                                    </a>
                                 </div>
-                                <div class="project-card__image project-card__image--2"></div>
-                                <div class="project-card__num">02</div>
                             </div>
-                            <div class="project-card__body">
-                                <h4 class="project-card__desc">
-                                    K-Brand Contents<br>
-                                    Web/Mobile UX/UI<br>
-                                </h4>
-                                <button class="project-card__btn"><span class="arrow"><i class="fa-solid fa-arrow-right"></i></span></button>
+                        </div>
+                        <div class="work-slide"
+                            style="background-image: url(https://alca.tv/static/u/9b5f71cb-34a3-4fb4-a3a6-0ce9557c0acd_opt.png);">
+                            <div class="slide-number">03</div>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">UXUI</span>
+                                <span class="project-card__tag">APP</span>
+                                <span class="project-card__tag">개인</span>
                             </div>
-                        </article>
-
-                        <!-- Project 03 -->
-                        <article class="project-card js-observe">
-                            <div class="project-card__visual">
-                                <div class="project-card__tags">
-                                    <span class="project-card__tag">UXUI</span>
-                                    <span class="project-card__tag">iOS</span>
-                                    <span class="project-card__tag">APP</span>
-                                    <span class="project-card__tag">MOBILE</span>
-                                    <span class="project-card__tag">개인</span>
+                            <div class="slide-body">
+                                <div class="slide-location">iOS App Design</div>
+                                <div class="slide-headline">보드게임·방탈출 Mobile UX/UI</div>
+                                <div class="slide-button-container" style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                                    <a href="#" target="_blank" style="display:inline-flex;">
+                                        <div class="slide-link">자세히 보기</div>
+                                    </a>
+                                    <a href="#" target="_blank" style="display:inline-flex;">
+                                        <div class="slide-link">프로젝트 보기</div>
+                                    </a>
                                 </div>
-                                <div class="project-card__image project-card__image--3"></div>
-                                <div class="project-card__num">03</div>
                             </div>
-                            <div class="project-card__body">
-                                <h4 class="project-card__desc">
-                                    Mobile UX/UI<br>
-                                    (보드게임·방탈출·만화카페)<br>
-                                </h4>
-                                <button class="project-card__btn"><span class="arrow"><i class="fa-solid fa-arrow-right"></i></span></button>
+                        </div>
+                        <div class="work-slide"
+                            style="background-image: url(https://alca.tv/static/u/10cfd52d-e217-41e9-bb8b-ad43384a5e63_opt.png);">
+                            <div class="slide-number">04</div>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">UXUI</span>
+                                <span class="project-card__tag">iOS</span>
+                                <span class="project-card__tag">APP</span>
+                                <span class="project-card__tag">MOBILE</span>
+                                <span class="project-card__tag">개인</span>
                             </div>
-                        </article>
+                            <div class="slide-body">
+                                <div class="slide-location">Web/Mobile UX/UI 브레인스토밍 워크샵</div>
+                                <div class="slide-headline">Portfolio Project 4</div>
+                                <div class="slide-button-container" style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                                    <a href="#" target="_blank" style="display:inline-flex;">
+                                        <div class="slide-link">자세히 보기</div>
+                                    </a>
+                                    <a href="#" target="_blank" style="display:inline-flex;">
+                                        <div class="slide-link">프로젝트 보기</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-slide"
+                            style="background-image: url(https://alca.tv/static/u/b9669f2a-17fc-47dc-b6b5-3f863004efa8_opt.png);">
+                            <div class="slide-number">05</div>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">UXUI</span>
+                                <span class="project-card__tag">iOS</span>
+                                <span class="project-card__tag">APP</span>
+                                <span class="project-card__tag">MOBILE</span>
+                                <span class="project-card__tag">개인</span>
+                            </div>
+                            <div class="slide-body">
+                                <div class="slide-location">프로젝트 5</div>
+                                <div class="slide-headline">Portfolio Project 5</div>
+                                <div class="slide-button-container" style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                                    <a href="#" target="_blank" style="display:inline-flex;">
+                                        <div class="slide-link">자세히 보기</div>
+                                    </a>
+                                    <a href="#" target="_blank" style="display:inline-flex;">
+                                        <div class="slide-link">프로젝트 보기</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-slide"
+                            style="background-image: url(https://alca.tv/static/u/31979576-5060-4513-aae2-b379b87e7fe6_opt.png);">
+                            <div class="slide-number">06</div>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">UXUI</span>
+                                <span class="project-card__tag">iOS</span>
+                                <span class="project-card__tag">APP</span>
+                                <span class="project-card__tag">MOBILE</span>
+                                <span class="project-card__tag">개인</span>
+                            </div>
+                            <div class="slide-body">
+                                <div class="slide-location">프로젝트 6</div>
+                                <div class="slide-headline">Portfolio Project 6</div>
+                                <div class="slide-button-container" style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                                    <a href="#" target="_blank" style="display:inline-flex;">
+                                        <div class="slide-link">자세히 보기</div>
+                                    </a>
+                                    <a href="#" target="_blank" style="display:inline-flex;">
+                                        <div class="slide-link">프로젝트 보기</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="works-footer js-observe">
-                        <button class="works-btn-all">
-                            <span class="btn-text">View All</span>
-                            <span class="arrow-wrapper">
-                                <span class="arrow-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                            </span>
-                        </button>
-                    </div>
+                </div>
+                <div class="works-footer js-observe">
+                    <button class="works-btn-all">
+                        <span class="btn-text">View All</span>
+                        <span class="arrow-wrapper">
+                            <span class="arrow-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                        </span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -472,7 +556,7 @@
                                 • 팀과 함께 피어나는 연꽃 같은 결과물
                             </p>
                             <button class="btn btn-primary resume-download">
-                                DOWNLOAD RESUME (PDF)
+                                VIEW RESUME (PDF)
                             </button>
                         </div>
                     </div>
@@ -480,93 +564,12 @@
             </div>
         </section>
 
-        <section id="contact" class="section section-contact">
-            <div class="section-contact__inner">
-                <header class="section-contact__header js-observe">
-                    <p class="section-label">GARDEN · CONTACT</p>
-                    <h2 class="section-title">
-                        함께 가꿀<br />
-                        다음 정원을 상상합니다
-                    </h2>
-                    <p class="section-desc">
-                        새로운 진흙, 새로운 물, 새로운 계절을 맞이하기 위해
-                        당신의 이야기를 기다리고 있습니다. 작은 씨앗이라도 좋습니다.
-                    </p>
-                </header>
-
-                <div class="contact-garden-footer js-observe">
-                    <!-- Floating Garden Creatures -->
-                    <div class="garden-ambient">
-                        <div class="creature butterfly butterfly-1">
-                            <div class="wings">
-                                <div class="wing wing-left"></div>
-                                <div class="wing wing-right"></div>
-                            </div>
-                        </div>
-                        <div class="creature butterfly butterfly-2">
-                            <div class="wings">
-                                <div class="wing wing-left"></div>
-                                <div class="wing wing-right"></div>
-                            </div>
-                        </div>
-                        <div class="creature bee bee-1">
-                            <div class="bee-body">
-                                <div class="bee-wing bee-wing-left"></div>
-                                <div class="bee-wing bee-wing-right"></div>
-                            </div>
-                        </div>
-                        <div class="creature dragonfly dragonfly-1">
-                            <div class="dragonfly-wings"></div>
-                        </div>
-                        <div class="creature bird bird-1"></div>
-                        <div class="creature petal petal-1"></div>
-                        <div class="creature petal petal-2"></div>
-                        <div class="creature petal petal-3"></div>
-                    </div>
-
-                    <div class="contact-grid">
-                        <!-- Left: Social & Info -->
-                        <div class="contact-info">
-                            <h3 class="contact-info__cta">Let's cultivate<br>something beautiful.</h3>
-                            <div class="contact-social">
-                                <a href="#" class="social-link" aria-label="Behance">Behance</a>
-                                <a href="#" class="social-link" aria-label="Dribbble">Dribbble</a>
-                                <a href="#" class="social-link" aria-label="GitHub">GitHub</a>
-                                <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a>
-                            </div>
-                            <p class="contact-email">hello@hykim-portfolio.com</p>
-                        </div>
-
-                        <!-- Right: Form -->
-                        <div class="contact-form-wrapper">
-                            <form id="contactForm" class="contact-form">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="name" class="sr-only">Name</label>
-                                        <input type="text" id="name" name="name" placeholder="Name" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email" class="sr-only">Email</label>
-                                        <input type="email" id="email" name="email" placeholder="Email" required />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message" class="sr-only">Message</label>
-                                    <textarea id="message" name="message" rows="4"
-                                        placeholder="Tell me about your garden..." required></textarea>
-                                </div>
-
-                                <button type="submit" class="btn-submit-seed">
-                                    <span class="btn-text">Send Message</span>
-                                    <span class="seed-icon">🌱</span>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section id="contact" class="section section-contact"></section>
     </div>
+
+    <div class='cursor' id="cursor"></div>
+    <div class='cursor2' id="cursor2"></div>
+    <div class='cursor3' id="cursor3"></div>
 </body>
 
 <!-- layout js -->

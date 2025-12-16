@@ -2,25 +2,44 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 :root {
-  /* 메인 컬러 (3색) */
-  --color-dark: #2c2c2c;
-  --color-gold: #d4af37;
-  --color-beige: #f5f5dc;
+  /* 1. 다크 네이비 (깊이) - 더 깊고 진한 톤 */
+  --color-dark: #0d0d16;
+  /* 2. 와인/버건디 (열정) */
+  --color-wine: #8b2635;
+  /* 3. 포레스트 그린 (가시덤불) */
+  --color-green: #2d5016;
+  /* 4. 크림/아이보리 (우아함) - 더 따뜻하고 밝은 크림 */
+  --color-cream: #f5e6d3;
+  /* 5. 화이트 (순수함) - 약간 부드러운 화이트 */
+  --color-white: #fafafa;
 
-  /* 보조 컬러 (1색) */
-  --color-white: #ffffff;
+  /* 다크 네이비 투명도 */
+  --color-dark-80: rgba(13, 13, 22, 0.8);
+  --color-dark-50: rgba(13, 13, 22, 0.5);
+  --color-dark-30: rgba(13, 13, 22, 0.3);
+  --color-dark-20: rgba(13, 13, 22, 0.2);
+  --color-dark-10: rgba(13, 13, 22, 0.1);
 
-  /* 투명도 변형 */
-  --color-dark-80: rgba(44, 44, 44, 0.8);
-  --color-dark-50: rgba(44, 44, 44, 0.5);
-  --color-dark-30: rgba(44, 44, 44, 0.3);
-  --color-dark-20: rgba(44, 44, 44, 0.2);
-  --color-dark-10: rgba(44, 44, 44, 0.1);
+  /* 와인 투명도 */
+  --color-wine-80: rgba(139, 38, 53, 0.8);
+  --color-wine-60: rgba(139, 38, 53, 0.6);
+  --color-wine-30: rgba(139, 38, 53, 0.3);
+  --color-wine-10: rgba(139, 38, 53, 0.1);
 
-  --color-gold-80: rgba(212, 175, 55, 0.8);
-  --color-gold-60: rgba(212, 175, 55, 0.6);
-  --color-gold-30: rgba(212, 175, 55, 0.3);
-  --color-gold-10: rgba(212, 175, 55, 0.1);
+  /* 그린 투명도 */
+  --color-green-80: rgba(45, 80, 22, 0.8);
+  --color-green-50: rgba(45, 80, 22, 0.5);
+  --color-green-30: rgba(45, 80, 22, 0.3);
+  --color-green-10: rgba(45, 80, 22, 0.1);
+
+  /* 레거시 변수 호환 (기존 색상 키 사용처 대응) */
+  --color-gold: var(--color-wine);
+  --color-gold-80: var(--color-wine-80);
+  --color-gold-60: var(--color-wine-60);
+  --color-gold-30: var(--color-wine-30);
+  --color-gold-10: var(--color-wine-10);
+  --color-beige: var(--color-cream);
+  --color-sand: var(--color-cream);
 
   --header-height: 72px;
 }
@@ -43,10 +62,15 @@ body {
 }
 
 body {
-  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+  font-family: "Pretendard", "Montserrat",
     sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* 공통 텍스트 스타일 */

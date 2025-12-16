@@ -1,0 +1,228 @@
+/* HERO SECTION */
+.hero-section-new {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  /* Reset global section padding to ensure full bleed */
+  padding: 0 !important; 
+}
+
+/* Reset global constraints on direct children */
+.hero-section-new > div {
+    max-width: none !important;
+    margin: 0 !important;
+    width: auto; 
+}
+
+/* 1. Parallax Text Layers */
+.hero-parallax-text {
+  position: absolute;
+  width: 100%;
+  max-width: calc(100vw - 80px);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  /* Larger font size like undo.co.in while fitting inside side-navi */
+  font-size: clamp(100px, 16vw, 280px); 
+  line-height: 0.85;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+  
+  /* Center horizontally */
+  left: 50%;
+  top: 50%;
+  /* Initial transform includes centering */
+  transform: translate(-50%, -50%); 
+}
+
+.text-layer-back {
+    /* Behind the visual */
+    z-index: 1;
+    /* Use background color instead of transparent to mask the strokes of overlapping letters */
+    color: var(--color-dark);
+    -webkit-text-stroke: 3px var(--color-wine);
+    /* Improve stroke rendering so stroke is outside/clipped properly */
+    paint-order: stroke fill;
+    /* Offset slightly up */
+    transform: translate(-50%, -90%); 
+    /* Tighten spacing to ensure overlap happens if intended, making masking useful */
+    letter-spacing: 0em;
+    font-weight: 900;
+}
+
+.text-layer-front {
+  /* In front of the visual */
+  z-index: 3;
+  color: var(--color-wine);
+  /* Same size as back layer */
+  /* Offset slightly down */
+  transform: translate(-50%, 20%); 
+  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* 2. Central Visual (Rose) */
+.hero-central-visual {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Higher z-index to be ON TOP of ticker tape (z-index 4) */
+    z-index: 5; 
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    pointer-events: none; /* Let clicks pass through if needed */
+}
+
+/* Old .seed-orbit and .seed-orbit__ring removed */
+
+.hero-central-visual .hero-rose {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    will-change: transform;
+    transform-origin: center;
+}
+
+/* Rose petals */
+.rose-petal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 70px;
+    background: var(--color-wine);
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    transform-origin: center bottom;
+    transition: background-color 0.45s ease;
+}
+
+/* Outer petals - larger, further out */
+.rose-petal--outer {
+    width: 55px;
+    height: 75px;
+}
+
+.rose-petal--1 { transform: translate(-50%, -50%) rotate(0deg) translateY(-35px); }
+.rose-petal--2 { transform: translate(-50%, -50%) rotate(72deg) translateY(-35px); }
+.rose-petal--3 { transform: translate(-50%, -50%) rotate(144deg) translateY(-35px); }
+.rose-petal--4 { transform: translate(-50%, -50%) rotate(216deg) translateY(-35px); }
+.rose-petal--5 { transform: translate(-50%, -50%) rotate(288deg) translateY(-35px); }
+
+/* Inner petals - smaller, offset angle */
+.rose-petal--inner {
+    width: 45px;
+    height: 60px;
+    background: var(--color-wine);
+    opacity: 0.85;
+}
+
+.rose-petal--6 { transform: translate(-50%, -50%) rotate(36deg) translateY(-25px); }
+.rose-petal--7 { transform: translate(-50%, -50%) rotate(108deg) translateY(-25px); }
+.rose-petal--8 { transform: translate(-50%, -50%) rotate(180deg) translateY(-25px); }
+.rose-petal--9 { transform: translate(-50%, -50%) rotate(252deg) translateY(-25px); }
+.rose-petal--10 { transform: translate(-50%, -50%) rotate(324deg) translateY(-25px); }
+
+/* Rose center */
+.rose-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: var(--color-wine);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+        inset -8px -8px 20px rgba(0,0,0,0.3),
+        inset 8px 8px 20px rgba(255,255,255,0.2),
+        0 10px 30px rgba(0,0,0,0.4);
+    transition: background-color 0.45s ease;
+}
+
+.hero-central-visual .hero-rose.seed-is-filling {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--seed-fill-scale, 8));
+  z-index: 20;
+  pointer-events: none;
+}
+
+.hero-central-visual .hero-rose.seed-is-filling .rose-petal,
+.hero-central-visual .hero-rose.seed-is-filling .rose-center {
+  border-radius: 50%;
+  background: var(--color-cream);
+  opacity: 1;
+}
+
+/* 3. Ticker Tape */
+.hero-ticker-tape {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  /* Ensure width is enough to cover diagonal */
+  width: 150vw; 
+  background: var(--color-wine);
+  color: var(--color-dark);
+  padding: 12px 0;
+  z-index: 4;
+  overflow: hidden;
+  /* Borders removed as requested */
+  border: none;
+  
+  /* Centered + Rotated */
+  /* Angle adjusted to match undo.co.in feel better */
+  transform: translate(-50%, -50%) rotate(-2deg);
+}
+
+.ticker-track {
+    display: flex;
+    gap: 0; /* Removing gap to prevent stutter, use padding on items instead */
+    white-space: nowrap;
+    /* Speed adjusted to 40s - Slower speed matching undo.co.in */
+    animation: ticker-scroll 40s linear infinite;
+}
+
+.ticker-item {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  /* Add padding to items for spacing */
+  padding-right: 40px; 
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+  /* Assumption: track content is duplicated enough to cover 50% scroll seamless loop 
+       Actually, standard ticker trick is: content width must be > 100% 
+       and we scroll by half if we duplicated content. 
+    */
+}
+
+/* Scroll Indicator Override */
+.section-home__scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  z-index: 5;
+  margin: 0 !important; /* ensure override */
+}
