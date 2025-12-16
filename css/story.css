@@ -1,3 +1,32 @@
+/* 임시 디버깅용 스타일: 각 성장 요소 시각화 */
+.story-seed {
+  width: 32px; height: 32px; border-radius: 50%; background: #8B2635; position: absolute; left: 40%; top: 60%; z-index: 10;
+  display: block;
+}
+.story-root {
+  width: 36px; height: 12px; border-radius: 8px; background: #2D5016; position: absolute; left: 38%; top: 70%; z-index: 9;
+  display: block;
+}
+.story-thorn {
+  width: 16px; height: 16px; border-radius: 50%; background: #8B2635aa; position: absolute; left: 45%; top: 50%; z-index: 8;
+  display: block;
+}
+.story-leaf {
+  width: 40px; height: 20px; border-radius: 20px 20px 0 0; background: #3a7d3a; position: absolute; left: 55%; top: 55%; z-index: 7;
+  display: block;
+}
+.story-bud {
+  width: 36px; height: 36px; border-radius: 50%; background: #8B2635; position: absolute; left: 50%; top: 40%; z-index: 11;
+  display: block;
+}
+.story-point {
+  width: 20px; height: 20px; border-radius: 50%; background: #FFD700; position: absolute; left: 60%; top: 60%; z-index: 12;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.story-point-tooltip {
+  position: absolute; top: 28px; left: 50%; transform: translateX(-50%); background: #fff; color: #222; padding: 4px 10px; border-radius: 6px; font-size: 13px; box-shadow: 0 2px 8px #0002; display: none;
+}
 .section-story {
   position: relative;
   background: var(--color-beige);

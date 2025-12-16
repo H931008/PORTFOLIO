@@ -29,13 +29,12 @@ $(function () {
   const $points = $story.find('.story-point');
   const $bg = $story;
 
-  // 1. 섹션 진입: 가시→줄기, 배경색 변화 시작
+  // 1. 섹션 진입: 가시→줄기
   let entered = false;
   function enterStory() {
     if (entered) return;
     entered = true;
     $thorns.addClass('to-stem'); // CSS에서 줄기 변형
-    // 배경색 점진적 변화 시작 (scroll에서 동기화)
   }
   // IntersectionObserver로 진입 감지
   if ($inner.length) {
@@ -61,10 +60,6 @@ $(function () {
     const rect = $story[0].getBoundingClientRect();
     const scrollP = Math.min(Math.max((winH - rect.top) / (rect.height + winH), 0), 1);
     // 0~1
-    // 배경색 동기화
-    const dark = [26,26,46], light = [244,237,228];
-    const bgColor = `rgb(${dark.map((d,i)=>Math.round(d+(light[i]-d)*scrollP)).join(',')})`;
-    $bg.css('background', bgColor);
     // 성장 단계별 애니메이션
     if (scrollP < 0.2) {
       $seed.show(); $root.hide(); $stem.hide(); $thorns.hide(); $leaf.hide(); $bud.hide();
