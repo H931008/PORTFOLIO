@@ -137,8 +137,9 @@
 
                     // Trigger scroll to section by index (0-based)
                     var sectionIndex = itemId - 1; // Convert 1-based to 0-based
-                    var sections = $('#fullpage section');
-                    var targetSection = sections.eq(sectionIndex);
+                    // 항상 최신 섹션 목록을 가져오도록 sections를 동적으로 조회
+                    var allSections = $('#fullpage > section, #fullpage > .section');
+                    var targetSection = allSections.eq(sectionIndex);
                     if (targetSection.length) {
                         window.scrollTo({
                             top: targetSection.offset().top,

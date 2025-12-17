@@ -38,13 +38,22 @@ document.addEventListener('DOMContentLoaded', function() {
   let slideCount = slideChildren.length;
   let currentlyDemoing = false;
   let currentPage = 0;
-  let slidesPerPage = () => window.innerWidth > 1700 ? 4 : window.innerWidth > 1200 ? 3 : 2;
+  // 항상 3개만 보이도록 고정
+  let slidesPerPage = () => 3;
+  let slideWidth = 360;
+  let slideGap = 16;
   let maxPageCount = () => Math.max(0, Math.ceil(slideCount / slidesPerPage()) - 1);
 
   function goToPage(pageNumber = 0) {
     currentPage = Math.min(maxPageCount(), Math.max(0, pageNumber));
-    console.log('Current page:', currentPage);
+    // 정확한 위치 계산: (슬라이드너비+gap)*page*3, 단 첫페이지는 0
+    const offset = currentPage * ((slideWidth + slideGap) * slidesPerPage());
+    slides.style.transform = `translateX(${-offset}px)`;
     worksSection.style.setProperty('--page', currentPage);
+    // 첫번째 슬라이드 margin-left 0 보정
+    for (let i = 0; i < slideChildren.length; i++) {
+      slideChildren[i].style.marginLeft = (i % slidesPerPage() === 0) ? '0' : '';
+    }
   }
 
   function sleep(time) {
@@ -67,22 +76,31 @@ document.addEventListener('DOMContentLoaded', function() {
   next.forEach(n => n.addEventListener('click', () => !currentlyDemoing && goToPage(currentPage + 1)));
   prev.forEach(n => n.addEventListener('click', () => !currentlyDemoing && goToPage(currentPage - 1)));
 
-  // Drag functionality
+
+  // Drag & Touch 기능 개선
   let isDragging = false;
   let startX = 0;
-  let scrollLeft = 0;
-  let dragThreshold = 100; // 드래그로 인식할 최소 거리 (픽셀)
+  let currentTranslate = 0;
+  let dragThreshold = 60;
+
+  function setTranslate(x) {
+    slides.style.transition = 'none';
+    slides.style.transform = `translateX(${x}px)`;
+  }
 
   slides.addEventListener('mousedown', (e) => {
     isDragging = true;
     startX = e.pageX;
-    scrollLeft = currentPage;
+    currentTranslate = -currentPage * (slideWidth * slidesPerPage() + slideGap * (slidesPerPage() - 1));
+    slides.style.transition = 'none';
     slides.style.cursor = 'grabbing';
     e.preventDefault();
   });
 
   slides.addEventListener('mousemove', (e) => {
     if (!isDragging) return;
+    const diff = e.pageX - startX;
+    setTranslate(currentTranslate + diff);
     e.preventDefault();
   });
 
@@ -90,18 +108,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!isDragging) return;
     isDragging = false;
     slides.style.cursor = 'grab';
-    
-    const endX = e.pageX;
-    const diffX = startX - endX;
-    
-    if (Math.abs(diffX) > dragThreshold) {
-      if (diffX > 0) {
-        // 왼쪽으로 드래그 -> 다음 페이지
+    slides.style.transition = '';
+    const diff = e.pageX - startX;
+    if (Math.abs(diff) > dragThreshold) {
+      if (diff < 0 && currentPage < maxPageCount()) {
         goToPage(currentPage + 1);
-      } else {
-        // 오른쪽으로 드래그 -> 이전 페이지
+      } else if (diff > 0 && currentPage > 0) {
         goToPage(currentPage - 1);
+      } else {
+        goToPage(currentPage);
       }
+    } else {
+      goToPage(currentPage);
     }
   });
 
@@ -109,12 +127,46 @@ document.addEventListener('DOMContentLoaded', function() {
     if (isDragging) {
       isDragging = false;
       slides.style.cursor = 'grab';
+      slides.style.transition = '';
+      goToPage(currentPage);
+    }
+  });
+
+  // 터치 지원
+  slides.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startX = e.touches[0].pageX;
+    currentTranslate = -currentPage * (slideWidth * slidesPerPage() + slideGap * (slidesPerPage() - 1));
+    slides.style.transition = 'none';
+  });
+  slides.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const diff = e.touches[0].pageX - startX;
+    setTranslate(currentTranslate + diff);
+  });
+  slides.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    slides.style.transition = '';
+    const diff = (e.changedTouches[0].pageX - startX);
+    if (Math.abs(diff) > dragThreshold) {
+      if (diff < 0 && currentPage < maxPageCount()) {
+        goToPage(currentPage + 1);
+      } else if (diff > 0 && currentPage > 0) {
+        goToPage(currentPage - 1);
+      } else {
+        goToPage(currentPage);
+      }
+    } else {
+      goToPage(currentPage);
     }
   });
 
   // 초기 커서 스타일 설정
   slides.style.cursor = 'grab';
 
+  // 최초 위치
+  goToPage(0);
   console.log('Works slides initialized with', slideCount, 'slides');
 });
 
