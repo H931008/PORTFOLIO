@@ -42,8 +42,8 @@
 /* Circle Animation - Large Gradient Circle */
 .works-circle {
   position: absolute;
-top: -350px;
-    left: -442px;
+  top: -300px;
+  left: -440px;
   width: 345px;
   height: 345px;
   pointer-events: none;
@@ -1383,12 +1383,12 @@ top: -350px;
 
 .works-slides-cont {
   position: relative;
-  width: 100%;
+  width: 1120px;
+  height: 456px;
+  margin: 42px auto 0 auto;
+  overflow: hidden;
   --button-height: 6vh;
   --button-spacing: 0.2vh;
-  margin-top: 42px;
-  height: 50vh;
-  overflow: hidden;
 }
 
 .works-slides-cont .button {
@@ -1496,26 +1496,23 @@ top: -350px;
 }
 
 #works-slides {
-  --slides-height: 50vh;
-  width: 100%;
-  height: var(--slides-height);
+  width: 1120px;
+  height: 456px;
+  display: flex;
+  gap: 16px;
   padding: 0;
   font-size: 0;
-  white-space: nowrap;
   position: relative;
-  transform: translate3D(calc(var(--page) * -80vw), 0, 0);
-  transition: 1500ms transform cubic-bezier(0.7, 0, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+  will-change: transform;
   overflow: visible;
 }
 
 .work-slide {
-  display: inline-block;
-  vertical-align: top;
-  font-size: 1rem;
-  width: calc((100% - 4rem) / 3);
-  max-width: 450px;
-  height: var(--slides-height);
-  margin: 0 0.5rem;
+  flex: 0 0 360px;
+  width: 360px;
+  height: 456px;
+  margin: 0;
   background: var(--color-dark);
   color: var(--color-white);
   background-size: cover;

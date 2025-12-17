@@ -12,12 +12,14 @@
 /* 메인 텍스트 */
 .hero-main-text {
   position: absolute;
-  left: 50%; top: 32%;
+  left: 50%;
+  top: 32%;
   transform: translate(-50%, 0);
   z-index: 30;
   opacity: 0;
   transition: opacity 0.7s, transform 0.7s;
 }
+
 .hero-title {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(2.5rem, 7vw, 5.5rem);
@@ -29,6 +31,7 @@
   opacity: 0;
   transition: opacity 0.7s, transform 0.7s;
 }
+
 .hero-title.active {
   opacity: 1;
   transform: translateY(0);
@@ -37,65 +40,89 @@
 /* 장미 SVG */
 .hero-rose-wrap {
   position: absolute;
-  left: 50%; top: 50%;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   z-index: 35;
-  width: 180px; height: 180px;
+  width: 180px;
+  height: 180px;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.7s;
 }
+
 .hero-rose {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   display: block;
   transform: scale(0.5) rotate(-180deg);
-  transition: transform 1.1s cubic-bezier(.7,1.7,.5,1), opacity 0.7s;
+  transition: transform 1.1s cubic-bezier(.7, 1.7, .5, 1), opacity 0.7s;
 }
+
 .hero-rose.active {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
+
 /* 꽃잎 */
 .hero-rose .petal {
   opacity: 0;
   transform: scale(0.7);
-  transition: opacity 0.5s, transform 0.7s cubic-bezier(.7,1.7,.5,1);
+  transition: opacity 0.5s, transform 0.7s cubic-bezier(.7, 1.7, .5, 1);
 }
+
 .hero-rose .petal.active {
   opacity: 1;
   transform: scale(1);
 }
+
 /* 빛 */
 .rose-light {
   opacity: 0;
   transition: opacity 0.7s;
 }
+
 .rose-light.active {
   opacity: 1;
   animation: rose-light-pulse 3s infinite alternate;
 }
+
 @keyframes rose-light-pulse {
-  0% { opacity: 0.6; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
 /* 장미 펄스 */
 .hero-rose.pulse {
   animation: rose-pulse 3s infinite alternate;
 }
+
 @keyframes rose-pulse {
-  0% { transform: scale(1) rotate(0deg); }
-  100% { transform: scale(1.02) rotate(0.5deg); }
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1.02) rotate(0.5deg);
+  }
 }
 
 /* 서브 텍스트 */
 .hero-sub-text {
   position: absolute;
-  left: 50%; top: 66%;
+  left: 50%;
+  top: 66%;
   transform: translate(-50%, 0);
   z-index: 40;
   opacity: 0;
   transition: opacity 0.7s, transform 0.7s;
 }
+
 .hero-subtitle {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.2rem, 3vw, 2.2rem);
@@ -106,6 +133,7 @@
   transform: translateY(30px);
   transition: opacity 0.7s, transform 0.7s;
 }
+
 .hero-subtitle.active {
   opacity: 1;
   transform: translateY(0);
@@ -114,26 +142,41 @@
 /* 스크롤 인디케이터 */
 .hero-scroll-indicator {
   position: absolute;
-  left: 50%; bottom: 4.5vh;
+  left: 50%;
+  bottom: 4.5vh;
   transform: translateX(-50%);
   z-index: 50;
   opacity: 0;
   transition: opacity 0.7s;
 }
+
 .scroll-indicator__icon {
   font-size: 2.1rem;
   color: #fffbe6;
   opacity: 0.3;
   animation: scroll-indicator-blink 1.2s infinite alternate, scroll-indicator-bounce 1.2s infinite;
 }
+
 @keyframes scroll-indicator-blink {
-  0% { opacity: 0.3; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
 @keyframes scroll-indicator-bounce {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(10px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
 }
+
 /* 어두운 오버레이 */
 .hero-dark-overlay {
   position: absolute;
@@ -148,12 +191,14 @@
 /* 메인 텍스트 */
 .hero-main-text {
   position: absolute;
-  left: 50%; top: 32%;
+  left: 50%;
+  top: 32%;
   transform: translate(-50%, 0);
   z-index: 30;
   opacity: 0;
   transition: opacity 0.7s, transform 0.7s;
 }
+
 .hero-title {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(2.5rem, 7vw, 5.5rem);
@@ -165,6 +210,7 @@
   opacity: 0;
   transition: opacity 0.7s, transform 0.7s;
 }
+
 .hero-title.active {
   opacity: 1;
   transform: translateY(0);
@@ -173,65 +219,89 @@
 /* 장미 SVG */
 .hero-rose-wrap {
   position: absolute;
-  left: 50%; top: 50%;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   z-index: 35;
-  width: 180px; height: 180px;
+  width: 180px;
+  height: 180px;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.7s;
 }
+
 .hero-rose {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   display: block;
   transform: scale(0.5) rotate(-180deg);
-  transition: transform 1.1s cubic-bezier(.7,1.7,.5,1), opacity 0.7s;
+  transition: transform 1.1s cubic-bezier(.7, 1.7, .5, 1), opacity 0.7s;
 }
+
 .hero-rose.active {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
+
 /* 꽃잎 */
 .hero-rose .petal {
   opacity: 0;
   transform: scale(0.7);
-  transition: opacity 0.5s, transform 0.7s cubic-bezier(.7,1.7,.5,1);
+  transition: opacity 0.5s, transform 0.7s cubic-bezier(.7, 1.7, .5, 1);
 }
+
 .hero-rose .petal.active {
   opacity: 1;
   transform: scale(1);
 }
+
 /* 빛 */
 .rose-light {
   opacity: 0;
   transition: opacity 0.7s;
 }
+
 .rose-light.active {
   opacity: 1;
   animation: rose-light-pulse 3s infinite alternate;
 }
+
 @keyframes rose-light-pulse {
-  0% { opacity: 0.6; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
 /* 장미 펄스 */
 .hero-rose.pulse {
   animation: rose-pulse 3s infinite alternate;
 }
+
 @keyframes rose-pulse {
-  0% { transform: scale(1) rotate(0deg); }
-  100% { transform: scale(1.02) rotate(0.5deg); }
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1.02) rotate(0.5deg);
+  }
 }
 
 /* 서브 텍스트 */
 .hero-sub-text {
   position: absolute;
-  left: 50%; top: 66%;
+  left: 50%;
+  top: 66%;
   transform: translate(-50%, 0);
   z-index: 40;
   opacity: 0;
   transition: opacity 0.7s, transform 0.7s;
 }
+
 .hero-subtitle {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.2rem, 3vw, 2.2rem);
@@ -242,6 +312,7 @@
   transform: translateY(30px);
   transition: opacity 0.7s, transform 0.7s;
 }
+
 .hero-subtitle.active {
   opacity: 1;
   transform: translateY(0);
@@ -250,26 +321,41 @@
 /* 스크롤 인디케이터 */
 .hero-scroll-indicator {
   position: absolute;
-  left: 50%; bottom: 4.5vh;
+  left: 50%;
+  bottom: 4.5vh;
   transform: translateX(-50%);
   z-index: 50;
   opacity: 0;
   transition: opacity 0.7s;
 }
+
 .scroll-indicator__icon {
   font-size: 2.1rem;
   color: #fffbe6;
   opacity: 0.3;
   animation: scroll-indicator-blink 1.2s infinite alternate, scroll-indicator-bounce 1.2s infinite;
 }
+
 @keyframes scroll-indicator-blink {
-  0% { opacity: 0.3; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
 @keyframes scroll-indicator-bounce {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(10px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
 }
+
 /* HERO SECTION */
 .hero-section-new {
   position: relative;
@@ -282,14 +368,14 @@
   align-items: center;
   z-index: 10;
   /* Reset global section padding to ensure full bleed */
-  padding: 0 !important; 
+  padding: 0 !important;
 }
 
 /* Reset global constraints on direct children */
-.hero-section-new > div {
-    max-width: none !important;
-    margin: 0 !important;
-    width: auto; 
+.hero-section-new>div {
+  max-width: none !important;
+  margin: 0 !important;
+  width: auto;
 }
 
 /* 1. Parallax Text Layers */
@@ -301,33 +387,33 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   /* Larger font size like undo.co.in while fitting inside side-navi */
-  font-size: clamp(100px, 16vw, 280px); 
+  font-size: clamp(100px, 16vw, 280px);
   line-height: 0.85;
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
   will-change: transform;
-  
+
   /* Center horizontally */
   left: 50%;
   top: 50%;
   /* Initial transform includes centering */
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
 }
 
 .text-layer-back {
-    /* Behind the visual */
-    z-index: 1;
-    /* Use background color instead of transparent to mask the strokes of overlapping letters */
-    color: var(--color-dark);
-    -webkit-text-stroke: 3px var(--color-wine);
-    /* Improve stroke rendering so stroke is outside/clipped properly */
-    paint-order: stroke fill;
-    /* Offset slightly up */
-    transform: translate(-50%, -90%); 
-    /* Tighten spacing to ensure overlap happens if intended, making masking useful */
-    letter-spacing: 0em;
-    font-weight: 900;
+  /* Behind the visual */
+  z-index: 1;
+  /* Use background color instead of transparent to mask the strokes of overlapping letters */
+  color: var(--color-dark);
+  -webkit-text-stroke: 3px var(--color-wine);
+  /* Improve stroke rendering so stroke is outside/clipped properly */
+  paint-order: stroke fill;
+  /* Offset slightly up */
+  transform: translate(-50%, -90%);
+  /* Tighten spacing to ensure overlap happens if intended, making masking useful */
+  letter-spacing: 0em;
+  font-weight: 900;
 }
 
 .text-layer-front {
@@ -336,91 +422,120 @@
   color: var(--color-wine);
   /* Same size as back layer */
   /* Offset slightly down */
-  transform: translate(-50%, 20%); 
-  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transform: translate(-50%, 20%);
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* 2. Central Visual (Rose) */
 .hero-central-visual {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* Higher z-index to be ON TOP of ticker tape (z-index 4) */
-    z-index: 5; 
-    width: auto;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1000px;
-    pointer-events: none; /* Let clicks pass through if needed */
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Higher z-index to be ON TOP of ticker tape (z-index 4) */
+  z-index: 5;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  pointer-events: none;
+  /* Let clicks pass through if needed */
 }
 
 /* Old .seed-orbit and .seed-orbit__ring removed */
 
 .hero-central-visual .hero-rose {
-    position: relative;
-    width: 140px;
-    height: 140px;
-    will-change: transform;
-    transform-origin: center;
+  position: relative;
+  width: 140px;
+  height: 140px;
+  will-change: transform;
+  transform-origin: center;
 }
 
 /* Rose petals */
 .rose-petal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50px;
-    height: 70px;
-    background: var(--color-wine);
-    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
-    transform-origin: center bottom;
-    transition: background-color 0.45s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 70px;
+  background: var(--color-wine);
+  border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+  transform-origin: center bottom;
+  transition: background-color 0.45s ease;
 }
 
 /* Outer petals - larger, further out */
 .rose-petal--outer {
-    width: 55px;
-    height: 75px;
+  width: 55px;
+  height: 75px;
 }
 
-.rose-petal--1 { transform: translate(-50%, -50%) rotate(0deg) translateY(-35px); }
-.rose-petal--2 { transform: translate(-50%, -50%) rotate(72deg) translateY(-35px); }
-.rose-petal--3 { transform: translate(-50%, -50%) rotate(144deg) translateY(-35px); }
-.rose-petal--4 { transform: translate(-50%, -50%) rotate(216deg) translateY(-35px); }
-.rose-petal--5 { transform: translate(-50%, -50%) rotate(288deg) translateY(-35px); }
+.rose-petal--1 {
+  transform: translate(-50%, -50%) rotate(0deg) translateY(-35px);
+}
+
+.rose-petal--2 {
+  transform: translate(-50%, -50%) rotate(72deg) translateY(-35px);
+}
+
+.rose-petal--3 {
+  transform: translate(-50%, -50%) rotate(144deg) translateY(-35px);
+}
+
+.rose-petal--4 {
+  transform: translate(-50%, -50%) rotate(216deg) translateY(-35px);
+}
+
+.rose-petal--5 {
+  transform: translate(-50%, -50%) rotate(288deg) translateY(-35px);
+}
 
 /* Inner petals - smaller, offset angle */
 .rose-petal--inner {
-    width: 45px;
-    height: 60px;
-    background: var(--color-wine);
-    opacity: 0.85;
+  width: 45px;
+  height: 60px;
+  background: var(--color-wine);
+  opacity: 0.85;
 }
 
-.rose-petal--6 { transform: translate(-50%, -50%) rotate(36deg) translateY(-25px); }
-.rose-petal--7 { transform: translate(-50%, -50%) rotate(108deg) translateY(-25px); }
-.rose-petal--8 { transform: translate(-50%, -50%) rotate(180deg) translateY(-25px); }
-.rose-petal--9 { transform: translate(-50%, -50%) rotate(252deg) translateY(-25px); }
-.rose-petal--10 { transform: translate(-50%, -50%) rotate(324deg) translateY(-25px); }
+.rose-petal--6 {
+  transform: translate(-50%, -50%) rotate(36deg) translateY(-25px);
+}
+
+.rose-petal--7 {
+  transform: translate(-50%, -50%) rotate(108deg) translateY(-25px);
+}
+
+.rose-petal--8 {
+  transform: translate(-50%, -50%) rotate(180deg) translateY(-25px);
+}
+
+.rose-petal--9 {
+  transform: translate(-50%, -50%) rotate(252deg) translateY(-25px);
+}
+
+.rose-petal--10 {
+  transform: translate(-50%, -50%) rotate(324deg) translateY(-25px);
+}
 
 /* Rose center */
 .rose-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 40px;
-    height: 40px;
-    background: var(--color-wine);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 
-        inset -8px -8px 20px rgba(0,0,0,0.3),
-        inset 8px 8px 20px rgba(255,255,255,0.2),
-        0 10px 30px rgba(0,0,0,0.4);
-    transition: background-color 0.45s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: var(--color-wine);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow:
+    inset -8px -8px 20px rgba(0, 0, 0, 0.3),
+    inset 8px 8px 20px rgba(255, 255, 255, 0.2),
+    0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.45s ease;
 }
 
 .hero-central-visual .hero-rose.seed-is-filling {
@@ -445,7 +560,7 @@
   top: 60%;
   left: 50%;
   /* Ensure width is enough to cover diagonal */
-  width: 150vw; 
+  width: 150vw;
   background: var(--color-wine);
   color: var(--color-dark);
   padding: 12px 0;
@@ -453,18 +568,19 @@
   overflow: hidden;
   /* Borders removed as requested */
   border: none;
-  
+
   /* Centered + Rotated */
   /* Angle adjusted to match undo.co.in feel better */
   transform: translate(-50%, -50%) rotate(-2deg);
 }
 
 .ticker-track {
-    display: flex;
-    gap: 0; /* Removing gap to prevent stutter, use padding on items instead */
-    white-space: nowrap;
-    /* Speed adjusted to 40s - Slower speed matching undo.co.in */
-    animation: ticker-scroll 40s linear infinite;
+  display: flex;
+  gap: 0;
+  /* Removing gap to prevent stutter, use padding on items instead */
+  white-space: nowrap;
+  /* Speed adjusted to 40s - Slower speed matching undo.co.in */
+  animation: ticker-scroll 40s linear infinite;
 }
 
 .ticker-item {
@@ -473,16 +589,18 @@
   font-weight: 700;
   letter-spacing: 0.05em;
   /* Add padding to items for spacing */
-  padding-right: 40px; 
+  padding-right: 40px;
 }
 
 @keyframes ticker-scroll {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
+
   /* Assumption: track content is duplicated enough to cover 50% scroll seamless loop 
        Actually, standard ticker trick is: content width must be > 100% 
        and we scroll by half if we duplicated content. 
@@ -496,5 +614,24 @@
   bottom: 40px;
   transform: translateX(-50%);
   z-index: 5;
-  margin: 0 !important; /* ensure override */
+  margin: 0 !important;
+  /* ensure override */
+}
+
+
+@keyframes hero-flower-fadein {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) rotate(-10deg);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.08) rotate(3deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
 }
