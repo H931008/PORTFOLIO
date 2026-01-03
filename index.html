@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- 모바일 메타태그 -->
+<meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<title>HYKIM'S PORTFOLIO</title>
+<link rel="shortcut icon" href="images/favicon.ico">    
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//code.jquery.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="css/sideNavi.css">
+<link rel="stylesheet" href="css/overlaymenu.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/about.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/project_reset.css"> <!-- CSS reset -->
+<link rel="stylesheet" href="css/project.css"> <!-- Resource style -->
+<link rel="stylesheet" href="css/work.css">
+<link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="css/mobile.css"> <!-- ip16pm (440*956) -->
+<link rel="stylesheet" href="css/tablet.css"> <!-- ipad 10.9 (1180*820) 적용 -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.js"></script>
+<script src="js/SideNav.js"></script>
+    
+<script src="js/overlaymenu.js"></script>
+<script src="js/typing.js"></script>
+<script src="js/modernizr.js"></script> <!-- Modernizr -->
+<script src="js/popup.js"></script>
+</head>
+<body>
+    <!-- overlay menu + hamburger menu -->
+    <header class="cd-header">
+        <div class="header-wrapper">
+            <!-- hamburger menu -->
+			<div class="nav-but-wrap">
+				<div class="menu-icon hover-target">
+					<span class="menu-icon_line menu-icon_line-left"></span>
+					<span class="menu-icon_line"></span>
+					<span class="menu-icon_line menu-icon_line-right"></span>
+				</div>					
+			</div>
+            <!-- hamburger menu end -->
+		</div>				
+	</header>
+    
+    <!-- overlay menu -->
+	<div class="nav">
+		<div class="nav_content">
+			<ul class="nav_list">
+				<li class="nav_list-item"><a href="index.html#1" class="hover-target">home</a></li>
+				<li class="nav_list-item"><a href="index.html#2" class="hover-target">about</a></li>
+				<li class="nav_list-item"><a href="index.html#3" class="hover-target">project</a></li>
+				<li class="nav_list-item"><a href="index.html#4" class="hover-target">work</a></li>
+				<li class="nav_list-item"><a href="index.html#5" class="hover-target">index</a></li>
+				<li class="nav_list-item"><a href="index.html#6" class="hover-target">contact</a></li>
+			</ul>
+		</div>
+	</div>
+    
+    <!-- mouse cursor -->
+	<div class='cursor' id="cursor"></div>
+	<div class='cursor2' id="cursor2"></div>
+	<div class='cursor3' id="cursor3"></div>
+
+    <!-- overlay menu + logo + hamburger menu end -->
+
+    <section class="km-side-navi" id="exampleSide"></section>
+    <div id="fullpage">
+    <section id="home" class="section section-hero hero-section-new">
+        <img src="images/bg.jpg" class="home" alt="home">
+        <div class="ho">
+            <h1 class="txt1"><span class="dia">븿</span>&nbsp;&nbsp;꿈을 디자인하는 디자이너 김혜영입니다&nbsp;&nbsp;<span class="dia">븿</span></h1>
+            <h1 class="txt2">DESIGN</h1>
+            <h1 class="typing-txt">PORTFOLIO</h1>
+            <h1 class="typing"></h1>
+            <h1 class="txt3">WEB·PUBLISHER</h1>
+            <h1 class="txt4">ALL OF MY WORKS</h1>
+                
+            <div class="txtbox">
+                <p>Optimization Resolution | PC : 1920*1080 | MOBILE : 390*844</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section section-about">
+        <div class="ab">
+            <div class="ab_box_bar"></div>
+            <div class="ab_box">
+                <h1 class="title_text">PERSONALITY</h1>
+            <p class="ttt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.<br><span class="ttt_bold">Maecenas porttitor</span> congue massa. Fusce posuere, magna<br>sed pulvinar ultricies</p>
+                <div class="profile_img"></div>
+                <div class="charactor">
+                    <div class="box1">ISFP</div>
+                    <div class="box2">다재다능한</div>
+                    <div class="box3">책임감강한</div>
+                    <div class="box4">긍정적인</div>
+                    <div class="box5">학구열강한</div>
+                    <div class="box6">성실한</div>
+                    <div class="box7">끈기있는</div>
+                    <div class="box8">노력파</div>
+                </div>                
+                <div class="emoji">😉</div>
+            </div>
+            <div class="ab_box_1">
+                <h2 class="title">김 혜영</h2>
+                <h2 class="title2">1993.10.08 (만 31세)</h2>
+                <h2 class="ttt_bold" id="tel">Tel.<span class="txt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+82. 010. 9054. 3881</span></h2>
+                <h2 class="ttt_bold" id="mail">Mail.<span class="txt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;designer_hykim@naver.com</span></h2>
+                <h2 class="ttt_bold" id="web">SNS.<span class="txt">&nbsp;&nbsp;&nbsp;&nbsp;instagram @h931008_</span></h2>
+            </div>
+            
+            <div class="bar"></div>
+
+            <div class="edu">
+                    <div class="bar"></div>
+                    <h1 class="edu_title">EDUCATION</h1>
+                    <h1 class="edu_txt"><span class="ttt_bold">2024.01</span>&nbsp;&nbsp;&nbsp;&nbsp;중부기술교육원 웹콘텐츠디자인과 수료</h1>
+                    <h1 class="edu_txt"><span class="ttt_bold">2022.09</span>&nbsp;&nbsp;&nbsp;&nbsp;이젠컴퓨터아카데미 노원점 웹디자이너&amp;퍼블리셔 수료</h1>
+                    <h1 class="edu_txt"><span class="ttt_bold">2022.02</span>&nbsp;&nbsp;&nbsp;&nbsp;한국폴리텍1대학 강서캠퍼스 디지털콘텐츠과 졸업</h1>
+                    <h1 class="edu_txt"><span class="ttt_bold">2019.05</span>&nbsp;&nbsp;&nbsp;&nbsp;더조은컴퓨터아트학원 노원점 영상편집&amp;모션그래픽제작 수료</h1>
+                    <h1 class="edu_txt"><span class="ttt_bold">2017.07</span>&nbsp;&nbsp;&nbsp;&nbsp;한성대학교 디자인아트교육원 (한디원) 영상디자인과 중퇴</h1>
+                    <h1 class="edu_txt"><span class="ttt_bold">2013.03</span>&nbsp;&nbsp;&nbsp;&nbsp;경민대학 시각디자인과 중퇴</h1>                    
+                    <h1 class="edu_txt"><span class="ttt_bold">2012.02</span>&nbsp;&nbsp;&nbsp;&nbsp;서울아이티고등학교 전기·전자과 졸업</h1>
+            </div>
+
+            <div class="exp">
+                <div class="bar"></div>
+                <h1 class="exp_title">EXPERIENCE</h1>
+                <h1 class="exp_txt"><span class="ttt_bold">2024.04 ~ 2024.12</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;중랑양원미디어센터 SNS운영 및 홍보콘텐츠 제작</h1>
+                <h1 class="exp_txt"><span class="ttt_bold">2022.12 ~ 2023.01</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(주)마켓스페이스 웹퍼블리셔 인턴</h1>
+                <h1 class="exp_txt"><span class="ttt_bold">2018.05 ~ 2018.12</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;다수 웹디자이너 인턴 경험</h1>
+                <h1 class="exp_txt"><span class="ttt_bold">2016.10 ~ 2017.12</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;다수 아르바이트 경험</h1>
+            </div>
+                
+            <div class="license">
+                <div class="bar"></div>
+                <h1 class="license_title">LICENSE</h1>
+                <h1 class="license_txt"><span class="ttt_bold">2013.08</span>&nbsp;&nbsp;&nbsp;&nbsp;(국가공인) 그래픽기술자격 GTQ 1급</h1>
+                <h1 class="license_txt"><span class="ttt_bold">2013.05</span>&nbsp;&nbsp;&nbsp;&nbsp;(국가공인) 그래픽기술자격 GTQ 2급</h1>
+                <h1 class="license_txt"><span class="ttt_bold">2011.07</span>&nbsp;&nbsp;&nbsp;&nbsp;(국가기술) 전자기기기능사</h1>
+            </div>
+                
+            <div class="bar2"></div>
+            <div class="skills">
+                <div class="bar"></div>
+                <h1 class="skills_title">SKILLS</h1>
+                <h1 class="skills_txt"><span class="pt1">PS</span></h1>
+                <div class="ps">
+                    <div class="ps2"></div>
+                </div>
+                <h1 class="skills_txt"><span class="pt2">AI</span></h1>
+                <div class="ai">
+                    <div class="ai2"></div>
+                </div>
+                <h1 class="skills_txt"><span class="pt3">PR</span></h1>
+                <div class="pr">
+                    <div class="pr2"></div>
+                </div>
+                <h1 class="skills_txt"><span class="pt4">AE</span></h1>
+                <div class="ae">
+                    <div class="ae2"></div>
+                </div>
+                <h1 class="skills_txt"><span class="pt5">ID</span></h1>
+                <div class="id">
+                    <div class="id2"></div>
+                </div>
+                <h1 class="skills_txt"><span class="pt6">LR</span></h1>
+                <div class="lr">
+                    <div class="lr2"></div>
+                </div>
+                <h1 class="skills_txt"><span class="pt7">FIGMA</span></h1>
+                <div class="xd">
+                    <div class="xd2"></div>
+                </div>
+                <h1 class="skills_txt"><span class="pt8">HTML</span></h1>
+                <div class="html">
+                    <div class="html2"></div>
+                </div>
+                <h1 class="skills_txt"><span class="pt9">CSS</span></h1>
+                <div class="css">
+                    <div class="css2"></div>
+                </div>
+                <h1 class="skills_txt"><span class="pt10">JS</span></h1>
+                <div class="js">
+                    <div class="js2"></div>
+                </div>
+                <h1 class="skills_txt"><span class="pt11">BLENDER</span></h1>
+                <div class="bd">
+                    <div class="bd2"></div>
+                </div>
+                <h1 class="skills_txt"><span class="pt12">C4D</span></h1>
+                <div class="c4d">
+                    <div class="c4d2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project" class="section section-project">
+        <div class="pr">
+            <div class="cd-slider-wrapper">
+                <ul class="cd-slider">
+                    <li class="is-visible">
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">HOLLYS</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.05<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="publisher/01.HOLLYS/index.html" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">W Concept</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.05<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS <span class="color_text2">| J-QUERY | JAVA-SCRIPT</span>
+                                </p>
+                                <a href="publisher/02.WConcept/index.html" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">Chilsung Cider</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.06<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="publisher/03.ChilsungCider/index.html" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">ROUND LAB</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.06<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="#" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">Hunger Games</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.06<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS <span class="color_text5">| J-QUERY | JAVA-SCRIPT</span>
+                                </p>
+                                <a href="publisher/05.HungerGame/index.html" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">Twilight</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.07<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="publisher/06.Twilight/index.html" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">Kloud</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.07<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="publisher/07.Kloud/index.html" target="_blank" class="btn">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">Digital Clock</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.07<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="publisher/08.DigitalClock/index.html" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">CHANEL</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.07<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="#" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">ROUND LAB</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.07<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="#" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">LOSTARK</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.07<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="publisher/11.LOSTARK/index.html" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">JoongAngIlbo</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.07<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="publisher/12.JoongAngIlbo/index.html" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">Pulmuone</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.07<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="publisher/13.Pulmuone/index.html" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">Radisson</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.07<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="publisher/14.Radisson/index.html" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                        
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">econeko</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.07<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="#" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">Re:NK Renewal</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.07<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT
+                                </p>
+                                <a href="publisher/16.ReNK/index.html" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">VOGUE KOREA</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.09<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS <span class="color_text16">| J-QUERY | JAVA-SCRIPT</span>
+                                </p>
+                                <a href="#" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">입생로랑</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.09<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS <span class="color_text17">| J-QUERY | JAVA-SCRIPT</span></p>
+                                <a href="#" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">THE LEGEND OF ZELDA</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.09<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS <span class="color_text18">| J-QUERY | JAVA-SCRIPT</span>
+                                </p>
+                                <a href="publisher/19.Zelda/index.html" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">Cafe mememi</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.09<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS | J-QUERY | JAVA-SCRIPT</span>
+                                </p>
+                                <a href="#" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="cd-half-block image"></div>
+                        <div class="cd-half-block content">
+                            <div>
+                                <h2 style="position: relative; right: 3px;">인생사진 코딩네컷</h2>
+                                <p>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기간</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2023.03<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">작업기여도</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  개인작업 100%<br>
+                                    <b style="font-family: 'Noto Sans KR'; font-weight: 500;">프로그램</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML5 | CSS <span class="color_text19">| J-QUERY | JAVA-SCRIPT</span>
+                                </p>
+                                <a href="publisher/21.cone/index.html" class="btn" target="_blank">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </li>                    
+                </ul> <!-- .cd-slider -->
+            </div> <!-- .cd-slider-wrapper -->
+        </div>
+    </section>
+
+    <section id="works" class="section section-works">
+        <div class="page-content">
+            <div class="card">
+                <div class="content">
+                    <h2 class="wo_title">RENEWAL 01</h2>
+                    <button class="page4_btn">
+                        <a href="#" target="_blank">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="wo_title">RENEWAL 02</h2>
+                    <button class="page4_btn">
+                        <a href="#" target="_blank">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="wo_title">RENEWAL 03</h2>
+                    <button class="page4_btn">
+                        <a href="#" target="_blank">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="wo_title">RENEWAL 04</h2>
+                    <button class="page4_btn">
+                        <a href="#" target="_blank">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="wo_title">RENEWAL 05</h2>
+                    <button class="page4_btn">
+                        <a href="#" target="_blank">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="wo_title">RENEWAL 06</h2>
+                    <button class="page4_btn">
+                        <a href="#" target="_blank">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="wo_title">RENEWAL 07</h2>
+                    <button class="page4_btn">
+                        <a href="#" target="_blank">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="wo_title">RENEWAL 08</h2>
+                    <button class="page4_btn">
+                        <a href="#" target="_blank">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="wo_title">RENEWAL 09</h2>
+                    <button class="page4_btn">
+                        <a href="#" target="_blank">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="wo_title">RENEWAL 10</h2>
+                    <button class="page4_btn">
+                        <a href="#" target="_blank">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <section id="index" class="section section-index">
+        <div class="in">
+            <div class="in1">
+                <h1 class="title_txt"></h1>
+                <a href="index/01.YWJNMC/index.html" target="_blank">
+                    <img src="images/index1.png" class="index1">
+                </a>
+                <h2 class="ft"><a href="index/01.YWJNMC/index.html">01</a></h2>
+                <h2 class="st"><a href="index/01.YWJNMC/index.html">YWJNMC</a></h2>
+                <h2 class="st1"><a href="index/01.YWJNMC/index.html"><h2 class="st2">2024.04~12</h2></a></h2>
+            </div>
+            <div class="in2">
+                <h1 class="title_txt"></h1>
+                <a href="index/02.WORKS/index.html" target="_blank">
+                    <img src="images/index1.png" class="index2">
+                </a>
+                <h2 class="ft"><a href="index/02.WORKS/index.html"></a>02</h2>
+                <h2 class="st"><a href="index/02.WORKS/index.html"></a>WORKS</h2>
+                <h2 class="st1"><a href="index/02.WORKS/index.html"></a>2019.05~</h2>
+            </div>
+        </div>
+    </section>
+        
+    <!-- contact -->
+    <div class="section">
+        <div class="co">
+            <div class="box">
+                <div class="bar"></div>
+                <div class="window_box1"></div>
+                <div class="window_box2"></div>
+                <div class="window_box3"></div>
+                <div class="window_box4"></div>
+                <div class="window_box5"></div>
+            </div>
+            <div class="txt">
+                <h1>THANK YOU!<br></h1>
+                <h2>DO YOU WANT TO</h2><br>
+                <span class="bold">HIRE ME?</span>
+            </div>
+
+            <div class="btn">
+                <div class="yes_box">
+                    <!-- popup -->
+                    <a href="javascript:openPop()">
+                        <h1 class="yes">YES</h1>
+                        <div class="popup_layer" id="popup_layer" style="display: none;">
+                            <div class="popup_box" style="overflow-x: hidden; overflow-y: hidden;">
+                            <div>
+                                <a href="javascript:closePop();"></a>
+                            </div>
+                            <!--팝업 컨텐츠 영역-->
+                                <div class="popup_cont">
+                                    <h5><span class="dia6" style="font-family: 'YUniverse-B'; font-size: 18px; color: #4a66ac; position: relative; bottom: 2px;">븿</span> C O N T A C T <span class="dia6" style="font-family: 'YUniverse-B'; font-size: 18px; color: #4a66ac; position: relative; bottom: 2px;">븿</span></h5>
+                                    <p>
+                                        INSTAGRAM @h931008_<br><br> 010.9054.3881<br><br>designer_hykim@naver.com<br>
+                                    </p>
+                                </div>
+                            <!--팝업 버튼 영역-->
+                                <div class="popup_btn">
+                                    <a href="javascript:closePop();" style="text-decoration: none;">닫기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- popup end -->
+                </div>
+                
+
+                <div class="no_box">
+                    <a href="">
+                        <h1 class="no">NO</h1>
+                    </a>
+                </div>
+            </div>
+            
+        <div class="dia2">
+            <p class="dia2_1">●</p>
+            <p class="dia2_2">븿</p>
+            <p class="dia2_3">븿</p>
+            <p class="dia2_4">븿</p>
+            <p class="dia2_5">●</p>
+        </div>
+        <div class="dia3">
+            <p class="dia3_1">븿</p>
+            <p class="dia3_2">븿</p>
+            <p class="dia3_3">●</p>
+        </div>
+        <div class="dia4">
+            <p class="dia4_1">븿</p>
+            <p class="dia4_2">븿</p>
+            <p class="dia4_3">●</p>
+        </div>
+        <div class="dia5">
+            <p class="dia5_1">븿</p>
+            <p class="dia5_2">븿</p>
+            <p class="dia5_3">븿</p>
+        </div>
+        </div>
+    </div>
+    <!-- contact end -->
+    </div> <!-- end -->
+</body>
+    
+<whale-quicksearch translate="no">
+    #shadow-root (closed)
+<style></style>
+    <div class="quicksearch"></div>
+</whale-quicksearch>
+<!-- project js -->
+<script src="js/project.js"></script> <!-- Resource jQuery -->    
+<!-- layout js -->
+<script>
+    $(window).on('load', function() {
+    var options = {
+        menu : ['HOME','ABOUT','PROJECT','WORKS','INDEX','CONTACT'],
+        position : 'right',
+        themeColor : '#4a66ac',
+        id : 'exampleSide',
+        afterInit : function(){
+            var currentIndex = parseInt($('#fullpage').find('.fp-section.active').attr('data-anchor'));
+            sidenav.activeMenuAndTag(currentIndex);
+        }
+    }
+    var sidenav = new SideNavi(options);
+    $('#fullpage').fullpage({
+        sectionsColor: ['#fff', '#fff', '#c7b2a0', '#c5c4cb', '#eee', '#ae795b'],
+        anchors: ['1', '2', '3', '4', '5', '6'],
+        onLeave: function(index,nextIndex){
+            sidenav.activeMenuAndTag(nextIndex);
+        },
+        afterLoad:function(index){
+            var loadedSection = $(this);
+            switch(index){
+                case 1 : loadedSection.find('h2').addClass('');
+                break;
+                case 2 : loadedSection.find('h2').addClass('');
+                break;
+                case 3 : loadedSection.find('h2').addClass('');
+                break;
+                case 4 : loadedSection.find('h2').addClass('');
+                break;
+                case 5 : loadedSection.find('h2').addClass('');
+                break;
+                case 6 : loadedSection.find('h2').addClass('');
+                break;
+            }
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- layout end -->
+</html>
