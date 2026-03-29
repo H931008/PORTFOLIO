@@ -1,0 +1,204 @@
+@charset "utf-8";
+
+.section-resume {
+  background: var(--fg-color);
+  color: var(--color-dark);
+  min-height: 100vh;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.section-resume__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Left Side - Skills */
+.resume-left {
+  padding-right: 40px;
+}
+
+.section-resume .section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--bg-color);
+  margin-bottom: 20px;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+}
+
+.section-resume .section-title {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: var(--color-dark);
+}
+
+.section-resume .section-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(44, 44, 44, 0.7);
+  margin-bottom: 40px;
+}
+
+/* Skills as Fruits */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Skills */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.skill-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.skill-percent {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-skyblue);
+}
+
+.skill-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(44, 44, 44, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-bg-80) 0%, var(--bg-color) 100%);
+  border-radius: 10px;
+  transition: width 1s ease-out;
+}
+
+/* Right Side - Experience & Values */
+.resume-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.resume-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.resume-card h3 {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--color-dark);
+}
+
+.experience-item {
+  margin-bottom: 12px;
+}
+
+.experience-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 4px;
+}
+
+.experience-period {
+  font-size: 13px;
+  color: rgba(44, 44, 44, 0.6);
+  margin-left: 8px;
+}
+
+.values-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(44, 44, 44, 0.8);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.values-list li {
+  padding-left: 8px;
+  position: relative;
+}
+
+.values-list li:before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--color-skyblue);
+  font-weight: bold;
+}
+
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: #3a4f8c;;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.skill-bar {
+  position: relative;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  background-color: var(--color-dark-10);
+  transition: all 0.3s ease;
+}
+
+.skill-bar__tooltip {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 20, 0.9);
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 160ms ease, transform 160ms ease;
+  pointer-events: none;
+}
+
+.skill-bar.is-filled .skill-bar__tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-6px);
+}

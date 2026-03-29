@@ -1,0 +1,91 @@
+/* Container matching #about's max-width: 1200px */
+.section-index .in {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 35px;
+    position: relative;
+    padding: 0 50px; /* match #about side paddings */
+}
+
+.in1, .in2 {
+    width: 335px; 
+    height: 328px;
+    position: relative;
+}
+
+/* Force <a> to have physical layout bounds for hovering */
+.in1 a, .in2 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+/* Background title text if ever used */
+.in1 .title_txt, .in2 .title_txt {
+    position: absolute; 
+    top: -538px; 
+    left: -985px; 
+    font-size: 152px;
+}
+
+/* Folder Images */
+.index1, .index2 {
+    position: absolute; 
+    left: 0; 
+    top: 0;
+    z-index: 1;
+}
+
+/* Top text (01, 02) */
+.in1 .ft, .in2 .ft {
+    position: absolute; 
+    left: 56px; 
+    top: 127px; 
+    font-family: 'montserrat'; 
+    font-size: 110px; 
+    font-weight: 500; 
+    color: #4a66ac;
+    z-index: 2;
+}
+.in2 .ft {
+    letter-spacing: 2px;
+}
+
+/* Middle text (YWJNMC, WORKS) */
+.in1 .st, .in2 .st {
+    position: absolute; 
+    left: 61px; 
+    top: 216px; 
+    font-family: 'montserrat'; 
+    font-size: 28px; 
+    color: #4a66ac;
+    z-index: 2;
+}
+.in2 .st {
+    left: 61px; 
+    top: 216px;
+}
+
+/* Bottom text (Date) */
+.in1 .st1, .in2 .st1 {
+    position: absolute; 
+    left: 61px; 
+    top: 254px; 
+    font-family: 'montserrat'; 
+    font-size: 22px; 
+    font-weight: 400; 
+    color: #767070;
+    z-index: 2;
+}
+.in2 .st1 {
+    left: 61px; 
+    top: 254px;
+}
