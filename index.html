@@ -1,0 +1,625 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 모바일 메타태그 -->
+    <meta name="viewport"
+        content="width=device-width,height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <title>HYKIM'S PORTFOLIO</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sideNavi.css">
+    <link rel="stylesheet" href="css/overlaymenu.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/project.css">
+    <link rel="stylesheet" href="css/resume.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/mobile.css"> <!-- ip16pm (440*956) -->
+    <link rel="stylesheet" href="css/tablet.css"> <!-- ipad 10.9 (1180*820) 적용 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.js"></script>
+    <script src="https://kit.fontawesome.com/c3b958d629.js" crossorigin="anonymous"></script>
+    <script src="js/SideNav.js"></script>
+    <script src="js/overlaymenu.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/resume.js"></script>
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="js/popup.js"></script>
+</head>
+<body>
+    <!-- First Animation Overlay (Loading Screen) -->
+    <div id="firstAnimationOverlay"></div>
+    
+    <!-- overlay menu + hamburger menu -->
+    <header class="cd-header">
+        <div class="header-wrapper">
+            <!-- hamburger menu -->
+            <div class="nav-but-wrap">
+                <div class="menu-icon hover-target">
+                    <span class="menu-icon_line menu-icon_line-left"></span>
+                    <span class="menu-icon_line"></span>
+                    <span class="menu-icon_line menu-icon_line-right"></span>
+                </div>
+            </div>
+            <!-- hamburger menu end -->
+        </div>
+    </header>
+
+    <!-- overlay menu -->
+    <div class="nav">
+        <div class="nav_content">
+            <ul class="nav_list">
+                <li class="nav_list-item"><a href="#home" class="hover-target">home</a></li>
+                <li class="nav_list-item"><a href="#about" class="hover-target">about</a></li>
+                <li class="nav_list-item"><a href="#project" class="hover-target">project</a></li>
+                <li class="nav_list-item"><a href="#index" class="hover-target">works</a></li>
+                <li class="nav_list-item"><a href="#resume" class="hover-target">resume</a></li>
+                <li class="nav_list-item"><a href="#contact" class="hover-target">contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- mouse cursor -->
+    <div class='cursor' id="cursor"></div>
+    <div class='cursor2' id="cursor2"></div>
+    <div class='cursor3' id="cursor3"></div>
+
+    <section class="km-side-navi" id="exampleSide"></section>
+    <div id="fullpage">
+        <section id="home" class="section section-hero hero-section-new">
+            <!-- background background light-vignette can be added via CSS -->
+            <section id="headerInfo" class="menu">
+                <p class="menu-text">
+                    <span class="hykim">HYKIM'S PORTFOLIO <span class="line"></span> </span>
+                    <span class="align-right">
+                        <span class="amsterdam">SEOUL</span>
+                        <span class="lata1"><span class="setYear">2026</span> <span class="line"></span></span>
+                    </span>
+                </p>
+            </section>
+
+            <section id="headerText" class="header hide-sm">
+                <div class="main-text-wrapper">
+                    <!-- Line 1: I AM -->
+                    <svg class="header-line-group" data-direction="r" data-movecoef="1" viewBox="0 -5 1102 130"
+                        fill="none">
+                        <path d="M31.1757 0.978638H0.575684V119.979H31.1757V0.978638Z" fill="currentColor"></path>
+                        <path
+                            d="M262.019 119.979H295.849L234.309 0.978638H192.999L131.629 119.979H165.289L178.039 94.6486H249.269L262.019 119.979ZM189.429 71.8686L213.739 23.5886L237.879 71.8686H189.429Z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M485.403 0.978638H444.093L394.283 84.9586L344.473 0.978638H303.163V119.979H333.763V38.3786L383.233 119.979H405.333L454.803 38.3786V119.979H485.403V0.978638Z"
+                            fill="currentColor"></path>
+                    </svg>
+
+                    <!-- Line 2: UX&UI -->
+                    <div class="header-line-group svg-right" data-direction="left" data-movecoef="5">
+                        <div class="header-line-side-piece piece-left piece-top">
+                            currently based in :<br>seoul<br>
+                        </div>
+                        <svg width="755" height="126" viewBox="0 0 755 126" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M149.6 63.24C149.6 84.2067 143.537 99.9033 131.41 110.33C119.397 120.643 100.527 125.8 74.8 125.8C48.96 125.8 30.0333 120.643 18.02 110.33C6.00666 100.017 -1.00136e-05 84.32 -1.00136e-05 63.24V1.01999H35.19V62.05C35.19 72.0233 37.9667 80.1833 43.52 86.53C49.0733 92.7633 59.5 95.88 74.8 95.88C90.1 95.88 100.527 92.7067 106.08 86.36C111.747 80.0133 114.58 71.91 114.58 62.05V1.01999H149.6V63.24ZM212.94 122.4H164.83L227.73 61.71L164.83 1.01999H212.94L251.53 39.95L290.12 1.01999H338.23L275.33 61.71L338.23 122.4H290.12L251.53 83.47L212.94 122.4ZM524.632 122.4H481.622L470.912 114.75C457.199 122.117 441.275 125.8 423.142 125.8C403.082 125.8 387.669 123.08 376.902 117.64C366.135 112.087 360.752 103.757 360.752 92.65C360.752 84.15 363.642 77.4067 369.422 72.42C375.202 67.32 383.305 63.0133 393.732 59.5C388.632 55.08 384.779 50.6033 382.172 46.07C379.565 41.5367 378.262 36.4933 378.262 30.94C378.262 24.2533 380.359 18.5867 384.552 13.94C388.859 9.17999 394.525 5.66666 401.552 3.39999C408.692 1.13332 416.455 -1.09673e-05 424.842 -1.09673e-05C438.669 -1.09673e-05 449.719 2.66332 457.992 7.98999C466.379 13.2033 470.572 20.5133 470.572 29.92C470.572 37.4 467.739 43.35 462.072 47.77C456.519 52.19 448.529 56.1567 438.102 59.67C441.049 61.4833 443.202 62.9 444.562 63.92L471.932 83.81C476.239 77.69 478.959 69.8133 480.092 60.18H507.462C506.442 75.0267 501.229 87.7767 491.822 98.43L524.632 122.4ZM426.542 21.59C421.215 21.59 416.965 22.61 413.792 24.65C410.732 26.69 409.202 29.6367 409.202 33.49C409.202 36.6633 410.392 39.61 412.772 42.33C415.152 44.9367 418.495 47.6567 422.802 50.49C430.395 47.8833 435.665 45.2767 438.612 42.67C441.672 40.0633 443.202 37.0033 443.202 33.49C443.202 29.6367 441.672 26.69 438.612 24.65C435.552 22.61 431.529 21.59 426.542 21.59ZM427.902 103.02C436.175 103.02 443.542 101.943 450.002 99.79L425.862 82.62C422.689 80.3533 416.682 76.2167 407.842 70.21C403.195 72.59 399.739 75.14 397.472 77.86C395.205 80.58 394.072 83.5833 394.072 86.87C394.072 92.31 396.849 96.39 402.402 99.11C408.069 101.717 416.569 103.02 427.902 103.02ZM697.784 63.24C697.784 84.2067 691.72 99.9033 679.594 110.33C667.58 120.643 648.71 125.8 622.984 125.8C597.144 125.8 578.217 120.643 566.204 110.33C554.19 100.017 548.184 84.32 548.184 63.24V1.01999H583.374V62.05C583.374 72.0233 586.15 80.1833 591.704 86.53C597.257 92.7633 607.684 95.88 622.984 95.88C638.284 95.88 648.71 92.7067 654.264 86.36C659.93 80.0133 662.764 71.91 662.764 62.05V1.01999H697.784V63.24ZM719.18 1.01999H754.37V122.4H719.18V1.01999Z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </div>
+
+                    <!-- Line 3: DESIG -->
+                    <div class="header-line-group svg-left" data-direction="r" data-movecoef="3">
+                        <svg width="682" height="129" viewBox="0 0 682 129" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M87.38 3.39999C117.13 3.39999 144.16 22.44 144.16 64.09C144.16 105.74 117.13 124.78 87.38 124.78H5.24521e-06V3.39999H87.38ZM35.19 94.86H72.59C91.8 94.86 107.44 92.31 107.44 64.09C107.44 35.87 91.8 33.32 72.59 33.32H35.19V94.86ZM290.82 3.39999V30.94H200.21V50.32H287.42V77.86H200.21V97.24H290.82V124.78H165.02V3.39999H290.82ZM307.255 85H344.145C344.145 95.2 354.175 101.83 386.135 101.83C415.375 101.83 422.515 97.24 422.515 89.59C422.515 80.75 417.075 79.22 381.035 76.84C331.905 73.44 310.145 63.58 310.145 36.72C310.145 11.39 337.515 -5.84126e-06 379.505 -5.84126e-06C426.255 -5.84126e-06 453.115 14.11 454.135 41.14H417.415C417.415 30.43 405.685 26.35 378.485 26.35C352.645 26.35 346.865 30.6 346.865 37.23C346.865 44.71 352.645 47.09 385.625 49.81C430.165 53.21 459.235 56.27 459.235 88.06C459.235 119.17 430.505 128.18 387.325 128.18C338.195 128.18 308.955 116.96 307.255 85ZM478.457 3.39999H513.647V124.78H478.457V3.39999ZM532.704 63.92C532.704 22.61 563.814 -5.84126e-06 609.544 -5.84126e-06C652.724 -5.84126e-06 679.414 20.23 681.794 47.6H644.394C642.184 38.25 631.644 29.92 609.714 29.92C578.094 29.92 569.594 48.45 569.594 65.11C569.594 81.94 577.584 100.64 613.964 100.64C630.454 100.64 640.824 97.92 652.044 93.16V81.6H609.034V58.65H681.794V110.5C656.804 124.44 636.064 128.18 612.094 128.18C564.324 128.18 532.704 105.57 532.704 63.92Z"
+                                fill="currentColor"></path>
+                        </svg>
+                        <div class="header-line-side-piece piece-right piece-bottom" id="writeTime">9:21:54 am</div>
+                    </div>
+
+                    <!-- Line 4: NER -->
+                    <svg class="header-line-group" data-direction="left" data-movecoef="2" viewBox="0 400 1102 130"
+                        fill="none">
+                        <path
+                            d="M454.519 405.561V494.981L373.259 405.561H331.779V524.561H362.379V435.311L443.469 524.561H485.119V405.561H454.519Z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M624.591 429.871V405.561H498.791V524.561H624.591V500.251H529.391V476.111H624.591V454.011H529.391V429.871H624.591Z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M774.814 449.251C774.814 422.731 756.284 405.561 729.254 405.561H635.754V524.561H666.354V492.771H715.654L734.864 524.561H770.904L748.974 489.201C764.954 482.911 774.814 468.631 774.814 449.251ZM666.354 431.231H720.754C729.934 431.231 744.214 431.231 744.214 449.251C744.214 467.101 729.934 467.101 720.754 467.101H666.354V431.231Z"
+                            fill="currentColor"></path>
+                    </svg>
+                </div>
+            </section>
+        </section>
+
+        <section id="about" class="section section-about">
+            <div class="section-about__inner">
+                <!-- 좌측 텍스트 -->
+                <div class="section-about__text js-observe">
+                    <p class="section-label">ABOUT</p>
+                    <h2 class="section-title">
+                        가장 예쁜 꽃은<br>
+                        우여곡절 끝에 피는 꽃
+                    </h2>
+                    <p class="section-desc">
+                        가장 깊은 곳에서부터 시작된, 저의 좌절과 도전, 그리고 다시 일어섬의 기록입니다.
+                        보이지 않는 뿌리가 단단할수록, 장미는 더 고요하고 단단하게 피어난다고 생각합니다.
+                    </p>
+                    <div class="section-about__highlights">
+                        <div class="about-highlight">
+                            <span class="about-highlight__label">BACKGROUND</span>
+                            <p class="about-highlight__text">
+                                <b>디지털콘텐츠전공</b>을 기반으로 UX/UI와 프론트엔드 개발에 집중해 왔습니다.
+                                사용자의 맥락을 이해하고, 그것을 화면과 인터랙션으로 옮기는 과정을 좋아합니다.
+                            </p>
+                        </div>
+                        <div class="about-highlight">
+                            <span class="about-highlight__label">MINDSET</span>
+                            <p class="about-highlight__text">
+                                실패와 우여곡절을 숨기기보다, 그것을 영양분으로 삼는 태도로 성장해왔습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 우측 인물 이미지 -->
+                <div class="section-about__visual">
+                    <div class="about-person-wrapper">
+                        <!-- <img src="assets/images/about/person.png" alt="Profile" class="about-person-image"> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="project" class="section section-works">
+            <div class="section-works__inner">
+                <div class="works-grid">
+                    <div class="card">
+                        <div class="slide-number">01</div>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">★입상·우수상</span>
+                            <span class="project-card__tag" style="font-family: Montserrat; font-weight: normal;">UXUI</span>
+                            <span class="project-card__tag">6인·팀플</span>
+                        </div>
+                        <div class="slide-body">
+                            <div class="slide-location">K-Brand Contents Web/Mobile UX/UI 프로젝트</div>
+                            <div class="slide-headline">BEAUTY OF JOSEON</div>
+                            <div class="slide-button-container"
+                                style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                                <a href="#" target="_blank" style="display:inline-flex;">
+                                    <button class="slide-link hover-target" type="button">VIEW MORE</button>
+                                </a>
+                                <a href="#" target="_blank" style="display:inline-flex;">
+                                    <button class="slide-link hover-target" type="button">PROPOSAL</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="slide-number">02</div>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag" style="font-family: Montserrat; font-weight: normal;">UXUI</span>
+                            <span class="project-card__tag" style="font-family: Montserrat; font-weight: normal;">APP</span>
+                            <span class="project-card__tag">1인·개인</span>
+                        </div>
+                        <div class="slide-body">
+                            <div class="slide-location">AI챗봇 지원 팬덤 커뮤니티 Mobile UX/UI 프로젝트</div>
+                            <div class="slide-headline">Web/Mobile UX/UI Renewal</div>
+                            <div class="slide-button-container"
+                                style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                                <a href="#" target="_blank" style="display:inline-flex;">
+                                    <button class="slide-link hover-target" type="button">PROTOTYPE</button>
+                                </a>
+
+                                <a href="#" target="_blank" style="display:inline-flex;">
+                                    <button class="slide-link hover-target" type="button">PROPOSAL</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="slide-number">03</div>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag" style="font-family: Montserrat; font-weight: normal;">UXUI</span>
+                            <span class="project-card__tag" style="font-family: Montserrat; font-weight: normal;">APP</span>
+                            <span class="project-card__tag">1인·개인</span>
+                        </div>
+                        <div class="slide-body">
+                            <div class="slide-location">IOS APP UX/UI DESIGN</div>
+                            <div class="slide-headline">프릿</div>
+                            <div class="slide-button-container"
+                                style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                                <a href="#" target="_blank" style="display:inline-flex;">
+                                    <button class="slide-link hover-target" type="button">PROTOTYPE</button>
+                                </a>
+
+                                <a href="#" target="_blank" style="display:inline-flex;">
+                                    <button class="slide-link hover-target" type="button">PROPOSAL</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="slide-number">04</div>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag" style="font-family: Montserrat; font-weight: normal;">UXUI</span>
+                            <span class="project-card__tag" style="font-family: Montserrat; font-weight: normal;">APP</span>
+                            <span class="project-card__tag">6인·팀플</span>
+                        </div>
+                        <div class="slide-body">
+                            <div class="slide-location">Web/Mobile UX/UI 브레인스토밍 워크샵</div>
+                            <div class="slide-headline">TRAMP</div>
+                            <div class="slide-button-container"
+                                style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                                <a href="#" target="_blank" style="display:inline-flex;">
+                                    <button class="slide-link hover-target" type="button">PROTOTYPE</button>
+                                </a>
+
+                                <a href="#" target="_blank" style="display:inline-flex;">
+                                    <button class="slide-link hover-target" type="button">PROPOSAL</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="slide-number">05</div>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag" style="font-family: Montserrat; font-weight: normal;">UXUI</span>
+                            <span class="project-card__tag" style="font-family: Montserrat; font-weight: normal;">WEB</span>
+                            <span class="project-card__tag">1인·개인</span>
+                        </div>
+                        <div class="slide-body">
+                            <div class="slide-location">WEBSITE RENEWAL</div>
+                            <div class="slide-headline">카페드롭탑 | 925 커피</div>
+                            <div class="slide-button-container"
+                                style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                                <a href="#" target="_blank" style="display:inline-flex;">
+                                    <button class="slide-link hover-target" type="button">VIEW MORE</button>
+                                </a>
+                                <a href="#" target="_blank" style="display:inline-flex;">
+                                    <button class="slide-link hover-target" type="button">PROPOSAL</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="slide-number">06</div>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag" style="font-family: Montserrat; font-weight: normal;">UXUI</span>
+                            <span class="project-card__tag">WEB</span>
+                            <span class="project-card__tag">1인·개인</span>
+                        </div>
+                        <div class="slide-body">
+                            <div class="slide-location">WEBSITE CLONECODEING</div>
+                            <div class="slide-headline">카페에반하다</div>
+                            <div class="slide-button-container"
+                                style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                                <a href="#" target="_blank" style="display:inline-flex;">
+                                    <button class="slide-link hover-target" type="button">VIEW MORE</button>
+                                </a>
+                                <a href="" target="_blank" style="display:inline-flex;">
+                                    <button class="slide-link hover-target" type="button">PROPOSAL</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="index" class="section section-index">
+        <div class="in">
+            <div class="in1">
+                <h1 class="title_txt"></h1>
+                <a href="index/01.YWJNMC/index.html" target="_blank" rel="noopener noreferrer" class="hover-target">
+                    <img src="assets/images/index/folder.png" class="index1">
+                    <h2 class="ft">01</h2>
+                    <h2 class="st">YWJNMC</h2>
+                    <h2 class="st1">2024.04~12</h2>
+                </a>
+            </div>
+            <div class="in2">
+                <h1 class="title_txt"></h1>
+                <a href="index/02.WORKS/index.html" target="_blank" rel="noopener noreferrer" class="hover-target">
+                    <img src="assets/images/index/folder.png" class="index2">
+                    <h2 class="ft">02</h2>
+                    <h2 class="st">WORKS</h2>
+                    <h2 class="st1">2019.05~</h2>
+                </a>
+            </div>
+        </div>
+    </section>
+        <section id="resume" class="section section-resume">
+            <div class="section-resume__inner">
+                <!-- Left Side - Skills -->
+                <div class="resume-left">
+                    <p class="section-label">RESUME</p>
+                    <h2 class="section-title">쌓여 온 시간들이<br>열매가 되다</h2>
+                    <p class="section-desc">한 번의 프로젝트로는 만들어지지 않는 역량들. 반복과 축적 끝에 맺힌 열매를 스킬과 경험으로 정리했습니다.</p>
+                    
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">HTML · CSS · Semantic Markup</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">JavaScript · Interaction</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">React · SPA Architecture</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">UX Writing · IA</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Experience & Values -->
+                <div class="resume-right">
+                    <div class="resume-card">
+                        <h3>Experience</h3>
+                        <div class="experience-item">
+                            <div>
+                                <span class="experience-title">강남이젠아카데미 UX/UI디자인&웹기획 프론트엔드 부트캠프 수료</span>
+                                <span class="experience-period">2025.12 — 현재</span>
+                            </div>
+                        </div>
+                        <div class="experience-item">
+                            <div>
+                                <span class="experience-title">중랑양원미디어센터 SNS 운영 및 홍보콘텐츠 제작 전문가</span>
+                                <span class="experience-period">2024.04 — 2024.12</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-card">
+                        <h3>Values</h3>
+                        <ul class="values-list">
+                            <li>우여곡절을 숨기지 않는 정직한 과정</li>
+                            <li>사용자의 시간을 아끼는 인터페이스</li>
+                            <li>팀과 함께 활짝 피어나는 장미 같은 결과물</li>
+                        </ul>
+                        <button class="resume-btn">VIEW RESUME (PDF)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- contact -->
+        <div id="contact" class="section section-contact">
+            <div class="co">
+                <div class="box">
+                    <div class="bar"></div>
+                    <div class="window_box1"></div>
+                    <div class="window_box2"></div>
+                    <div class="window_box3"></div>
+                    <div class="window_box4"></div>
+                    <div class="window_box5"></div>
+                </div>
+                <div class="txt">
+                    <h1>THANK YOU!</h1>
+                    <h2>DO YOU WANT TO</h2>
+                    <span class="bold">HIRE ME?</span>
+                </div>
+
+                <div class="btn">
+                    <div class="yes_box">
+                        <a href="javascript:openPop()" class="hover-target">
+                            <h1 class="yes">YES</h1>
+                        </a>
+                    </div>
+
+                    <div class="no_box">
+                        <a href="javascript:openNoPop()" class="hover-target">
+                            <h1 class="no">NO</h1>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="dia2">
+                    <p class="dia2_1">●</p>
+                    <p class="dia2_2">븿</p>
+                    <p class="dia2_3">븿</p>
+                    <p class="dia2_4">븿</p>
+                    <p class="dia2_5">●</p>
+                </div>
+                <div class="dia3">
+                    <p class="dia3_1">븿</p>
+                    <p class="dia3_2">븿</p>
+                    <p class="dia3_3">●</p>
+                </div>
+                <div class="dia4">
+                    <p class="dia4_1">븿</p>
+                    <p class="dia4_2">븿</p>
+                    <p class="dia4_3">●</p>
+                </div>
+                <div class="dia5">
+                    <p class="dia5_1">븿</p>
+                    <p class="dia5_2">븿</p>
+                    <p class="dia5_3">븿</p>
+                </div>
+            </div>
+        </div>
+        <!-- contact end -->
+
+        <!-- YES popup -->
+        <div class="popup_layer" id="popup_layer" style="display: none;">
+            <div class="popup_box">
+                <div>
+                    <a href="javascript:closePop();"></a>
+                </div>
+                <!--팝업 컨텐츠 영역-->
+                <div class="popup_cont">
+                    <h5><span class="dia6"
+                            style="font-family: 'YUniverse-B'; font-size: 18px; color: #4a66ac; position: relative; bottom: 2px;">븿</span>
+                        C O N T A C T <span class="dia6"
+                            style="font-family: 'YUniverse-B'; font-size: 18px; color: #4a66ac; position: relative; bottom: 2px;">븿</span>
+                    </h5>
+                    <p>
+                        INSTAGRAM @h931008_<br>
+                        010.9054.3881<br>designer_hykim@naver.com<br>
+                    </p>
+                </div>
+                <!--팝업 버튼 영역-->
+                <div class="popup_btn">
+                    <a href="javascript:closePop();" style="text-decoration: none;">닫기</a>
+                </div>
+            </div>
+        </div>
+        <!-- YES popup end -->
+
+        <!-- NO popup -->
+        <div class="popup_layer" id="no_popup_layer" style="display: none;">
+            <div class="popup_box">
+                <div>
+                    <a href="javascript:closeNoPop();"></a>
+                </div>
+                <!--팝업 컨텐츠 영역-->
+                <div class="popup_cont">
+                    <h5><span class="dia6"
+                            style="font-family: 'YUniverse-B'; font-size: 18px; color: #4a66ac; position: relative; bottom: 2px;">븿</span>
+                        T H A N K   Y O U <span class="dia6"
+                            style="font-family: 'YUniverse-B'; font-size: 18px; color: #4a66ac; position: relative; bottom: 2px;">븿</span>
+                    </h5>
+                    <p>
+                        아쉽지만 이해합니다!<br>
+                        다음 기회에 또 뵙겠습니다.<br>
+                        좋은 하루 되세요! 😊
+                    </p>
+                </div>
+                <!--팝업 버튼 영역-->
+                <div class="popup_btn">
+                    <a href="javascript:closeNoPop();" style="text-decoration: none;">닫기</a>
+                </div>
+            </div>
+        </div>
+        <!-- NO popup end -->
+    </div> <!-- end -->
+</body>
+
+<script>
+    $(window).on('load', function () {
+        // 페이지 로드 완료 시 body에 loaded 클래스 추가
+        $('body').addClass('loaded');
+
+        var options = {
+            menu: ['HOME', 'ABOUT', 'PROJECT', 'WORKS', 'RESUME', 'CONTACT'],
+            position: 'right',
+            themeColor: '#4a66ac',
+            id: 'exampleSide',
+            afterInit: function () {
+                var currentIndex = parseInt($('#fullpage').find('.fp-section.active').attr('data-anchor'));
+                sidenav.activeMenuAndTag(currentIndex);
+            }
+        }
+        var sidenav = new SideNavi(options);
+
+        // 앵커 링크 클릭 시 부드러운 스크롤 적용
+        $(document).on('click', 'a[href^="#"]', function (e) {
+            e.preventDefault();
+            var target = $(this).attr('href');
+            if (target && target !== '#') {
+                // 섹션 이름을 인덱스로 매핑
+                var sectionMap = {
+                    '#home': 0,
+                    '#about': 1,
+                    '#project': 2,
+                    '#works': 3,
+                    '#resume': 4,
+                    '#contact': 5,
+                    '#1': 0,
+                    '#2': 1,
+                    '#3': 2,
+                    '#4': 3,
+                    '#5': 4,
+                    '#6': 5
+                };
+                
+                var sectionIndex = sectionMap[target];
+                if (sectionIndex !== undefined) {
+                    var targetSection = $('.section').eq(sectionIndex);
+                    if (targetSection.length) {
+                        $('html, body').animate({
+                            scrollTop: targetSection.offset().top
+                        }, 600, 'swing');
+                    }
+                }
+            }
+        });
+
+        // 사용자가 새창에서 이전 창으로 돌아왔을 때 스크롤 멈춤 현상(overflow hidden) 방지
+        $(window).on('focus', function() {
+            var yesPopup = document.getElementById("popup_layer");
+            var noPopup = document.getElementById("no_popup_layer");
+            if (yesPopup && yesPopup.style.display === "block") return;
+            if (noPopup && noPopup.style.display === "block") return;
+            document.body.style.overflow = "auto";
+        });
+
+        $('#fullpage').fullpage({
+            autoScrolling: false,
+            fitToSection: false,
+            scrollBar: false,
+            animateAnchor: false,
+            lockAnchors: false,
+            recordHistory: false,
+            sectionsColor: ['#FFFFFF', '#FFFFFF', '#C5C4CB', '#EEEEEE', '#FFFFFF', '#FFFFFF'],
+            anchors: ['1', '2', '3', '4', '5', '6'],
+            onLeave: function (index, nextIndex) {
+                sidenav.activeMenuAndTag(nextIndex);
+            },
+            afterLoad: function (index) {
+                var loadedSection = $(this);
+                switch (index) {
+                    case 1: loadedSection.find('h2').addClass('');
+                        break;
+                    case 2: loadedSection.find('h2').addClass('');
+                        break;
+                    case 3: loadedSection.find('h2').addClass('');
+                        break;
+                    case 4: loadedSection.find('h2').addClass('');
+                        break;
+                    case 5: loadedSection.find('h2').addClass('');
+                        break;
+                    case 6: loadedSection.find('h2').addClass('');
+                        break;
+                }
+            }
+        });
+    });
+</script>
+<!-- layout end -->
+
+</html>
