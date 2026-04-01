@@ -131,17 +131,21 @@ textarea {
 
 label,
 summary {
-    cursor: default
+    cursor: none !important;
 }
 
 a,
 button {
-    cursor: pointer !important;
+    cursor: none !important;
 }
 
 a *,
 button * {
-    cursor: pointer !important;
+    cursor: none !important;
+}
+
+body, html, * {
+    cursor: none !important;
 }
 
 h1,
