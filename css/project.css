@@ -50,11 +50,11 @@
 }
 
 .card:nth-child(3) {
-  background-image: url(../assets/images/project/web_thumbnail_03.jpg);
+  background-image: url(../assets/images/project/team_uxui_thumbnail_01.jpg);
 }
 
 .card:nth-child(4) {
-  background-image: url(../assets/images/project/team_uxui_thumbnail_01.jpg);
+  background-image: url(../assets/images/project/uxui_app_thumbnail_01.jpg);
 }
 
 .card:nth-child(5) {
