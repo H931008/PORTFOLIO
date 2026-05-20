@@ -42,27 +42,29 @@
 }
 
 .card:nth-child(1) {
-  background-image: url(../assets/images/project/web_thumbnail_01.jpg);
-}
-
-.card:nth-child(2) {
-  background-image: url(../assets/images/project/web_thumbnail_02.jpg);
-}
-
-.card:nth-child(3) {
   background-image: url(../assets/images/project/team_uxui_thumbnail_01.jpg);
 }
 
-.card:nth-child(4) {
-  background-image: url(../assets/images/project/uxui_app_thumbnail_01.jpg);
-}
-
-.card:nth-child(5) {
+.card:nth-child(2) {
   background-image: url(../assets/images/project/uxui_app_thumbnail_02.jpg);
 }
 
+.card:nth-child(3) {
+  background-image: url(../assets/images/project/team_uxui_thumbnail_03.jpg);
+}
+
+
+.card:nth-child(4) {
+  background-image: url(../assets/images/project/uxui_app_thumbnail_04.jpg);
+}
+
+.card:nth-child(5) {
+  background-color: #FF6F00;
+  background-image: url(../assets/images/project/uxui_app_thumbnail_05.jpg);
+}
+
 .card:nth-child(6) {
-  background-image: url(../assets/images/project/team_uxui_thumbnail_04.jpg);
+  background-image: url(../assets/images/project/team_uxui_thumbnail_06.jpg);
 }
 
 
@@ -404,7 +406,6 @@
 
 @media (max-width: 600px) {
   .works-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr;     gap: 32px;
   }
 }
