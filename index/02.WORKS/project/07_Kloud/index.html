@@ -1,1 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>클라우드 (Kloud)</title>
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/prefixfree.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@charset "utf-8";
+* {margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif;}
+ul {list-style: none;}
+a {text-decoration: none;}
+img {border: 0;}
 
+.wrap {position: fixed; width: 100%; height: 97%; min-width: 1024px; min-height: 768px; background-size: cover; background:url("images/bg.jpg") no-repeat 100%;}
+.wrap h1 {position: fixed; top: 50px; right: 50px;}
+.wrap h1 img {width: 150px; height: auto;}
+
+section {position: fixed; top: 0px; right: 0px; width: 100%; height: 100%;}
+article {position: relative; width: 12%; height: 100%; float: left; overflow: hidden; border-right: 1px solid #fff;}
+article h2 {position: absolute; top: 170px; left: 20px; padding-left: 15px; border-left: 3px solid #fff; font-weight: bold; font-size: 20px; color: #fff; z-index: 3; transition: 0.4s;}
+article div {position: absolute; left: 0px; top: 170px; width: 100%; height: 0px; background: #fff; opacity: 0.3; z-index: 2; transition: all 0.4s;}
+article:hover h2 {color: #fff; border-left: 3px solid #fff;}
+article:hover div {top: 150px; height: 70px;}
+
+article video {position: absolute; width: auto; height: 100%; margin-top: 0; margin-left: -400px; opacity: 0; z-index: 1;}
+article h3 {position: absolute; bottom: 180px; text-align: right; right: -540px; color: #fff; opacity: 1; z-index: 4; font-size: 30px;}
+article p {position: absolute; top: 780px; text-align: right; right: -400px; color: #fff; opacity: 0.8; z-index: 5; font-size: 16px; width: 300px; height: 150px;}
+
+footer {position: fixed; width: 100%; height: 40px; left: 0px; bottom: 0; background: #000; font-size: 13px; color: #fff; z-index: 10}
+footer ul {position: absolute; bottom: 10px; left: 50px;}
+footer ul li {float: left; margin-right: 40px;}
+footer li a {color: #fff;}
+foooter i {font-size: 20px;}
+footer span {position: absolute; right: 50px; bottom: 10px;}
+</style>
+<script>
+$(document).ready(function() {
+$("article").on("mouseover",function() {
+var vid=$(this).find("video").get(0);
+vid.curruntTime=0;
+vid.play();
+$(this).stop().animate({width:"40%"},1000,function() {
+ 
+$(this).find("h3").stop().animate({right:"20px"},400);
+$(this).find("p").stop().animate({right:"20px"},800);
+})
+$(this).find("video").stop().animate({opacity:"1"},1200)    
+});
+
+$("article").on("mouseout",function() {
+var vid=$(this).find("video").get(0); 
+vid.pause(); 
+$(this).stop().animate({width:"12%"},700);
+$(this).find("video").stop().animate({opacity:"0"},2000);
+$(this).find("h3").stop().animate({right:"-500px"},200);
+$(this).find("p").stop().animate({right:"-400px"},500);
+})
+})    
+
+</script>
+</head>
+<body>
+<div class="wrap">
+<h1><img src="images/logo_white_ver.png"></h1>
+<section class="contents">
+<article>
+<h2>Kloud X Behind</h2>
+<video loop="loop autoplay muted">
+<source src="" type="video/mp4">
+</video>
+<div></div>
+<h3></h3>
+<p>클라우드 광고 촬영, 인터뷰 등<br>
+비하인드를 만나보세요!</p>
+</article>
+
+<article>
+<h2>클라우드 X AD</h2>
+<video loop="loop" autoplay muted>
+<source src="vid/Kloud_3.mp4" type="video/mp4">
+</video>
+<div></div>
+<h3></h3>
+<p></p>
+</article>
+
+<article>
+<h2>클라우드 X bhc</h2>
+<video loop="loop" autoplay muted>
+<source src="vid/Kloud_2.mp4" tpye="video/mp4">
+</video>
+<div></div>
+<h3>오늘 저녁엔<br>시원한 클라우드와 bhc 치킨 각?</h3>
+<p>치킨 맛을 살리는 초신선 생라거<br>
+클라우드 생 드래프트와 bhc 치퐁당<br>
+치킨의 환상의 티키타카!</p>
+</article>
+
+<article>
+<h2>ABOUT US</h2>
+<video loop="loop" autoplay muted>
+<source src="vid/Kloud_1.mp4" type="video/mp4">
+</video>
+<div></div>
+<h3>100% 발효원액으로 만들어 깊고 풍부한</h3>
+<p>클라우드<br>
+물을 타지 않은 오리지널 공법으로 만들어<br>
+최고 품질의 원료를 엄선해 유럽 정통 맥주의 맛을 구현했습니다.</p>
+</article>
+</section>
+<footer>
+<ul>
+<li><a href="#">이용약관</a></li>
+<li><a href="#">개인정보처리방침</a></li>
+<li><a href="#">영상정보처리기기운영·관리방침</a></li>
+<li><a href="#">롯데칠성몰</a></li>
+<li><a href="#">신문고</a></li>
+<li><a href="#">사이트맵</a></li>
+<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+<li><a href="#"><i class="fab fa-facebook"></i></a></li>
+</ul>
+<span>COPYRIGHT&copy;LOTTE CHILSUNG BEVERAGE CO.,LTD. RIGHTS RESERVED.</span>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+* {margin: 0; padding: 0;}
+
+body {width:1920px; height: 1080px; font-family: ?˜ëˆ”ê³ ë”•, NanumGothic, ng, ?‹ì?, arial, helvetica, sans-serif !important; font-size: 12px; line-height: 19px;}
+ul, ol, li {list-style: none;}
+a {text-decoration: none; color: grey;}
+    
+.red {color: #D91226; font-weight: bold;}
+.black {color: #303030; font-weight: bold;}
+    
+.wrap {width: 940px; color: #6f6f6f; margin: 0 auto; position: relative;}
+.wrap h1 {width: 133px; margin: 0 auto; padding: 17px ; text-align: center;}
+.wrap .head_sub_menu {width: 410px; position: absolute; font-size: 12px; line-height: 20px; overflow: hidden; top: 5px; right: -65px;}
+.wrap .head_sub_menu li {font-weight: bold; float: left; margin-left: 12px; margin-top: 0px;}
+.wrap .head_sub_menu2 {width: 410px; position: absolute; font-size: 12px; line-height: 20px; overflow: hidden; top: 5px; left: 15px;}
+.wrap .head_sub_menu2 li {float: left; margin-right: 12px; margin-top: 0px;}
+
+#btn {width: 89px; height: 89px; position: fixed; right: 350px; top: 30px; z-index: 99;}
+    
+#gnb {width: 100%; height: 60px; position: relative;}
+#gnb>ul {width: 1100px; height: 60px; margin: 0 auto;}
+#gnb>ul>li {float: left; width: 180px; height: 60px; font-weight: bold; text-align: center; box-sizing: border-box;}
+#gnb>ul>li>a {display: block; width: 100%; height: 100%; color: black;  text-align: center; font-size: 18px; line-height: 50px;}
+#gnb>ul>li>a>span {display: block; font-size: 12px; color: grey; position: relative; top: -30px; text-align: center; opacity: 0;}
+
+#gnb ul li .smenu {width: 220px; height: 0px; overflow: hidden; z-index: 9999; position: absolute;}
+#gnb ul li .smenu li {width: 200px; height: 25px;}
+#gnb ul li .smenu li>a {display: block; height: 100%; width: 90%; font-size: 14px; text-align: center; color: gray;}
+#gnb ul li .smenu li:hover a {color: #fff;}
+    
+#gnb .gnb_bar {width: 100%; height: 0px; background: #4F4C4B; position: absolute; left: 0; top: 60px; z-index: 1;}
+#gnb ul:hover span {opacity: 1;}
+#gnb ul:hover .gnb_bar, #gnb ul:hover .smenu {height: 250px; transition: all 0.5s;}
+#gnb ul>li:hover span {color: #fff;}
+
+.red_line_bar {border: 1px solid #D91226;}
+
+#gnb ul>li:hover>a {background: #D91226; color: #fff;}
+/* #gnb ul>li:hover>a:hover {} */
+
+.mainlist {width: 940px; height: 650px; margin: 0 auto; overflow: hidden;}
+.mainlist div {float: left; width: 205px;}
+.mainlist .list_le {width: 225px; height: 272px; position: relative; padding: 30px 0px 0px 0px; background: #faf9f7;}
+.mainlist .list_le>img {width: 143px; position: relative; padding: 0 0 0 19px;}
+.mainlist .list_center {width: 460px; margin-left: 15px; padding: 0px;}
+.mainlist .list_center p {margin-bottom: 15px; padding: 0px 0px 0px;}
+.mainlist .list_center ul {overflow: hidden; margin-top: 24px;}
+.mainlist .list_center li {float: left; width: 150px; text-align: center; background: url(images/mall_bar01.gif) 0 top no-repeat; padding: 10px 0px 0px 0px; box-sizing: border-box;} 
+.mainlist .list_center li:first-child {background: none;}
+.mainlist .list_center li .img_wr {height: 85px; margin-bottom: 80px;}
+.mainlist .list_center li a {text-decoration: none; display: block;} 
+.mainlist .list_center span {display: block; color: #303030;} 
+.mainlist .list_center span:hover {color: #b5121b;} 
+.mainlist .list_ri {width: 240px; height: 271px; position: relative; padding: 30px 0px 0px 0px; background: #faf9f7;}
+.mainlist .list_ri>img {padding-left: 19px;}
+    
+.mainlist .mainlist02 {overflow: hidden; margin-top: 40px; width: 940px; height: 152px;}
+.mainlist .mainlist02 .banner_membershp {float: left; width: 465px;}
+.mainlist .mainlist02 .banner_gift {float: right; width: 465px;}    
+.mainlist .mainlist02 a {display: block;}       
+  
+.mainlist .mainlist03 {width: 940px; height: 106px; overflow: hidden; margin-top: 30px;}
+.mainlist .mainlist03 a {text-decoration: noen;}       
+.mainlist .mainlist03 ul {float: left; width: 205px; margin-right: 35px; color: #6f6f6f;}        
+.mainlist .mainlist03 li .ico_going {background: url(images/ico_arrow.gif) left 1px no-repeat; padding: 0px 0px 0px 18px; margin-top: 7px;}
+.mainlist .mainlist03 li .ico_going a {color: #303030;}
+.mainlist .mainlist03 news_lsit {width: 205px; height: 88px; float: left; width: 205px; margin-right: 35px;} 
+.mainlist .mainlist03 .news_lsit li {margin-bottom: 3px;}
+.mainlist .mainlist03 .news_lsit li a {text-decoration: none;}
+.mainlist .mainlist03 .news_lsit li.news a {width: 205px; display: block;}
+.mainlist .mainlist03 .list_etc {width: 205px; height: 83px; overflow: hidden; margin: 0;}
+.mainlist .mainlist03 .list_etc li {float: left;}
+.mainlist .mainlist03 .list_etc li a {display: block; text-decoration: none;}
+.mainlist .mainlist03 .list_etc li .img_wr {background: url(images/mall_bar01.gif) right top no-repeat; padding: 10px 14px 10px; margin-bottom: 5px;}
+.mainlist .mainlist03 .list_etc span {display: block; text-align: center;}
+    
+.sns {width: 940px; height: 84px; margin: 0 auto; border-top: 2px solid #b5121b; padding: 40px 0px 0px 0px; margin-top: 50px; overflow: hidden}
+.sns .sns_tit {width: 940px; height: 22px; margin-bottom: 20px;}
+    
+.footer {width: 100%; height: 115px; padding: 33px 0px 0px 0px; background: #ba000c; font-size: 11px;}
+.footer .footerInner {width: 940px; margin: 0 auto; line-height: 14px; overflow: hidden;}
+.footer .footerInner .footer01 {float: left;}
+.footer .footerInner a {background: url(images/bg_footer_bar01.gif) right 2px no-repeat; padding: 0px 8px 0px 3px; color: #faeff0; text-decoration: none;}
+.footer .footerInner a:first-child {padding: 0px 8px 0px 0px;}
+.footer .footerInner a:last-child {background: none;}
+.footer .footerInner p {margin-top: 23px; color: #de898e; line-height: 16px;}
+.footer .footerInner p.address {margin-top: 0;}

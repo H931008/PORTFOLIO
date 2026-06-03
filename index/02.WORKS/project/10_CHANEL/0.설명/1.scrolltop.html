@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+    body {height: 3000px;}
+    p{font-size: 30px; top: 0px; left: 0px;  position: fixed;}
+</style>
+<script>
+    $(document).ready(function () {
+    $(window).on("scroll",function () {
+    // 브라우저를 스크롤 할 때 마다
+    var ab=$(this).scrollTop();
+    // 변수 ab에 스크롤 한 만큼의 거리 값을 저장한다.
+    $("p").text(ab);
+    //  p 태그 안에 변수 ab값을 통해 나온 스크롤한 거리를 출력해 준다.
+    })
+    }) //end
+</script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>
+<!-- 
+scrollTop(): 화면을 스크롤 할 때에 현재 사용자가 스크롤한 만큼의 거리를 계산해 준다.
+브라우저 오른족 스크롤바가 움직인 만큼의 거리 값을 계산한다.
+-->

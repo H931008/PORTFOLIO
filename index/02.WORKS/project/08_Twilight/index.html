@@ -1,1 +1,132 @@
-
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Twilight | 트와일라잇</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/prefixfree.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $(".btn_menu").on("click",function() {
+    $(this).fadeOut();
+    $("section").addClass("on");
+    $("nav").addClass("on");
+    })  
+    
+    $("nav li").on("click",function() {
+    $(".btn_menu").fadeIn()
+    $("section").removeClass("on");
+    $("nav").removeClass("on");
+    var i=$(this).index();
+    $("section>div").removeClass("on");
+    $("section>div").eq(i).addClass("on");
+    })
+    
+    $("#front>.click").click(function() {
+    $("#front").hide()
+    })
+    })
+</script>
+</head>
+<body>
+    <div id="front">
+        <img src="images/logo.png">
+        <div class="click"> CLICK</div>
+    </div>
+    <div class="wrap">
+        <a class="btn_menu" href="#">
+            <i class="fas fa-bars"></i>
+        </a>
+        <nav>
+            <h1><img src="images/logo2.png"></h1>
+            <ul class="gnb">
+                <li><a href="#">TWILIGHT</a></li>
+                <li><a href="#">NEW MOON</a></li>
+                <li><a href="#">ECLIPSE</a></li>
+                <li><a href="#">BREAKING DAWN</a></li>
+                <li><a href="#">BREAKING DAWN 2</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div class="box1 on">
+                <p>
+                    <em><a href=""><i class="fab fa-facebook"></i></a></em>
+                    <em><a href=""><i class="fab fa-twitter"></i></a></em>
+                    <em><a href=""><i class="fab fa-instagram"></i></a></em>
+                    <em><a href=""><i class="fab fa-tumblr"></i></a></em>
+                    <span>
+                        <strong>얼음보다 차갑고 빛보다 빠른 그가 온다!</strong><br><br><small>17세의 평범한 고등학생 소녀 ‘벨라’는 집안 사정으로<br>워싱턴 주 포크스에 있는 아빠의 집으로 이사를 온다.<br>전학 첫날, ‘벨라’는 냉담하지만 자신을 무장 해제시킬 정도로<br>잘생긴 ‘에드워드’와 마주치고, 전율과 두려움 넘치는 인생의 전환을 맞이한다.<br>‘에드워드’와 돌이킬 수 없는 사랑에 빠져든 ‘벨라’.<br>하지만 ‘에드워드’와 그의 가족이 뱀파이어 일족이라는<br>사실을 알게 되고, 예기치 못한 운명에 빠져든다.</small>
+                    </span>
+                </p>
+                <p><a href="" class="a1"><img src="images/img1.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img2.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img3.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img4.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img5.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img6.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img7.jpeg" width="480" height="490"></a></p>
+            </div>
+            
+            <div class="box2">
+                <p><a href="" class="a1"><img src="images/img8.jpeg" width="480" height="490"></a></p>
+                <p><span>
+                        <strong>전세계를 강타한 ‘트와일라잇’ 두 번째 신화!<br>흥분하라! 더 강해진 그들이 돌아온다!</strong><br><br><small>초능력을 가진 뱀파이어 에드워드는 인간 벨라가 자신 때문에 위험해지자<br> 냉정하게 그녀를 떠난다. 이제 벨라를 지키는 것은 오랜 친구 제이콥.<br>하지만 제이콥은 뱀파이어와 적을 이루는 늑대인간 ‘퀼렛족’의 일원으로<br>벨라와 에드워드를 떼어놓고자 한다. 그러던 어느 날 벨라는 자신이 위험한 사고를<br> 당할 때마다 에드워드의 환영이 보인다는 것을 알고 급기야 절벽에서 떨어지는<br> 무모한 행동을 한다. 그리고 이 사건은 누구도 예상치 못할 결과를 초래하는데…</small>
+                    </span>
+                </p>
+                <p><a href="" class="a1"><img src="images/img9.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img10.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img11.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img12.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img13.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img14.jpeg" width="480" height="490"></a></p>
+            </div>
+            
+            <div class="box3">
+                <p><a href="" class="a1"><img src="images/img16.jpeg" width="480" height="490"></a></p>
+                <p><span>
+                        <strong>종족의 운명을 건 마지막 선택!<br>올 여름 최후의 결전이 시작된다!</strong><br><br><small>불멸의 사랑을 위해 뱀파이어가 되기로 결심한 벨라.<br>제이콥은 벨라의 선택을 가로막으며 자신을 택하도록 종용하고<br>이로 인해 에드워드와의 갈등은 더욱 심해진다.<br>한편 시애틀에서 의문의 연쇄살인사건이 일어나고 에드워드는 곧<br>이 사건의 배후를 알게 되지만 벨라에게는 비밀로 하는데…</small>
+                    </span>
+                </p>
+                <p><a href="" class="a1"><img src="images/img17.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img18.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img19.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img20.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img21.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img22.jpeg" width="480" height="490"></a></p>
+            </div>
+            
+            <div class="box4">
+                <p><a href="" class="a1"><img src="images/img23.jpeg" width="480" height="490"></a></p>
+                <p><span>
+                    <strong>전세계가 기다려온 세기의 결혼식!<br>인간과 뱀파이어의 결합이 불러온 새로운 운명이 시작된다!</strong><br><br><small>우여곡절 끝에 많은 이들의 축복 속에 뱀파이어 에드워드와 결혼식을 올린 벨라!<br> 아직 마음을 정리하지 못한 제이콥을 뒤로하고 허니문을 떠난 벨라와 에드워드는 세상에<br>서 가장 아름답고 특별한 첫날 밤을 보내게 된다. 행복한 시간도 잠시, 벨라는 예상치 못한 임신을 하게 된다. <br></small><strong>새로운 생명의 탄생이 불러올 종족 간 최대의 위기!<br>시리즈 사상 가장 거대한 전쟁이 펼쳐진다!</strong>
+                    </span>
+                </p>
+                <p><a href="" class="a1"><img src="images/img24.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img25.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img26.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img27.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img28.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img29.jpeg" width="480" height="490"></a></p>
+            </div>
+            
+            <div class="box5">
+                <p><a href="" class="a1"><img src="images/img30.jpeg" width="480" height="490"></a></p>
+                <p><span>
+                    <strong>금기를 넘어선 불멸의 사랑! 그리고 <br>누구도 예측할 수 없었던 신비한 혼혈소녀 ‘르네즈미’의 탄생!<br>인간과 뱀파이어의 결합이 불러온 새로운 운명이 시작된다!</strong><br><br><small>르네즈미를 잉태하면서 죽음의 순간까지 닿았던 벨라는 그녀를 살리기 위한<br> 에드워드의 노력으로 마침내 뱀파이어로 다시 태어나고,<br> 제이콥이 자신의 딸 르네즈미에게 ‘각인’되었다는 사실을 알고 충격에 빠진다.<br>한편 르네즈미를 뱀파이어에게 위험한 ‘불멸의 아이’라고 판단한 볼투리가는<br>그녀를 제거하기 위해 군대를 모으기 시작한다.</small>
+                    </span>
+                </p>
+                <p><a href="" class="a1"><img src="images/img31.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img32.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img33.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img34.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img35.jpeg" width="480" height="490"></a></p>
+                <p><a href="" class="a1"><img src="images/img36.jpeg" width="480" height="490"></a></p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

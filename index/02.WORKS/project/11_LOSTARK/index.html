@@ -1,1 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>로스트아크 - LOSTARK</title>
+<link rel="icon" href="https://cdn-lostark.game.onstove.com/2018/obt/assets/images/common/icon/favicon-192.png?v=20220707162553" sizes="192x192">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+<link href="css/index.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/prefixfree.min.js"></script>
+<script src="js/index.js"></script>
+<style>
+    @charset "utf-8";
+    * {margin: 0; padding: 0;}
+    ol,ul {list-style: none;}
+    a {outline: 0; text-decoration: none; color: #555;}
+    img {border: 0;}
+    body {width: 100%; min-width: 1400px; height: 23000px; font-family: 'Noto Sans', 'Roboto+Slab'; font-size: 12px; letter-spacing: 2px;}
+    .bg {position: fixed; width: 100%; height: 100%; top: 0px; left: 0px; background: #000;}
+    
+    h1 {position: fixed; top: 40px; left: 70px; z-index: 2;}
+    h1 img {width: 142px;}
+    
+    .gnb {position: fixed; top: 50px; right: 180px; z-index: 2;}
+    .gnb li {float: left; margin-left: 50px;}
+    .gnb li a {font-size: 14px; font-weight: bold; color: #fff; transform: scale(1); opacity: 0.5; transition: all 0.5s;}
+    .gnb li a:hover {transform: scale(1.5); opacity: 1;}
+    
+    .sns {position: fixed; top: 50px; right: 50px; z-index: 2;}
+    .sns li {float: left; margin-left: 30px;}
+    .sns li .fab {font-size: 18px; color: #fff; transform: scale(1); opacity: 0.5; transition: all 0.5s;}
+    .sns li .fab:hover {transform: scale(1.5); opacity: 1;}
+    
+    .scrollNavi {position: fixed; left: 100px; top: 300px; z-index: 2;}
+    .scrollNavi li {position: relative; width: 150px; height: 35px; margin-bottom: 20px; font-size: 12px; color: #fff; text-align: center; perspective: 400px; cursor: pointer;}
+    .scrollNavi li em {position: absolute; top: 8px; left: 20px; font-size: 14px; font-weight: bold; color: #fff; text-shadow: 1px 1px 1px #000;}
+    .scrollNavi li span {display: block; width: 3%; height: 100%; position: absolute; transform: skewX(-30deg); box-shadow: 1px 1px 1px #000;}
+    .scrollNavi li.on span {width: 100%;}
+    .scrollNavi li:nth-child(1) span {background: #ff0f51;}
+    .scrollNavi li:nth-child(2) span {background: #997fb6;}
+    .scrollNavi li:nth-child(3) span {background: #c53b42;}
+    .scrollNavi li:nth-child(4) span {background: #f79af7;}
+    .scrollNavi li:nth-child(5) span {background: #f4628b;}
+    
+    .copyright {position: fixed; bottom: 20px; right: 413px; font-family: 'Roboto+Slab'; font-size: 11px; color: #fff;}
+    .copyright>.copy {position: relative; left: 395px;}
+    
+    section {width: 1200px; height: 700px; position: fixed; left: 50%; margin-left: -600px; top: 50%; margin-top: -350px; perspective: 2300px; z-index: 1;}
+    section>article {width: 1200px; height: 700px; position: absolute; top: 0px; left: 0; opacity: 0.5; z-index: 8;}
+    section>article.on {opacity: 1; z-index: 9;}
+    section>article:nth-child(1) {transform: translateZ(0px);}
+    section>article:nth-child(2) {transform: translateZ(-5000px);}
+    section>article:nth-child(3) {transform: translateZ(-10000px);}
+    section>article:nth-child(4) {transform: translateZ(-15000px);}
+    section>article:nth-child(5) {transform: translateZ(-20000px);}
+    section>article>p {position: absolute; width: 800px; padding: 30px 60px; color: #fff; opacity: 1;}
+    section>article>p>span {font-family: 'Noto Sans'; font-size: 45px; font-weight: bold; letter-spacing: -5px; line-height: 1.5;}
+    
+    section>article>p>img {position: absolute;}
+    section>article:nth-child(1) p {bottom: 100px; left: 100px;}
+    section>article:nth-child(2) p {top: 100px; left: -100px;}
+    section>article:nth-child(3) p {bottom: 250px; left: -100px;}
+    section>article:nth-child(4) p {bottom: 490px; right: -350px;}
+    section>article:nth-child(5) p {top: 50px; left: -50px;} 
+    
+    section>article:nth-child(1) p span {color: #ffffff;}
+    section>article:nth-child(2) p span {color: #ffffff;}
+    section>article:nth-child(3) p span {color: #ffffff;}
+    section>article:nth-child(4) p span {color: #ffffff;}
+    section>article:nth-child(5) p span {color: #ffffff;}
+    
+    .bm1 {position: absolute; bottom: -155px; right: -351px;}
+    .bm2 {position: absolute; top: -143px; right: -465px;}
+    
+    .lm1 {position: absolute; bottom: -155px; right: -351px;}
+    .lm2 {position: absolute; top: -143px; right: -410px;}
+    
+    .blade1 {position: absolute; bottom: -155px; right: -351px;}
+    .blade2 {position: absolute; top: -143px; right: -410px;}
 
+    .artist1 {position: absolute; bottom: -155px; right: -351px;}
+    .artist2 {position: absolute; top: -215px; right: -390px;}
+    
+    .aeromancer1 {position: absolute; bottom: -155px; right: -351px;}
+    .aeromancer2 {position: absolute; top: -170px; right: -390px;}
+    
+</style>
+<script>
+    $(document).ready(function(){
+    $("body, html").stop().animate({"scrollTop":0},1500,"swing");
+
+    $(window).scroll(function(){
+    var scroll=$(this).scrollTop();
+        
+    for(var i=0; i<5; i++){
+        $("section>article").eq(i).css({"transform":"translateZ("+parseInt((-5000*i)+scroll)+"px)"});
+        };
+
+    for(var i=0; i<5; i++){
+    if(scroll>=i*5000&&scroll<(i+1)*5000){
+    $(".scrollNavi li").removeClass();
+    $(".scrollNavi li").eq(i).addClass("on");
+    $("article").removeClass();
+    $("article").eq(i).addClass("on");
+    };
+    };	
+    });
+
+    $(".scrollNavi li").on("click",function(){
+    var a=$(this).index();
+    $("body,html").stop().animate({"scrollTop":5000*a},1500,"swing");
+    });
+    $("body").on("mousemove",function (e) {
+    var posX=e.pageX/100;
+    var posY=e.pageY/150;
+        
+    $(".bm1").css({"left":-350-posX , "top":-150+posY});
+    $(".bm2").css({"right":-593-posX , "top":-200+posY});
+    $(".lm1").css({"left":-350-posX, "bottom":-250+posY});   
+    $(".lm2").css({"top":-150-posX, "bottom":-200+posY});   
+    $(".blade1").css({"left":-360-posX, "top":-160-posY});   
+    $(".blade2").css({"right":-300-posX, "top":-160-posY});   
+    $(".artist1").css({"right":-360-posX , "bottom":-248+posY});   
+    $(".artist2").css({"right":-593-posX , "top":-200+posY});   
+    $(".aeromancer1").css({"left":-350-posX, "bottom":-250+posY});
+    $(".aeromancer2").css({"left":-100-posX, "right":-350+posY});
+    })
+    })//
+
+</script>
+</head>
+<body>
+    <div class="bg"></div>
+    <h1><img src="images/logo.png"></h1>
+    <ul class="gnb">
+        <li><a href="https://lostark.game.onstove.com/News/Notice/List">새소식</a></li>
+        <li><a href="https://lostark.game.onstove.com/Profile/Character">게임정보</a></li>
+        <li><a href="https://lostark.game.onstove.com/GameGuide" target="_blank">가이드</a></li>
+        <li><a href="https://lostark.game.onstove.com/Video">미디어</a></li>
+        <li><a href="https://help.onstove.com/web/faq/serviceMain/page?game_nm=LOST_ARK&game=2017090003&channel=stove" target="_blank">고객센터</a></li>
+        <li><a href="https://lostark.game.onstove.com/Promotion/Esports/220112" target="_blank">E-SPORTS</a></li>
+        <li><a href="https://lostark.game.onstove.com/News/TesterNotice/List">테스터</a></li>
+        <li><a href="http://bit.ly/2UjASbf">공식사이트</a></li>
+    </ul>
+    <ul class="sns">
+        <li><a href="http://bit.ly/LostArk_FB"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="http://bit.ly/LostArk_Youtube"><i class="fab fa-youtube"></i></a></li>
+    </ul>
+    <ul class="scrollNavi">
+        <li class="on"><span></span><em>Battle Master</em></li>
+        <li><span></span><em>Lance Master</em></li>
+        <li><span></span><em>Blade</em></li>
+        <li><span></span><em>Artist</em></li>
+        <li><span></span><em>Aeromancer</em></li>
+    </ul>
+    <section>
+        <article class="on">
+            <img class="bm1" src="images/bg_detail_battlemaster.jpg">
+            <img class="bm2" src="images/img_detail_battlemaster.png">
+            <p class="on">
+                <span>"체술만으로는 강해질 수 없어"</span><br>
+                배틀마스터는 전광석화와 같이 적들을 공격하는 무도가 클래스입니다. 빠른 움직임<br>에 다양한 체술을 두루 갖추고 있기 때문에 순식간에 적을 타격한 뒤 화려한 공중<br> 콤보를 이어갈 수 있으며, 강력한 엘리멘탈 스킬들을 활용해 전장의 판도를 뒤집을<br> 수도 있습니다.
+            </p>
+        </article>
+        <article>
+            <img class="lm1" src="images/bg_detail_lancemaster.jpg">
+            <img class="lm2" src="images/img_detail_lancemaster.png">
+            <p>
+                <span>"전장의 창이 되어, 적을 섬멸하라!"</span><br>
+                창술사는 상황에 맞게 스탠스를 변경할 수 있는 클래스입니다. 변형 창을 사용해 <br>주변에 위치한 적들을 쓸어버릴 수 있는 난무 스탠스, 날카로운 창으로 순간 높은<br>피해를 줄 수 있는 집중 스탠스를 사용해 전장의 적들을 단숨에 제압할 수 있습니다.
+            </p>
+        </article>
+        <article>
+            <img class="blade1" src="images/bg_detail_blade.jpg">
+            <img class="blade2" src="images/img_detail_blade.png">
+            <p>
+                <span>"내재된 악마성을 절제하며,<br> 혼돈의 검을 휘두르는 자!"</span><br>
+                블레이드는 쌍검과 장검, 총 세개의 검을 사용하는 암살자입니다. 항상 차분한 이성을<br> 유지하며, 날렵한 쌍검과 묵직한 장검에 혼돈의 힘을 담아 빠르고 절도 있게 적들을 공<br>격합니다. 특히, 쌍검과 장검을 활용한 연계 공격은 숨쉴 틈 없는 공격을 난사해 적을 제압합니다.
+            </p>
+        </article>
+        <article>
+            <img class="artist1" src="images/bg_detail_artist.jpg">
+            <img class="artist2" src="images/img_detail_artist.png">
+            <p>
+                <span>"그릴 거야, 너와 모두를 지키기 위해…"</span><br>
+                도화가는 붓에서 나오는 환영의 힘으로 전략적 운용이 가능한 서포터형 클래스 입니다.<br> 붓과 먹물로 적을 공격하거나 그림을 통해 다양한 신수를 불러낼 수 있습니다.<br>공격력은 다소 낮은 편이지만 환영의 힘으로 아군을 위험에서 구해 전장의 후방을 든든<br>하게 지원해 주는 클래스입니다.
+            </p>
+        </article>
+        <article>
+            <img class="aeromancer1" src="images/bg_detail_aeromancer.jpg">
+            <img class="aeromancer2" src="images/img_detail_aeromancer.png">
+            <p>
+                <span>"오늘 날씨는… 맑음!"</span><br>
+                기상술사는 신비로운 환영의 힘으로 기상을 다루고 우산을 활용하여 적을 제압하는<br> 클래스입니다. 변덕스러운 날씨를 이용해 특정 위치에 있는 적을 공략하거나,<br>우산을 접고 펼치는 화렿나 움직임으로 근거리 적들을 제압하는 전투를 할 수 있습니다.
+            </p>
+        </article>
+ 
+    </section>
+    <span class="copyright"><span class="copy">&copy;Smilegate RPG &amp; Smilegate Stove All rights reserved.</span></span>
+</body>
+</html>

@@ -1,0 +1,220 @@
+@charset "utf-8";
+
+/* reset */
+* {margin: 0; padding: 0;}
+ol, ul {list-style: none;}
+a {outline: 0; text-decoration: none; color: #555;}
+img {border: 0;}
+body {font: 12px/1.6; color: #555;}
+#wrap {width: 100%; height: 100%;}
+
+/* layout */
+header {position: fixed; width: 15%; height: 100%; background: #fff; top: 0; left: 0; transition: all 0.5s;}
+nav {position: relative; width: 85%; height: 35px; background: #A81919; margin-left: 15%; transition: all 0.5s; font-size: 12px; line-height: 25px;}
+section {position: relative; width: 85%; margin-left: 15%;}
+
+article {float: left; height: 260px; transition: all 0.5s; animation: scale 1s 1;}
+article:nth-child(1) {width: 60%; height: 520px; background: #ddd;}
+article:nth-child(2) {width: 40%; background: #A81919;}
+article:nth-child(3) {width: 20%; background: #bbb;}
+article:nth-child(4) {width: 20%; background: #aaa;}
+article:nth-child(5) {width: 20%; background: #ccc;}
+article:nth-child(6) {width: 40%; background: #000;}
+article:nth-child(7) {width: 20%; background: #888;}
+article:nth-child(8) {width: 20%; background: #555;}
+article:nth-child(9) {width: 40%; background: #333;}
+article:nth-child(10) {width: 20%; background: #777;}
+article:nth-child(11) {width: 20%; background: #222;}
+article:nth-child(12) {width: 20%; background: #111;}
+
+@keyframes scale {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+
+article>div {position: relative; width: 100%; height: 100%; overflow: hidden; cursor: pointer;}
+
+/* header contents */
+header h1 {position: absolute; top: 70px; left: 55%; margin-left: -100px; width: 180px; height: 180px; text-indent: -99999px; background: url(../images/logo.png)no-repeat; background-size: contain; transform: rotate(30deg);}
+
+.menu {position: absolute; top: 300px; left: 50%; margin-left: -110px; width: 100%;}
+.menu a {display: block; padding: 8px 55px; font-size: 16px; text-align: left; line-height: 1.8; transition: all 0.5s; letter-spacing: -1px;}
+.menu a:hover {color: #A81919;}
+
+.sns {position: absolute; bottom: 50px; right: 50%; margin-right: -60px; width: 110px; height: 45px;}
+.sns a {float: left; display: block; font-size: 30px; padding: 0 3px;}
+.sns a:nth-child(1) {font-size: 10px; padding: 0 5px;}
+.sns a:nth-child(2) {font-size: 10px; padding: 0 5px; border-left: thin solid #ccc;}
+.sns a:hover {color: #A81919}
+
+/* nav */
+nav a:nth-child(1) {position: absolute; top: 5px; right: 593px; color: #fff;}
+nav a:nth-child(2) {position: absolute; top: 5px; right: 451px; color: #fff;}
+nav a:nth-child(3) {position: absolute; top: 5px; right: 320px; color: #fff;}
+nav a:nth-child(4) {position: absolute; top: 5px; right: 190px; color: #fff;}
+nav a {transition: all 0.4s;}
+nav a:hover {color: #ccc;}
+
+/* put in background-img */
+article .bg1 {background: url(../images/img1.jpeg)no-repeat; background-size: cover;}
+article .bg1 video {width: 100%}
+article .bg2 {background: url(../images/img2.jpeg)no-repeat; background-size: cover;}
+article .bg3 {background: url(../images/img3.jpeg)no-repeat; background-size: cover;}
+article .bg4 {background: url(../images/img4.jpeg)no-repeat; background-size: cover;}
+article .bg5 {background: url(../images/img5.jpeg)no-repeat 0px -60px !important; background-size: 110% !important;}
+article .bg6 {background: url(../images/img6.jpeg)no-repeat; background-size: cover;}
+article .bg7 {background: url(../images/img7.jpeg)no-repeat; background-size: cover;}
+
+/* img box */
+article .bg1 {background-size: cover; background-position: 0px -300px;}
+article .bg2 {background-size: cover; background-position: -125px 0px;}
+article .bg span {font-size: 60px; color: #fff; transform: scale(10); transition: all 0.6s; position: absolute; bottom: 0px; right: 20px; opacity: 0;}
+article .bg1 span {font-size: 80px; letter-spacing: -5px; bottom: -9px; right: 5px; opacity: 1; transform: rotateY(180deg); transition: all 0.5s;}
+article .bg2 span {font-size: 30px; color: #fff; transform: scale(10); transition: all 0.6s; position: absolute; bottom: 220px; right: 10px; opacity: 0;}
+article .bg3 span {font-size: 30px; color: #fff; transform: scale(10); transition: all 0.6s; position: absolute; bottom: 10px; right: 10px; opacity: 0;}
+article .bg4 span {font-size: 30px; color: #fff; transform: scale(10); transition: all 0.6s; position: absolute; bottom: 10px; right: 10px; opacity: 0;}
+article .bg5 span {font-size: 30px; color: #fff; transform: scale(10); transition: all 0.6s; position: absolute; bottom: 220px; right: 10px; opacity: 0;}
+article .bg6 span {font-size: 30px; color: #fff; transform: scale(10); transition: all 0.6s; position: absolute; bottom: 10px; right: 10px; opacity: 0;}
+article .bg7 span {font-size: 30px; color: #fff; transform: scale(10); transition: all 0.6s; position: absolute; bottom: 220px; right: 10px; opacity: 0;}
+
+/* img box:hover */
+article:hover .bg span {opacity: 1; transform: scale(1);}
+article .bg1:hover span {transform: rotateY(0deg); color: #fff;}
+
+/* text box */
+article .txt {background: #fff; box-sizing: border-box; padding: 40px 30px; transition: all 1s;}
+article:nth-child(3) .txt {background: #fff;}
+article:nth-child(11) .txt {background: #fff;}
+article .txt strong {font-size: 30px; font-weight: normal; line-height: 1.6; color: #444; transition: 1s;}
+
+/* text box:hover */
+article:hover .txt {background: #A81919; color: #fff;}
+article:hover .txt strong {color: #fff;}
+
+/* media query ?œìž‘ */
+@media screen and (min-width: 1280px) and (max-width: 1599px) {
+    header {position: relative; width: 100%; height: 80px;}
+    nav {width: 100%; margin-left: 0;}
+    /* header contents */
+    header h1 {top: 2px; left: 2%; margin-left: 0;}
+    .menu {top: 20px;}
+    .menu li {float: left;}
+    .sns {bottom: 20px;}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    header {position: relative; width: 100%; height: 80px;}
+    nav {width: 100%; margin-left: 0;}
+    section {width: 100%; margin-left: 0;}
+    
+    article:nth-child(1) {width: 75%}
+    article:nth-child(2) {width: 25%}
+    article:nth-child(3) {width: 25%}
+    article:nth-child(4) {width: 25%}
+    article:nth-child(5) {width: 25%}
+    article:nth-child(6) {width: 50%}
+    article:nth-child(7) {width: 50%}
+    article:nth-child(8) {width: 25%}
+    article:nth-child(9) {width: 25%}
+    article:nth-child(10) {width: 50%}
+    article:nth-child(11) {width: 25%}
+    article:nth-child(12) {width: 25%}
+    
+    /* header contents */
+    header h1 {top: 2px; left: 2%; margin-left: 0;}
+    .menu {top: 20px;}
+    .menu li {float: left;}
+    .sns {display: none;}
+}
+
+@media screen and (min-width: 780px) and (max-width: 1023px) {
+    header {position: relative; width: 100%; height: 80px;}
+    nav {width: 100%; margin-left: 0;}
+    section {width: 100%; margin-left: 0;}
+    
+    article:nth-child(1) {width: 100%; height: 400px;}
+    article:nth-child(2) {width: 66.6666%}
+    article:nth-child(3) {width: 33.3333%}
+    article:nth-child(4) {width: 33.3333%; display: none;}
+    article:nth-child(5) {width: 33.3333%}
+    article:nth-child(6) {width: 66.6666%}
+    article:nth-child(7) {width: 66.6666%; display: none;}
+    article:nth-child(8) {width: 33.3333%}
+    article:nth-child(9) {width: 33.3333%}
+    article:nth-child(10) {width: 66.6666%; display: none;}
+    article:nth-child(11) {width: 33.3333%}
+    article:nth-child(12) {width: 33.3333%; display: none;}
+    
+    /* header contents */
+    header h1 {top: 2px; left: 2%; margin-left: 0;}
+    .menu {top: 20px;}
+    .menu li {float: left;}
+    .menu li a {padding: 10px;}
+    .sns {display: none;}
+}
+
+@media screen and (min-width: 640px) and (max-width: 779px) {
+    header {position: relative; width: 100%; height: 80px;}
+    nav {width: 100%; margin-left: 0;}
+    section {width: 100%; margin-left: 0;}
+    
+    article:nth-child(1) {width: 100%; height: 400px;}
+    article:nth-child(2) {width: 100%}
+    article:nth-child(3) {width: 33.3333%; display: none;}
+    article:nth-child(4) {width: 100%; display: none;}
+    article:nth-child(5) {width: 50%}
+    article:nth-child(6) {width: 50%}
+    article:nth-child(7) {width: 66.6666%; display: none;}
+    article:nth-child(8) {width: 50%}
+    article:nth-child(9) {width: 50%}
+    article:nth-child(10) {width: 66.6666%; display: none;}
+    article:nth-child(11) {width: 50%}
+    article:nth-child(12) {width: 50%; display: none;}
+    
+    /* header contents */
+    header h1 {top: 2px; left: 2%; margin-left: 0;}
+    .menu {top: 20px;}
+    .menu li {float: left;}
+    .menu li a {padding: 10px;}
+    .sns {display: none;}
+}
+
+@media screen and (min-width: 501px) and (max-width: 639px) {
+    header {position: relative; width: 100%; height: 130px;}
+    nav {display: none;}
+    section {width: 100%; margin-left: 0;}
+    article {height: 150px;}
+    
+    article:nth-child(1) {width: 100%; height: 300px;}
+    article:nth-child(2) {width: 100%}
+    article:nth-child(3) {width: 33.3333%; display: none;}
+    article:nth-child(4) {width: 100%; display: none;}
+    article:nth-child(5) {width: 50}
+    article:nth-child(6) {width: 50%}
+    article:nth-child(7) {width: 66.6666%; display: none;}
+    article:nth-child(8) {width: 50%}
+    article:nth-child(9) {width: 50%}
+    article:nth-child(10) {width: 66.6666%; display: none;}
+    article:nth-child(11) {width: 50%}
+    article:nth-child(12) {width: 50%; display: none;}
+    
+    /* header contents */
+    header h1 {position: relative; top: 2px; left: 2%; margin:0 auto;}
+    .menu {width: 100%; height: 40px; top: 80px; left: 3.5%; margin: 0; padding: 0;}
+    .menu li {float: left; width: 25%;}
+    .menu li a {padding: 4px; text-align: center; font-size: 0.85em;}
+    .sns {display: none;}
+}
+
+@media screen and (max-width: 500px) {
+    header {position: fixed; width: 100%; height: 40px; background-color: transparent; z-index: 5;}
+    nav {display: none;}
+    section {width: 100%; margin-left: 0; z-index: 4;}
+    article {display: none;}
+    /* header contents */
+    header h1 {top: 40px; width: 140px; margin-left: -70px;}
+    .menu {width: 250px; top: 140px; margin-left: -125px;}
+    .menu a {width: 100%; background: #000; box-sizing: border-box; text-align: center; margin: 8px 0px; border-radius: 10px; opacity: 0.5; color: #fff;}
+    .menu a:hover {opacity: 1; transform: scale(1.1);}
+    article:nth-child(1) span {display: none;}
+}

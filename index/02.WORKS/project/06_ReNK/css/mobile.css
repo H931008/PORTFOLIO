@@ -1,0 +1,95 @@
+/* font css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+
+/* mobile screen (768px) */
+@media screen and (min-width: 768px) {
+    
+}
+
+/* tab screen (768px ~ 1719px) */
+@media screen and (min-width: 768px) and (max-width: 1719px) {}
+
+/* home */
+#home {width: 500px; height: 650px;}
+#renk_img {position: relative; top: 30px; text-align: center; font-size: 28px; font-weight: 900;}
+#banner {width: 500px; height: 165px; background: pink; position: relative; top: 50px; text-align: center; line-height: 165px;}
+#sub_banner {width: 500px; height: 82px; background: gray; color: #fff; position: relative; top: 55px; text-align: center; line-height: 82px;}
+#menu {width: 500px; height: 300px; position: relative; top: 60px; left: 0px;}
+#box1, #box2, #box3, #box4, #box5, #box6 {width: 498px; height: 45px; text-align: center; line-height: 45px; background: #fff; border: 1px solid #000; color:;}
+#bar1 {border: 1px solid #ccc; position: relative; top: 32px; left: 0px;}
+    
+/* new & best */
+#new_best_product {width: 500px; height: 650px; position: absolute; top: 675px;}
+#product1 {position: relative; top: 30px; text-align: center; font-size: 28px; font-weight: 900;}
+#bar2 {border: 1px solid #ccc; position: relative; top: 596px; left: 0px;}
+
+/* product */
+#product {width: 500px; height: 650px; position: absolute; top: 1350px;}
+#product2 {position: relative; top: 30px; text-align: center; font-size: 28px; font-weight: 900;}
+#bar3 {border: 1px solid #ccc; position: relative; top: 571px; left: 0px;}
+    
+/* login */    
+#login {width: 500px; height: 650px; position: absolute; top: 2000px;}
+#logo {position: relative; top: 25px; text-align: center; left: 0px;}
+    #txt_login {position: relative; top: 30px; text-align: center; font-size: 28px; font-weight: 900;}
+    #txt_renk {position: relative; top: 225px; text-align: center; font-size: 18px; font-weight: 600;}
+    #id_pw {text-align: center;}
+    #id {width: 350px; height: 35px; border: 2px solid #000; position: relative; top: 40px; left: 1px;}
+    #pw {width: 350px; height: 35px; border: 2px solid #000; position: relative; top: 30px; left: 1px;}
+    #checkbox {width: 13px; height: 13px; border: 2px solid #000; position: absolute; left: 72px; top: 295px;}
+    #txt1 {position: absolute; left: 95px; top: 295px; font-size: 14px;}
+    #txt2 {position: absolute; left: 305px; top: 295px; font-size: 14px;}
+    #btn {width: 357px; height: 50px; color: #fff; border: 2px solid #6d4a22; background: #6d4a22; font-size: 16px; font-weight: bold; position: absolute; left: 72px; top: 353px; line-height: 0px;}
+    #btn1 {width: 177px; height: 35px; position: absolute; top: 406px; left: 72px; background: #000; color: #fff; border: 2px solid #000; font-weight: bold; line-height: 0px;}
+    #btn2 {width: 177px; height: 35px; position: absolute; top: 406px; left: 252px; background: #000; color: #fff; border: 2px solid #000; font-weight: bold; line-height: 0px;}
+    #btn3 {width: 357px; height: 50px; position: absolute; top: 545px; left: 80px; background: #6d4a22; color: #fff; border: 2px solid #6d4a22; font-size: 16px; font-weight: bold; line-height: 0px;}
+    #bar4 {border: 1px solid #ccc; position: relative; top: 335px; left: 0px;}
+    
+    /* sign up */
+    #signup {width: 500px; height: 650px; position: absolute; top: 2650px;}
+    #txt_welcom {position: relative; top: 30px; text-align: center; font-size: 28px; font-weight: 900;}
+    #information {width: 500px; height: 150px; position: relative; top: 35px;}
+    #box7 {width: 500px; height: 75px; position: relative; left: 15px;}
+    #my {position: relative; top: 5px; font-size: 14px;}
+    #checkbox1 {position: relative; top: 5px;}
+    #txt3 {position: relative; top: 75px; text-align: center; font-size: 16px;}
+    #txt_box {width: 490px; height: 190px; background: #fafafa; border: 1px solid #000; position: relative; bottom: 5px; left: 4px;}
+    #checkbox2 {position: relative; top: 5px; left: 25px;}
+    #checkbox3 {position: relative; top: 22px; left: 25px;}
+    #my1 {position: relative; top: 5px; left: 25px; font-size: 14px;}
+    #my2 {position: relative; top: 20px; left: 25px; font-size: 14px;}
+    #my3 {position: relative; top: 35px; left: 49px; font-size: 12px;}
+    #my3 strong {position: relative; top: 3px; left: 0px; font-size: 12px;}
+    #my4 {position: relative; top: 4px; font-size: 14px;}
+    
+    #box7_1 {width: 88px; height: 29px; background: #959595; color: #fff; border-radius: 25px; float: right; font-size: 13px; line-height: 25px; text-align: center; position: relative; bottom: 183px; right: 15px;}
+    #box7_2 {width: 88px; height: 29px; background: #959595; color: #fff; border-radius: 25px; float: right; font-size: 13px; line-height: 25px; text-align: center; position: relative; left: 73px; bottom: 140px;}
+    #box7_3 {width: 88px; height: 29px; background: #959595; color: #fff; border-radius: 25px; float: left; font-size: 13px; line-height: 25px; text-align: center; position: relative; left: 397px; bottom: 97px;}
+    
+    #my5 {position: relative; left: 49px; top: 50px; font-size: 13px;} 
+    #radio1 {position: relative; left: 49px; top: 51px;}
+    #radio2 {position: relative; left: 49px; top: 51px;}
+    #radio3 {position: relative; left: 49px; top: 51px;}
+    #radio4 {position: relative; left: 49px; top: 51px;}
+    #bar5 {border: 1px solid #ccc; position: relative; top: 414px; left: 0px;}
+ 
+    
+    /* media */
+    #media {width: 500px; height: 650px; position: absolute; top: 3300px;}
+    #txt_media {position: relative; top: 30px; text-align: center; font-size: 28px; font-weight: 900;}
+    #youtube {}
+    #bar6 {border: 1px solid #ccc; position: relative; top: 571px; left: 0px;}
+    
+    /* review */
+    #review {width: 500px; height: 650px; position: absolute; top: 3950px;}
+    #txt_review {position: relative; top: 30px; text-align: center; font-size: 28px; font-weight: 900;}
+    #review_box {}
+    #bar7 {border: 1px solid #ccc; position: relative; top: 570px ; left: 0px;}
+    
+    /* instagram + footer */
+    #instagram {width: 500px; height: 650px; position: absolute; top: 4600px;}
+    #txt_insta {position: relative; top: 30px; text-align: center; font-size: 28px; font-weight: 900;}
+    #insta_box {}
+    #bar8 {border: 1px solid #ccc; position: relative; top: -79px; left: 0px;}

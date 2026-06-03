@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>       
+<style>
+    * {margin: 0; padding: 0;}
+    span {color: red;}
+</style>
+<script>
+    $(function () {
+    $(window).mousemove(function (e) {
+    x=e.pageX; // pageX는 마우스의 X좌표
+    y=e.pageY; // pageY는 마우스의 Y좌표
+    $("#mouse_x span").html(x);
+    $("#mouse_y span").html(y);
+    })    
+    }) //end
+</script>
+</head>
+<body>
+    <h1 id="mouse_x">mouse x position:
+    <span>0</span></h1>
+    <h1 id="mouse_y">mouse y position:
+    <span>0</span></h1>
+</body>
+</html>

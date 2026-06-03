@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RADISSON HOTEL</title>
+<script src="js/jquery-animate-css-rotate-scale.js"></script>
+<script src="js/jquery.min.js"></script>
+<style>
+    /* RESET */
+    * {margin: 0; padding: 0; font: 400 0.875rem 'Noto Sans KR';}
+    ul,li {list-style: none;}
+    body,html {width: 100%; height: 100%; background-color: #000;}
+    a {display: block; width: 100%; height: 100%; text-decoration: none; color: inherit;}
 
+    #bg {width: 100%; height: 100%; background: #fff url("images/bg.jpg")no-repeat 0 0/cover; transform: scale(2); position: fixed; top: 0; left: 0; z-index: 0; opacity: 0; transition: transform 0.5s ease-out,opacity 0.5s;}
+
+    /* HEADER */
+    header {width: 100%; position: fixed; top: -150px; left: 0; z-index: 1;}
+    #logo {float: left; margin-left: 40px; padding: 25px 30px; background-color: rgba(0,0,0,0.5);}
+    #menu {float: right; margin: 40px 40px 0 0;}
+    #menu li {float: left; margin: 0 15px; color: #fff; position: relative;}
+    #menu li::before {content: ""; width: 1px; height: 10px; background-color: #fff; position: absolute; top: 4px; right: -15px;}
+    #menu li:last-child::before {content: none;}
+    #menu li:hover {text-decoration: underline; cursor: pointer;}
+
+    /* MAIN */
+    #main {width: 100%; color: #fff; text-align: center; text-shadow: 0 3px 5px rgba(0,0,0,0.7); position: fixed; left: 0; top: 370px; opacity: 0;}
+    #main #title {font-size: 3rem; font-weight: 1000; letter-spacing: -0.1rem;}
+    #main p {margin-top: 5px; font-size: 1.125rem; letter-spacing: -0.05rem;}
+    #main span {color: #ff0; font-size: 1rem;}
+
+    /* FOOTER */
+    footer {width: 100%; height: 30px; background-color: #000; line-height: 30px; text-align: center; cursor: pointer; position: fixed; bottom: -100px; left: 0; z-index: 2;}
+    footer p {float: left; margin-left: 30px; font-size: 0.75rem; line-height: 30px; color: #fff;}
+    footer img {float: right; margin-right: 30px; margin-top: 4px;}
+
+    /* GALLERY */
+    #slide {width: 100%; height: 150px; cursor: pointer; position: fixed; left: 0; bottom: -150px; z-index: 1; overflow: hidden;}
+    #open_btn {width: 150px; height: 50px; color: #fff; text-align: center; position: absolute; left: 0; right: 0; top: 50px; margin: auto; z-index: 0;}
+    #open_btn p,#open_btn h2 {width: 100%; font-weight: bold; margin-bottom: 12px;}
+    #gallery {width: 100%; height: 120px; background-color: #000; position: absolute; left: 0; bottom: -150px; z-index: 1;}
+    #gallery ul {width: 0; height: 120px; margin:10px auto 0; overflow: hidden;}
+    #gallery li {width: 154px; height: 100%; margin: 2px; float: left; opacity: 0.5;}
+    #gallery ul li img {width: 100%; vertical-align: top;}
+</style>
+<script>
+    $(function(){
+    //intro animation
+    $("#bg").css({transform:'scale(1)',opacity:'1'});
+    $("header").animate({top:'0'},700,function(){
+    $("footer").animate({bottom:'0'},800,function(){
+    $("#main").animate({opacity:'1'},900);
+    $("#main #title").animate({'margin-top':'50px'},900,function(){
+    $(this).animate({"letter-spacing":'0.5rem'},500);
+    $("#slide").animate({bottom:'0'},500);
+    });
+    });
+    });
+    ///open button animation
+    $("#open_btn").animate({top:'45px'},400,function call(){
+    $("#open_btn").animate({top:'50px'},400);
+    $("#open_btn").animate({top:'45px'},400,call);
+    });
+    //gallery slide
+    $("#open_btn").click(function(){
+    $("#gallery").animate({bottom:'10px'},600,function(){
+    $("#gallery ul").animate({width:'2000px'},400);
+    $("#main #title").animate({marginTop:'20px'},400);
+    });
+    });
+
+    $("#gallery li").hover(function(){
+    $(this).stop().animate({opacity:'1'});
+    },function(){
+    $(this).stop().animate({opacity:'0.5'});
+    });
+
+    $("#gallery li").click(function(){
+    var imgSrc = $(this).children("img").attr("src");
+    $(this).css({opacity:'1'}).siblings().css({opacity:'0.5'});
+    $("#bg").css({backgroundImage:'url('+imgSrc+')',transition:'all .5s'});
+    $("#bg").click(function(){
+    $("#gallery").animate({bottom:'-150px'},600,function(){
+    $("#gallery ul").animate({width:'0'},400);
+    $("#main #title").animate({marginTop:'50px'},400);
+    });
+    });
+    });
+    //gallery side end
+    })//end
+</script>
+</head>
+<body>
+    <div id="bg" style="transform: scale(1); opacity: 1;"></div>
+    <header style="top: 0px;">
+        <h1 id="logo">
+            <a href="#"><img src="images/logo.png" alt="logo"></a>
+        </h1>
+        <ul id="menu">
+            <li>
+                <a href="#">Radisson Blue</a>
+            </li>
+            <li>
+                <a href="#">Thailand</a>
+            </li>
+            <li>
+                <a href="#">Radisson Blue Plaza Bangkok</a>
+            </li>
+        </ul>
+    </header>
+    <section id="main" style="opacity: 1;">
+        <h1 id="title" style="margin-top: 50px; letter-spacing: 0.5rem;">RADISSON BLUE PLAZA BANGKOK</h1>
+        <p>RADISSON BLUE PLAZA HOTEL</p>
+        <span>★★★★★</span>
+        <p>489 Sukhumvit Road Klongtoey Nua Wattana, Bankok, 10110, TH</p>
+    </section>
+    <section id="slide" style="bottom: 0px;">
+        <div id="open_btn" style="top: 46.5252px;">
+            <p>^</p>
+            <h2>OPEN GALLERY</h2>
+        </div>
+        <div id="gallery">
+            <ul>
+                <li><img src="images/img1.jpg" alt="gallery"></li>
+                <li><img src="images/img2.jpg" alt="gallery"></li>
+                <li><img src="images/img3.jpg" alt="gallery"></li>
+                <li><img src="images/img4.jpg" alt="gallery"></li>
+                <li><img src="images/img5.jpg" alt="gallery"></li>
+                <li><img src="images/img6.jpg" alt="gallery"></li>
+                <li><img src="images/img7.jpg" alt="gallery"></li>
+                <li><img src="images/img8.jpg" alt="gallery"></li>
+                <li><img src="images/img9.jpg" alt="gallery"></li>
+                <li><img src="images/img10.jpg" alt="gallery"></li>
+                <li><img src="images/img11.jpg" alt="gallery"></li>
+                <li><img src="images/img12.jpg" alt="gallery"></li>
+            </ul>
+        </div>
+    </section>
+    <footer style="bottom: 0px;">
+        <p>©2017 The Carlson Rezidor Hotel Group. All rights reserved</p>
+        <img src="images/logo_bottom.png" alt="logo_bottom">
+    </footer>
+</body>
+</html>

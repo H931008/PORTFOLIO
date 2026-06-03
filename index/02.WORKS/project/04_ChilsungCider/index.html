@@ -1,1 +1,548 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>칠성사이다</title>
+<link href="css/style.css" rel="stylesheet"> <!--Item Slider-->
+<link href="css/jquery.bxslider.css" rel="stylesheet"> <!-- bxSlider CSS file -->
+<script src="js/jquery-3.1.1.min.js"></script> <!-- jQuery library -->
+<script src="js/jquery.bxslider.js"></script> <!-- bxSlider Javascript file -->
+<script src="js/modernizr.custom.63321.js"></script>
+<script src="js/jquery.catslider.js"></script>
+<style>
+    * {margin: 0; padding: 0;}
+    a {text-decoration: none;}
+    ul, li {list-style: none;}
+    
+    header {width: 100%; height: 30px; background: #149f5c; position: relative;}
+    header ul {position: absolute; right: 0; margin-right: 400px;}
+    header ul li {float: left; margin-right: 30px;}
+    header ul li a {color: #fff; font-size: 0.9em; line-height: 30px;}
+    
+    ul li {list-style: none;}
+    .navibar {position: relative; width:100%; height: 70px; background-color: #fff; font-family: 'Noto Sans KR';}
+    .navibar .nav {width: 1450px; height: 70px; margin: 0 auto;}
+    .navibar .nav .logo {width: 360px; height: 54px; position: relative; right: 155px; top: 7px;}
+    .nav>li {float: left; width: 180px; height: 70px; position: relative;}
+    .nav>li>a {display: block; width: 180px; height: 70px; text-decoration: none; text-align: center; line-height: 70px; color: #000; font-size: 18px;}
+    
+    /* 빨간색 선 가상으로 만들기 */
+    .nav>li::before {content: ""; position: absolute; width: 100%; height: 10px; background: red; bottom: 0; transition: 0.5s all; opacity: 0;}
+    .nav>li:hover::before {opacity: 1;}
+    .nav>li:nth-child(1)::before,.nav>li:last-child::before {content: ""; background: transparent;}
 
+    /* 서브메뉴 막대바 */
+    .nav .na {position: absolute; width: 100%; left: 0; height: 0; background: #fff; top: 70px; transition: all 0.5s; z-index: 9999;}
+    .nav:hover .na, .nav:hover .smenu {height: 200px;}
+
+    /* 서브메뉴 */
+    .smenu {width: 100%; height: 0px; background: #fff; z-index: 99999; position: relative; transition:0.5s all; overflow: hidden;}
+    .smenu>li {height: 50px; width: 100%;}
+    .smenu>li>a {text-decoration: none; display: block; text-align: center; font-size: 16px; color: #000; display: block; line-height: 50px;}
+    .smenu>li:hover>a {background: #ccc; color: #fff;}
+    
+    /* 아이템슬라이드 배경 */
+    .container {background: url(images/content/produce_bg.png) no-repeat; width: 100%; height: 580px; margin: 0 auto; background-position: 0 -120px; background-size: cover;}
+    
+    /* box 4개 */
+    .block2 {width: 100%; height: 280px; background: url(images/content/business_bg4.jpg)no-repeat;}
+    .b2_box {width: 865px; height: 260px; margin:0 auto; overflow: hidden; font-family: 'Noto Sans KR';}
+    .b2_box .value {color: #fff; text-align: center; width: 300px; display: block; margin: 20px auto; position: relative;}    
+    .b2_img {width: 200px; height: 200px; position: relative;}
+    .img1 {background-image: url(images/content/business_1.png); background-size: cover; background-position: -70px;}
+    .img2 {background-image: url(images/content/business_b.jpg); background-size: cover; background-position: -70px; position: relative; top: -200px; left: 220px;}
+    .img3 {background-image: url(images/content/business_3.jpg); background-size: cover; background-position: -70px; position: relative; top: -400px; left: 440px;}
+    .img4 {background-image: url(images/content/business_4.jpg); background-size: cover; background-position: -70px; position: relative; top: -600px; left: 660px;}
+    .b2_img:before {content: ""; position: absolute; width: 100%; height: 0px; background-color: rgba(80,80,80,0.5); bottom: 0; transition: 0.5s all; color: white; text-align: center; line-height: 50px;}
+    .b2_img:hover:before {height: 50px;}
+
+    .img1:before {content: "윤리경영";}
+    .img2:before {content: "환경경영";}
+    .img3:before {content: "사회공헌";}
+    .img4:before {content: "공정거래";}
+    
+    /* event banner 2 */
+    .event {width: 928px; height: 320px; margin: 0 auto; margin-top: 30px; font-family: 'Noto Sans KR'; font-size: 1.2em; font-weight: 900; position: relative;}
+    .event .eve {width: 454px; height: 320px; position: relative;}
+    .event .nt2 {position: absolute; top: 0; right: 0;}
+    .eve .tit {width: 55px; margin:0 auto;}
+    .eve .more {background: url(images/content/more.jpg) no-repeat; width: 36px; height: 12px; position: absolute; right: 10; top: 10px;}
+    .eve .ue1 {background: url(images/content/event_1.jpg) no-repeat; width: 454px; height: 265px; margin-top: 20px;}
+    .eve .ue2 {background: url(images/content/newprd_1.JPG) no-repeat; width:454px; height:265px; margin-top:20px;}
+    .vog {width: 454px; height: 265px; position: relative; overflow: hidden;}
+    .vog:before {content: ""; width: 110%; height: 110%; border: 10px solid green; position: absolute; box-sizing: border-box; top: -10px; left: -10px; transition: all 0.5s;}
+    .vog:hover:before {top: 0; left: 0; width: 100%; height: 100%;}
+    
+    /* news */    
+    .news {width: 1000px; height:350px; margin: 0 auto; margin-top: 30px; font-family:'Noto Sans KR'; position: relative; box-shadow: 2px 2px 5px #ccc, 1px 1px 2px #999;}
+    .news .l7 {width: 900px; text-align: center; margin: 0 auto; border-bottom: 2px solid red; padding: 10px; font-size: 20px; font-weight: bolder;}
+    .news .more {background: url(images/content/more.jpg) no-repeat; width: 36px; height: 12px; position: absolute; right: 50px; top: 30px;}
+    .news .box {width: 890px; height: 220px; position: relative; margin:0 auto; top:60px;}
+    
+    .b5_box {width: 1060px; height: 280px; position: relative; margin: 0 auto;}
+    .b5_img {width: 175.5px; height: 175.5px; position: relative; float: left; margin: 0 5px; left: 35px; top: 60px;}
+    .img5{width: 175.5px; height: 175.5px; float: left; position: relative; margin: 0 5px; left: 35px; top: 60px;}
+            
+    .img5 {background: url(images/content/pnews_1.JPG)no-repeat; background-size: cover;}
+    .img6 {background: url(images/content/pnews_2.JPG)no-repeat; background-size: cover;}
+    .img7 {background: url(images/content/pnews_3.PNG)no-repeat; background-size: cover;}
+    .img8 {background: url(images/content/pnews_5.png)no-repeat; background-size: cover;}
+    .img9 {background: url(images/content/pnews_4.JPG)no-repeat; background-size: cover;}
+            
+    .img5,.img6,.img7,.img8,.img9{transition: all .5s;}
+    .img5:hover,.img6:hover,.img7:hover,.img8:hover,.img9:hover{transform: scale(1.1);}
+            
+    .b5_text {width: 1060px; height: 50px; position: relative; margin: 0 auto; top: 15px;}
+    .text1 {width: 200px; height: 50px; position: relative; bottom: 47px; left: 25px; margin: 0 auto; float: left; margin: 0 5px; font-size: 12px; text-align: center;}
+    .text2 {width: 200px; height: 50px; position: relative; bottom: 47px; left: 0px; margin: 0 auto; float: left; margin: 0 5px; font-size: 12px; text-align: center;}
+    .text3 {width: 200px; height: 50px; position: relative; bottom: 47px; right: 32px; margin: 0 auto; float: left; margin: 0 5px; font-size: 12px; text-align: center;}
+    .text4 {width: 200px; height: 50px; position: relative; bottom: 47px; right: 57px; margin: 0 auto; float: left; margin: 0 5px; font-size: 12px; text-align: center;}
+    .text5 {width: 200px; height: 50px; position: relative; bottom: 47px; right: 0px; margin: 0 auto; float: left; margin: 0 5px; font-size: 12px; text-align: center;}
+    .text5 {width: 200px; height: 50px; position: relative; bottom: 47px; right: 79px; margin: 0 auto; float: left; margin: 0 5px; font-size: 12px; text-align: center;}
+    
+    /* community */
+    .cum {width: 940px; height: 550px; margin: 0 auto; margin-top: 30px; position: relative;}
+    .cum_tit {font-size: 20px; font-weight: bolder; font-family:'Noto Sans KR'; width: 150px; margin: 0 auto;}
+    .sns {width: 1100px; height: 530px; margin: 0 auto; position: relative; right: 80px;}
+    .sns>div {position: absolute;}
+    .sns>div>a {display: block; width: 100%; height: 100%;}
+
+    /* 롯데칠성 커뮤니티 위아래 */
+    .sns>.you1 {width: 250px; height: 250px; background-image: url(images/content/community_1.JPG); background-size: cover; margin-left: 50px;}
+    .sns>.you1:before {content: ""; width: 100%; height: 0; background: rgba(0, 128, 0, 0.6); position: absolute; transition: all .5s;}
+    .sns>.you1>a:before {content: ""; position: absolute; right: 0; width: 50px; height: 50px; background: url(images/content/icon.png); background-position: -70px -125px;}
+
+    .sns>.you1:after {content: "더보기"; width: 100px; height: 30px; border: 1px solid white; color: white; text-align: center; line-height: 30px; transition: all .5s; top: 40%; position: absolute; left: 30%; opacity: 0;}
+    .sns>.you1>a:after {content: ""; position: absolute; right: 0; width: 50px; height: 50px; background: url(images/content/icon.png); background-position: -70px -125px;}
+
+    .sns>.you1:hover:before {height: 100%;}
+    .sns>.you1:hover:after {opacity: 1;}
+
+    /* 롯데칠성 커뮤니티 왼오 */
+    .sns>.face {width: 250px; height: 250px; background-image: url(images/content/community_2.jpg); background-size: cover; margin-top: 280px; margin-left: 50px; overflow: hidden;}
+    .sns>.face:before {content: ""; width: 100%; height: 100%; background: rgba(2, 114, 50,0.6); position: absolute; transition: all .5s; left: -100%;}
+    .sns>.face>a:before {content: ""; position: absolute; right: 0; width: 50px; height: 50px; background: url(images/content/icon.png); background-position: -12px -126px;}
+
+    .sns>.face:after {content: "더보기"; width: 100px; height: 30px; border: 1px solid white; color: white; text-align: center; line-height: 30px; transition: all .5s; top: 40%; position: absolute; left: 30%; opacity: 0;}
+    .sns>.face>a:after {content: ""; position: absolute; right: 0; width: 50px; height: 50px; background: url(images/content/icon.png); background-position: -12px -126px;}
+
+    .sns>.face:hover:before {left: 0;}
+    .sns>.face:hover:after {opacity: 1;}
+
+    /* 롯데칠성 커뮤니티 대각선 */
+    .sns>.insta {width: 350px; height: 350px; background-image: url(images/content/community_3.jpg); background-size: cover; margin-top: 100px; margin-left: 380px; overflow: hidden;}
+    .sns>.insta:before {content: ""; width: 200%; height: 200%; background: rgba(2, 114, 50,0.6); position: absolute; transition: all .5s; transform: skewX(45deg); left: -200%; }
+    .sns>.insta>a:before {content: ""; position: absolute; right: 0; width: 50px; height: 50px; background: url(images/content/icon.png); background-position: -134px -126px;}
+
+    .sns>.insta:after {content: "더보기"; width: 100px; height: 30px; border: 1px solid white; color: white; text-align: center; line-height: 30px; transition: all .5s; top: 43%; position: absolute; left: 37%; opacity: 0;}
+    .sns>.insta>a:after {content: ""; position: absolute; right: 0; width: 50px; height: 50px; background: url(images/content/icon.png); background-position: -134px -126px;}
+
+    .sns>.insta:hover:before {left: 0;}
+    .sns>.insta:hover:after {opacity: 1;}
+
+    .ani>.dia:before {content: ""; width: 200%; height: 200%; background: rgba(255,192,302,0.6); position: absolute; transform: skewX(45deg); left: -200%; transition: all .5s;}
+    .ani>.dia:hover:before{left: 0;}
+    .ani>.dia:after {content: "더보기"; width: 100px; height: 30px; position: absolute; border: 1px solid white; top: 40%; left: 40%; color: white; text-align: center; line-height: 30px; transition: all .5s; opacity: 0;}
+    .ani>.dia:hover:after {opacity: 1;}
+
+    /* 롯데칠성 커뮤니티 아래위 */
+    .sns>.you2 {width: 250px; height: 250px; background-image: url(images/content/community_4.jpg); background-size: cover; margin-left: 800px; overflow: hidden;}
+    .sns>.you2:before {content: ""; width: 100%; height: 100%; background: rgba(2, 114, 50,0.6); position: absolute; transition: all .5s; bottom: -100%;}
+    .sns>.you2>a:before {content: ""; position: absolute; right: 0; width: 50px; height: 50px; background: url(images/content/icon.png); background-position: -70px -125px;}
+
+    .sns>.you2:after {content: "더보기"; width: 100px; height: 30px; border: 1px solid white; color: white; text-align: center; line-height: 30px; transition: all .5s; top: 40%; position: absolute; left: 30%; opacity: 0;}
+    .sns>.you2>a:after {content: ""; position: absolute; right: 0; width: 50px; height: 50px; background: url(images/content/icon.png); background-position: -70px -125px;}
+
+    .sns>.you2:hover:before {bottom: 0;}
+    .sns>.you2:hover:after {opacity: 1;}
+
+    /* 롯데칠성 커뮤니티 오왼 */
+    .sns>.lotte {width: 250px; height: 250px; background-image: url(images/content/community_5.jpg); background-size: cover; margin-top: 280px; margin-left: 800px; overflow: hidden;}
+    .sns>.lotte:before {content: ""; width: 100%; height: 100%; background: rgba(2, 114, 50,0.6); position: absolute; transition: all .5s; right: -100%;}
+
+    .sns>.lotte:after {content: "더보기"; width: 100px; height: 30px; border: 1px solid white; color: white; text-align: center; line-height: 30px; transition: all .5s; top: 40%; position: absolute; left: 30%; opacity: 0;}
+
+    .sns>.lotte:hover:before {right: 0;}
+    .sns>.lotte:hover:after {opacity: 1;}
+    
+    /* footer */
+    footer {width: 1450px; height: 300px; padding-top: 70px; margin: 0 auto; position: relative; font-family: 'Noto Sans KR';}
+    footer .f1 span {display: block; width: 600px; margin: 0 auto; font-weight: bolder; font-size: 1.2em; position: relative; top: 10px;}
+    footer .f1 ul {position: absolute; top: 10px;}
+    footer .f1 ul li{position: absolute; width: 50px; height: 50px; filter: grayscale(100%); top: 55px;}
+    footer .f1 ul li:nth-of-type(1) {background: url(images/content/icon.png)no-repeat; background-position: -10px -6px; left: 816px;}
+    footer .f1 ul li:nth-of-type(2) {background: url(images/content/icon.png)no-repeat; background-position: -68px -6px; left: 864px;}
+    footer .f1 ul li:nth-of-type(3) {background: url(images/content/icon.png)no-repeat; background-position: -132px -6px; left: 912px;}
+    footer .f1 ul li:nth-of-type(4) {background: url(images/content/icon.png)no-repeat; background-position: -190px -6px; left: 960px;}
+    
+    footer .f2 {width: 100%; height: 100px; background: #777; position: relative; top: 42px;}
+    footer .f2 .ff {width: 900px; height: 100%; margin: 0 auto;}
+    .ff .re, .ff .co, .ff .cu {width: 300px; height: 100%; position: relative;}
+    .ff .co {position: relative; top: -100px; left: 300px;}
+    .ff .cu {position: relative; top: -200px; left: 600px;}
+    .ff .re .sym {width: 80px; height: 80px; background: url(images/foot/service1.png)no-repeat; background-size: cover; position: absolute; top: 10px;}
+     .ff .co .sym {width: 80px; height: 80px; background: url(images/foot/service2.png)no-repeat; background-size: cover; position: absolute; top: 10px;}
+     .ff .cu .sym {width: 80px; height: 80px; background: url(images/foot/service3.png)no-repeat; background-size: cover; position: absolute; top: 10px;}
+    .ff .re .title, .ff .co .title, .ff .cu .title {font-weight: bolder; font-size: 1.1em; position: absolute; left: 90px; top: 10px;}
+    .ff .re .con, .ff .co .con, .ff .cu .con {color: #fff; position: absolute; left: 90px; top: 40px; font-weight: bolder;}
+    .f3 {width: 100%; height: 130px; background: #333; position: relative; top: 42px;}
+    .f3 .logo {background: url(images/foot/footter_rogo.png) no-repeat; width: 130px; height: 66px; background-size: cover; position: absolute; left: 230px;}
+    .f3 ul li {float: left; margin-right: 40px; color: #fff; font-weight: bolder; position: relative; left: 500px; top: 20px; font-size: 0.9em;}
+    .f3  div:nth-of-type(2) {clear: both; color: #fff; font-weight: bolder; font-size: 0.9em; position: relative; top: 35px; left: 500px; width: 400px;}
+</style>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+        </ul>
+    </header>
+    
+    <nav class="navibar"> <!-- nav -->
+        <ul class="nav">
+            <li><a href="#"><img src="images/top/rogo.png" class="logo"></a></li>
+            <li><a href="#">기업소개</a>
+                <ul class="smenu">
+                    <li><a href="#">소개</a></li>
+                    <li><a href="#">CEO인사말</a></li>
+                    <li><a href="#">비전</a></li>
+                    <li><a href="#">연혁</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">맑은경영</a>
+                <ul class="smenu">
+                    <li><a href="#">윤리경영</a></li>
+                    <li><a href="#">품질/환경경영</a></li>
+                    <li><a href="#">사회공헌</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">제품정보</a>
+                <ul class="smenu">
+                    <li><a href="#">신제품 정보</a></li>
+                    <li><a href="#">음료브랜드</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">홍보센터</a>
+                <ul class="smenu">
+                    <li><a href="#">홍보관</a></li>
+                    <li><a href="#">홍보자료실</a></li>
+                    <li><a href="#">롯데칠성뉴스</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="#">인재채용</a>
+                <ul class="smenu">
+                    <li><a href="#">채용공고</a></li>
+                    <li><a href="#">온라인 입사지원</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">고객지원</a>
+                <ul class="smenu">
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+            </li>
+
+            <li class="na">
+                <a href="#"></a>
+            </li>
+        </ul>
+    </nav> <!-- nav end -->
+
+    <!--bxslider-->
+    <div class="bx-wrapper" style="max-width: 100%;">
+        <div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative; height: 609px;">
+            <section class="slider1" style="width: 5215%; position: relative; transition-duration: 0s; transform: translate3d(-1680px, 0px, 0px);">
+                <div style="float: left; list-style: none; position: relative; width: 1680px;" class="bx-clone" aria-hidden="true">
+                    <img src="images/main/visual_5.jpg">
+                </div>
+                <div style="float: left; list-style: none; position: relative; width: 1680px;" aria-hidden="false">
+                    <img src="images/main/visual_1.jpg">
+                </div>
+                <div aria-hidden="true" style="float: left; list-style: none; position: relative; width: 1680px;">
+                    <img src="images/main/visual_2.jpg">
+                </div>
+                <div aria-hidden="true" style="float: left; list-style: none; position: relative; width: 1680px;">
+                    <img src="images/main/visual_3.jpg">
+                </div>
+                <div aria-hidden="true" style="float: left; list-style: none; position: relative; width: 1680px;">
+                    <img src="images/main/visual_4.jpg">
+                </div>
+                <div style="float: left; list-style: none; position: relative; width: 1680px;" aria-hidden="true">
+                    <img src="images/main/visual_5.jpg">
+                </div>
+            </section>
+        </div>
+        
+        <div class="bx-controls bx-has-controls-direction bx-has-pager">
+            <div class="bx-controls-direction">
+                <a class="bx-prev" href="#">Prev</a>
+                <a class="bx-next" href="#">Next</a>
+            </div>
+            <div class="bx-pager bx-default-pager">
+                <div class="bx-pager-item">
+                    <a href="#" data-slide-index="0" class="bx-pager-link active">1</a>
+                </div>
+                <div class="bx-pager-item">
+                    <a href="#" data-slide-index="1" class="bx-pager-link">2</a>
+                </div>
+                <div class="bx-pager-item">
+                    <a href="#" data-slide-index="2" class="bx-pager-link">3</a>
+                </div>
+                <div class="bx-pager-item">
+                    <a href="#" data-slide-index="3" class="bx-pager-link">4</a>
+                </div>
+                <div class="bx-pager-item">
+                    <a href="#" data-slide-index="4" class="bx-pager-link">5</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="main">
+            <div id="mi-slider" class="mi-slider">
+                <ul class="mi-moveFromLeft mi-current">
+                    <li style="">
+                        <a href="#">
+                            <img src="images/content/soda1.png" alt="img01">
+                            <h4>사이다</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/content/soda6.png" alt="img02">
+                            <h4>밀키스</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/content/soda4.png" alt="img03">
+                            <h4>미란다</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/content/soda10.png" alt="img04">
+                            <h4>칠성스트롱</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/content/soda9.png" alt="img04">
+                            <h4>트레비</h4>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="mi-moveToRight">
+                    <li>
+                        <a href="#">
+                            <img src="images/content/juice1.png" alt="img05">
+                            <h4>포켓몬</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/content/juice5.png" alt="img06">
+                            <h4>오렌지주스</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/content/juice6.png" alt="img07">
+                            <h4>포도주스</h4>
+                        </a>
+                    </li>
+                    <li style="">
+                        <a href="#">
+                            <img src="images/content/juice9.png" alt="img08">
+                            <h4>딸기라떼</h4>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="">
+                    <li>
+                        <a href="#">
+                            <img src="images/content/coffee1.png" alt="img09">
+                            <h4>칸타타</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/content/coffee3.png" alt="img09">
+                            <h4>콜레컨트롤</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/content/coffee5.png" alt="img10">
+                            <h4>칸타타콜드브루</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/content/coffee8.png" alt="img11">
+                            <h4>렛잇비블랙</h4>
+                        </a>
+                    </li>
+                </ul>
+				<ul class="">
+                    <li>
+                        <a href="#">
+                            <img src="images/content/tea1.png" alt="img12">
+                            <h4>초가을우엉차</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/content/tea3.png" alt="img13">
+                            <h4>옥수수수염차</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/content/tea5.png" alt="img14">
+                            <h4>실론티콜드브루</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/content/tea6.png" alt="img15">
+                            <h4>아침헛개</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/content/tea2.png" alt="img15">
+                            <h4>황금보리</h4>
+                        </a>
+                    </li>
+                </ul>
+                <nav>
+                    <a href="#" class="mi-selected">탄산</a>
+					<a href="#" class="">주스</a>
+                    <a href="#">커피</a>
+                    <a href="#">차</a>
+                </nav>
+            </div>
+        </div>
+    </div> <!-- container -->
+    <!-- banner 4 -->
+    <article class="block2">
+        <div class="b2_box"> 
+            <span class="value">롯데칠성은 지속가능한 가치를 추구합니다.</span>
+            <div class="b2_img img1"></div>
+            <div class="b2_img img2"></div>
+            <div class="b2_img img3"></div>
+            <div class="b2_img img4"></div>
+        </div>
+    </article> 
+
+    <!-- event banner 2 -->
+    <article class="event">
+        <div class="eve nt1">
+            <div class="tit">이벤트</div>
+            <div class="more">
+                <a href="#"></a>
+            </div>
+            <div class="vog ue1"></div>
+        </div>
+        <div class="eve nt2">
+            <div class="tit">신제품</div>
+            <div class="more">
+                <a href="#"></a>
+            </div>
+            <div class="vog ue2"></div>  
+        </div>  
+    </article>
+
+    <!-- news -->
+    <article class="news">
+        <div class="l7">롯데칠성뉴스</div>
+        <div class="more"></div>
+        <div class="b5_box">
+            <div class="img5"></div>
+            <div class="b5_img img6"></div>
+            <div class="b5_img img7"></div>
+            <div class="b5_img img8"></div>
+            <div class="b5_img img9"></div>
+        </div>
+        <div class="b5_text">
+            <p class="text1">전국천사무료급식소에 임직원들이<br>모은 '나눔저금통'성금 전달</p>
+            <p class="text2">추운 겨울철에 얼어붙은 몸과 마음<br>을 녹여주는 온장음료 인기</p>
+            <p class="text3">프리미언 원두캔커피 1등 브랜드<br> '칸타타'출시 11년 만에 누적...</p>
+            <p class="text4">대한민국 1위 종합음료기업인 롯<br>데칠성에서 미래의 더 높은 가...</p>
+            <p class="text5">피카츄가 들어간 깜찍한 사이즈의<br>아이시스8.0 200ml 페트병...</p>
+        </div>
+    </article>
+    
+    <!-- community -->
+    <article class="cum">
+        <div class="cum_tit">롯데칠성커뮤니티</div>
+        <div class="sns">
+                        <div class="you1"><a href="http://yoonyoung.pe.kr/images/publish/chilsung/chilsung.html#"></a></div>
+                        <div class="face"><a href="http://yoonyoung.pe.kr/images/publish/chilsung/chilsung.html#"></a></div>
+                        <div class="insta"><a href="http://yoonyoung.pe.kr/images/publish/chilsung/chilsung.html#"></a></div>
+                        <div class="you2"><a href="http://yoonyoung.pe.kr/images/publish/chilsung/chilsung.html#"></a></div>
+                        <div class="lotte"><a href="http://yoonyoung.pe.kr/images/publish/chilsung/chilsung.html#"></a></div>
+                    </div>
+    </article>
+    
+    <footer>
+        <div class="f1">
+            <span>롯데칠성의 더 많은 소식을 SNS로 만나보세요!</span>
+            <ul>
+                        <li class="t"><a href="http://yoonyoung.pe.kr/images/publish/chilsung/chilsung.html#"></a></li>
+                        <li class="y"><a href="http://yoonyoung.pe.kr/images/publish/chilsung/chilsung.html#"></a></li>
+                        <li class="i"><a href="http://yoonyoung.pe.kr/images/publish/chilsung/chilsung.html#"></a></li>
+                        <li class="f"><a href="http://yoonyoung.pe.kr/images/publish/chilsung/chilsung.html#"></a></li>
+                    </ul>
+        </div>
+        <div class="f2">
+            <div class="ff">
+                <div class="re">
+                    <div class="sym"></div>
+                    <div class="title">채용안내</div>
+                    <div class="con">적극적이고 노력하는 인재를 중요시 합니다.</div>
+                </div>
+                <div class="co">
+                    <div class="sym"></div>
+                    <div class="title">업체등록</div>
+                    <div class="con">업체제휴절차를 안내합니다.</div>
+                </div>
+                <div class="cu">
+                    <div class="sym"></div>
+                    <div class="title">고객문의</div>
+                    <div class="con">롯데칠성음료(주)공장은 여러분을 환영합니다.</div>
+                </div> 
+            </div>
+        </div>
+        <div class="f3">
+            <div class="logo"></div>
+            <ul>
+                <li>이용약관</li>
+                <li>개인정보처리방침</li>
+                <li>공장견학</li>
+            </ul>
+            <div>본사:서울특별시 송파구 올림픽로 269. 롯데캐슬골드 4.5층 Tel:02-
+                3497-9114/대표이사:이영구 COPYRIGHT@2010 LOTTE CHIL SUNG BEVERAGE
+                CO LTD ALL RIGHTS RESERVED</div>
+        </div>
+    </footer>
+<script>
+    $(document).ready(function(){
+    $(".slider1").bxSlider({
+        auto: true,
+    });
+    });
+</script>
+<script>
+    $(function() {
+    $( '#mi-slider' ).catslider();
+	});
+</script>
+</body>
+</html>

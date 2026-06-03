@@ -1,1 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/prefixfree.min.js"></script>
+<style>
+    @charset "utf-8";
+    * {margin: 0; padding: 0;}
+    ul {list-style: none;}
+    a {text-decoration: none; text-align: center;}
+    
+    img {border: none;}
+    
+    #wrap {position: fixed; top: 0; left: 0; width: 100%; height: 100%; min-width: 1400px; min-height: 780px;    transition: all 0.2s; background:url() 0 0/100%;}
+    #wrap .logo {width: 126px; height: 61px; position: fixed; top: 40px; left: 60px;}
 
+    .logo>img {width: 126px; height: 61px;}
+    
+    .list {position: fixed; top: 50px; right: 200px;}
+    .list li {float: left; margin-left: 20px;}
+    .list li a {font-size: 14px; font-weight: bold; color: #fff; font-family: 'Noto Sans KR', sans-serif;}
+    
+    .sns {position: fixed; top: 50px; right: 50px;}
+    .sns li {float: left; margin-left: 20px;}
+    .sns li a {font-size: 20px; font-weight: bold; color: #fff;}
+    
+    article p {position: absolute; top: 330px; left: 250px; width: 400px; font-size: 50px; color: #fff; font-family: 'Roboto Slab', cursive;}
+    article b {position: absolute; top: 430px; left: 250px; width: 500px; font-size: 24px; color: #fff; font-family: 'Noto Sans KR', sans-serif;}
+    
+    figure {position: absolute; top: 150px; right: 100px; width: 800px; height: 1020px; transition: all 0.2s; z-index: 5;}
+    figure>img {position: relative; width: 812px; height: 921px; left: 248px; top: 25px; z-index: 5; overflow: hidden;}
+    figure p {position: absolute; top: 45px; right: 138px; width: 330px; height: 710px; overflow: hidden; font-size: 40px; font-weight: bold; line-height: 4.6; box-sizing: border-box; z-index: 2;}
+    figure p span {position: relative; top: 80px; z-index: 3; left: 75px; color: #fff; text-shadow: 2px 2px 2px #7f7f7f;}
+    figure p b {position: relative; top: 78px; z-index: 3; left: 80px; color: #fff;}
+    
+    nav {position: fixed; bottom: 0px; left: 0%; width: 100%; z-index: 99;}
+    nav li {float: left; width: 25%;}
+    nav li a {display: block; width: 99.5%; height: 45px; background: #fff; color: #111; margin: 0 auto; transition: all 0.5s; font-size: 12px; font-weight: bold; line-height: 45px; letter-spacing: 10px; box-sizing: border-box; padding-left: 30px; opacity: 0.6; z-index: 1; position: relative;}
+    nav li:hover a {background: #111; color: #eee; opacity: 0.9;}
+    nav li a.on {background: #111; color: #eee; opacity: 0.9;}
+    
+    #wrap>img:nth-child(1) {position: absolute; top: 100px; left: -500px; opacity: 0.8; width: 500px; height: auto; animation: ani1 70s linear infinite;}
+    #wrap>img:nth-child(2) {position: absolute; top: 20px; left: 0px; opacity: 0.7; width: 500px; height: auto; animation: ani1 120s linear infinite;}
+
+    figure p img.c1 {width: 200px; height: auto; position: absolute; top: 90px; left: -200px; z-index: 3; animation: ani3 50s linear infinite;}
+    figure p img.c2 {width: 200px; height: auto; position: absolute; top: 0px; left: -600px; z-index: 3; opacity: 0.8; animation: ani4 90s linear infinite;}
+    
+    @keyframes  ani1 {
+        0% {left: -500px;}
+        100% {left: 1950px;}
+    }
+    @keyframes ani2 {
+        50% {left: 1950px; opacity: 0;}
+        50.1% {left: -700px; opacity: 0;}
+        100% {left: 0px;}
+    }
+    @keyframes ani3 {
+        100% {left: 540px;}
+    }
+    @keyframes ani4 {
+        0% {left: 0px;}
+        50% {left: 540px;}
+        50.1% {left: -600px; opacity: 1;}
+        100% {left: 0px;}
+    }
+    
+    #wrap.Hawaii {background:url(images/hawaii.jpg) 0 0/100%;}
+    #wrap.Hawaii .list a {color: #ede9d2;}
+    #wrap.Hawaii .sns i {color: #ede9d2;}
+    #wrap.Hawaii figure p {background: url(); z-index: 2; color: #ccc;}
+    #wrap.Hawaii article p {color: #015cb7;}
+    #wrap.Hawaii article b {color: #0096f4;}
+    #wrap.Hawaii>img:nth-child(1) {opacity: 1;}
+    #wrap.Hawaii>img:nth-child(2) {opacity: 1;}
+    
+    #wrap.Maidives {background:url(images/maidives.jpg) 0 0/100%;}
+    #wrap.Maidives .list a {color: #badbfe;}
+    #wrap.Maidives .sns i {color: #badbfe;}
+    #wrap.Maidives figure p {background: url(); z-index: 2; color: #aaa;}
+    #wrap.Maidives article p {color: #8dc3fe;}
+    #wrap.Maidives article b {color: #99ccff;}
+    #wrap.Maidives>img:nth-child(1) {opacity: 1;}
+    #wrap.Maidives>img:nth-child(2) {opacity: 1;}
+    
+    #wrap.Europe {background:url(images/europe.jpg) 0 0/100%;}
+    #wrap.Europe .list a {color: #54437a;}
+    #wrap.Europe .sns i {color: #54437a;}
+    #wrap.Europe figure p {background: url(); z-index: 2; color: #666;}
+    #wrap.Europe article p {color: #4576cc;}
+    #wrap.Europe article b {color: #96d2f6;}
+    #wrap.Europe>img:nth-child(1) {opacity: 1;}
+    #wrap.Europe>img:nth-child(2) {opacity: 1;}
+    
+    #wrap.Bali {background: url(images/bali.jpg) 0 0/100%;}
+    #wrap.Bali .list a {color: #f7eea1;}
+    #wrap.Bali .sns i {color: #f7eea1;}
+    #wrap.Bali figure p {background: url(); z-index: 2; color: #ddd;}
+    #wrap.Bali article p {color: #996699;}
+    #wrap.Bali article b {color: #2d4257;}
+    #wrap.Bali>img:nth-child(1) {opacity: 1;}
+    #wrap.Bali>img:nth-child(2) {opacity: 1;}
+</style>
+<script>
+    $(document).ready(function() {
+        
+        var timer=setInterval(function (){
+        var now=new Date();
+        var hr=now.getHours();
+        var min=now.getMinutes();
+        var sec=now.getSeconds();
+            
+        if(hr>=10) {
+        hNum=hr;
+        } else {
+        hNum="0"+hr;
+        }
+        
+        if(min>=10) {
+        mNum=min;
+        } else {
+        mNum="0"+min;
+        }
+            
+        if(sec>=10) {
+        sNum=sec;
+        } else {
+        sNum="0"+sec;
+        }
+        
+        $("p span").eq(0).text(hNum)
+        $("p span").eq(1).text(mNum)
+        $("p span").eq(2).text(sNum)
+
+        },1000)
+        
+        var now=new Date();
+        var hr=now.getHours();
+        
+        if(hr>=5 && hr<11) {
+        $("#wrap").removeClass();
+        $("#wrap").addClass("Hawaii");
+        $("nov li").removeClass();
+        $("nov li").eq(0).addClass("on");
+        }
+        
+        else if(hr>=11 && hr<16) {
+        $("#wrap").removeClass();
+        $("#wrap").addClass("Maidives");
+        $("nov li").removeClass();
+        $("nov li").eq(1).addClass("on");
+        }
+        
+        else if(hr>=16 && hr<20) {
+        $("#wrap").removeClass();
+        $("#wrap").addClass("Europe");
+        $("nov li").removeClass();
+        $("nov li").eq(2).addClass("on");
+        }
+        
+        else if(hr>=20 && hr<25) {
+        $("#wrap").removeClass();
+        $("#wrap").addClass("Bali");
+        $("nov li").removeClass();
+        $("nov li").eq(3).addClass("on");
+        }
+        
+        $("nav li").on("click", function(){
+        var className=$(this).children("a").text();
+            
+        $("nav li").removeClass ();
+        $(this).addClass("on");
+        $("#wrap").removeClass();
+        $("#wrap").addClass(className);
+        })        
+    })
+</script>
+</head>
+<body>
+    <div id="wrap" class="">
+        <img src="images/airplane.png">
+        <img src="images/cloud.png">
+        <h1 class="logo"><img src="images/logo.png"></h1>
+        
+        <ul class="list">
+            <li><a href="#">LOGIN</a></li>
+            <li><a href="#">JOIN</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+        
+        <ul class="sns">
+            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube-square"></i></a></li>
+        </ul>
+        
+        <article>
+            <p>HoneyMoon</p>
+            <b>매시간 새로운 장소에서 만드는 다양한 추억!</b>
+        </article>
+        
+        <figure><img src="images/mobile.png">
+            <p>
+                <span>00</span><b>: </b><span>00</span><b>: </b><span>00</span>
+                <img class="c1" src="images/airplane.png">
+                <img class="c2" src="images/cloud.png">
+            </p>
+        </figure>
+        
+        <nav>
+            <ul>
+                <li><a href="#">Hawaii</a></li>
+                <li><a href="#">Maidives</a></li>
+                <li><a href="#">Europe</a></li>
+                <li><a href="#">Bali</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

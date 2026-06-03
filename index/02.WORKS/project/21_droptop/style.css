@@ -1,0 +1,1270 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    color: #333;
+    line-height: 1.5;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+
+}
+
+/* Utilities */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.btn-wrap {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.btn-more {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    line-height: 38px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-more:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    z-index: 100;
+}
+
+.top-bar {
+    padding: 15px 0;
+    border-bottom: none;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.top-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo {
+    flex: 1;
+    text-align: center;
+}
+
+.top-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo h1 a {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e2f55;
+    letter-spacing: 2px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.icon-btn i {
+    color: #1e2f55;
+    font-size: 16px;
+}
+
+.util-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.util-nav li a, .util-nav li button {
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Main Nav Bar */
+.main-nav-bar {
+    background-color: #1e2f55;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+.gnb ul {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1002; /* Ensure higher than submenu-bg (999) */
+}
+
+.gnb > ul > li {
+    position: relative;
+}
+
+.gnb > ul > li > a {
+    display: block;
+    padding: 20px 40px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Submenu Background Slide - The white band */
+.submenu-bg {
+    position: absolute;
+    top: 100%; /* Below GNB */
+    left: 0;
+    width: 100%;
+    height: 0; /* Hidden by default */
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    transition: height 0.3s;
+    overflow: hidden;
+    z-index: 999;
+}
+
+/* Show submenu-bg when hovering over any menu item (li) */
+.gnb > ul > li:first-child:hover ~ .submenu-bg,
+.gnb > ul > li:nth-child(2):hover ~ .submenu-bg,
+.gnb > ul > li:nth-child(3):hover ~ .submenu-bg,
+.gnb > ul > li:nth-child(4):hover ~ .submenu-bg,
+.gnb > ul > li:nth-child(5):hover ~ .submenu-bg,
+.gnb > ul > li:nth-child(6):hover ~ .submenu-bg {
+    height: 180px;
+}
+
+/* Submenu Lists */
+.submenu {
+    display: none !important; /* Force hide by default */
+    position: absolute;
+    top: 100%; /* Align perfectly to bottom of LI (header) */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px; 
+    text-align: center;
+    z-index: 1001; /* Above bg */
+    padding-top: 20px; /* Give some space from the top border */
+}
+
+/* Show only the submenu of the hovered LI */
+.gnb > ul > li:hover .submenu {
+    display: block !important;
+}
+
+.submenu li {
+    padding: 5px 0;
+}
+
+.submenu li a {
+    color: #000; /* Darkened for visibility */
+    font-size: 13px;
+    font-weight: 500; /* Slightly bolder */
+    display: block;
+}
+
+.submenu li a:hover {
+    color: #1e2f55;
+    font-weight: 700;
+    background: none; /* Remove per-item bg */
+}
+
+
+
+/* Dashboard 1: Notice Bar */
+.notice-bar {
+    background-color: #1e2f55;
+    padding: 15px 0;
+    color: #fff;
+}
+
+.notice-content {
+    display: flex;
+    justify-content: center; /* PERFECT CENTER */
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+    height: 30px;
+    width: 100%; /* Ensure it spans full width for centering */
+}
+
+.noticeSwiper {
+    width: 440px; /* Adjusted to fit the longest text: '단백질 커피 마시고, 셀렉스 단백질바 받자! 2025-09-04' */
+    height: 100%;
+    margin: 0 !important;
+}
+
+.noticeSwiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text within swiper slide */
+}
+
+.noticeSwiper p {
+    font-weight: 400;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-more-plus {
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+/* Dashboard 2: Promos */
+.dashboard-promos {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.promo-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.promo-item {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden; /* rounded corners for image */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    cursor: pointer;
+    background: transparent; /* No background color needed */
+}
+
+.promo-item img {
+    width: 100%;
+    display: block; /* Remove bottom space */
+    height: auto;
+}
+
+/* Specific Colors removed as now using images */
+.promo-item.p1, .promo-item.p2, .promo-item.p3 {
+    background-color: transparent;
+    padding: 0;
+}
+
+
+/* Main Slider */
+.main-slider {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background-color: #ecf0f1;
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide .text-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slide h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    color: #333;
+}
+
+.slide p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn-cta {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid #333;
+    color: #333;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s;
+    /* Absolute positioning for consistency */
+    position: absolute;
+    bottom: 120px; /* Fixed distance from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn-cta:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.slider-controls button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.slider-controls button:hover {
+    opacity: 1;
+}
+
+.dots-container {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+/* Modals */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 999;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 40px;
+    width: 400px;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #1e2f55;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+.btn-submit, .btn-search {
+    width: 100%;
+    padding: 12px;
+    background-color: #1e2f55;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.store-search {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+.modal.active, .modal-overlay.active {
+    display: block;
+}
+
+/* New Menu */
+/* New Menu - Center Focus Layout (Swiper) */
+/* New Menu - Center Focus Layout (Swiper) */
+.new-menu {
+    background-color: #f9f9f9;
+    padding: 100px 0; /* More padding */
+    text-align: center;
+}
+
+.new-menu .section-title {
+    font-size: 40px; /* Larger Title */
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.new-menu .container {
+    max-width: 1200px; /* Standard 1200px container as requested */
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 10px; /* Minimal padding */
+}
+
+.new-menu .swiper {
+    width: 100%;
+    height: 550px; 
+    min-height: 0; 
+    padding-bottom: 0;
+    padding-top: 0;
+    overflow: hidden; /* Hide overflow to allow clean edges (masking) */
+}
+
+/* Force proper Swiper Flex behavior */
+.new-menu .swiper-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center; 
+    box-sizing: content-box;
+    width: 100%;
+}
+
+.new-menu .swiper-slide {
+    text-align: center;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    opacity: 1;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 298px;
+    height: auto;
+    flex-shrink: 0;
+    position: relative;
+    transform: scale(0.85); /* Visually shrink side items to fit 5 in width */
+    z-index: 1;
+}
+
+/* Ensure Active slide is on top and full size */
+.new-menu .swiper-slide-active {
+    transform: scale(1);
+    z-index: 10;
+}
+
+.new-menu .swiper-slide .img-box {
+    width: 298px !important; 
+    height: 347px !important;
+    height: 267px !important; /* Base height */
+    margin-bottom: 20px;
+    overflow: visible;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.8s ease; 
+    transform-origin: center center;
+}
+
+/* Active Item Transformation - Scale UP */
+.new-menu .swiper-slide-active {
+    transform: scale(1);
+}
+
+/* Re-attempt Height Animation with Fixed Container */
+.new-menu .swiper-slide-active .img-box {
+    height: 347px !important;
+    transform: translateY(-10px);
+}
+
+.new-menu .swiper-slide .img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Vital if box changes shape */
+    transition: all 0.8s ease;
+}
+
+.new-menu .swiper-slide .img-box {
+    /* Reset to be transitionable */
+    width: 298px !important; 
+    height: 267px !important;
+    transition: height 0.8s ease, width 0.8s ease;
+}
+
+.new-menu .swiper-slide-active .img-box {
+    width: 298px !important;
+    height: 347px !important;
+}
+
+/* Ensure Name doesn't jump */
+.new-menu .swiper-slide .name {
+    margin-top: 20px;
+    transition: margin 0.8s ease;
+}
+
+.new-menu .swiper-slide-active .name {
+    margin-top: 30px; /* Push text down as image grows */
+}
+
+.new-menu .swiper-slide .img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.new-menu .swiper-slide .placeholder-img {
+    background-color: transparent !important; /* Force remove */
+}
+
+/* Active Item Styling */
+.new-menu .swiper-slide-active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.new-menu .swiper-slide-active .img-box {
+    width: 298px !important;
+    height: 347px !important; /* Taller active */
+    /* Remove shadow if user wants clean look? User didn't specify, but background removal implies clean. */
+    /* box-shadow: 0 15px 30px rgba(0,0,0,0.1); */ 
+    transform: none; /* Reset transform */
+}
+
+.new-menu .swiper-slide .name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+
+.new-menu .swiper-slide-active .name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+/* More Button Round */
+.btn-more-round {
+    display: inline-block;
+    padding: 12px 60px; /* Slightly wider */
+    border: 1px solid #333;
+    border-radius: 30px;
+    color: #333;
+    font-size: 15px; /* Slightly larger text */
+    font-weight: 500; /* Regular weight like image */
+    background: #fff;
+    transition: all 0.3s;
+    margin-top: 40px; /* Increased top margin for separation */
+}
+
+.btn-more-round:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* Dessert Section Specifics */
+/* Dessert Section Specifics */
+.dessert {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.dessert .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 10px;
+}
+
+.dessert .swiper {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0; /* Space for shadow if needed */
+}
+
+/* Ensure items are purely flex in swiper */
+.dessert .swiper-slide {
+    text-align: center;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto; /* Let Swiper handle width based on slidesPerView: 4 */
+    height: auto;
+}
+
+/* Slider Buttons Matching Reference */
+.slider-wrap {
+    position: relative;
+}
+
+.dessert .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px; /* Larger like reference */
+    height: 60px;
+    background: #f4f4f4; /* Light gray background */
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    cursor: pointer;
+    color: #000;
+    font-size: 20px; /* Larger icon */
+    transition: all 0.3s;
+}
+
+.dessert .slider-btn:hover {
+    background: #e0e0e0; /* Darker gray on hover */
+    color: #000;
+}
+
+.dessert .dessert-prev { left: -80px; } /* Outside positioning */
+.dessert .dessert-next { right: -80px; }
+
+.dessert .img-box {
+    width: 220px !important; /* Fixed size explicitly */
+    height: 220px !important;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: transparent !important;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto; /* Center horizontally */
+}
+
+/* Button Wrap Spacing */
+.dessert .btn-wrap {
+    margin-top: 60px; /* Match New Menu spacing */
+    text-align: center;
+}
+
+/* Swiper button disabled state */
+.swiper-button-disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.slider-btn:hover {
+    color: #333;
+    border-color: #333;
+}
+
+/* Event Section Grid */
+/* Event Section Grid */
+.event {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 386px); /* Fixed height rows for perfect squares */
+    gap: 20px;
+}
+
+/* Item 1: Top Left (Square) */
+.event-item:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background-color: #fcebd3; /* Fallback */
+}
+
+/* Item 2: Top Right (Wide) */
+.event-item:nth-child(2) {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    background-color: #e3f2fd; /* Fallback */
+}
+
+/* Item 3: Middle Left (Wide) */
+.event-item:nth-child(3) {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    background-color: #e8f5e9; /* Fallback */
+}
+
+/* Item 4: Right Tall (Spans 2 Rows) */
+.event-item:nth-child(4) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4; /* Spans Middle and Bottom rows */
+    background-color: #a31d1d; /* Fallback */
+    height: 100%; /* Fill the grid area */
+}
+
+/* Item 5: Bottom Left (Square) */
+.event-item:nth-child(5) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    background-color: #e1f5fe; /* Fallback */
+}
+
+/* Item 6: Bottom Center (Square) */
+.event-item:nth-child(6) {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    background-color: #1a1a1a; /* Fallback */
+}
+
+/* Common Image Styling */
+.event-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important; /* Simplified to block */
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.event-item img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;  /* Override global constraints */
+    max-height: none !important; /* Override global constraints */
+    object-fit: cover !important; /* Force fill while cropping */
+    margin: 0 !important;
+    padding: 0 !important;
+    transition: transform 0.5s ease;
+}
+
+.event-item:hover img {
+    transform: none !important;
+}
+
+/* Hover Overlay Style - Global (Bottom Slide) */
+.event .text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 25px;
+    color: #fff;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 5;
+    backdrop-filter: blur(8px) !important; /* Apply blur to all items */
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.event-item:hover .text-overlay {
+    transform: translateY(0);
+}
+
+/* Item 2 Specific: Slide from Right (Wide Blue) */
+.event-item:nth-child(2) .text-overlay {
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: auto;
+    transform: translateX(100%); /* Start from right */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.event-item:nth-child(2):hover .text-overlay {
+    transform: translateX(0); /* Slide into left */
+}
+
+/* Item 3 Specific: Slide from Left (Wide Green) */
+.event-item:nth-child(3) .text-overlay {
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    transform: translateX(-100%); /* Start from left */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.event-item:nth-child(3):hover .text-overlay {
+    transform: translateX(0); /* Slide into right */
+}
+
+.event .text-overlay h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    white-space: normal; /* Allow wrap for side overlays if needed */
+}
+
+.event .text-overlay p {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    opacity: 0.9;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* More lines for side overlays */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.event .text-overlay .date {
+    font-size: 12px;
+    color: #ccc;
+    font-weight: 300;
+}
+
+
+
+
+/* --- INSTAGRAM SECTION --- */
+.instagram-feed-title {
+    text-align: center;
+    margin: 80px 0 30px;
+}
+
+.instagram-feed-title h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.instagram-feed-title .insta-link {
+    font-size: 14px;
+    color: #666;
+}
+
+.insta-display {
+    padding-bottom: 60px;
+}
+
+.insta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.insta-item img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+/* Review Section Styling Refined */
+.reviewSwiper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.review-card {
+    background: #fff;
+    cursor: pointer;
+}
+
+.review-card .img-wrap {
+    position: relative;
+    border-radius: 4px; /* Minimal rounding like image */
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.review-card .img-wrap img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.review-card .overlay-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: #fff;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-card .desc .summary {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    height: 54px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-align: left;
+}
+
+.review-card .meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+.review-card .rating {
+    color: #fbbc05; /* Bright yellow stars */
+    font-weight: 700;
+}
+
+.review-card .stats-icons {
+    display: flex;
+    gap: 8px;
+}
+
+.review-card .stats-icons span {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.review-card .stats-icons span i {
+    color: #ff4d4d; /* Red heart */
+    font-size: 12px;
+}
+
+.review-card .stats-icons span:nth-child(2) i,
+.review-card .stats-icons span:nth-child(3) i {
+    color: #999;
+}
+
+.review-card .stats-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 10px;
+    font-size: 11px;
+}
+
+.review-card .total-review {
+    color: #333;
+    font-size: 13px;
+}
+
+.review-card .total-review b {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.review-card .date {
+    color: #bbb;
+}
+
+.review-divider {
+    border: none;
+    border-top: 1px solid #eeeeee;
+    margin: 20px 0 40px; /* Reduced top margin to match reference */
+}
+
+/* Bottom Review Banner (Pill Shape with Swiper) */
+.review-banner {
+    background: #f2f2f2; /* Lighter gray matching reference */
+    border-radius: 80px; /* More pronounced pill shape */
+    margin-top: 50px;
+    height: 90px; /* Slightly taller for more breathing room */
+    overflow: hidden;
+    padding: 0 60px;
+}
+
+.bannerSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.bannerSwiper .swiper-slide {
+    display: flex;
+    align-items: center;
+}
+
+.review-banner .banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.review-banner .title {
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #444;
+}
+
+.review-banner .title span {
+    color: #ccc;
+    font-weight: 300;
+    margin: 0 15px;
+}
+
+.review-banner .banner-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.review-banner .count {
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #444;
+}
+
+.review-banner .time {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #444;
+}
+
+
+.review-banner .banner-right .sep {
+    font-size: 17px;
+    font-weight: 400;
+    color: #ccc;
+    margin: 0 5px;
+}
+
+.review-banner .btn-join {
+    background: #1a2a5a; /* Dark blue button matching reference */
+    color: #fff;
+    padding: 12px 40px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: background 0.3s;
+    margin-left: 10px;
+}
+
+.review-banner .btn-join:hover {
+    background: #0d1a3a;
+}
+
+/* --- FOOTER SECTION --- */
+footer {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logos img {
+    height: 35px;
+    opacity: 0.7;
+}
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin-bottom: 40px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.address-info p {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.8;
+    margin-bottom: 5px;
+}
+
+.address-info .copyright {
+    margin-top: 15px;
+    color: #aaa;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    font-size: 18px;
+    color: #1e2f55;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #333;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links li a {
+    font-size: 13px;
+    color: #1e2f55;
+    font-weight: 700;
+}
+
+/* --- DESSERT SECTION NAV FIX --- */
+.dessert .slider-btn {
+    z-index: 100 !important;
+    display: flex !important;
+}

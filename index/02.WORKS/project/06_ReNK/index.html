@@ -1,1 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리엔케이 스토어 - 리엔케이 스토어 메인</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.bxslider.css">    
+</head>
+<body>
+    <header class="title">
+        <div class="nunc">
+            <a href="#">
+                <img src="images/small_left_arrow_btn.png"> nunc 메인으로 가기</a>
+        </div>
+        <div class="f_list">
+            <ul class="f_menu">
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">주문배송조회</a></li>
+                <li><a href="#">마이눙크</a></li>
+                <li><a href="#">고객센터</a></li>
+                <li><a href="#">멤버십안내</a></li>
+            </ul>
+        </div>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">
+                    <img src="images/logo.png" alt="logo" class="n_logo">
+                </a>
+            </div>
+            <div class="txt_renk">
+                <a href="#">
+                    <span class="renk">리엔케이</span>
+                    <div class="d_arrow">
+                        <img src="images/bottom_arrow_btn.png" alt="↓">
+                    </div>
+                </a>
+            </div>
+            <div class="search_box">
+                <div class="search"></div>
+                <h1 class="s_txt">검색어를 입력해 주세요.</h1>
+                <h1 class="s_icon">
+                    <img src="images/search_btn.png" alt="search">
+                </h1>
+            </div>
+            <div class="btn">
+                <a href="#">
+                    <img src="images/shopping_basket_btn.png" alt="shopping_basket_btn" class="basket_btn">
+                </a>
+                <a href="#">
+                    <img src="images/my_btn.png" alt="my_btn" class="my_btn">
+                </a>
+                <a href="#">
+                    <img src="images/time_btn.png" alt="time_btn" class="time_btn">
+                </a>
+            </div>
+        </div>
+        
+        <div class="nav">
+            <ul class="s_menu_one"> 
+                <li>
+                    <a href="#">Re:NK</a>
+                    <ul class="s_menu_two">
+                        <li><a href="#">리엔케이 스토리</a></li>
+                        <li><a href="#">디자인 스토리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">NEW &amp; BEST</a>
+                </li>
+                <li>
+                    <a href="#">제품</a>
+                    <ul class="s_menu_two2">
+                        <li>
+                            <span class="s_menu_two_title">라인별</span>
+                            <ul class="s_menu_two_sub">
+                                <li><a href="#">토탈 안티에이징</a></li>
+                                <li><a href="#">더마 클리닉</a></li>
+                                <li><a href="#">셀 브라이트닝</a></li>
+                                <li><a href="#">퍼펙트 크리미</a></li>
+                                <li><a href="#">센솔로지 리</a></li>
+                                <li><a href="#">셀 펩타리프트</a></li>
+                                <li><a href="#">셀 레미디</a></li>
+                                <li><a href="#">인텐스 브라이트닝</a></li>
+                                <li><a href="#">에센셜 하이드라</a></li>
+                                <li><a href="#">옴므</a></li>
+                                <li><a href="#">더마 리페어</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="s_menu_two_title">유형별</span>
+                            <ul class="s_menu_two_sub">
+                                <li><a href="#">스킨소프너</a></li>
+                                <li><a href="#">에센스/세럼</a></li>
+                                <li><a href="#">앰플</a></li>
+                                <li><a href="#">에멀젼</a></li>
+                                <li><a href="#">크림</a></li>
+                                <li><a href="#">에이케어</a></li>
+                                <li><a href="#">클렌징</a></li>
+                                <li><a href="#">팩&amp;마스크</a></li>
+                                <li><a href="#">자외선 차단</a></li>
+                                <li><a href="#">바디케어</a></li>
+                                <li><a href="#">베이스 메이크업</a></li>
+                                <li><a href="#">포인트 메이크업</a></li>
+                                <li><a href="#">옴므</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="s_menu_two_title">패밀리 브랜드별</span>
+                            <ul class="s_menu_two_sub">
+                                <li><a href="#">리프레쉬 바이 리엔케이</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">이벤트</a>
+                    <ul class="s_menu_two">
+                        <li><a href="#">특가 제품</a></li>
+                        <li><a href="#">이달의 구매혜택</a></li>
+                        <li><a href="#">스페셜 기획세트</a></li>
+                        <li><a href="#">기획전</a></li>
+                        <li><a href="#">진행중인 이벤트</a></li>
+                        <li><a href="#">당첨자 발표</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">커뮤니티</a>
+                    <ul class="s_menu_two">
+                        <li><a href="#">Re:NK</a></li>
+                        <li><a href="#">미디어</a></li>
+                        <li><a href="#">공식 페이스북</a></li>
+                        <li><a href="#">공식 인스타그램</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">매장안내</a>
+                    <ul class="s_menu_two">
+                        <li><a href="#">찾아오시는 길</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
 
+    <section class="m_banner">
+        <a href="#">
+            <img src="images/mainbanner_1.jpg" alt="mainbanner">
+        </a>
+        <a href="#">
+            <img src="images/mainbanner_2.jpg" alt="mainbaner2">
+        </a>
+    </section>
+
+    <section class="c_banner">
+        <img src="images/subbanner_1.jpg">
+            <div class="c_logo">
+                <img src="images/Club_Re_NK_logo.png" alt="club Re:NK">
+            </div>
+            <a href="#">
+                <div class="m_ship">
+                    <span class="m_ship_txt">Club</span>
+                    <h1 class="m_ship_logo">
+                        <img src="images/small_Club_Re_NK_logo.png" alt="club Re:NK">
+                    </h1>
+                <span class="m_ship_txt1">멤버십 가입하기</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="m_ship_1">
+                <span class="m_ship_txt">Club</span>
+                    <h1 class="m_ship_logo">
+                        <img src="images/small_Club_Re_NK_logo.png" alt="club Re:NK">
+                    </h1>
+                <span class="m_ship_txt1">멤버십 등급 안내</span>
+                </div>
+            </a>
+    </section>
+
+    <section class="product">
+        <div class="best">
+            <span class="best_txt">BEST</span>
+            <span class="best_txt_2">PRODUCT</span>
+            <div class="p_b_line"></div>
+            <div class="best_box">
+            <div class="best_box_1">
+                <a href="#">
+                    <img src="images/best_1.png" class="b1">
+                </a>
+                <p class="best_txt_title">셀 투 셀 에센스</p>
+                <span class="best_txt_title_sub">150,000</span>
+            </div>
+            <div class="best_box_2">
+                <a href="#">
+                    <img src="images/best_2.png" class="b2">
+                </a>
+                <p class="best_txt_title">셀 리커버리 벨벳 앰플 쿠션</p>
+                <span class="best_txt_title_sub">57,000</span>
+            </div>
+            <div class="best_box_3">
+                <a href="#">
+                    <img src="images/best_3.png" class="b3">
+                </a>
+                <p class="best_txt_title">셀슈어 크리미 루즈</p>
+                <span class="best_txt_title_sub">38,000</span>
+            </div>
+            <div class="best_box_4">
+                    <a href="#">
+                        <img src="images/best_4.png" class="b4">
+                    </a>
+                <p class="best_txt_title">래디언스 컬러 크림 EX SPF30/FA++</p>
+                <span class="best_txt_title_sub">30,000</span>
+            </div>
+            </div>
+        </div>
+        <div class="new">
+            <span class="new_txt">NEW</span>
+            <span class="new_txt_2">PRODUCT</span>
+            <div class="n_b_line"></div>
+            <div class="new_box">
+                <div class="new_box_1">
+                    <a href="#">
+                        <img src="images/new_1.png" class="n1">
+                    </a>
+                    <p class="new_txt_title">셀레미디 토탈 케어 하이드로겔 마스크</p>
+                    <span class="new_txt_title_sub">60,000</span>
+                </div>
+                <div class="new_box_2">
+                    <a href="#">
+                        <img src="images/new_2.png" class="n2">
+                    </a>
+                    <p class="new_txt_title">셀 레미디 마스터 앰플</p>
+                    <span class="new_txt_title_sub">100,000</span>
+                </div>
+                <div class="new_box_3">
+                    <a href="#">
+                        <img src="images/new_3.png" class="n3">
+                    </a>
+                    <p class="new_txt_title">LED 셀 마스크</p>
+                    <span class="new_txt_title_sub">1,290,000</span>
+                </div>
+                <div class="new_box_4">
+                    <a href="#">
+                        <img src="images/new_4.png" class="n4">
+                    </a>
+                    <p class="new_txt_title">셀슈어 크리미 루즈 시그니처 버건디</p>
+                    <span class="new_txt_title_sub">38,000</span>
+                </div>
+                <div class="new_box_5">
+                    <a href="#">
+                        <img src="images/new_5.png" class="n5">
+                    </a>
+                    <p class="new_txt_title">오리지널 래디언스 컬러크림<br>스페셜 에디션 (시크니처 에디션)</p>
+                    <span class="new_txt_title_sub">70,000</span>
+                </div>
+            </div>
+        </div>    
+    </section>
+
+    <section class="s_banner">
+        <img src="images/subbanner_2.jpg" alt="" width="1902px" height="218px">
+    </section>
+
+    <section class="media">
+        <span class="media_txt">RE:NK</span>
+        <span class="media_txt_2">MEDIA</span>
+        <div class="media_line"></div>
+        <div class="youtube">
+            <iframe width="1201" height="673" src="https://www.youtube.com/embed/VA5ilN66xBw?si=HSic_Yw1lQo0bT9C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+    </section>
+
+    <section class="review">
+        <span class="review_txt">RE:NK REAL</span>
+        <span class="review_txt_2">REVIEW</span>
+        <div class="reveiw_line"></div>
+        <div class="re_box_bg">
+            <div class="re_img_box1">
+                <div class="img1">
+                    <a href="#">
+                        <img src="images/review_1.jpg" alt="" width="280"; height="280px";>
+                    </a>
+                </div>
+                <div class="img1_txt">
+                    <span class="main_txt">김성령 공항 크림 / 빛크림 튜브 후기</span><br>
+                    <span class="sub_txt">먼저 눈에 들어온 건 한듯 안한듯 자연스럽게<br>빛나는 피부였어요! 얼마 전 김성령씨의 출국<br>기사를 봤는데, 밝고 깨끗하면서 자연스럽게</span>
+                </div>
+                <div class="img_small_box">
+                    <span class="id">ID : 젤리월드
+                        <div class="re_blog_btn_box">
+                            <h1 class="re_blog_btn_txt">블로그</h1>
+                        </div>
+                    </span>
+                    <span class="total">1399</span>
+                    <span class="total_txt1">Total Review</span>
+                    <span class="total_txt2">등록일 2018.03.15</span>
+                </div>
+            </div>
+
+            <div class="re_img_box2">
+                <div class="img2">
+                    <a href="#">
+                        <img src="images/review_2.jpg" alt="" width="280"; height="280px";>
+                    </a>
+                </div>
+                <div class="img2_txt2">
+                    <span class="main_txt2">이번엔 빛크림 튜브형으로 출시했어욧!</span><br>
+                    <span class="sub_txt2">블링블링 화사하고 맑아보이는 <span class="re_tag">#핑크빛톤업</span>은<br>물론- 슥슥 크림처럼 얇게발리기 때문에 민낯<br>이지만 피부좋아보이는 피부로 변신 샤샥-</span>
+                </div>
+                <div class="img_small_box2">
+                    <span class="id2">ID : pururune
+                        <div class="re_insta_btn_box">
+                            <h1 class="re_insta_btn_txt">인스타그램</h1>
+                        </div>
+                    </span>
+                    <span class="total2_1"><img src="images/love_btn.png"></span>
+                    <span class="total2">979</span>
+                    <span class="total_txt3">등록일 2018.02.23</span>
+                </div>
+            </div>
+
+            <div class="re_img_box3">
+                <div class="img3">
+                    <a href="#">
+                        <img src="images/review_3.jpg" alt="" width="280"; height="280px";>
+                    </a>
+                </div>
+                <div class="img3_txt3">
+                    <span class="main_txt3">자연스러운 <span class="re_tag">#민낯메이크업</span> 빛크림튜브</span><br>
+                    <span class="sub_txt3">자연스러운 <span class="re_tag">#민낯메이크업</span>을 할 수 있다면 얼<br>마나좋을까요!? 요즘 제가 민낯 메이크업할 때<br>사용하는 <span class="re_tag">#리앤케이 #빛크림튜브형</span> 추천해요:)</span>
+                </div>
+                <div class="img_small_box3">
+                    <span class="id3">ID : 쏨스타일 (S001234)
+                        <div class="re_insta_btn_box">
+                            <h1 class="re_insta_btn_txt">인스타그램</h1>
+                        </div>
+                    </span>
+                    <span class="total3_1"><img src="images/love_btn.png"></span>
+                    <span class="total3">628</span>
+                    <span class="total_txt4">등록일 2018.02.21</span>
+                </div>
+            </div>
+
+            <div class="re_img_box4">
+                <div class="img4">
+                    <a href="#">
+                        <img src="images/review_4.jpg" alt="" width="280"; height="280px";>
+                    </a>
+                </div>
+                <div class="img4_txt4">
+                    <span class="main_txt4">김성령 공항크림으로 유명한 튜브형 빛크림</span><br>
+                    <span class="sub_txt4">좋아하는배우중 한분인 김성령씨, 나이를 잊게<br>하는 외모와 피부가 같은여자로서 참 부럽더라<br>고요 :) 그러던 중 이번에 공항에서 찍힌 사진보</span>
+                </div>
+                <div class="img_small_box4">
+                    <span class="id4">ID : 단아다야
+                        <div class="re_blog_btn_box">
+                            <h1 class="re_blog_btn_txt">블로그</h1>
+                        </div>
+                    </span>
+                    <span class="total4">203</span>
+                    <span class="total_txt5">Total Review</span>
+                    <span class="total_txt6">등록일 2018.03.15</span>
+                </div>
+            </div>
+
+            </div>
+            <div class="re_box_icon">
+                <a href="#">
+                    <h1 class="re_box_icon_txt">리뷰
+                        <span class="re_box_icon_txt2"> 더보기</span>
+                    </h1>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="insta">
+        <span class="insta_txt">@renk_beauty</span>
+        <div class="insta_line"></div>
+        <div class="insta_box_bg">
+            <div class="insta_img_box1">
+                <a href="#">
+                    <img src="images/insta_img_1.jpg" alt=""; width="282px" height="281px">
+                </a>
+            </div>
+            <div class="insta_img_box2">
+                <a href="#">
+                    <img src="images/insta_img_2.jpg" alt=""; width="282px" height="281px">
+                </a>
+            </div>
+            <div class="insta_img_box3">
+                <a href="#">
+                    <img src="images/insta_img_3.jpg" alt=""; width="282px" height="281px">
+                </a>
+            </div>
+            <div class="insta_img_box4">
+                <a href="#">
+                    <img src="images/insta_img_4.jpg" alt=""; width="282px" height="281px">
+                </a>
+            </div>
+            <div class="insta_img_box5">
+                <a href="#">
+                    <img src="images/insta_img_5.jpg" alt=""; width="282px" height="281px">
+                </a>
+            </div>
+            <div class="insta_img_box6">
+                <a href="#">
+                    <img src="images/insta_img_6.jpg" alt=""; width="282px" height="281px">
+                </a>
+            </div>
+            <div class="insta_img_box7">
+                <a href="#">
+                    <img src="images/insta_img_7.jpg" alt=""; width="282px" height="281px">
+                </a>
+            </div>
+            <div class="insta_img_box8">
+                <a href="#">
+                    <img src="images/insta_img_8.jpg" alt=""; width="282px" height="281px">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="box">
+        <div class="f_f_list">
+            <h4 class="mobile_store">모바일 스토어</h4>
+            <div class="qrcord"><img src="images/img_qrcode.gif"></div>
+            <span class="f_txt1">모바일에서도<br>Re:NK 스토어를 만나보세요</span>
+         </div>
+        <div class="f_f_list2">
+            <h4 class="qna">1:1 상담</h4>
+            <span class="f_txt2">무엇이든 물어보세요!<br></span>             
+            <span class="f_txt3">Re:NK 상담매니저가 친절히 답변해드리겠습니다.</span>
+            <div class="qna_btn">
+                <p>상담하러가기</p>
+            </div>
+        </div>
+        <div class="f_f_list3">
+            <h4 class="notice">고객센터</h4>
+            <div class="number">
+                <p>080. 200. 5100</p>
+            </div>
+            <span class="f_txt4">평일 AM 09:00~ PM 06:00</span>
+            <span class="f_small_txt4">(주말/국/공휴일 상담불가)</span>
+        </div>
+        </div>
+        
+        <div class="f_bg">
+            <div class="f_last_bar">
+                <ul class="f_nav">
+                    <li style="color: #d52228; font-weight: 500;">개인정보처리방침</li>
+                    <li>이용약관</li>
+                    <li>이메일무단수집거부</li>
+                </ul>
+                <ul class="f_nav2">
+                    <li>대리점 모집</li>
+                    <li>뷰티플래너 모집</li>
+                </ul>
+                <div class="f_bar"></div>
+                <ul class="f_nav2_icon">
+                    <li><img src="images/facebook_btn.png"></li>
+                    <li><img src="images/insta_btn.png"></li>
+                </ul>
+            </div>
+            <div class="site_list">
+                <p>FAMILY SITE</p>
+                <a href="#">
+                    <img src="images/ico_fam_bottom.png">
+                </a>
+            </div>
+            <div class="ft_txt">
+                <p>
+                    <strong>고객서비스센터&nbsp;&nbsp;&nbsp;080-200-5100</strong>&nbsp;&nbsp;(상담시간 평일 09:00~18:00, 점심시간 (12:00-13:00), 주말/국·공휴일 상담불가)
+                </p>
+                <p>본사&nbsp;:&nbsp;서울특별시 구로구 디지털로26길 38(구로동) &nbsp;&nbsp;사업장주소&nbsp;:&nbsp;충남 공주시 유구읍 유구마곡사로 136-23<br>
+                코웨이 주식회사&nbsp;대표이사&nbsp;:&nbsp;이해선, 서장원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;사업자등록번호&nbsp;:&nbsp;307-81-06054&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;통신판매번호&nbsp;:&nbsp;제2005-21호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" style="color: blue; text-decoration: underline;">사업자정보확인</a></p>
+                <p>© COPYRIGHT COWAY., LTD. ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+        <div class="ft_wakorea_logo">
+            <img src="images/img_mark3.jpg" alt="">
+        </div>
+    </footer>
+
+    <!-- main bxslider js-->
+    <script>
+        $( document ).ready(function() {
+          $( '.m_banner' ).bxSlider(
+            {auto: true,
+            pause: 2500,
+            autoHover: true,
+            minSlides: 1,
+            maxSlides: 2,
+            slideWidth: 1902,
+            slideMargin: 0,
+            });}
+          );
+          ;
+    </script>
+</body>
+</html>

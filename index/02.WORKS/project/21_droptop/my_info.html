@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DROPTOP - MY INFO</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .my-dashboard {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+        .user-card {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .user-info h2 {
+            font-size: 28px;
+            color: #1e2f55;
+            margin-bottom: 10px;
+        }
+        .user-info p {
+             font-size: 16px;
+             color: #666;
+        }
+        .user-stats {
+            display: flex;
+            gap: 40px;
+            text-align: center;
+        }
+        .stat-item h3 {
+            font-size: 36px;
+            color: #1e2f55;
+            font-weight: 700;
+        }
+        .stat-item span {
+            font-size: 14px;
+            color: #888;
+        }
+        .recent-orders {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .recent-orders h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #1e2f55;
+            padding-bottom: 15px;
+        }
+        .order-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .order-list th, .order-list td {
+            text-align: left;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .order-list th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-left">
+                    <button id="btn-find-store" class="icon-btn"><i class="fas fa-map-marker-alt"></i> 매장찾기</button>
+                </div>
+                <div class="logo">
+                     <h1><a href="index.html">DROPTOP</a></h1>
+                </div>
+                <div class="top-right">
+                    <ul class="util-nav">
+                        <li><button id="btn-logout">LOGOUT</button></li>
+                        <li><a href="index.html">HOME</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-nav-bar">
+             <div class="container">
+                <nav class="gnb">
+                    <ul>
+                        <li><a href="#">DROPTOP</a></li>
+                        <li><a href="#">메뉴</a></li>
+                        <li><a href="#">멤버십</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="my-dashboard">
+        <div class="container">
+            <div class="user-card">
+                <div class="user-info">
+                    <h2 id="user-name-display">Welcome, DROPTOP!</h2>
+                    <p>MEMBERSHIP LEVEL: <strong>VIP</strong></p>
+                </div>
+                <div class="user-stats">
+                    <div class="stat-item">
+                        <h3>2,500</h3>
+                        <span>POINTS</span>
+                    </div>
+                    <div class="stat-item">
+                        <h3>3</h3>
+                        <span>COUPONS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-orders">
+                <h3>최근 주문 내역</h3>
+                <div class="order-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>주문일자</th>
+                                <th>메뉴</th>
+                                <th>결제금액</th>
+                                <th>상태</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2026.01.15</td>
+                                <td>925 Black Glaze Latte</td>
+                                <td>5,800원</td>
+                                <td>픽업완료</td>
+                            </tr>
+                            <tr>
+                                <td>2026.01.10</td>
+                                <td>Strawberry Yogurt</td>
+                                <td>6,300원</td>
+                                <td>픽업완료</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <address>
+                <p>Copyright © DROPTOP. All Rights Reserved.</p>
+            </address>
+        </div>
+    </footer>
+
+    <script>
+        // Inline script for protection, but better to share logic in script.js if possible.
+        // For simplicity in this static setup, we check sessionStorage here.
+        document.addEventListener('DOMContentLoaded', () => {
+            const isLoggedIn = sessionStorage.getItem('droptop_login');
+            if (isLoggedIn !== 'true') {
+                alert('로그인이 필요한 페이지입니다.');
+                location.href = 'index.html';
+            }
+            
+            document.getElementById('btn-logout').addEventListener('click', () => {
+                sessionStorage.removeItem('droptop_login');
+                alert('로그아웃 되었습니다.');
+                location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

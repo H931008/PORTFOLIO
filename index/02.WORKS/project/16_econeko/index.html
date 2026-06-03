@@ -1,1 +1,219 @@
+<!DOCTYPE HTML>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8">
+<title></title> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<link rel='stylesheet' id='camera-css'  href='css/camera.css' type='text/css' media='all'> 
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="scripts/script.js"></script>
+<script src='scripts/jquery.min.js'></script>
+<script src='scripts/jquery.mobile.customized.min.js'></script>
+<script src='scripts/jquery.easing.1.3.js'></script> 
+<script src='scripts/camera.min.js'></script>
+<!-- 카메라 플러그인 js -->
+<script>
+jQuery(function(){
+jQuery('#camera_wrap_4').camera({
+height: 'auto',
+loader: 'bar',
+pagination: false,
+thumbnails: true,
+hover: false,
+opacityOnGrid: false,
+imagePath: '../images/'
+});
+}); // end    
 
+</script>
+</head>
+<body>
+    <!--상단 카메라 플러그인, 네비 -->
+    <div id="wrap">
+        <div id="header">
+            <div id="top_menu">
+                <a href="index.html"><img src="images/logo.png"></a>
+                <ul id="menu" class="cf">
+                    <li class="left_text"><a href="#css1">ABOUT US</a></li>
+                    <li class="left_text"><a href="#viewwrap">SHOP</a></li>
+                    <li class="left_text"><a href="#adaptive1">AMPOULE MASK</a></li>
+                    <li class="right_text"><a href="#globalwrap">GALLERY</a></li>
+                    <li class="sub">
+                        <dl>
+                            <dt><a href="#"></a></dt>
+                            <dt><a href="#"></a></dt>
+                            <dt><a href="#"></a></dt>
+                        </dl>
+                        <dl>
+                            <dt><a href="#"></a></dt>
+                        </dl>
+                        <dl>
+                            <dt><a href="#"></a></dt>
+                            <dt><a href="#"></a></dt>
+                        </dl>
+                        <dl>
+                            <dt><a href="#"></a></dt>
+                        </dl>
+                    </li>
+                </ul>
+            </div> 
+            <div class="fluid_container">
+                <div class="camera_wrap camera_emboss pattern_1" id="camera_wrap_4">
+                    <div data-src="images/mainVisual1.jpg"></div>
+                    <div data-src="images/mainVisual2.jpg"></div>
+                    <div data-src="images/mainVisual3.jpg"></div>
+                    <div data-src="images/mainVisual4.jpg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 두번째 자연으로 왼쪽에서 -->
+    <div id="section">
+        <div id="css1">
+            <div id="css1_width">
+                <div class="title1">
+                    <p>자 &nbsp;.&nbsp; 연&nbsp; .&nbsp; 으&nbsp; .&nbsp; 로&nbsp; .&nbsp; 만 &nbsp;.&nbsp; 든</p>
+                    <img src="images/title2_1.png"></div>
+                <div class="css1_left">
+                    <p><img src="images/img2_1.jpg" width="853"/></p>
+                    <div class="main_inner"></div>
+                </div>
+                <div id="css1_right">
+                    <div class="css1_right_top">
+                        <ul id="css1_text_one">
+                            <li class="css1_bold"><b>ECO-CONSCIOUS<br>BEAUTY BRAND</b></li>
+                            <li class="css1_small">고효능 클린 제품으로 건강한 아름다움을 추구하고<br>환경에 미치는 영향력을 줄이기 위해 행동하는<br>우리는 에코컨셔스 뷰티 브랜드입니다</li><br>
+                        </ul>
+                        <ul id="css1_text_two">
+                            <li class="css1_bold2"><b>SKIN-</b>LOVING<b><br>EARTH-</b>CARING</li>
+                            <li class="css1_small">피부를 소중히 생각하며<br>이니스프리가 아름다움을 위해 하는 모든 일들이<br>지구에 불필요한 영향을 끼치지 않도록<br>지속 가능한 아름다움을 위해 노력합니다</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--세번째 슬라이드, 확대, 호버 -->
+        <div id="jquery1" class="cf">
+            <div id="jquery1_width">
+                <div class="title1">
+                    <img src="images/title3_1.png">
+                </div>
+                <div id="jquery1_left">
+                    <div class="jquery1_text_one">
+                        <ul>
+                            <li class="jquery1_bold">이니스프리의 약속<br><b>첫 번째, SKIN</b> - LOVING</li>
+                            <li class="jquery1_bold1 Sbold">건강한 아름다움을 위해 이니스프리는 행동합니다.<br> 그 시작은 그린 이노베이션 랩</li>
+                            <li class="jquery1_small">피부엔 순하지만, 확실한 효능을 가진 고효능 자연<br>원료를 찾기 위해 연구합니다</li>
+                        </ul>
+                    </div>
+                    <div class="jquery1_text_two">
+                        <ul>
+                            <li class="jquery1_bold">이니스프리의 약속<br><b>두 번째, EARTH</b> - CARING</li>
+                            <li class="jquery1_bold1 Sbold">우리는 우리가 사는 지구를 소중히 아낍니다<br><br></li>
+                            <li class="jquery1_small">우리가 아름다움을 위해 하는 모든 일들이<br>지구에 불필요한 영향을 끼치지 않도록 행동합니다</li> 
+                        </ul>
+                    </div>
+                </div>
+                <div class="jquery1_right">
+                    <p class="jquery_com"><img src="images/img3_1.jpg" width="853" height="562"></p>
+                    <div class="jquery_main_inner">
+                        <a class="hidden02 "target="_blank">
+                            <img src="images/product_item2.png" alt="jquery메인" width="300px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--네번째 애니메이션 -->
+        <div id="viewwrap">
+            <img src="images/title1.png">
+            <div class="view">
+                <ul>
+                    <li><a href=""><img src="images/img_single_capsure1.png" width="200"></a></li>
+                    <li><a href=""><img src="images/img_single_capsure2.png" width="200"></a></li>
+                    <li><a href=""><img src="images/img_single_capsure3.png" width="200"></a></li>
+                    <li><a href=""><img src="images/img_single_capsure4.png" width="200"></a></li>
+                </ul>
+            </div>
+            <div class="product">
+                <a href="#"><img src="images/a1.png" width="300"><p>BYE!<br>TROUBLE CARE</p></a>
+                <a href="#"><img src="images/a2.png" width="300"><p>HELLO!<br>SKIN MOISTURE</p></a>
+                <a href="#"><img src="images/a3.png" width="298"><p>BYE!<br>SENSITIVE CARE</p></a>
+                <a href="#"><img src="images/a4.png" width="325"><p>HELLO!<br>GLOWING SKIN</p></a>                             
+            </div>  
+        </div>
+        <!--다섯번째 옆에서 -->
+        <div id="adaptive1">
+            <div class="imgwrap">
+                <div class="img1"><img src="images/img2_2.png"></div>
+                <div class="img2"><img src="images/img2_3.png"></div>
+                <div class="img3"><img src="images/img2_1.png"></div>
+            </div>
+        </div>
+        <!--여섯번째 유튜브, 버튼 -->
+        <div id="videowrap">
+            <img src="images/look_title.png">
+            <video autoplay controls loop>
+                <source src="http://econeko.smilecast.co.kr/154262414716125.mp4" width="300" height="300"> 
+            </video>
+        </div>
+        <div id="slide_wrap">
+            <div id="slide">
+                <img src="images/img4_1.png" alt="">
+                <img src="images/img4_2.png" alt="">
+                <img src="images/img4_3.png" alt="">
+                <img src="images/img4_4.png" alt="">
+                <img src="images/img4_5.png" alt="">
+                <img src="images/img4_6.png" alt="">
+                <img src="images/img4_7.png" alt="">
+                <img src="images/img4_8.png" alt="">
+            </div>
+            <ul id="slide_bt">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <!--일곱번째 위아래 움직이고, 애니메이션-->
+        <div id="brandstory">
+            <img src="images/visual4.jpg">
+            <img src="images/brandStroy_title.png">
+            <img src="images/brandStroy_text1.png">
+            <img src="images/brandStroy_text2.png">
+            <img src="images/brandStroy_text3.png">
+        </div>
+        <!--여덟번째 애니메이션-->
+        <div id="globalwrap">
+            <img src="images/global_title.png">
+            <div class="imageswrap">
+                <a href="#">
+                    <img src="images/img_global1.jpg">
+                    <img src="images/img_global2.jpg">  
+                    <img src="images/img_global3.jpg">
+                    <img src="images/img_global4.jpg">
+                    <img src="images/img_global5.jpg">
+                    <img src="images/img_global6.jpg">  
+                    <img src="images/img_global7.jpg">
+                    <img src="images/img_global8.jpg"></a>
+            </div>
+        </div>
+        <!--아홉번째 top,n store-->
+        <div id="footer">
+            <p>COPYRIGHT &copy; 2019 INNISFREE. ALL RIGHTS RESERVED.</p>
+        </div>
+        <div id="naverbutton">
+            <a href="https://smartstore.naver.com/econeko" target="_blank"><img src="images/btn_naver.png"></a>
+        </div>
+        <div id="topbutton">
+            <div></div>
+            <a href=""><img src="images/btn_top.jpg"></a>
+        </div>
+</div><!--전체 section으로 싼거 닫음-->
+</body>
+</html>

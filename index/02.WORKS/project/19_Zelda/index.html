@@ -1,1 +1,174 @@
-
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>젤다의 전설</title>
+<style>
+    * {margin: 0; padding: 0;}
+    ul, li {list-style: none;}
+    body {background: url(images/bg_back.jpg) no-repeat fixed center/cover;}
+    nav {width: 100%; height: 5%; background: url(images/bg/nav_bg_pattern.jpg) repeat-x center; position: fixed; bottom: 0; left: 0;}
+    nav ul {width: 100%; height: 100%;}
+    nav li {width: 20%; height: 100%; float: left; background-repeat: no-repeat; background-position: center; background-size: contain; transition: all 0.3s;}
+    
+    #mouse {width: 3.5vmin; height: 5vmin; position: fixed; bottom: 11%; left: 50%; margin-left: -1.75vmin; z-index: 0;}
+    .line {width: 100%; height: 100%; border: 0.5vmin solid #fff; box-sizing: border-box; border-radius: 1.75vmin; position: relative;}
+    .scroll {width: 0.5vmin; height: 1vmin; background-color: #fff; border-radius: 0.25vmin; position: absolute; top: 10%; left: 50%; margin-left: -.025vmin; animation: scroll 1.5s infinite, opacity 1.5s infinite;}
+    .line::after {content: "SCROLL"; font: bold 1.5vmin monospace; letter-spacing: 0.1vmin; color: #fff; position: absolute; left: -1.6vmin; bottom: -3vmin; animation: opacity 1.5s infinite;}
+    @keyframes scroll {
+        from {top: 10%;}
+        to {top: 15%;}
+    }
+    
+    @keyframes opacity {
+        0% {opacity: 0.25;}
+        50% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+    
+    #side {position: fixed; right: 1vw; top: 35%; z-index: 3;}
+    #side li {width: 2vmin; height: 2vmin; background-clip: #888; border-right: 1vmin; margin: 1vw;}
+    
+    nav li:nth-of-type(1) {background-image: url(images/bg/nav_top.png);}
+    nav li:nth-of-type(2) {background-image: url(images/bg/nav_world.png);}
+    nav li:nth-of-type(3) {background-image: url(images/bg/nav_background.png);}
+    nav li:nth-of-type(4) {background-image: url(images/bg/nav_movie.png);}
+    nav li:nth-of-type(5) {background-image: url(images/bg/nav_products.png);}
+    nav li:nth-of-type(1):hover {background-image: url(images/bg/nav_top_ov.png);}
+    nav li:nth-of-type(2) {background-image: url(images/bg/nav_world_ov.png);}
+    nav li:nth-of-type(3) {background-image: url(images/bg/nav_background_ov.png);}
+    nav li:nth-of-type(4) {background-image: url(images/bg/nav_movie_ov.png);}
+    nav li:nth-of-type(5) {background-image: url(images/bg/nav_products_ov.png);}
+    
+    #container {width: 100%; display: flex; position: relative;}
+    .logo_l {width: 20vmax; background: url("images/top_logo.png") no-repeat center/100%; position: absolute; left: 0; top: 0;}
+    .logo_l::before {content: ""; display: block; padding-top: 80%;}
+    .logo_r {width: 10vmax; background: url("images/logo_nintendo_redBox.gif") no-repeat center/100%; position: absolute; right: 0; top: 0;}
+    .logo_r::before {content: ""; display: block; padding-top: 455;}
+    
+    .main {width: 100%; height: 100px; display: flex; flex-wrap: wrap; position: relative;}
+    .main li {width: 100%; position: relative;}
+    
+    .background::before {content: ""; display: block; padding-top: 70%;}
+    .background div {position: absolute;}
+    .bg_title {width: 24%; height: 10%; background: url("images/bg_title.png") no-repeat center/100%; top: 14%; left: 38%;}
+    
+    .character:nth-of-type(2n+1)::before {content: ""; display: block; padding-top: 70%;}
+    .character:nth-of-type(2n)::before {content: ""; display: block; padding-top: 70%; background-color: rgba(0,0,0,0.5);}
+    .character::after {content: ""; width: 100%; height: 55%; background-color: rgba(0,0,0,0.5); border-width: 3px 0; border-color: orange; border-spacing: solid; position: absolute; top: 20%; left: 0; z-index: 1;}
+    .character div {position: absolute; z-index: 2;}
+    .character .char_name {width: 25%; height: 10%; top: 26%; left: 7.5%;}
+    .character .char_text {width: 35%; height: 20%; top: 34%; left: 6%;}
+    .character .char_img {width: 55%; height: 90%; top: 2%; right: 2%;}
+    
+    .c_a .char_name {background: url("images/bg_chara3_name.png") no-repeat left center/contain;}
+    .c_a .char_text {background: url("images/bg_chara3_text.png") no-repeat left center/contain;}
+    .c_a .char_img {background: url("images/bg_chara3.png") no-repeat left center/contain;}
+    .c_b .char_name {background: url("images/bg_chara4_name.png") no-repeat left center/contain;}
+    .c_b .char_text {background: url("images/bg_chara4_text.png") no-repeat left center/contain;}
+    .c_b .char_img {background: url("images/bg_chara4.png") no-repeat left center/contain;}
+    .c_c .char_name {background: url("images/bg_chara5_name.png") no-repeat left center/contain;}
+    .c_c .char_text {background: url("images/bg_chara5_text.png") no-repeat left center/contain;}
+    .c_c .char_img {background: url("images/bg_chara5.png") no-repeat left center/contain;}
+    .c_d .char_name {background: url("images/bg_chara6_name.png") no-repeat left center/contain;}
+    .c_d .char_text {background: url("images/bg_chara6_text.png") no-repeat left center/contain;}
+    .c_d .char_img {background: url("images/bg_chara6.png") no-repeat left center/contain;}
+    .c_e .char_name {background: url("images/bg_chara7_name.png") no-repeat left center/contain;}
+    .c_e .char_text {background: url("images/bg_chara7_text.png") no-repeat left center/contain;}
+    .c_e .char_img {background: url("images/bg_chara7.png") no-repeat left center/contain;}
+    
+    @media screen and (min-width: 501px) and (max-width: 1024px){
+        * {transition: 0.5s all;}
+        
+        body {background-position: 5% 10%; background-size: 230%;}
+        .logo_l {width: 30vmax;}
+        .logo_r {width: 20vmax;}
+        .background::before {padding-top: 100%;}
+        .bg_title {width: 60%; height: 30%; left: 20%; top: 20%;}
+        .bg_text {width: 70%; height: 50%; left: 15%; top: 30%;}
+        
+        .character .char_name {width: 35%; height: 10%; top: 30%; left: 7.5%;}
+        .character .char_text {width: 45%; height: 25%; top: 40%; left: 6%;}
+        .character .char_img {width: 50%; height: 90%; top: 2%; right: 2%;}
+        }
+    @media screen and (max-width: 500px){
+        * {transition: 0.5s all;}
+        
+        body {background-position: 12% -10%; background-size: 300%;}
+        .logo_l {width: 70vmin;}
+        .logo_r {width: 40vmin;}
+        .background::before {padding-top: 170%;}
+        .bg_title {width: 80%; height: 30%; left: 10%; top: 30%;}
+        .bg_text {width: 84%; height: 50%; left: 8%; top: 35%;}
+        
+        .character .char_name {width: 50%; height: 20%; top: 30%; left: 7.5%;}
+        .character .char_text {width: 60%; height: 40%; top: 45%; left: 6%;}
+        .character .char_img {width: 35%; height: 80%; top: 30%; right: 1%;}
+        
+        .character::before {padding-top: 90%;}
+        .character::after {height: 70%;}
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+        <div class="logo_l"></div>
+        <div class="logo_r"></div>
+        <ul class="main">
+            <li class="background">
+                <div class="bg_title"></div>
+                <div class="bg_text"></div>
+            </li>
+            <li class="character_c_a">
+                <div class="char_name"></div>
+                <div class="char_text"></div>
+                <div class="char_img"></div>
+            </li>
+            <li class="character c_b">
+                <div class="char_name"></div>
+                <div class="char_text"></div>
+                <div class="char_img"></div>
+            </li>
+            <li class="character c_c">
+                <div class="char_name"></div>
+                <div class="char_text"></div>
+                <div class="char_img"></div>
+            </li>
+            <li class="character c_d">
+                <div class="char_name"></div>
+                <div class="char_text"></div>
+                <div class="char_img"></div>
+            </li>
+            <li class="character c_e">
+                <div class="char_name"></div>
+                <div class="char_text"></div>
+                <div class="char_img"></div>
+            </li>            
+        </ul>
+    </div>
+    
+    <nav>
+        <ul>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </nav>
+    <div id="mouse">
+        <div class="line"><div class="scroll"></div></div>
+    </div>
+    
+    <div id="side">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

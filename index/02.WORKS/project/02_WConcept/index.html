@@ -1,1 +1,330 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>W Concept</title>
+<link rel="shortcut icon" href="http://rimi.co.kr/site/wcon/favicon.ico">
+<link rel="stylesheet" href="css/jquery.bxslider.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
 
+ <script>
+ $(document).ready(function() {
+ $('.slider1').bxSlider();
+ auto: true;
+ });
+</script>
+ <style>
+     .bx-wrapper {border: none;}
+     .bx-controls .bx-default-pager {display: none;}
+
+     * {margin: 0; padding: 0;}
+     ul,ol,li {margin: 0; padding: 0; list-style: none;}
+     a {text-decoration: none; color: gray;}
+     
+     nav {position: relative; width: 100%; height: 60px;}
+     nav>ul {width: 1100px; height: 60px; margin: 0 auto;}
+     nav>ul>li {width: 180px; height: 60px; font-weight: bold; float: left;}
+     nav>ul>li>a {display: block; width: 100%; height: 100%; text-align: center; line-height: 60px; color: black;}
+     nav ul li .smenu {position: absolute; width: 180px; height: 0px; overflow: hidden; z-index: 2;}
+     nav ul li .smenu li {width: 200ppx; height: 40px;}
+     nav ul li .smenu li a {display: block; width: 100%; height: 100%; color: lightgray; font: 15px/50px "맑은 고딕"; text-align: left; line-height: 60px; padding-left: 60px;}
+     nav ul li .smenu li:hover a {color: black; text-decoration: underline;}
+     nav .na {width: 100%; height: 0px; background: #fff; position: absolute; top: 60px; left: 0; transition: all 0.5s; z-index: 1;}
+
+     nav ul:hover .na, nav ul:hover .smenu {height: 200px; transition: all 0.5s;}
+     .logo {background: url(img/logo.png)no-repeat center; width: 280px; height: 100px; margin-left: 700px; top: -15px; position: relative;}
+     .top1 ul li img:nth-child(2) {display: none;}
+     .top1 ul li:hover img:nth-child(1) {display: none;}
+     .top1 ul li:hover img:nth-child(2) {display: block;}
+     .top1 ul {display: flex; margin-top: -60px; margin-left: 200px;}
+     .top1 ul li {margin-left: 2px;}
+     .top1 ul li:nth-child(4) {margin-left: 20px;}
+     .top2 ul {display: flex; float: right; margin-right: 190px; margin-top: -30px; font-size: 14px;}
+
+     .b1 {width: 700px; height: 350; overflow: hidden; margin-left: 370px;}
+     .b1>a {background: url("img/bb.png")no-repeat center; width: 700px; height: 350px; transition: all ease 0.5s; position: relative;}
+     a {display: block; background-position: center; background-size: cover;}
+     .b1:hover>a {transform: scale(1.5);}
+     .b2 {width: 700px; height: 350; overflow: hidden; margin-left: 642px; margin-top: 18px; position: absolute;}
+     .b2>a {background: url("img/atc.jpg")no-repeat center; width: 700px; height: 350px; transition: all ease 0.5s; position: relative; background-size: cover;}
+     .b2:hover>a {transform: scale(1.5);}
+     .b3 {background: url("img/he.png")no-repeat center; width: 480px; height: 350px; margin-left: 370px; margin-top: 390px; position: absolute;}
+     .b4 {background: url("img/new.png")no-repeat center; width: 480px; height: 350px; margin-left: 370px; margin-top: 740px; position: absolute;}
+     .b5 {background: url("img/mim.png")no-repeat center; width: 473px; height: 405px; margin-left: 870px; margin-top: 660px; position: absolute;}    
+
+     .text {border: 1px solid lightgray; width: 240px; height: 270; margin-left: 1100px; margin-top: -350px; position: absolute; line-height: 50px; text-align: center; padding-top: 80px;}
+     h3 {font-size: 25px;}
+     p {line-height: normal; color: gray;}
+     .text a {width: 100px; height: 35px; text-align: center; display: block; margin: 0 auto; text-decoration: underline; line-height: 35px; color: black; margin-top: 20px;}
+     .text a:hover {background-color: maroon; color: white; text-decoration: none; transition: all 0.5s;}
+     
+     .t1 {margin-left: 370px; margin-top: 20px; position: absolute;}
+     .t2 {margin-top: 280px; color: white; text-align: left; margin-left: 20px;}
+     .t2 a {float: left; margin-top: 10px; color: white; text-decoration: none; border: 1px solid white; width: 100px; height: 35px;}
+     .t2 a:hover {background-color: white; color: black; text-decoration: none; transition: all 0.5s;}
+     .t3 {border: 1px solid lightgray; width: 470px; height: 260; margin-top: -290px; margin-left: 480px; position: absolute; color: black; text-align: center;}
+     .t3 a {margin-top: 50px; margin-left: 185px; color: white; text-decoration: none; background-color: #3a3A3A; width: 100px; height: 35px;}
+     .t3 a:hover {background-color: red; color: white;}
+     .t4 {margin-top: 50px;}
+     .t5 {position: relative; margin-left: -495px; margin-top: 269px; width: 465px; height: 275px; background-color: lightgray;}
+     .t5 a {margin-top: 30px; border: none;}
+     .t5 a:hover {background-color: white; color: black;}
+     .t6 {position: absolute; margin-left: 500px; margin-top: -50px; width: 465px; height: 275px;}
+     .t6 a {margin-top: 15px; margin-left: 1px; background: none; border: 1px solid white;}
+
+     .ins {margin-top: 1100px; margin-left: 800px;}
+     .i1 {width: 970px; height: 550px; margin-left: 370px; margin-top: 10px;}
+     .i2 {background: url(img/u1.jpg)no-repeat; width: 160px; height: 180px; position: absolute; background-size: 100%}
+     .i2:hover {background-size: 120%; background-position: center;}
+     .i3 {background: url(img/u2.jpg)no-repeat; width: 160px; height: 180px; position: absolute; background-size: 100%;margin-left: 160px;}
+     .i3:hover {background-size: 120%; background-position: center;}
+     .i4 {background: url(img/u3.jpg)no-repeat; width: 160px; height: 180px; position: absolute; background-size: 100%; margin-left: 320px;}
+     .i4:hover {background-size: 120%; background-position: center;}      
+     .i5 {background: url(img/u4.jpg)no-repeat; width: 160px; height: 180px; position: absolute; background-size: 100%; margin-left: 480px;}
+     .i5:hover {background-size: 120%; background-position: center;}
+     .i6 {background: url(img/u5.jpg)no-repeat; width: 160px; height: 180px; position: absolute; background-size: 100%; margin-left: 640px;}
+     .i6:hover {background-size: 120%; background-position: center;}
+     .i7 {background: url(img/u6.jpg)no-repeat; width: 170px; height: 180px; position: absolute; background-size: 100%; margin-left: 800px;}
+     .i7:hover {background-size: 120%; background-position: center;}
+     .i8 {background: url(img/d1.jpg)no-repeat; width: 160px; height: 180px; background-size: 100%; position: absolute; margin-top: 180px;}
+     .i8:hover {background-size: 120%; background-position: center;}
+     .i9 {background: url(img/d2.jpg)no-repeat; width: 160px; height: 180px; background-size: 100%; position: absolute; margin-top: 180px; margin-left: 160px;}
+     .i9:hover {background-size: 120%; background-position: center;}
+     .i10 {background: url(img/d3.jpg)no-repeat; width: 160px; height: 180px; background-size: 100%; position: absolute; margin-top: 180px; margin-left: 320px;}
+     .i10:hover {background-size: 120%; background-position: center;}
+     .i11 {background: url(img/d4.jpg)no-repeat; width: 160px; height: 180px; background-size: 100%; position: absolute; margin-top: 180px; margin-left:480px;}
+     .i11:hover {background-size: 120%; background-position: center;}
+     .i12 {background: url(img/d5.jpg)no-repeat; width: 160px; height: 180px; background-size: 100%; position: absolute; margin-top: 180px; margin-left: 640px;}
+     .i12:hover {background-size: 120%; background-position: center;}
+     .i13 {background: url(img/d6.jpg)no-repeat; width: 170px; height: 180px; background-size: 100%; position: absolute; margin-top: 180px; margin-left: 800px;}
+     .i13:hover {background-size: 120%; background-position: center;}
+     footer>div {background-color: #3a3A3A; width: 100%; height: 150px; margin-top: -150px;}
+     .f2 {color: gray; font-size: 15px; margin-top: -120px; margin-left: 520px; font-family: "맑은고딕";}      
+     .f3 {margin-left: 750px; width: 20px; height: 20px; margin-top: 30px;}
+     .f4 {margin-left: 800px; width: 20px; height: 20px; margin-top: -20px;}        
+     .f5 {margin-left: 850px; width: 20px; height: 20px; margin-top: -20px;}        
+     .f6 {color: gray; font-size: 15px; margin-left: 650px; margin-top: 30px; font-family: "맑은고딕";}
+     .f7 {margin-top: -123px; margin-left: 1100px; width: 20px; height: 20px;}     
+</style>
+</head>
+<body>
+    <div class="logo"></div>
+    <div class="top1">
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="img/social_icon1.gif">
+                    <img src="img/social_icon1_1.png">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/social_icon2.gif">
+                    <img src="img/social_icon2_1.png">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/social_icon3.gif">
+                    <img src="img/social_icon3_1.png">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/btn_mileage.gif">
+                    <img src="img/mileage_ov.png">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="top2">
+        <ul>
+            <li><a href="#">LOGIN |&nbsp;</a></li>
+            <li><a href="#">&nbsp;JOIN&nbsp; |</a></li>
+            <li><a href="#">&nbsp;개인정보취급방침</a></li>
+        </ul>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">NEW</a>
+                <ul class="smenu">
+                    <li><a href="#">ARRIVED</a></li>
+                    <li><a href="#">NEW</a></li>
+                </ul>
+            </li>
+            <li><a href="#">WOMEN</a>
+                <ul class="smenu">
+                    <li><a href="#">APPAREL</a></li>
+                    <li><a href="#">SHOES</a></li>
+                    <li><a href="#">BAGS</a></li>
+                    <li><a href="#">ACCESSORIES</a></li>
+                </ul>
+            </li>
+            <li><a href="#">MEN</a>
+                <ul class="smenu">
+                    <li><a href="#">APPAREL</a></li>
+                    <li><a href="#">SHOES</a></li>
+                    <li><a href="#">BAG&amp;ACC</a></li>
+                </ul>
+            </li>
+            <li><a href="#">LIFE</a>
+                <ul class="smenu">
+                    <li><a href="#">APARTMENT</a></li>
+                    <li><a href="#">ELECTRONICS</a></li>
+                    <li><a href="#">CULTURE</a></li>
+                    <li><a href="#">BEAUTY</a></li>
+                </ul>
+            </li>
+            <li><a href="#">SALE</a>
+                <ul class="smenu">
+                    <li><a href="#">SALE</a></li>
+                    <li><a href="#">SALE EVENT</a></li>
+                </ul>
+            </li>
+            <li><a href="#">BRAND</a>
+                <ul class="smenu">
+                    <li><a href="#">EXCUSIVE</a></li>
+                    <li><a href="#">TOP</a></li>
+                </ul>
+            </li>
+            <li class="na"></li>
+        </ul>
+    </nav>
+    <div class="bx-wrapper" style="max-width: 100%;">
+        <div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative; height: 585.625px;">
+            <section class="slider1" style="width: 4215%; position: relative; transition-duration: 0s; transform: translate3d(-1874px, 0px, 0px);">
+                <div style="float: left; list-style: none; position: relative; width: 1874px;" class="bx-clone" aria-hidden="true">
+                    <img src="img/key4.jpg">
+                </div>
+                <div style="float: left; list-style: none; position: relative; width: 1874px;" aria-hidden="false">
+                    <img src="img/key1.jpg">
+                </div>
+                <div aria-hidden="true" style="float: left; list-style: none; position: relative; width: 1874px;">
+                    <img src="img/key2.jpg">
+                </div>
+                <div aria-hidden="true" style="float: left; list-style: none; position: relative; width: 1874px;">
+                    <img src="img/key3.jpg">
+                </div>
+                <div style="float: left; list-style: none; position: relative; width: 1874px;" aria-hidden="true">
+                    <img src="img/key4.jpg">
+                </div>
+                <div style="float: left; list-style: none; position: relative; width: 1874px;" class="bx-clone" aria-hidden="true">
+                    <img src="img/key1.jpg">
+                </div>
+            </section>
+        </div>
+    </div>
+    <ul>
+        <li class="b1">
+            <a href="#"></a>
+        </li>
+        <li class="b2">
+            <a href="#"></a>
+        </li>
+    </ul>
+    <div class="b3"></div>
+    <div class="b4"></div>
+    <div class="b5"></div>
+    
+    <div class="text">
+        <h3>buttero</h3>
+        <h5>101% handcrafted</h5>
+        <p>A fusion of pure rawness<br>and elegance </p>
+        <a herf="#">view more</a>
+    </div>
+    <div class="text t1">
+        <h3>atclip launching</h3>
+        <h5>new launching </h5>
+        <p>Focus on restraint<br>and the complex beauty</p>
+        <a herf="#">view more</a>
+        
+        <div class="t2">
+            <h5>heich blade 17f/w collection </h5>
+            <h3>lookbook</h3>
+            <a herf="#">view more</a>
+            
+        <div class="t3">
+            <div class="t4">
+                <h3>sale</h3>
+                <p>다양하고 특별한 할인 혜택을 만나보세요.</p>
+            </div>
+            <a herf="#">view more</a>
+            
+            <div class="t3 t5">
+                <div class="t4">
+                    <h3>new</h3>
+                    <p>new in this week</p>
+                </div>
+                <a herf="#">view more</a>
+                
+            <div class="t2 t6">
+                <h5>mimicawe 17f/w </h5>
+                <h3>collection</h3>
+                <a herf="#">view more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="ins"><h2>INSTAGRAM</h2></div>
+    <div class="i1">
+        <ul>
+            <li class="i2">
+                <a href="#"></a>
+            </li>
+            <li class="i3">
+                <a href="#"></a>
+            </li>
+            <li class="i4">
+                <a href="#"></a>
+            </li>
+            <li class="i5">
+                <a href="#"></a>
+            </li>
+            <li class="i6">
+                <a href="#"></a>
+            </li>
+            <li class="i7">
+                <a href="#"></a>
+            </li>
+            <li class="i8">
+                <a href="#"></a>
+            </li>
+            <li class="i9">
+                <a href="#"></a>
+            </li>
+            <li class="i10">
+                <a href="#"></a>
+            </li>
+            <li class="i11">
+                <a href="#"></a>
+            </li>
+            <li class="i12">
+                <a href="#"></a>
+            </li>
+            <li class="i13">
+                <a href="#"></a>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <div class="f1"></div>
+        <p class="f2">(주)더블유컨셉코리아 대표자:황재익 서울특별시 강남구 테헤란로14길 16층,5층</p>
+        <div class="f3">
+            <img src="img/facebook_ot.png"></div>
+        <div class="f4">
+            <img src="img/blog_ot.png"></div>
+        <div class="f5">
+            <img src="img/kakao_ot.png"></div>
+        <p class="f6">copyright(c) 2018 W concept all right reserved.</p>
+        <div class="f7">
+            <li>
+                <a href="#">
+                    <img src="img/private_ot.png"></a>
+            </li>
+        </div>
+    </footer>
+</body>
+<whale-quicksearch translate="no">
+</whale-quicksearch>
+</html>
